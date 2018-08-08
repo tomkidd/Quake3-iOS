@@ -23,8 +23,8 @@ You can read a lengthy blog article on how I did all this [here](http://schnappl
 
 This repo was based on the code from *[Beben III](https://itunes.apple.com/us/app/beben-iii/id771105890?mt=8)* by Ronny Stiftel (more info [here](http://www.mac-and-i.net/2013/12/beben-iii-openarenaquake-3-for-ios.html)), ultimately derived from [ioquake3](https://ioquake3.org/).  On-screen joystick code came from [this repo](https://github.com/bradhowes/Joystick) by Brad Howe. Quake font DpQuake by Dead Pete available [here](https://www.dafont.com/quake.font). Code to query servers came from [Q3ServerBrowser](https://github.com/andreagiavatto/Q3ServerBrowser) on GitHub by Andrea Giavatto.
 
-[Video of Quake running on an iPhone X](https://www.youtube.com/watch?v=5awJDcu-cAs)
+[Video of Quake III: Arena running on an iPhone X](https://www.youtube.com/watch?v=4Fu1fmXtcvo)
 
-[Video of Quake running on an Apple TV](https://www.youtube.com/watch?v=jC_qnGjzO7s)
+[Video of Quake III: Arena running on an Apple TV](https://www.youtube.com/watch?v=ade-J3RYpsQ)
 
 Have fun. For any questions I can be reached at tomkidd@gmail.com
