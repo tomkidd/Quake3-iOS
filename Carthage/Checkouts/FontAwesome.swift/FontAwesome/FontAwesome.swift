@@ -54,11 +54,11 @@ public enum FontAwesomeStyle: String {
     func fontFilename() -> String {
         switch self {
         case .solid:
-            return "Font-Awesome-5-Free-Solid-900"
+            return "Font Awesome 5 Free-Solid-900"
         case .regular:
-            return "Font-Awesome-5-Free-Regular-400"
+            return "Font Awesome 5 Free-Regular-400"
         case .brands:
-            return "Font-Awesome-5-Brands-Regular-400"
+            return "Font Awesome 5 Brands-Regular-400"
         }
     }
 
@@ -88,7 +88,7 @@ public extension UIFont {
     /// Loads the FontAwesome font in to memory.
     /// This method should be called when setting icons without using code.
     public class func loadFontAwesome(ofStyle style: FontAwesomeStyle) {
-        if !UIFont.fontNames(forFamilyName: style.fontFamilyName()).isEmpty {
+        if UIFont.fontNames(forFamilyName: style.fontFamilyName()).contains(style.fontName()) {
             return
         }
 

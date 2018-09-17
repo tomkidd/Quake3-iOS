@@ -6,6 +6,46 @@ This guide is useful to figure out what you need to do between breaking changes.
 
 As always, [submit issues](https://github.com/FortAwesome/Font-Awesome/issues/new) that you run into with this guide or with these upgrades to us.
 
+## 5.3.0 to 5.3.1
+
+There are no breaking changes in this version upgrade.
+
+---
+
+## 5.x.x to 5.3.0
+
+Sass mixin syntax has been updated to address a bug.
+
+Use `@extend %fa-icon` to correctly maintain CSS order in output files.
+
+~~Old way:~~
+
+```
+.twitter {
+  @include fa-icon; /* incorrect */
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
+```
+
+New way:
+
+```
+.twitter {
+  @extend %fa-icon; /* correct */
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
+```
+
+---
+
 ## 5.1.x to 5.2.x
 
 There are no breaking changes in this version upgrade.
@@ -58,7 +98,7 @@ account](https://fontawesome.com/account/services).
 
 The following packages have been renamed as part of 5.1.0 of Font Awesome.
 
-_All packages are in the [@fortawesome NPM scope](https://www.npmjs.com/search?q=scope:fortawesome&page=1&ranking=optimal)_
+_All packages are in the [@fortawesome NPM scope](https://www.npmjs.com/search?q=scope:fortawesome&ranking=optimal)_
 
 | Old package(1)            | New package            |
 |---------------------------|------------------------|

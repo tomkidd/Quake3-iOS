@@ -152,7 +152,7 @@ public final class JoyStickView: UIView {
         let filterConfig: [String:Any] = [kCIInputIntensityKey: 1.0,
                                           kCIInputColorKey: CIColor(color: handleTintColor!),
                                           kCIInputImageKey: inputImage]
-        guard let filter = CIFilter(name: "CIColorMonochrome", withInputParameters: filterConfig) else {
+        guard let filter = CIFilter(name: "CIColorMonochrome", parameters: filterConfig) else {
             fatalError("failed to create CIFilter CIColorMonochrome")
         }
         

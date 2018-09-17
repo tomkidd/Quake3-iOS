@@ -2549,6 +2549,9 @@
 					A179BFE2210142F900D3C611 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					A1902E9E2108237E008823BB = {
+						LastSwiftMigration = 1000;
+					};
 					A1902F5E210939B9008823BB = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -3794,7 +3797,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quake3-iOS/bridging.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Quake3_iOS-Swift.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3835,7 +3838,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quake3-iOS/bridging.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Quake3_iOS-Swift.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
