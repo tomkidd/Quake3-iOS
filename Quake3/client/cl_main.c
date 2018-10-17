@@ -3014,8 +3014,7 @@ void CL_Frame ( int msec ) {
 	CL_SetCGameTime();
 
 	// update the screen
-	if(clc.state!=CA_BACKGROUND)
-		SCR_UpdateScreen();
+	SCR_UpdateScreen();
 
 	// update audio
 	S_Update();

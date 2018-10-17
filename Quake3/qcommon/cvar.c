@@ -35,10 +35,6 @@ int			cvar_numIndexes;
 #define FILE_HASH_SIZE		256
 static	cvar_t	*hashTable[FILE_HASH_SIZE];
 
-void cleanVars() {
-	cvar_vars = NULL;
-}
-
 /*
 ================
 return a hash value for the filename
@@ -191,6 +187,7 @@ Cvar_CommandCompletion
 void Cvar_CommandCompletion(void (*callback)(const char *s))
 {
 	cvar_t		*cvar;
+	
 	for(cvar = cvar_vars; cvar; cvar = cvar->next)
 	{
 		if(cvar->name)
@@ -720,6 +717,7 @@ Any testing variables will be reset to the safe values
 void Cvar_SetCheatState(void)
 {
 	cvar_t	*var;
+
 	// set all default vars to the safe value
 	for(var = cvar_vars; var ; var = var->next)
 	{
@@ -915,6 +913,7 @@ void Cvar_WriteVariables(fileHandle_t f)
 {
 	cvar_t	*var;
 	char	buffer[1024];
+
 	for (var = cvar_vars; var; var = var->next)
 	{
 		if(!var->name || Q_stricmp( var->name, "cl_cdkey" ) == 0)
@@ -959,7 +958,6 @@ void Cvar_List_f( void ) {
 	}
 
 	i = 0;
-
 	for (var = cvar_vars ; var ; var = var->next, i++)
 	{
 		if(!var->name || (match && !Com_Filter(match, var->name, qfalse)))
@@ -1148,6 +1146,7 @@ char *Cvar_InfoString(int bit)
 	cvar_t	*var;
 
 	info[0] = 0;
+
 	for(var = cvar_vars; var; var = var->next)
 	{
 		if(var->name && (var->flags & bit))
@@ -1170,6 +1169,7 @@ char *Cvar_InfoString_Big(int bit)
 	cvar_t	*var;
 
 	info[0] = 0;
+
 	for (var = cvar_vars; var; var = var->next)
 	{
 		if(var->name && (var->flags & bit))

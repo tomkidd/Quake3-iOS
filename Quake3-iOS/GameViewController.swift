@@ -273,7 +273,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
             
             //                ri.Printf(PRINT_DEVELOPER, "%s: deltaX = %d, deltaY = %d\n", __PRETTY_FUNCTION__, deltaX, deltaY);
             
-            CL_MouseEvent(Int32(deltaX), Int32(deltaY), Sys_Milliseconds(), qtrue);
+            CL_MouseEvent(Int32(deltaX), Int32(deltaY), Sys_Milliseconds());
             
         }
     }

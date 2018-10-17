@@ -1078,16 +1078,6 @@ extern cvar_t *r_printShaders;
 
 extern cvar_t *r_marksOnTriangleMeshes;
 
-// VR ADD ON
-extern cvar_t *vr_fovoffset;
-extern cvar_t *vr_warpingShader;
-extern cvar_t *vr_headlockedtorso;
-extern cvar_t *vr_ovrdetected;
-extern cvar_t *vr_lenseoffset;
-extern cvar_t *vr_ipd;
-extern cvar_t *vr_viewofsx;
-extern cvar_t *vr_viewofsy;
-
 //====================================================================
 
 void R_SwapBuffers(int);

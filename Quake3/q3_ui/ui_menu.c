@@ -42,8 +42,7 @@ MAIN MENU
 #define ID_EXIT					17
 
 #define MAIN_BANNER_MODEL				"models/mapobjects/banner/banner5.md3"
-
-static int MAIN_MENU_VERTICAL_SPACING = 0;
+#define MAIN_MENU_VERTICAL_SPACING		34
 
 
 typedef struct {
@@ -84,6 +83,8 @@ static void MainMenu_ExitAction( qboolean result ) {
 	UI_CreditMenu();
 }
 
+
+
 /*
 =================
 Main_MenuEvent
@@ -93,42 +94,43 @@ void Main_MenuEvent (void* ptr, int event) {
 	if( event != QM_ACTIVATED ) {
 		return;
 	}
-	
+
 	switch( ((menucommon_s*)ptr)->id ) {
-		case ID_SINGLEPLAYER:
-			UI_SPLevelMenu();
-			break;
-			
-		case ID_MULTIPLAYER:
-			UI_ArenaServersMenu();
-			break;
-			
-		case ID_SETUP:
-			UI_SetupMenu();
-			break;
-			
-		case ID_DEMOS:
-			UI_DemosMenu();
-			break;
-			 
-		case ID_CINEMATICS:
-			UI_CinematicsMenu();
-			break;
-			
-		case ID_MODS:
-			UI_ModsMenu();
-			break;
+	case ID_SINGLEPLAYER:
+		UI_SPLevelMenu();
+		break;
 
-		case ID_TEAMARENA:
-			trap_Cvar_Set( "fs_game", "missionpack");
-			trap_Cmd_ExecuteText( EXEC_APPEND, "vid_restart;" );
-			break;
+	case ID_MULTIPLAYER:
+		UI_ArenaServersMenu();
+		break;
 
-		case ID_EXIT:
-			UI_ConfirmMenu( "EXIT GAME?", 0, MainMenu_ExitAction );
-			break;
+	case ID_SETUP:
+		UI_SetupMenu();
+		break;
+
+	case ID_DEMOS:
+		UI_DemosMenu();
+		break;
+
+	case ID_CINEMATICS:
+		UI_CinematicsMenu();
+		break;
+
+	case ID_MODS:
+		UI_ModsMenu();
+		break;
+
+	case ID_TEAMARENA:
+		trap_Cvar_Set( "fs_game", BASETA);
+		trap_Cmd_ExecuteText( EXEC_APPEND, "vid_restart;" );
+		break;
+
+	case ID_EXIT:
+		UI_ConfirmMenu( "EXIT GAME?", 0, MainMenu_ExitAction );
+		break;
 	}
 }
+
 
 /*
 ===============
@@ -223,7 +225,7 @@ static void Main_MenuDraw( void ) {
 		UI_DrawProportionalString( 320, 372, "DEMO      FOR MATURE AUDIENCES      DEMO", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 400, "Quake III Arena(c) 1999-2000, Id Software, Inc.  All Rights Reserved", UI_CENTER|UI_SMALLFONT, color );
 	} else {
-		UI_DrawString( 320, 450, "Beben III(c) 2013, Ronny Stiftel. Based on ioquake licencsed under GPL2", UI_CENTER|UI_SMALLFONT, color );
+		UI_DrawString( 320, 450, "Quake III Arena(c) 1999-2000, Id Software, Inc.  All Rights Reserved", UI_CENTER|UI_SMALLFONT, color );
 	}
 }
 
@@ -254,6 +256,7 @@ static qboolean UI_TeamArenaExists( void ) {
 	return qfalse;
 }
 
+
 /*
 ===============
 UI_MainMenu
@@ -267,23 +270,17 @@ void UI_MainMenu( void ) {
 	int		y;
 	qboolean teamArena = qfalse;
 	int		style = UI_CENTER | UI_DROPSHADOW;
-	
+
 	trap_Cvar_Set( "sv_killserver", "1" );
 
-	if ( !uis.ios ) {
-		if( !uis.demoversion && !ui_cdkeychecked.integer ) {
-			char	key[17];
-			
-			trap_GetCDKey( key, sizeof(key) );
-			if( trap_VerifyCDKey( key, NULL ) == qfalse ) {
-				UI_CDKeyMenu();
-				return;
-			}
+	if( !uis.demoversion && !ui_cdkeychecked.integer ) {
+		char	key[17];
+
+		trap_GetCDKey( key, sizeof(key) );
+		if( trap_VerifyCDKey( key, NULL ) == qfalse ) {
+			UI_CDKeyMenu();
+			return;
 		}
-		
-		MAIN_MENU_VERTICAL_SPACING = 34;
-	} else {
-		MAIN_MENU_VERTICAL_SPACING = 58;
 	}
 	
 	memset( &s_main, 0 ,sizeof(mainmenu_t) );
@@ -346,44 +343,42 @@ void UI_MainMenu( void ) {
 	s_main.setup.color						= color_red;
 	s_main.setup.style						= style;
 
-	if ( !uis.ios ) {
+	y += MAIN_MENU_VERTICAL_SPACING;
+	s_main.demos.generic.type				= MTYPE_PTEXT;
+	s_main.demos.generic.flags				= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
+	s_main.demos.generic.x					= 320;
+	s_main.demos.generic.y					= y;
+	s_main.demos.generic.id					= ID_DEMOS;
+	s_main.demos.generic.callback			= Main_MenuEvent; 
+	s_main.demos.string						= "DEMOS";
+	s_main.demos.color						= color_red;
+	s_main.demos.style						= style;
+
+	y += MAIN_MENU_VERTICAL_SPACING;
+	s_main.cinematics.generic.type			= MTYPE_PTEXT;
+	s_main.cinematics.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
+	s_main.cinematics.generic.x				= 320;
+	s_main.cinematics.generic.y				= y;
+	s_main.cinematics.generic.id			= ID_CINEMATICS;
+	s_main.cinematics.generic.callback		= Main_MenuEvent; 
+	s_main.cinematics.string				= "CINEMATICS";
+	s_main.cinematics.color					= color_red;
+	s_main.cinematics.style					= style;
+
+	if ( !uis.demoversion && UI_TeamArenaExists() ) {
+		teamArena = qtrue;
 		y += MAIN_MENU_VERTICAL_SPACING;
-		s_main.demos.generic.type				= MTYPE_PTEXT;
-		s_main.demos.generic.flags				= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
-		s_main.demos.generic.x					= 320;
-		s_main.demos.generic.y					= y;
-		s_main.demos.generic.id					= ID_DEMOS;
-		s_main.demos.generic.callback			= Main_MenuEvent;
-		s_main.demos.string						= "DEMOS";
-		s_main.demos.color						= color_red;
-		s_main.demos.style						= style;
-		
-		y += MAIN_MENU_VERTICAL_SPACING;
-		s_main.cinematics.generic.type			= MTYPE_PTEXT;
-		s_main.cinematics.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
-		s_main.cinematics.generic.x				= 320;
-		s_main.cinematics.generic.y				= y;
-		s_main.cinematics.generic.id			= ID_CINEMATICS;
-		s_main.cinematics.generic.callback		= Main_MenuEvent;
-		s_main.cinematics.string				= "CINEMATICS";
-		s_main.cinematics.color					= color_red;
-		s_main.cinematics.style					= style;
-		
-		if ( !uis.demoversion && UI_TeamArenaExists() ) {
-			teamArena = qtrue;
-			y += MAIN_MENU_VERTICAL_SPACING;
-			s_main.teamArena.generic.type			= MTYPE_PTEXT;
-			s_main.teamArena.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
-			s_main.teamArena.generic.x				= 320;
-			s_main.teamArena.generic.y				= y;
-			s_main.teamArena.generic.id				= ID_TEAMARENA;
-			s_main.teamArena.generic.callback		= Main_MenuEvent;
-			s_main.teamArena.string					= "TEAM ARENA";
-			s_main.teamArena.color					= color_red;
-			s_main.teamArena.style					= style;
-		}
+		s_main.teamArena.generic.type			= MTYPE_PTEXT;
+		s_main.teamArena.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
+		s_main.teamArena.generic.x				= 320;
+		s_main.teamArena.generic.y				= y;
+		s_main.teamArena.generic.id				= ID_TEAMARENA;
+		s_main.teamArena.generic.callback		= Main_MenuEvent; 
+		s_main.teamArena.string					= "TEAM ARENA";
+		s_main.teamArena.color					= color_red;
+		s_main.teamArena.style					= style;
 	}
-	
+
 	if ( !uis.demoversion ) {
 		y += MAIN_MENU_VERTICAL_SPACING;
 		s_main.mods.generic.type			= MTYPE_PTEXT;
@@ -411,17 +406,14 @@ void UI_MainMenu( void ) {
 	Menu_AddItem( &s_main.menu,	&s_main.singleplayer );
 	Menu_AddItem( &s_main.menu,	&s_main.multiplayer );
 	Menu_AddItem( &s_main.menu,	&s_main.setup );
-
-	if ( !uis.ios ) {
-		Menu_AddItem( &s_main.menu,	&s_main.demos );
-		Menu_AddItem( &s_main.menu,	&s_main.cinematics );
-		if (teamArena)
-			Menu_AddItem( &s_main.menu,	&s_main.teamArena );
+	Menu_AddItem( &s_main.menu,	&s_main.demos );
+	Menu_AddItem( &s_main.menu,	&s_main.cinematics );
+	if (teamArena) {
+		Menu_AddItem( &s_main.menu,	&s_main.teamArena );
 	}
-	
-	if ( !uis.demoversion )
+	if ( !uis.demoversion ) {
 		Menu_AddItem( &s_main.menu,	&s_main.mods );
-	
+	}
 	Menu_AddItem( &s_main.menu,	&s_main.exit );             
 
 	trap_Key_SetCatcher( KEYCATCH_UI );

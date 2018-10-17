@@ -159,8 +159,7 @@ void RE_AddPolyToScene(qhandle_t hShader, int numVerts, const polyVert_t *verts,
 		// see if it is in a fog volume
 		else if (tr.world->numfogs == 1) {
 			fogIndex = 0;
-		}
-		else {
+		} else {
 			// find which fog volume the poly is in
 			VectorCopy(poly->verts[0].xyz, bounds[0]);
 			VectorCopy(poly->verts[0].xyz, bounds[1]);
@@ -416,22 +415,6 @@ void RE_RenderScene(const refdef_t *fd) {
 	parms.fovY = tr.refdef.fov_y;
 	
 	parms.stereoFrame = tr.refdef.stereoFrame;
-	
-	
-	if (tr.refdef.stereoFrame == STEREO_LEFT) {
-		parms.viewportX = tr.refdef.x;
-		parms.viewportY = glConfig.vidHeight - (tr.refdef.y + tr.refdef.height);
-		parms.viewportWidth = tr.refdef.width / 2;
-		parms.viewportHeight = tr.refdef.height;
-		parms.isPortal = qfalse;
-	}
-	else if (tr.refdef.stereoFrame == STEREO_RIGHT) {
-		parms.viewportX = tr.refdef.x + tr.refdef.width / 2;
-		parms.viewportY = glConfig.vidHeight - (tr.refdef.y + tr.refdef.height);
-		parms.viewportWidth = tr.refdef.width / 2;
-		parms.viewportHeight = tr.refdef.height;
-		parms.isPortal = qfalse;
-	}
 	
 	VectorCopy(fd->vieworg, parms.or.origin);
 	VectorCopy(fd->viewaxis[0], parms.or.axis[0]);

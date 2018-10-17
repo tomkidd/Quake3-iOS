@@ -139,7 +139,7 @@ void UI_PopMenu (void)
 
 	if (uis.menusp < 0)
 		trap_Error ("UI_PopMenu: menu stack underflow");
-	
+
 	if (uis.menusp) {
 		uis.activemenu = uis.stack[uis.menusp-1];
 		uis.firstdraw = qtrue;
@@ -869,40 +869,35 @@ void UI_KeyEvent( int key, int down ) {
 UI_MouseEvent
 =================
 */
-void UI_MouseEvent ( int dx, int dy, qboolean absolute ) {
+void UI_MouseEvent( int dx, int dy )
+{
 	int				i;
 	menucommon_s*	m;
 
 	if (!uis.activemenu)
 		return;
-	
-	// update mouse screen position
-	
-	if (absolute) uis.cursorx = dx;
-	else uis.cursorx += dx;
 
+	// update mouse screen position
+	uis.cursorx += dx;
 	if (uis.cursorx < -uis.bias)
 		uis.cursorx = -uis.bias;
 	else if (uis.cursorx > SCREEN_WIDTH+uis.bias)
 		uis.cursorx = SCREEN_WIDTH+uis.bias;
-	
-	if (absolute) uis.cursory = dy;
-	else uis.cursory += dy;
-	
+
+	uis.cursory += dy;
 	if (uis.cursory < 0)
 		uis.cursory = 0;
 	else if (uis.cursory > SCREEN_HEIGHT)
 		uis.cursory = SCREEN_HEIGHT;
-	
+
 	// region test the active menu items
-	
 	for (i=0; i<uis.activemenu->nitems; i++)
 	{
 		m = (menucommon_s*)uis.activemenu->items[i];
-		
+
 		if (m->flags & (QMF_GRAYED|QMF_INACTIVE))
 			continue;
-		
+
 		if ((uis.cursorx < m->left) ||
 			(uis.cursorx > m->right) ||
 			(uis.cursory < m->top) ||
@@ -911,22 +906,22 @@ void UI_MouseEvent ( int dx, int dy, qboolean absolute ) {
 			// cursor out of item bounds
 			continue;
 		}
-		
+
 		// set focus to item at cursor
 		if (uis.activemenu->cursor != i)
 		{
 			Menu_SetCursor( uis.activemenu, i );
 			((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor_prev]))->flags &= ~QMF_HASMOUSEFOCUS;
-			
+
 			if ( !(((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags & QMF_SILENT ) ) {
 				trap_S_StartLocalSound( menu_move_sound, CHAN_LOCAL_SOUND );
 			}
 		}
-		
+
 		((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags |= QMF_HASMOUSEFOCUS;
 		return;
-	}
-	
+	}  
+
 	if (uis.activemenu->nitems > 0) {
 		// out of any region
 		((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags &= ~QMF_HASMOUSEFOCUS;
@@ -1224,7 +1219,7 @@ void UI_Refresh( int realtime )
 			Menu_Draw( uis.activemenu );
 
 		if( uis.firstdraw ) {
-			UI_MouseEvent( 0, 0, qtrue );
+			UI_MouseEvent( 0, 0 );
 			uis.firstdraw = qfalse;
 		}
 	}

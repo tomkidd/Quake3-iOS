@@ -391,10 +391,6 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 	// show where the qvm was loaded from
 	FS_Which(filename, vm->searchPath);
 	
-	// mecwerks: also set to running on ios if loading from an IOS pakfile
-	FS_iOSCheck(filename, vm->searchPath);
-	
-	
 	if( LittleLong( header.h->vmMagic ) == VM_MAGIC_VER2 ) {
 		Com_Printf( "...which has vmMagic VM_MAGIC_VER2\n" );
 

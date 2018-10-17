@@ -2204,11 +2204,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 							break;
 							
 						case SE_MOUSE:
-							CL_MouseEvent(ev.evValue, ev.evValue2, ev.evTime, qfalse);
-							break;
-							
-						case SE_MOUSE_ABS:
-							CL_MouseEvent(ev.evValue, ev.evValue2, ev.evTime, qtrue);
+							CL_MouseEvent(ev.evValue, ev.evValue2, ev.evTime);
 							break;
 							
 						case SE_JOYSTICK_AXIS:

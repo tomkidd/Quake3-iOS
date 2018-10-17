@@ -120,27 +120,27 @@ extern vmCvar_t	ui_ioq3;
 #define MTYPE_PTEXT				9
 #define MTYPE_BTEXT				10
 
-#define QMF_BLINK			((unsigned int) 0x00000001)
+#define QMF_BLINK				((unsigned int) 0x00000001)
 #define QMF_SMALLFONT			((unsigned int) 0x00000002)
 #define QMF_LEFT_JUSTIFY		((unsigned int) 0x00000004)
 #define QMF_CENTER_JUSTIFY		((unsigned int) 0x00000008)
 #define QMF_RIGHT_JUSTIFY		((unsigned int) 0x00000010)
 #define QMF_NUMBERSONLY			((unsigned int) 0x00000020)	// edit field is only numbers
 #define QMF_HIGHLIGHT			((unsigned int) 0x00000040)
-#define QMF_HIGHLIGHT_IF_FOCUS		((unsigned int) 0x00000080)	// steady focus
+#define QMF_HIGHLIGHT_IF_FOCUS	((unsigned int) 0x00000080)	// steady focus
 #define QMF_PULSEIFFOCUS		((unsigned int) 0x00000100)	// pulse if focus
 #define QMF_HASMOUSEFOCUS		((unsigned int) 0x00000200)
 #define QMF_NOONOFFTEXT			((unsigned int) 0x00000400)
 #define QMF_MOUSEONLY			((unsigned int) 0x00000800)	// only mouse input allowed
-#define QMF_HIDDEN			((unsigned int) 0x00001000)	// skips drawing
-#define QMF_GRAYED			((unsigned int) 0x00002000)	// grays and disables
+#define QMF_HIDDEN				((unsigned int) 0x00001000)	// skips drawing
+#define QMF_GRAYED				((unsigned int) 0x00002000)	// grays and disables
 #define QMF_INACTIVE			((unsigned int) 0x00004000)	// disables any input
 #define QMF_NODEFAULTINIT		((unsigned int) 0x00008000)	// skip default initialization
 #define QMF_OWNERDRAW			((unsigned int) 0x00010000)
-#define QMF_PULSE			((unsigned int) 0x00020000)
+#define QMF_PULSE				((unsigned int) 0x00020000)
 #define QMF_LOWERCASE			((unsigned int) 0x00040000)	// edit field is all lower case
 #define QMF_UPPERCASE			((unsigned int) 0x00080000)	// edit field is all upper case
-#define QMF_SILENT			((unsigned int) 0x00100000)
+#define QMF_SILENT				((unsigned int) 0x00100000)
 
 // callback notifications
 #define QM_GOTFOCUS				1
@@ -161,8 +161,6 @@ typedef struct _tag_menuframework
 	qboolean	wrapAround;
 	qboolean	fullscreen;
 	qboolean	showlogo;
-	// iOS touch menu
-	void (*touchDraw) (void);
 } menuframework_s;
 
 typedef struct
@@ -558,13 +556,12 @@ typedef struct {
 	float				bias;
 	qboolean			demoversion;
 	qboolean			firstdraw;
-	qboolean			ios;
 } uiStatic_t;
 
 extern void			UI_Init( void );
 extern void			UI_Shutdown( void );
 extern void			UI_KeyEvent( int key, int down );
-extern void			UI_MouseEvent( int dx, int dy, qboolean absolute );
+extern void			UI_MouseEvent( int dx, int dy );
 extern void			UI_Refresh( int realtime );
 extern qboolean		UI_ConsoleCommand( int realTime );
 extern float		UI_ClampCvar( float min, float max, float value );
@@ -587,7 +584,6 @@ extern void			UI_AdjustFrom640( float *x, float *y, float *w, float *h );
 extern void			UI_DrawTextBox (int x, int y, int width, int lines);
 extern qboolean		UI_IsFullscreen( void );
 extern void			UI_SetActiveMenu( uiMenuCommand_t menu );
-extern void			UI_SelectAndPress( int button );
 extern void			UI_PushMenu ( menuframework_s *menu );
 extern void			UI_PopMenu (void);
 extern void			UI_ForceMenuOff (void);
@@ -605,8 +601,6 @@ void UI_SPLevelMenu_Cache( void );
 void UI_SPLevelMenu( void );
 void UI_SPLevelMenu_f( void );
 void UI_SPLevelMenu_ReInit( void );
-void UI_SPLevelMenu_Event( int callback, int notification );
-
 
 //
 // ui_spArena.c
@@ -624,13 +618,12 @@ void UI_SPPostgameMenu_f( void );
 //
 void UI_SPSkillMenu( const char *arenaInfo );
 void UI_SPSkillMenu_Cache( void );
-void UI_SPSkillMenu_Event( int callback, int notification );
 
 //
 // ui_syscalls.c
 //
 void			trap_Print( const char *string );
-void			trap_Error( const char *string );
+void			trap_Error( const char *string ) __attribute__((noreturn));
 int				trap_Milliseconds( void );
 void			trap_Cvar_Register( vmCvar_t *vmCvar, const char *varName, const char *defaultValue, int flags );
 void			trap_Cvar_Update( vmCvar_t *vmCvar );
@@ -692,8 +685,6 @@ void			trap_SetCDKey( char *buf );
 qboolean               trap_VerifyCDKey( const char *key, const char *chksum);
 
 void			trap_SetPbClStatus( int status );
-void			trap_DrawTouchArea( float x, float y, float w, float h );
-void			trap_ClearTouchButtons( void );
 
 //
 // ui_addbots.c

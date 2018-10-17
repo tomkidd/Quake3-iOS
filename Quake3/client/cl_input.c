@@ -377,9 +377,9 @@ void CL_KeyMove( usercmd_t *cmd ) {
 CL_MouseEvent
 =================
 */
-void CL_MouseEvent( int dx, int dy, int time, qboolean absolute ) {
+void CL_MouseEvent( int dx, int dy, int time ) {
 	if ( Key_GetCatcher( ) & KEYCATCH_UI ) {
-		VM_Call( uivm, UI_MOUSE_EVENT, dx, dy, absolute );
+		VM_Call( uivm, UI_MOUSE_EVENT, dx, dy );
 	} else if (Key_GetCatcher( ) & KEYCATCH_CGAME) {
 		VM_Call (cgvm, CG_MOUSE_EVENT, dx, dy);
 	} else {
@@ -400,21 +400,6 @@ void CL_JoystickEvent( int axis, int value, int time ) {
 		Com_Error( ERR_DROP, "CL_JoystickEvent: bad axis %i", axis );
 	}
 	cl.joystickAxis[axis] = value;
-}
-
-/*
-=================
-CL_AccelEvent
- 
-iOS Accelerometer event
-=================
-*/
-void CL_AccelEvent( int pitch, int roll, int yaw ) {
-#if 0 // mecwerks: i need to reimplement this as a control option
-	cls.accelAngles[PITCH] = pitch;
-	cls.accelAngles[ROLL] = roll;
-	cls.accelAngles[YAW] = yaw;
-#endif
 }
 
 /*
