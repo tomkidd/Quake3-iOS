@@ -117,8 +117,6 @@ int time_backend;           // renderer backend time
 int com_frameTime;
 int com_frameNumber;
 
-int vrMode;
-
 qboolean com_errorEntered = qfalse;
 qboolean com_fullyInitialized = qfalse;
 qboolean com_gameRestarting = qfalse;
@@ -134,7 +132,8 @@ static char *rd_buffer;
 static int rd_buffersize;
 static void (*rd_flush)(char *buffer);
 
-void Com_BeginRedirect(char *buffer, int buffersize, void (*flush)(char *)) {
+void Com_BeginRedirect (char *buffer, int buffersize, void (*flush)( char *) )
+{
 	if (!buffer || !buffersize || !flush)
 		return;
 	rd_buffer = buffer;
@@ -144,7 +143,8 @@ void Com_BeginRedirect(char *buffer, int buffersize, void (*flush)(char *)) {
 	*rd_buffer = 0;
 }
 
-void Com_EndRedirect(void) {
+void Com_EndRedirect (void)
+{
 	if (rd_flush) {
 		rd_flush(rd_buffer);
 	}
@@ -208,16 +208,19 @@ void QDECL Com_Printf(const char *fmt, ...) {
 			
 			logfile = FS_FOpenFileWrite("qconsole.log");
 			
-			if (logfile) {
+			if(logfile)
+			{
 				Com_Printf("logfile opened on %s\n", asctime(newtime));
 				
-				if (com_logfile->integer > 1) {
+				if ( com_logfile->integer > 1 )
+				{
 					// force it to not buffer so we get valid
 					// data even if we are crashing
 					FS_ForceFlush(logfile);
 				}
 			}
-			else {
+			else
+			{
 				Com_Printf("Opening qconsole.log failed!\n");
 				Cvar_SetValue("logfile", 0);
 			}
@@ -285,8 +288,7 @@ void QDECL Com_Error(int code, const char *fmt, ...) {
 		if (++errorCount > 3) {
 			code = ERR_FATAL;
 		}
-	}
-	else {
+	} else {
 		errorCount = 0;
 	}
 	lastErrorTime = currentTime;
@@ -308,8 +310,7 @@ void QDECL Com_Error(int code, const char *fmt, ...) {
 		FS_PureServerSetLoadedPaks("", "");
 		com_errorEntered = qfalse;
 		longjmp(abortframe, -1);
-	}
-	else if (code == ERR_DROP) {
+	} else if (code == ERR_DROP) {
 		Com_Printf("********************\nERROR: %s\n********************\n", com_errorMessage);
 		VM_Forced_Unload_Start();
 		SV_Shutdown(va("Server crashed: %s",  com_errorMessage));
@@ -319,8 +320,7 @@ void QDECL Com_Error(int code, const char *fmt, ...) {
 		FS_PureServerSetLoadedPaks("", "");
 		com_errorEntered = qfalse;
 		longjmp(abortframe, -1);
-	}
-	else if (code == ERR_NEED_CD) {
+	} else if ( code == ERR_NEED_CD ) {
 		VM_Forced_Unload_Start();
 		SV_Shutdown("Server didn't have CD");
 		if (com_cl_running && com_cl_running->integer) {
@@ -328,8 +328,7 @@ void QDECL Com_Error(int code, const char *fmt, ...) {
 			CL_FlushMemory();
 			VM_Forced_Unload_Done();
 			CL_CDDialog();
-		}
-		else {
+		} else {
 			Com_Printf("Server didn't have CD\n");
 			VM_Forced_Unload_Done();
 		}
@@ -338,8 +337,7 @@ void QDECL Com_Error(int code, const char *fmt, ...) {
 		
 		com_errorEntered = qfalse;
 		longjmp(abortframe, -1);
-	}
-	else {
+	} else {
 		VM_Forced_Unload_Start();
 		CL_Shutdown(va("Client fatal crashed: %s", com_errorMessage), qtrue, qtrue);
 		SV_Shutdown(va("Server fatal crashed: %s", com_errorMessage));
@@ -474,7 +472,8 @@ void Com_StartupVariable(const char *match) {
 		
 		s = Cmd_Argv(1);
 		
-		if (!match || !strcmp(s, match)) {
+		if(!match || !strcmp(s, match))
+		{
 			if (Cvar_Flags(s) == CVAR_NONEXISTENT)
 				Cvar_Get(s, Cmd_Argv(2), CVAR_USER_CREATED);
 			else
@@ -528,13 +527,15 @@ void Info_Print(const char *s) {
 	
 	if (*s == '\\')
 		s++;
-	while (*s) {
+	while (*s)
+	{
 		o = key;
 		while (*s && *s != '\\')
 			*o++ = *s++;
 		
 		l = o - key;
-		if (l < 20) {
+		if (l < 20)
+		{
 			Com_Memset(o, ' ', 20 - l);
 			key[20] = 0;
 		}
@@ -542,7 +543,8 @@ void Info_Print(const char *s) {
 			*o = 0;
 		Com_Printf("%s ", key);
 		
-		if (!*s) {
+		if (!*s)
+		{
 			Com_Printf("MISSING VALUE\n");
 			return;
 		}
@@ -593,7 +595,8 @@ char *Com_StringContains(char *str1, char *str2, int casesensitive) {
  Com_Filter
  ============
  */
-int Com_Filter(char *filter, char *name, int casesensitive) {
+int Com_Filter(char *filter, char *name, int casesensitive)
+{
 	char buf[MAX_TOKEN_CHARS];
 	char *ptr;
 	int i, found;
@@ -672,7 +675,8 @@ int Com_Filter(char *filter, char *name, int casesensitive) {
  Com_FilterPath
  ============
  */
-int Com_FilterPath(char *filter, char *name, int casesensitive) {
+int Com_FilterPath(char *filter, char *name, int casesensitive)
+{
 	int i;
 	char new_filter[MAX_QPATH];
 	char new_name[MAX_QPATH];
@@ -911,8 +915,7 @@ void Z_FreeTags(int tag) {
 			continue;
 		}
 		zone->rover = zone->rover->next;
-	}
-	while (zone->rover != &zone->blocklist);
+	} while ( zone->rover != &zone->blocklist );
 }
 
 /*
@@ -971,12 +974,10 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			}
 			if (rover->tag) {
 				base = rover = rover->next;
-			}
-			else {
+		} else {
 				rover = rover->next;
-			}
 		}
-		while (base->tag || base->size < size);
+	} while (base->tag || base->size < size);
 		
 		//
 		// found a block big enough
@@ -1146,40 +1147,19 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			byte mem[2];
 		} memstatic_t;
 		
-		memstatic_t emptystring = {
-			{ (sizeof(memblock_t) + 2 + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '\0', '\0' }
-		};
-		memstatic_t numberstring[] = {
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '0', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '1', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '2', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '3', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '4', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '5', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '6', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '7', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '8', '\0' }
-			},
-			{
-				{ (sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID }, { '9', '\0' }
-			}
+memstatic_t emptystring =
+	{ {(sizeof(memblock_t)+2 + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'\0', '\0'} };
+memstatic_t numberstring[] = {
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'0', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'1', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'2', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'3', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'4', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'5', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'6', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'7', '\0'} },
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'8', '\0'} }, 
+	{ {(sizeof(memstatic_t) + 3) & ~3, TAG_STATIC, NULL, NULL, ZONEID}, {'9', '\0'} }
 		};
 		
 		/*
@@ -1303,8 +1283,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					zoneBlocks++;
 					if (block->tag == TAG_BOTLIB) {
 						botlibBytes += block->size;
-					}
-					else if (block->tag == TAG_RENDERER) {
+			} else if ( block->tag == TAG_RENDERER ) {
 						rendererBytes += block->size;
 					}
 				}
@@ -1445,8 +1424,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			
 			if (cv->integer < DEF_COMZONEMEGS) {
 				s_zoneTotal = 1024 * 1024 * DEF_COMZONEMEGS;
-			}
-			else {
+        	} else {
 				s_zoneTotal = cv->integer * 1024 * 1024;
 			}
 			
@@ -1569,8 +1547,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			if (cv->integer < nMinAlloc) {
 				s_hunkTotal = 1024 * 1024 * nMinAlloc;
 				Com_Printf(pMsg, nMinAlloc, s_hunkTotal / (1024 * 1024));
-			}
-			else {
+        	} else {
 				s_hunkTotal = cv->integer * 1024 * 1024;
 			}
 			
@@ -1714,19 +1691,18 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 #endif
 				void *buf;
 				
-				if (s_hunkData == NULL) {
+				if ( s_hunkData == NULL)
+				{
 					Com_Error(ERR_FATAL, "Hunk_Alloc: Hunk memory system not initialized");
 				}
 				
 				// can't do preference if there is any temp allocated
 				if (preference == h_dontcare || hunk_temp->temp != hunk_temp->permanent) {
 					Hunk_SwapBanks();
-				}
-				else {
+				} else {
 					if (preference == h_low && hunk_permanent != &hunk_low) {
 						Hunk_SwapBanks();
-					}
-					else if (preference == h_high && hunk_permanent != &hunk_high) {
+				} else if (preference == h_high && hunk_permanent != &hunk_high) {
 						Hunk_SwapBanks();
 					}
 				}
@@ -1752,8 +1728,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				if (hunk_permanent == &hunk_low) {
 					buf = (void *)(s_hunkData + hunk_permanent->permanent);
 					hunk_permanent->permanent += size;
-				}
-				else {
+				} else {
 					hunk_permanent->permanent += size;
 					buf = (void *)(s_hunkData + s_hunkTotal - hunk_permanent->permanent);
 				}
@@ -1796,7 +1771,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				// this allows the config and product id files ( journal files too ) to be loaded
 				// by the file system without redunant routines in the file system utilizing different
 				// memory systems
-				if (s_hunkData == NULL) {
+				if ( s_hunkData == NULL )
+				{
 					return Z_Malloc(size);
 				}
 				
@@ -1811,8 +1787,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				if (hunk_temp == &hunk_low) {
 					buf = (void *)(s_hunkData + hunk_temp->temp);
 					hunk_temp->temp += size;
-				}
-				else {
+				} else {
 					hunk_temp->temp += size;
 					buf = (void *)(s_hunkData + s_hunkTotal - hunk_temp->temp);
 				}
@@ -1843,7 +1818,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				// this allows the config and product id files ( journal files too ) to be loaded
 				// by the file system without redunant routines in the file system utilizing different
 				// memory systems
-				if (s_hunkData == NULL) {
+				if ( s_hunkData == NULL )
+				{
 					Z_Free(buf);
 					return;
 				}
@@ -1861,16 +1837,13 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				if (hunk_temp == &hunk_low) {
 					if (hdr == (void *)(s_hunkData + hunk_temp->temp - hdr->size)) {
 						hunk_temp->temp -= hdr->size;
-					}
-					else {
+		} else {
 						Com_Printf("Hunk_FreeTempMemory: not the final block\n");
 					}
-				}
-				else {
+	} else {
 					if (hdr == (void *)(s_hunkData + s_hunkTotal - hunk_temp->temp)) {
 						hunk_temp->temp -= hdr->size;
-					}
-					else {
+		} else {
 						Com_Printf("Hunk_FreeTempMemory: not the final block\n");
 					}
 				}
@@ -1922,8 +1895,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					Com_Printf("Journaling events\n");
 					com_journalFile = FS_FOpenFileWrite("journal.dat");
 					com_journalDataFile = FS_FOpenFileWrite("journaldata.dat");
-				}
-				else if (com_journal->integer == 2) {
+	} else if ( com_journal->integer == 2 ) {
 					Com_Printf("Replaying journaled events\n");
 					FS_FOpenFileRead("journal.dat", &com_journalFile, qtrue);
 					FS_FOpenFileRead("journaldata.dat", &com_journalDataFile, qtrue);
@@ -1961,15 +1933,18 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 be freed by the game later.
 			 ================
 			 */
-			void Com_QueueEvent(int time, sysEventType_t type, int value, int value2, int ptrLength, void *ptr) {
+void Com_QueueEvent( int time, sysEventType_t type, int value, int value2, int ptrLength, void *ptr )
+{
 				sysEvent_t *ev;
 				
 				ev = &eventQueue[eventHead & MASK_QUEUED_EVENTS];
 				
-				if (eventHead - eventTail >= MAX_QUEUED_EVENTS) {
+	if ( eventHead - eventTail >= MAX_QUEUED_EVENTS )
+	{
 					Com_Printf("Com_QueueEvent: overflow\n");
 					// we are discarding an event, but don't leak memory
-					if (ev->evPtr) {
+		if ( ev->evPtr )
+		{
 						Z_Free(ev->evPtr);
 					}
 					eventTail++;
@@ -1977,7 +1952,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				
 				eventHead++;
 				
-				if (time == 0) {
+	if ( time == 0 )
+	{
 					time = Sys_Milliseconds();
 				}
 				
@@ -1995,19 +1971,22 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 
 			 ================
 			 */
-			sysEvent_t Com_GetSystemEvent(void) {
+sysEvent_t Com_GetSystemEvent( void )
+{
 				sysEvent_t ev;
 				char *s;
 				
 				// return if we have data
-				if (eventHead > eventTail) {
+	if ( eventHead > eventTail )
+	{
 					eventTail++;
 					return eventQueue[(eventTail - 1) & MASK_QUEUED_EVENTS];
 				}
 				
 				// check for console commands
 				s = Sys_ConsoleInput();
-				if (s) {
+	if ( s )
+	{
 					char *b;
 					int len;
 					
@@ -2018,7 +1997,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				}
 				
 				// return if we have data
-				if (eventHead > eventTail) {
+	if ( eventHead > eventTail )
+	{
 					eventTail++;
 					return eventQueue[(eventTail - 1) & MASK_QUEUED_EVENTS];
 				}
@@ -2052,8 +2032,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 							Com_Error(ERR_FATAL, "Error reading from journal file");
 						}
 					}
-				}
-				else {
+	} else {
 					ev = Com_GetSystemEvent();
 					
 					// write the journal value out if needed
@@ -2074,6 +2053,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				return ev;
 			}
 			
+
 			/*
 			 =================
 			 Com_InitPushEvent
@@ -2089,6 +2069,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				com_pushedEventsTail = 0;
 			}
 			
+
 			/*
 			 =================
 			 Com_PushEvent
@@ -2111,8 +2092,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 						Z_Free(ev->evPtr);
 					}
 					com_pushedEventsTail++;
-				}
-				else {
+	} else {
 					printedWarning = qfalse;
 				}
 				
@@ -2194,28 +2174,24 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					}
 					
 					
-					switch (ev.evType) {
+		switch(ev.evType)
+		{
 						case SE_KEY:
 							CL_KeyEvent(ev.evValue, ev.evValue2, ev.evTime);
 							break;
-							
 						case SE_CHAR:
 							CL_CharEvent(ev.evValue);
 							break;
-							
 						case SE_MOUSE:
 							CL_MouseEvent(ev.evValue, ev.evValue2, ev.evTime);
 							break;
-							
 						case SE_JOYSTICK_AXIS:
 							CL_JoystickEvent(ev.evValue, ev.evValue2, ev.evTime);
 							break;
-							
 						case SE_CONSOLE:
 							Cbuf_AddText((char *)ev.evPtr);
 							Cbuf_AddText("\n");
 							break;
-							
 						default:
 							Com_Error(ERR_FATAL, "Com_EventLoop: bad event type %i", ev.evType);
 							break;
@@ -2246,8 +2222,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					if (ev.evType != SE_NONE) {
 						Com_PushEvent(&ev);
 					}
-				}
-				while (ev.evType != SE_NONE);
+	} while ( ev.evType != SE_NONE );
 				
 				return ev.evTime;
 			}
@@ -2262,11 +2237,10 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 test error shutdown procedures
 			 =============
 			 */
-			static void Com_Error_f(void) {
+static void __attribute__((__noreturn__)) Com_Error_f (void) {
 				if (Cmd_Argc() > 1) {
 					Com_Error(ERR_DROP, "Testing drop error");
-				}
-				else {
+	} else {
 					Com_Error(ERR_FATAL, "Testing fatal error");
 				}
 			}
@@ -2317,16 +2291,19 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 For controlling environment variables
 			 ==================
 			 */
-			void Com_Setenv_f(void) {
+void Com_Setenv_f(void)
+{
 				int argc = Cmd_Argc();
 				char *arg1 = Cmd_Argv(1);
 				
-				if (argc > 2) {
+	if(argc > 2)
+	{
 					char *arg2 = Cmd_ArgsFrom(2);
 					
 					Sys_SetEnv(arg1, arg2);
 				}
-				else if (argc == 2) {
+	else if(argc == 2)
+	{
 					char *env = getenv(arg1);
 					
 					if (env)
@@ -2344,11 +2321,13 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 ==================
 			 */
 			
-			void Com_ExecuteCfg(void) {
+void Com_ExecuteCfg(void)
+{
 				Cbuf_ExecuteText(EXEC_NOW, "exec default.cfg\n");
 				Cbuf_Execute(); // Always execute after exec to prevent text buffer overflowing
 				
-				if (!Com_SafeMode()) {
+	if(!Com_SafeMode())
+	{
 					// skip the q3config.cfg and autoexec.cfg if "safe" is on the command line
 					Cbuf_ExecuteText(EXEC_NOW, "exec " Q3CONFIG_CFG "\n");
 					Cbuf_Execute();
@@ -2365,9 +2344,11 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 ==================
 			 */
 			
-			void Com_GameRestart(int checksumFeed, qboolean disconnect) {
+void Com_GameRestart(int checksumFeed, qboolean disconnect)
+{
 				// make sure no recursion can be triggered
-				if (!com_gameRestarting && com_fullyInitialized) {
+	if(!com_gameRestarting && com_fullyInitialized)
+	{
 					int clWasRunning;
 					
 					com_gameRestarting = qtrue;
@@ -2377,7 +2358,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					if (com_sv_running->integer)
 						SV_Shutdown("Game directory changed");
 					
-					if (clWasRunning) {
+		if(clWasRunning)
+		{
 						if (disconnect)
 							CL_Disconnect(qfalse);
 						
@@ -2390,14 +2372,16 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					Cvar_Restart(qtrue);
 					Com_ExecuteCfg();
 					
-					if (disconnect) {
+		if(disconnect)
+		{
 						// We don't want to change any network settings if gamedir
 						// change was triggered by a connect to server because the
 						// new network settings might make the connection fail.
 						NET_Restart_f();
 					}
 					
-					if (clWasRunning) {
+		if(clWasRunning)
+		{
 						CL_Init();
 						CL_StartHunkUsers(qfalse);
 					}
@@ -2414,8 +2398,10 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 ==================
 			 */
 			
-			void Com_GameRestart_f(void) {
-				if (!FS_FilenameCompare(Cmd_Argv(1), com_basegame->string)) {
+void Com_GameRestart_f(void)
+{
+	if(!FS_FilenameCompare(Cmd_Argv(1), com_basegame->string))
+	{
 					// This is the standard base game. Servers and clients should
 					// use "" and not the standard basegame name because this messes
 					// up pak file negotiation and lots of other stuff
@@ -2466,8 +2452,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				
 				if (CL_CDKeyValidate(buffer, NULL)) {
 					Q_strncpyz(cl_cdkey, buffer, 17);
-				}
-				else {
+	} else {
 					Q_strncpyz(cl_cdkey, "                ", 17);
 				}
 			}
@@ -2497,8 +2482,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				
 				if (CL_CDKeyValidate(buffer, NULL)) {
 					strcat(&cl_cdkey[16], buffer);
-				}
-				else {
+	} else {
 					Q_strncpyz(&cl_cdkey[16], "                ", 17);
 				}
 			}
@@ -2550,12 +2534,12 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				;
 #endif
 			}
-			
 #endif
 			
 #endif // STANDALONE
 			
-			static void Com_DetectAltivec(void) {
+static void Com_DetectAltivec(void)
+{
 				// Only detect if user hasn't forcibly disabled it.
 				if (com_altivec->integer) {
 					static qboolean altivec = qfalse;
@@ -2580,13 +2564,15 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			
 #if id386 || idx64
 			
-			static void Com_DetectSSE(void) {
+static void Com_DetectSSE(void)
+{
 #if !idx64
 				cpuFeatures_t feat;
 				
 				feat = Sys_GetProcessorFeatures();
 				
-				if (feat & CF_SSE) {
+	if(feat & CF_SSE)
+	{
 					if (feat & CF_SSE2)
 						Q_SnapVector = qsnapvectorsse;
 					else
@@ -2599,8 +2585,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					Com_Printf("Have SSE support\n");
 #if !idx64
 				}
-				
-				else {
+	else
+	{
 					Q_ftol = qftolx87;
 					Q_VMftol = qvmftolx87;
 					Q_SnapVector = qsnapvectorx87;
@@ -2622,7 +2608,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 Seed the random number generator, if possible with an OS supplied random seed.
 			 =================
 			 */
-			static void Com_InitRand(void) {
+static void Com_InitRand(void)
+{
 				unsigned int seed;
 				
 				if (Sys_RandomBytes((byte *)&seed, sizeof(seed)))
@@ -2691,7 +2678,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				
 				// Add some commands here already so users can use them from config files
 				Cmd_AddCommand("setenv", Com_Setenv_f);
-				if (com_developer && com_developer->integer) {
+	if (com_developer && com_developer->integer)
+	{
 					Cmd_AddCommand("error", Com_Error_f);
 					Cmd_AddCommand("crash", Com_Crash_f);
 					Cmd_AddCommand("freeze", Com_Freeze_f);
@@ -2831,7 +2819,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 #endif
 				
 				com_pipefile = Cvar_Get("com_pipefile", "", CVAR_ARCHIVE | CVAR_LATCH);
-				if (com_pipefile->string[0]) {
+	if( com_pipefile->string[0] )
+	{
 					pipefile = FS_FCreateOpenPipeFile(com_pipefile->string);
 				}
 				
@@ -2845,7 +2834,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 Read whatever is in com_pipefile, if anything, and execute it
 			 ===============
 			 */
-			void Com_ReadFromPipe(void) {
+void Com_ReadFromPipe( void )
+{
 				static char buf[MAX_STRING_CHARS];
 				static int accu = 0;
 				int read;
@@ -2853,11 +2843,13 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				if (!pipefile)
 					return;
 				
-				while ((read = FS_Read(buf + accu, sizeof(buf) - accu - 1, pipefile)) > 0) {
+	while( ( read = FS_Read( buf + accu, sizeof( buf ) - accu - 1, pipefile ) ) > 0 )
+	{
 					char *brk = NULL;
 					int i;
 					
-					for (i = accu; i < accu + read; ++i) {
+		for( i = accu; i < accu + read; ++i )
+		{
 						if (buf[i] == '\0')
 							buf[i] = '\n';
 						if (buf[i] == '\n' || buf[i] == '\r')
@@ -2867,7 +2859,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					
 					accu += read;
 					
-					if (brk) {
+		if( brk )
+		{
 						char tmp = *brk;
 						*brk = '\0';
 						Cbuf_ExecuteText(EXEC_APPEND, buf);
@@ -2876,7 +2869,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 						accu -= brk - buf;
 						memmove(buf, brk, accu + 1);
 					}
-					else if (accu >= sizeof(buf) - 1) {  // full
+		else if( accu >= sizeof( buf ) - 1 ) // full
+		{
 						Cbuf_ExecuteText(EXEC_APPEND, buf);
 						accu = 0;
 					}
@@ -2928,11 +2922,11 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 #if !defined(DEDICATED) && !defined(STANDALONE)
 				fs = Cvar_Get("fs_game", "", CVAR_INIT | CVAR_SYSTEMINFO);
 				
-				if (!com_standalone->integer) {
+	if(!com_standalone->integer)
+	{
 					if (UI_usesUniqueCDKey() && fs && fs->string[0] != 0) {
 						Com_WriteCDKey(fs->string, &cl_cdkey[16]);
-					}
-					else {
+		} else {
 						Com_WriteCDKey(BASEGAME, cl_cdkey);
 					}
 				}
@@ -2973,11 +2967,9 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				//
 				if (com_fixedtime->integer) {
 					msec = com_fixedtime->integer;
-				}
-				else if (com_timescale->value) {
+	} else if ( com_timescale->value ) {
 					msec *= com_timescale->value;
-				}
-				else if (com_cameraMode->integer) {
+	} else if (com_cameraMode->integer) {
 					msec *= com_timescale->value;
 				}
 				
@@ -2994,13 +2986,12 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 						Com_Printf("Hitch warning: %i msec frame time\n", msec);
 					
 					clampTime = 5000;
-				}
-				else if (!com_sv_running->integer)        {
+	} else 
+	if ( !com_sv_running->integer ) {
 					// clients of remote servers do not want to clamp time, because
 					// it would skew their view of the server's time temporarily
 					clampTime = 5000;
-				}
-				else {
+	} else {
 					// for local single player gaming
 					// we may want to clamp the time to prevent players from
 					// flying off edges when something hitches.
@@ -3020,7 +3011,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 =================
 			 */
 			
-			int Com_TimeVal(int minMsec) {
+int Com_TimeVal(int minMsec)
+{
 				int timeVal;
 				
 				timeVal = Sys_Milliseconds() - com_frameTime;
@@ -3071,10 +3063,12 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				}
 				
 				// Figure out how much time we have
-				if (!com_timedemo->integer) {
+	if(!com_timedemo->integer)
+	{
 					if (com_dedicated->integer)
 						minMsec = SV_FrameMsec();
-					else {
+		else
+		{
 						if (com_minimized->integer && com_maxfpsMinimized->integer > 0)
 							minMsec = 1000 / com_maxfpsMinimized->integer;
 						else if (com_unfocused->integer && com_maxfpsUnfocused->integer > 0)
@@ -3098,8 +3092,10 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				else
 					minMsec = 1;
 				
-				do {
-					if (com_sv_running->integer) {
+	do
+	{
+		if(com_sv_running->integer)
+		{
 						timeValSV = SV_SendQueuedPackets();
 						
 						timeVal = Com_TimeVal(minMsec);
@@ -3114,8 +3110,7 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 						NET_Sleep(0);
 					else
 						NET_Sleep(timeVal - 1);
-				}
-				while (Com_TimeVal(minMsec));
+	} while(Com_TimeVal(minMsec));
 				
 				lastTime = com_frameTime;
 				com_frameTime = Com_EventLoop();
@@ -3124,7 +3119,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				
 				Cbuf_Execute();
 				
-				if (com_altivec->modified) {
+	if (com_altivec->modified)
+	{
 					Com_DetectAltivec();
 					com_altivec->modified = qfalse;
 				}
@@ -3338,10 +3334,12 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 Field_FindFirstSeparator
 			 ===============
 			 */
-			static char *Field_FindFirstSeparator(char *s) {
+static char *Field_FindFirstSeparator( char *s )
+{
 				int i;
 				
-				for (i = 0; i < strlen(s); i++) {
+	for( i = 0; i < strlen( s ); i++ )
+	{
 					if (s[i] == ';')
 						return &s[i];
 				}
@@ -3354,7 +3352,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 Field_Complete
 			 ===============
 			 */
-			static qboolean Field_Complete(void) {
+static qboolean Field_Complete( void )
+{
 				int completionOffset;
 				
 				if (matchCount == 0)
@@ -3367,7 +3366,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				
 				completionField->cursor = strlen(completionField->buffer);
 				
-				if (matchCount == 1) {
+	if( matchCount == 1 )
+	{
 					Q_strcat(completionField->buffer, sizeof(completionField->buffer), " ");
 					completionField->cursor++;
 					return qtrue;
@@ -3384,7 +3384,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 Field_CompleteKeyname
 			 ===============
 			 */
-			void Field_CompleteKeyname(void) {
+void Field_CompleteKeyname( void )
+{
 				matchCount = 0;
 				shortestMatch[0] = 0;
 				
@@ -3402,7 +3403,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 ===============
 			 */
 			void Field_CompleteFilename(const char *dir,
-										const char *ext, qboolean stripExt, qboolean allowNonPureFilesOnDisk) {
+		const char *ext, qboolean stripExt, qboolean allowNonPureFilesOnDisk )
+{
 				matchCount = 0;
 				shortestMatch[0] = 0;
 				
@@ -3418,7 +3420,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 ===============
 			 */
 			void Field_CompleteCommand(char *cmd,
-									   qboolean doCommands, qboolean doCvars) {
+		qboolean doCommands, qboolean doCvars )
+{
 				int completionArgument = 0;
 				
 				// Skip leading whitespace and quotes
@@ -3428,7 +3431,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				completionArgument = Cmd_Argc();
 				
 				// If there is trailing whitespace on the cmd
-				if (*(cmd + strlen(cmd) - 1) == ' ') {
+	if( *( cmd + strlen( cmd ) - 1 ) == ' ' )
+	{
 					completionString = "";
 					completionArgument++;
 				}
@@ -3438,8 +3442,10 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 #ifndef DEDICATED
 				// Unconditionally add a '\' to the start of the buffer
 				if (completionField->buffer[0] &&
-					completionField->buffer[0] != '\\') {
-					if (completionField->buffer[0] != '/') {
+			completionField->buffer[ 0 ] != '\\' )
+	{
+		if( completionField->buffer[ 0 ] != '/' )
+		{
 						// Buffer is full, refuse to complete
 						if (strlen(completionField->buffer) + 1 >=
 							sizeof(completionField->buffer))
@@ -3455,7 +3461,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 				}
 #endif
 				
-				if (completionArgument > 1) {
+	if( completionArgument > 1 )
+	{
 					const char *baseCmd = Cmd_Argv(0);
 					char *p;
 					
@@ -3470,7 +3477,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					else
 						Cmd_CompleteArgument(baseCmd, cmd, completionArgument);
 				}
-				else {
+	else
+	{
 					if (completionString[0] == '\\' || completionString[0] == '/')
 						completionString++;
 					
@@ -3486,7 +3494,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 					if (doCvars)
 						Cvar_CommandCompletion(FindMatches);
 					
-					if (!Field_Complete()) {
+		if( !Field_Complete( ) )
+		{
 						// run through again, printing matches
 						if (doCommands)
 							Cmd_CommandCompletion(PrintMatches);
@@ -3504,7 +3513,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 Perform Tab expansion
 			 ===============
 			 */
-			void Field_AutoComplete(field_t *field) {
+void Field_AutoComplete( field_t *field )
+{
 				completionField = field;
 				
 				Field_CompleteCommand(completionField->buffer, qtrue, qtrue);
@@ -3517,7 +3527,8 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 fills string array with len radom bytes, peferably from the OS randomizer
 			 ==================
 			 */
-			void Com_RandomBytes(byte *string, int len) {
+void Com_RandomBytes( byte *string, int len )
+{
 				int i;
 				
 				if (Sys_RandomBytes(string, len))
@@ -3536,10 +3547,13 @@ void *Z_TagMallocDebug(int size, int tag, char *label, char *file, int line) {
 			 If clientNum is negative return if any bit is set.
 			 ==================
 			 */
-			qboolean Com_IsVoipTarget(uint8_t *voipTargets, int voipTargetsSize, int clientNum) {
+qboolean Com_IsVoipTarget(uint8_t *voipTargets, int voipTargetsSize, int clientNum)
+{
 				int index;
-				if (clientNum < 0) {
-					for (index = 0; index < voipTargetsSize; index++) {
+	if(clientNum < 0)
+	{
+		for(index = 0; index < voipTargetsSize; index++)
+		{
 						if (voipTargets[index])
 							return qtrue;
 					}

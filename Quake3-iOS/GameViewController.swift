@@ -102,7 +102,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         
         let menuPressRecognizer = UITapGestureRecognizer()
         menuPressRecognizer.addTarget(self, action: #selector(GameViewController.menuButtonAction))
-        menuPressRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.menu.rawValue)]
+        menuPressRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.menu.rawValue)]
         
         self.view.addGestureRecognizer(menuPressRecognizer)
         

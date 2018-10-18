@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6RI-kZ-qLC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6RI-kZ-qLC">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="CXV-mc-6oD">
             <objects>
-                <viewController id="dWF-vJ-0ad" sceneMemberID="viewController">
+                <viewController id="dWF-vJ-0ad" customClass="MainMenuViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uuz-Jq-TKC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,13 +197,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPr-ud-ycR">
-                                <rect key="frame" x="223" y="0.0" width="220" height="187.5"/>
+                                <rect key="frame" x="223.5" y="0.0" width="220" height="187.5"/>
                                 <connections>
                                     <action selector="nextWeaponWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dc-wk-H5e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CF-kQ-2OE">
-                                <rect key="frame" x="223" y="187" width="220.5" height="187.5"/>
+                                <rect key="frame" x="223.5" y="187.5" width="220" height="187.5"/>
                                 <connections>
                                     <action selector="prevWeaponWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQe-Kv-n3z"/>
                                 </connections>
@@ -675,7 +674,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-7y-x7h">
-                                <rect key="frame" x="36" y="2" width="128" height="35"/>
+                                <rect key="frame" x="36" y="1.5" width="128" height="35"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -739,9 +738,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="quake_3_background" width="1920" height="720"/>
+        <image name="quake_3_background" width="1440" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cZw-Gc-PNX"/>
+        <segue reference="T1e-r3-Itb"/>
     </inferredMetricsTieBreakers>
 </document>

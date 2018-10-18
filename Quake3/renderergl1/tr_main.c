@@ -538,40 +538,7 @@ void R_SetupProjection(viewParms_t *dest, float zProj, qboolean computeFrustum)
 
 	width = xmax - xmin;
 	height = ymax - ymin;
-#ifdef IOS
-	if ( vidRotation == 90 ) {
-		dest->projectionMatrix[0] = 0;
-		dest->projectionMatrix[4] = -2 * zProj / height;
-		dest->projectionMatrix[8] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[12] = 0;
 		
-		dest->projectionMatrix[1] = 2 * zProj / width;
-		dest->projectionMatrix[5] = 0;
-		dest->projectionMatrix[9] = ( xmax + xmin ) / width;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	} else if ( vidRotation == 180 ) {
-		dest->projectionMatrix[0] = -2 * zProj / width;
-		dest->projectionMatrix[4] = 0;
-		dest->projectionMatrix[8] = ( xmax + xmin ) / width;	// normally 0
-		dest->projectionMatrix[12] = 0;
-		
-		dest->projectionMatrix[1] = 0;
-		dest->projectionMatrix[5] = -2 * zProj / height;
-		dest->projectionMatrix[9] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	} else if ( vidRotation == 270 ) {
-		dest->projectionMatrix[0] = 0;
-		dest->projectionMatrix[4] = 2 * zProj / height;
-		dest->projectionMatrix[8] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[12] = 0;
-		
-		dest->projectionMatrix[1] = -2 * zProj / width;
-		dest->projectionMatrix[5] = 0;
-		dest->projectionMatrix[9] = ( xmax + xmin ) / width;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	} else
-#endif // IOS
-	{
 		dest->projectionMatrix[0] = 2 * zProj / width;
 		dest->projectionMatrix[4] = 0;
 		dest->projectionMatrix[8] = (xmax + xmin + 2 * stereoSep) / width;
@@ -581,7 +548,7 @@ void R_SetupProjection(viewParms_t *dest, float zProj, qboolean computeFrustum)
 		dest->projectionMatrix[5] = 2 * zProj / height;
 		dest->projectionMatrix[9] = ( ymax + ymin ) / height;	// normally 0
 		dest->projectionMatrix[13] = 0;
-	}
+
 	
 	dest->projectionMatrix[3] = 0;
 	dest->projectionMatrix[7] = 0;

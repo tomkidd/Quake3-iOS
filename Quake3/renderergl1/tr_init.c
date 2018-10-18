@@ -27,7 +27,6 @@ glconfig_t glConfig;
 qboolean textureFilterAnisotropic = qfalse;
 int maxAnisotropy = 0;
 float displayAspect = 0.0f;
-float vidRotation = 90.0f;
 
 glstate_t glState;
 

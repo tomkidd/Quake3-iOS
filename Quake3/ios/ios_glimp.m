@@ -222,7 +222,6 @@ void GLimp_SetMode(float rotation) {
 //    glConfig.colorBits = (int)[_screenView numColorBits];
 //    glConfig.depthBits = (int)[_screenView numDepthBits];
 	glConfig.stencilBits = 0;
-	vidRotation = rotation;
 
 	
 	if (cls.uiStarted) {
