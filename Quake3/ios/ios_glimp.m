@@ -239,7 +239,7 @@ void GLimp_SetMode(float rotation) {
 	}
 }
 
-void GLimp_Init(void) {
+void GLimp_Init(qboolean fixedFunction) {
 //    Q3Application *application = (Q3Application *)[Q3Application sharedApplication];
 	
 	ri.Printf(PRINT_ALL, "Initializing OpenGL subsystem\n");

@@ -6,7 +6,7 @@
 
 #include "ios_local.h"
 
-void IN_Init(void) {
+void IN_Init(void *windowData) {
 }
 
 void IN_Frame(void) {

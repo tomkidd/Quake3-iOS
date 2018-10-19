@@ -921,6 +921,7 @@ void GfxInfo_f( void )
 	ri.Printf( PRINT_ALL, "GL_RENDERER: %s\n", glConfig.renderer_string );
 	ri.Printf( PRINT_ALL, "GL_VERSION: %s\n", glConfig.version_string );
 	ri.Printf( PRINT_ALL, "GL_EXTENSIONS: " );
+#ifndef IOS
 	if ( qglGetStringi )
 	{
 		GLint numExtensions;
@@ -934,8 +935,11 @@ void GfxInfo_f( void )
 	}
 	else
 	{
+#endif
 		R_PrintLongString( glConfig.extensions_string );
+#ifndef IOS
 	}
+#endif
 	ri.Printf( PRINT_ALL, "\n" );
 	ri.Printf( PRINT_ALL, "GL_MAX_TEXTURE_SIZE: %d\n", glConfig.maxTextureSize );
 	ri.Printf( PRINT_ALL, "GL_MAX_TEXTURE_UNITS_ARB: %d\n", glConfig.numTextureUnits );

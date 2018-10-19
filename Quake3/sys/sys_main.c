@@ -115,11 +115,13 @@ Restart the input subsystem
 void Sys_In_Restart_f( void )
 {
 #ifndef DEDICATED
+#ifndef IOS
 	if( !SDL_WasInit( SDL_INIT_VIDEO ) )
 	{
 		Com_Printf( "in_restart: Cannot restart input while video is shutdown\n" );
 		return;
 	}
+#endif
 #endif
 
 	IN_Restart( );
@@ -145,7 +147,9 @@ Sys_GetClipboardData
 char *Sys_GetClipboardData(void)
 {
 #ifdef DEDICATED
-	return NULL;
+    return NULL;
+#elif IOS
+    return NULL;
 #else
 	char *data = NULL;
 	char *cliptext;
@@ -742,9 +746,13 @@ int main( int argc, char **argv )
 {
 	int   i;
 	char  commandLine[ MAX_STRING_CHARS ] = { 0 };
+    
+#ifndef IOS
 
 	extern void Sys_LaunchAutoupdater(int argc, char **argv);
 	Sys_LaunchAutoupdater(argc, argv);
+    
+#endif
 
 #if !defined(DEDICATED) && !defined(IOS)
 	// SDL version check
