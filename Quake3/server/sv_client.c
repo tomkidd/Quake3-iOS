@@ -140,7 +140,7 @@ void SV_GetChallenge(netadr_t from)
 	}
 
 	// always generate a new challenge number, so the client cannot circumvent sv_maxping
-	challenge->challenge = ( (rand() << 16) ^ rand() ) ^ svs.time;
+	challenge->challenge = ( ((unsigned int)rand() << 16) ^ (unsigned int)rand() ) ^ svs.time;
 	challenge->wasrefused = qfalse;
 	challenge->time = svs.time;
 
@@ -176,15 +176,13 @@ void SV_GetChallenge(netadr_t from)
 		else
 		{
 			// otherwise send their ip to the authorize server
-			cvar_t	*fs;
-			char	game[1024];
+			const char *game;
 
 			Com_DPrintf( "sending getIpAuthorize for %s\n", NET_AdrToString( from ));
 		
-			strcpy(game, BASEGAME);
-			fs = Cvar_Get ("fs_game", "", CVAR_INIT|CVAR_SYSTEMINFO );
-			if (fs && fs->string[0] != 0) {
-				strcpy(game, fs->string);
+			game = Cvar_VariableString( "fs_game" );
+			if (game[0] == 0) {
+				game = BASEGAME;
 			}
 			
 			// the 0 is for backwards compatibility with obsolete sv_allowanonymous flags
@@ -488,7 +486,7 @@ void SV_DirectConnect( netadr_t from ) {
 
 	// check for privateClient password
 	password = Info_ValueForKey( userinfo, "password" );
-	if ( !strcmp( password, sv_privatePassword->string ) ) {
+	if ( *password && !strcmp( password, sv_privatePassword->string ) ) {
 		startIndex = 0;
 	} else {
 		// skip past the reserved slots
@@ -673,18 +671,16 @@ void SV_DropClient( client_t *drop, const char *reason ) {
 
 	if ( isBot ) {
 		SV_BotFreeClient( drop - svs.clients );
-	}
 
-	// nuke user info
-	SV_SetUserinfo( drop - svs.clients, "" );
-	
-	if ( isBot ) {
 		// bots shouldn't go zombie, as there's no real net connection.
 		drop->state = CS_FREE;
 	} else {
 		Com_DPrintf( "Going to CS_ZOMBIE for %s\n", drop->name );
 		drop->state = CS_ZOMBIE;		// become free in a few seconds
 	}
+
+	// nuke user info
+	SV_SetUserinfo( drop - svs.clients, "" );
 
 	// if this was the last client on the server, send a heartbeat
 	// to the master so it is known the server is empty
@@ -1043,7 +1039,7 @@ int SV_WriteDownloadToClient(client_t *cl, msg_t *msg)
 			if(cl->download)
 				FS_FCloseFile(cl->download);
 			
-			return 0;
+			return 1;
 		}
  
 		Com_Printf( "clientDownload: %d : beginning \"%s\"\n", (int) (cl - svs.clients), cl->downloadName );
@@ -1459,8 +1455,8 @@ void SV_UserinfoChanged( client_t *cl ) {
 	else
 #endif
 	{
-		val = Info_ValueForKey(cl->userinfo, "cl_voip");
-		cl->hasVoip = atoi(val);
+		val = Info_ValueForKey(cl->userinfo, "cl_voipProtocol");
+		cl->hasVoip = !Q_stricmp( val, "opus" );
 	}
 #endif
 
@@ -1794,7 +1790,7 @@ static qboolean SV_ShouldIgnoreVoipSender(const client_t *cl)
 }
 
 static
-void SV_UserVoip(client_t *cl, msg_t *msg)
+void SV_UserVoip(client_t *cl, msg_t *msg, qboolean ignoreData)
 {
 	int sender, generation, sequence, frames, packetsize;
 	uint8_t recips[(MAX_CLIENTS + 7) / 8];
@@ -1829,12 +1825,12 @@ void SV_UserVoip(client_t *cl, msg_t *msg)
 
 	MSG_ReadData(msg, encoded, packetsize);
 
-	if (SV_ShouldIgnoreVoipSender(cl))
+	if (ignoreData || SV_ShouldIgnoreVoipSender(cl))
 		return;   // Blacklisted, disabled, etc.
 
 	// !!! FIXME: see if we read past end of msg...
 
-	// !!! FIXME: reject if not speex narrowband codec.
+	// !!! FIXME: reject if not opus data.
 	// !!! FIXME: decide if this is bogus data?
 
 	// decide who needs this VoIP packet sent to them...
@@ -1950,7 +1946,7 @@ void SV_ExecuteClientMessage( client_t *cl, msg_t *msg ) {
 		}
 		// if we can tell that the client has dropped the last
 		// gamestate we sent them, resend it
-		if ( cl->messageAcknowledge > cl->gamestateMessageNum ) {
+		if ( cl->state != CS_ACTIVE && cl->messageAcknowledge > cl->gamestateMessageNum ) {
 			Com_DPrintf( "%s : dropped gamestate, resending\n", cl->name );
 			SV_SendClientGameState( cl );
 		}
@@ -1983,10 +1979,18 @@ void SV_ExecuteClientMessage( client_t *cl, msg_t *msg ) {
 		}
 	} while ( 1 );
 
-	// read optional voip data
-	if ( c == clc_voip ) {
+	// skip legacy speex voip data
+	if ( c == clc_voipSpeex ) {
 #ifdef USE_VOIP
-		SV_UserVoip( cl, msg );
+		SV_UserVoip( cl, msg, qtrue );
+		c = MSG_ReadByte( msg );
+#endif
+	}
+
+	// read optional voip data
+	if ( c == clc_voipOpus ) {
+#ifdef USE_VOIP
+		SV_UserVoip( cl, msg, qfalse );
 		c = MSG_ReadByte( msg );
 #endif
 	}

@@ -512,6 +512,10 @@ void UI_DrawProportionalString( int x, int y, const char* str, int style, vec4_t
 	int		width;
 	float	sizeScale;
 
+	if( !str ) {
+		return;
+	}
+
 	sizeScale = UI_ProportionalSizeScale( style );
 
 	switch( style & UI_FORMATMASK ) {
@@ -803,7 +807,7 @@ static void NeedCDKeyAction( qboolean result ) {
 
 void UI_SetActiveMenu( uiMenuCommand_t menu ) {
 	// this should be the ONLY way the menu system is brought up
-	// enusure minumum menu data is cached
+	// ensure minimum menu data is cached
 	Menu_Cache();
 
 	switch ( menu ) {
@@ -872,17 +876,21 @@ UI_MouseEvent
 void UI_MouseEvent( int dx, int dy )
 {
 	int				i;
+	int				bias;
 	menucommon_s*	m;
 
 	if (!uis.activemenu)
 		return;
 
+	// convert X bias to 640 coords
+	bias = uis.bias / uis.xscale;
+
 	// update mouse screen position
 	uis.cursorx += dx;
-	if (uis.cursorx < -uis.bias)
-		uis.cursorx = -uis.bias;
-	else if (uis.cursorx > SCREEN_WIDTH+uis.bias)
-		uis.cursorx = SCREEN_WIDTH+uis.bias;
+	if (uis.cursorx < -bias)
+		uis.cursorx = -bias;
+	else if (uis.cursorx > SCREEN_WIDTH+bias)
+		uis.cursorx = SCREEN_WIDTH+bias;
 
 	uis.cursory += dy;
 	if (uis.cursory < 0)

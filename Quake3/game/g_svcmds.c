@@ -132,11 +132,11 @@ UpdateIPBans
 */
 static void UpdateIPBans (void)
 {
-	byte	b[4];
-	byte	m[4];
+	byte	b[4] = {0};
+	byte	m[4] = {0};
 	int		i,j;
-	char	iplist_final[MAX_CVAR_VALUE_STRING];
-	char	ip[64];
+	char	iplist_final[MAX_CVAR_VALUE_STRING] = {0};
+	char	ip[64] = {0};
 
 	*iplist_final = 0;
 	for (i = 0 ; i < numIPFilters ; i++)
@@ -178,7 +178,7 @@ qboolean G_FilterPacket (char *from)
 {
 	int		i;
 	unsigned	in;
-	byte m[4];
+	byte m[4] = {0};
 	char *p;
 
 	i = 0;
@@ -320,8 +320,8 @@ void	Svcmd_EntityList_f (void) {
 	int			e;
 	gentity_t		*check;
 
-	check = g_entities+1;
-	for (e = 1; e < level.num_entities ; e++, check++) {
+	check = g_entities;
+	for (e = 0; e < level.num_entities ; e++, check++) {
 		if ( !check->inuse ) {
 			continue;
 		}

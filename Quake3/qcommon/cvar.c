@@ -438,6 +438,7 @@ cvar_t *Cvar_Get( const char *var_name, const char *var_value, int flags ) {
 	var->integer = atoi(var->string);
 	var->resetString = CopyString( var_value );
 	var->validate = qfalse;
+	var->description = NULL;
 
 	// link the variable in
 	var->next = cvar_vars;
@@ -488,6 +489,10 @@ void Cvar_Print( cvar_t *v ) {
 
 	if ( v->latchedString ) {
 		Com_Printf( "latched: \"%s\"\n", v->latchedString );
+	}
+
+	if ( v->description ) {
+		Com_Printf( "%s\n", v->description );
 	}
 }
 
@@ -564,6 +569,12 @@ cvar_t *Cvar_Set2( const char *var_name, const char *value, qboolean force ) {
 			return var;
 		}
 
+		if ((var->flags & CVAR_CHEAT) && !cvar_cheats->integer)
+		{
+			Com_Printf ("%s is cheat protected.\n", var_name);
+			return var;
+		}
+		
 		if (var->flags & CVAR_LATCH)
 		{
 			if (var->latchedString)
@@ -584,13 +595,6 @@ cvar_t *Cvar_Set2( const char *var_name, const char *value, qboolean force ) {
 			var->modificationCount++;
 			return var;
 		}
-
-		if ( (var->flags & CVAR_CHEAT) && !cvar_cheats->integer )
-		{
-			Com_Printf ("%s is cheat protected.\n", var_name);
-			return var;
-		}
-
 	}
 	else
 	{
@@ -1018,6 +1022,90 @@ void Cvar_List_f( void ) {
 
 /*
 ============
+Cvar_ListModified_f
+============
+*/
+void Cvar_ListModified_f( void ) {
+	cvar_t	*var;
+	int		totalModified;
+	char	*value;
+	char	*match;
+
+	if ( Cmd_Argc() > 1 ) {
+		match = Cmd_Argv( 1 );
+	} else {
+		match = NULL;
+	}
+
+	totalModified = 0;
+	for (var = cvar_vars ; var ; var = var->next)
+	{
+		if ( !var->name || !var->modificationCount )
+			continue;
+
+		value = var->latchedString ? var->latchedString : var->string;
+		if ( !strcmp( value, var->resetString ) )
+			continue;
+
+		totalModified++;
+
+		if (match && !Com_Filter(match, var->name, qfalse))
+			continue;
+
+		if (var->flags & CVAR_SERVERINFO) {
+			Com_Printf("S");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_SYSTEMINFO) {
+			Com_Printf("s");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_USERINFO) {
+			Com_Printf("U");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_ROM) {
+			Com_Printf("R");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_INIT) {
+			Com_Printf("I");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_ARCHIVE) {
+			Com_Printf("A");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_LATCH) {
+			Com_Printf("L");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_CHEAT) {
+			Com_Printf("C");
+		} else {
+			Com_Printf(" ");
+		}
+		if (var->flags & CVAR_USER_CREATED) {
+			Com_Printf("?");
+		} else {
+			Com_Printf(" ");
+		}
+
+		Com_Printf (" %s \"%s\", default \"%s\"\n", var->name, value, var->resetString);
+	}
+
+	Com_Printf ("\n%i total modified cvars\n", totalModified);
+}
+
+/*
+============
 Cvar_Unset
 
 Unsets a cvar
@@ -1028,6 +1116,9 @@ cvar_t *Cvar_Unset(cvar_t *cv)
 {
 	cvar_t *next = cv->next;
 
+	// note what types of cvars have been modified (userinfo, archive, serverinfo, systeminfo)
+	cvar_modifiedFlags |= cv->flags;
+
 	if(cv->name)
 		Z_Free(cv->name);
 	if(cv->string)
@@ -1036,6 +1127,8 @@ cvar_t *Cvar_Unset(cvar_t *cv)
 		Z_Free(cv->latchedString);
 	if(cv->resetString)
 		Z_Free(cv->resetString);
+	if(cv->description)
+		Z_Free(cv->description);
 
 	if(cv->prev)
 		cv->prev->next = cv->next;
@@ -1207,6 +1300,23 @@ void Cvar_CheckRange( cvar_t *var, float min, float max, qboolean integral )
 
 /*
 =====================
+Cvar_SetDescription
+=====================
+*/
+void Cvar_SetDescription( cvar_t *var, const char *var_description )
+{
+	if( var_description && var_description[0] != '\0' )
+	{
+		if( var->description != NULL )
+		{
+			Z_Free( var->description );
+		}
+		var->description = CopyString( var_description );
+	}
+}
+
+/*
+=====================
 Cvar_Register
 
 basically a slightly modified Cvar_Get for the interpreted modules
@@ -1221,12 +1331,42 @@ void Cvar_Register(vmCvar_t *vmCvar, const char *varName, const char *defaultVal
 	// flags. Unfortunately some historical game code (including single player
 	// baseq3) sets both flags. We unset CVAR_ROM for such cvars.
 	if ((flags & (CVAR_ARCHIVE | CVAR_ROM)) == (CVAR_ARCHIVE | CVAR_ROM)) {
-		Com_DPrintf( S_COLOR_YELLOW "WARNING: Unsetting CVAR_ROM cvar '%s', "
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: Unsetting CVAR_ROM from cvar '%s', "
 			"since it is also CVAR_ARCHIVE\n", varName );
 		flags &= ~CVAR_ROM;
 	}
 
-	cv = Cvar_Get(varName, defaultValue, flags | CVAR_VM_CREATED);
+	// Don't allow VM to specific a different creator or other internal flags.
+	if ( flags & CVAR_USER_CREATED ) {
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: VM tried to set CVAR_USER_CREATED on cvar '%s'\n", varName );
+		flags &= ~CVAR_USER_CREATED;
+	}
+	if ( flags & CVAR_SERVER_CREATED ) {
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: VM tried to set CVAR_SERVER_CREATED on cvar '%s'\n", varName );
+		flags &= ~CVAR_SERVER_CREATED;
+	}
+	if ( flags & CVAR_PROTECTED ) {
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: VM tried to set CVAR_PROTECTED on cvar '%s'\n", varName );
+		flags &= ~CVAR_PROTECTED;
+	}
+	if ( flags & CVAR_MODIFIED ) {
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: VM tried to set CVAR_MODIFIED on cvar '%s'\n", varName );
+		flags &= ~CVAR_MODIFIED;
+	}
+	if ( flags & CVAR_NONEXISTENT ) {
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: VM tried to set CVAR_NONEXISTENT on cvar '%s'\n", varName );
+		flags &= ~CVAR_NONEXISTENT;
+	}
+
+	cv = Cvar_FindVar(varName);
+
+	// Don't modify cvar if it's protected.
+	if ( cv && ( cv->flags & CVAR_PROTECTED ) ) {
+		Com_DPrintf( S_COLOR_YELLOW "WARNING: VM tried to register protected cvar '%s' with value '%s'%s\n",
+			varName, defaultValue, ( flags & ~cv->flags ) != 0 ? " and new flags" : "" );
+	} else {
+		cv = Cvar_Get(varName, defaultValue, flags | CVAR_VM_CREATED);
+	}
 
 	if (!vmCvar)
 		return;
@@ -1319,5 +1459,6 @@ void Cvar_Init (void)
 	Cmd_SetCommandCompletionFunc("unset", Cvar_CompleteCvarName);
 
 	Cmd_AddCommand ("cvarlist", Cvar_List_f);
+	Cmd_AddCommand ("cvar_modified", Cvar_ListModified_f);
 	Cmd_AddCommand ("cvar_restart", Cvar_Restart_f);
 }

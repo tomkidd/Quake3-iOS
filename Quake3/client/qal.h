@@ -37,13 +37,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "../AL/al.h"
 #include "../AL/alc.h"
 #else
-#ifdef _MSC_VER
+#if defined(_MSC_VER) || defined(__APPLE__)
   // MSVC users must install the OpenAL SDK which doesn't use the AL/*.h scheme.
+  // OSX framework also needs this
   #include <al.h>
   #include <alc.h>
-#elif defined(IOS)
-	#include "al.h"
-	#include "alc.h"
 #else
   #include <AL/al.h>
   #include <AL/alc.h>
@@ -128,7 +126,6 @@ extern LPALGETBUFFERI qalGetBufferi;
 extern LPALGETBUFFER3I qalGetBuffer3i;
 extern LPALGETBUFFERIV qalGetBufferiv;
 extern LPALDOPPLERFACTOR qalDopplerFactor;
-extern LPALDOPPLERVELOCITY qalDopplerVelocity;
 extern LPALSPEEDOFSOUND qalSpeedOfSound;
 extern LPALDISTANCEMODEL qalDistanceModel;
 
@@ -223,7 +220,6 @@ extern LPALCCAPTURESAMPLES qalcCaptureSamples;
 #define qalGetBuffer3i alGetBuffer3i
 #define qalGetBufferiv alGetBufferiv
 #define qalDopplerFactor alDopplerFactor
-#define qalDopplerVelocity alDopplerVelocity
 #define qalSpeedOfSound alSpeedOfSound
 #define qalDistanceModel alDistanceModel
 

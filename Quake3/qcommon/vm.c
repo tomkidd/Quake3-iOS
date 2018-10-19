@@ -336,7 +336,7 @@ Dlls will call this directly
 ============
 */
 intptr_t QDECL VM_DllSyscall( intptr_t arg, ... ) {
-#if !id386 || defined __clang__ || defined IOS
+#if !id386 || defined __clang__
   // rcg010206 - see commentary above
   intptr_t args[MAX_VMSYSCALL_ARGS];
   int i;
@@ -390,7 +390,7 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 
 	// show where the qvm was loaded from
 	FS_Which(filename, vm->searchPath);
-	
+
 	if( LittleLong( header.h->vmMagic ) == VM_MAGIC_VER2 ) {
 		Com_Printf( "...which has vmMagic VM_MAGIC_VER2\n" );
 
@@ -451,13 +451,15 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 	if(alloc)
 	{
 		// allocate zero filled space for initialized and uninitialized data
-		vm->dataBase = Hunk_Alloc(dataLength, h_high);
+		// leave some space beyond data mask so we can secure all mask operations
+		vm->dataAlloc = dataLength + 4;
+		vm->dataBase = Hunk_Alloc(vm->dataAlloc, h_high);
 		vm->dataMask = dataLength - 1;
 	}
 	else
 	{
 		// clear the data, but make sure we're not clearing more than allocated
-		if(vm->dataMask + 1 != dataLength)
+		if(vm->dataAlloc != dataLength + 4)
 		{
 			VM_Free(vm);
 			FS_FreeFile(header.v);
@@ -467,7 +469,7 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 			return NULL;
 		}
 		
-		Com_Memset(vm->dataBase, 0, dataLength);
+		Com_Memset(vm->dataBase, 0, vm->dataAlloc);
 	}
 
 	// copy the intialized data
@@ -615,7 +617,7 @@ vm_t *VM_Create( const char *module, intptr_t (*systemCalls)(intptr_t *),
 		if(retval == VMI_NATIVE)
 		{
 			Com_Printf("Try loading dll file %s\n", filename);
-#ifndef IOS
+
 			vm->dllHandle = Sys_LoadGameDll(filename, &vm->entryPoint, VM_DllSyscall);
 			
 			if(vm->dllHandle)
@@ -623,7 +625,7 @@ vm_t *VM_Create( const char *module, intptr_t (*systemCalls)(intptr_t *),
 				vm->systemCall = systemCalls;
 				return vm;
 			}
-#endif
+			
 			Com_Printf("Failed loading dll, trying next\n");
 		}
 		else if(retval == VMI_COMPILED)

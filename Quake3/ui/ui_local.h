@@ -258,7 +258,7 @@ typedef struct
 	int width;
 	int height;
 	int	columns;
-	int	seperation;
+	int	separation;
 } menulist_s;
 
 typedef struct
@@ -359,6 +359,7 @@ int UI_AdjustTimeByGame(int time);
 void UI_ShowPostGame(qboolean newHigh);
 void UI_ClearScores( void );
 void UI_LoadArenas(void);
+void UI_LoadArenasIntoMapList(void);
 
 //
 // ui_menu.c
@@ -532,6 +533,9 @@ typedef struct {
 	qhandle_t		headSkin;
 
 	animation_t		animations[MAX_TOTALANIMATIONS];
+
+	qboolean		fixedlegs;		// true if legs yaw is always the same as torso yaw
+	qboolean		fixedtorso;		// true if torso never changes yaw
 
 	qhandle_t		weaponModel;
 	qhandle_t		barrelModel;

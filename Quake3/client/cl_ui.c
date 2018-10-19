@@ -24,10 +24,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "../botlib/botlib.h"
 
-#ifdef IOS
-#include "../renderercommon/tr_common.h"
-#endif
-
 extern	botlib_export_t	*botlib_export;
 
 vm_t *uivm;
@@ -378,6 +374,7 @@ LAN_CompareServers
 static int LAN_CompareServers( int source, int sortKey, int sortDir, int s1, int s2 ) {
 	int res;
 	serverInfo_t *server1, *server2;
+	int clients1, clients2;
 
 	server1 = LAN_GetServerPtr(source, s1);
 	server2 = LAN_GetServerPtr(source, s2);
@@ -395,10 +392,19 @@ static int LAN_CompareServers( int source, int sortKey, int sortDir, int s1, int
 			res = Q_stricmp( server1->mapName, server2->mapName );
 			break;
 		case SORT_CLIENTS:
-			if (server1->clients < server2->clients) {
+			// sub sort by max clients
+			if ( server1->clients == server2->clients ) {
+				clients1 = server1->maxClients;
+				clients2 = server2->maxClients;
+			} else {
+				clients1 = server1->clients;
+				clients2 = server2->clients;
+			}
+
+			if (clients1 < clients2) {
 				res = -1;
 			}
-			else if (server1->clients > server2->clients) {
+			else if (clients1 > clients2) {
 				res = 1;
 			}
 			else {
@@ -633,9 +639,9 @@ CLUI_GetCDKey
 */
 static void CLUI_GetCDKey( char *buf, int buflen ) {
 #ifndef STANDALONE
-	cvar_t	*fs;
-	fs = Cvar_Get ("fs_game", "", CVAR_INIT|CVAR_SYSTEMINFO );
-	if (UI_usesUniqueCDKey() && fs && fs->string[0] != 0) {
+	const char *gamedir;
+	gamedir = Cvar_VariableString( "fs_game" );
+	if (UI_usesUniqueCDKey() && gamedir[0] != 0) {
 		Com_Memcpy( buf, &cl_cdkey[16], 16);
 		buf[16] = 0;
 	} else {
@@ -655,9 +661,9 @@ CLUI_SetCDKey
 */
 #ifndef STANDALONE
 static void CLUI_SetCDKey( char *buf ) {
-	cvar_t	*fs;
-	fs = Cvar_Get ("fs_game", "", CVAR_INIT|CVAR_SYSTEMINFO );
-	if (UI_usesUniqueCDKey() && fs && fs->string[0] != 0) {
+	const char *gamedir;
+	gamedir = Cvar_VariableString( "fs_game" );
+	if (UI_usesUniqueCDKey() && gamedir[0] != 0) {
 		Com_Memcpy( &cl_cdkey[16], buf, 16 );
 		cl_cdkey[32] = 0;
 		// set the flag so the fle will be written at the next opportunity
@@ -784,7 +790,7 @@ intptr_t CL_UISystemCalls( intptr_t *args ) {
 		return FS_FOpenFileByMode( VMA(1), VMA(2), args[3] );
 
 	case UI_FS_READ:
-		FS_Read2( VMA(1), args[2], args[3] );
+		FS_Read( VMA(1), args[2], args[3] );
 		return 0;
 
 	case UI_FS_WRITE:
@@ -803,10 +809,10 @@ intptr_t CL_UISystemCalls( intptr_t *args ) {
 	
 	case UI_R_REGISTERMODEL:
 		return re.RegisterModel( VMA(1) );
-			
+
 	case UI_R_REGISTERSKIN:
 		return re.RegisterSkin( VMA(1) );
-			
+
 	case UI_R_REGISTERSHADERNOMIP:
 		return re.RegisterShaderNoMip( VMA(1) );
 
@@ -1065,7 +1071,7 @@ intptr_t CL_UISystemCalls( intptr_t *args ) {
 
 	case UI_VERIFY_CDKEY:
 		return CL_CDKeyValidate(VMA(1), VMA(2));
-				
+		
 	default:
 		Com_Error( ERR_DROP, "Bad UI system trap: %ld", (long int) args[0] );
 
@@ -1102,9 +1108,6 @@ void CL_InitUI( void ) {
 	vmInterpret_t		interpret;
 
 	// load the dll or bytecode
-#ifdef IOS
-	interpret = VMI_BYTECODE;
-#else
 	interpret = Cvar_VariableValue("vm_ui");
 	if(cl_connectedToPureServer)
 	{
@@ -1112,8 +1115,7 @@ void CL_InitUI( void ) {
 		if(interpret != VMI_COMPILED && interpret != VMI_BYTECODE)
 			interpret = VMI_COMPILED;
 	}
-#endif
-	
+
 	uivm = VM_Create( "ui", CL_UISystemCalls, interpret );
 	if ( !uivm ) {
 		Com_Error( ERR_FATAL, "VM_Create on UI failed" );

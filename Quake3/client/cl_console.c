@@ -56,6 +56,7 @@ typedef struct {
 console_t	con;
 
 cvar_t		*con_conspeed;
+cvar_t		*con_autoclear;
 cvar_t		*con_notifytime;
 
 #define	DEFAULT_CONSOLE_WIDTH	78
@@ -72,7 +73,10 @@ void Con_ToggleConsole_f (void) {
 		return;
 	}
 
-	Field_Clear( &g_consoleField );
+	if ( con_autoclear->integer ) {
+		Field_Clear( &g_consoleField );
+	}
+
 	g_consoleField.widthInChars = g_console_field_width;
 
 	Con_ClearNotify ();
@@ -190,6 +194,12 @@ void Con_Dump_f (void)
 
 	Q_strncpyz( filename, Cmd_Argv( 1 ), sizeof( filename ) );
 	COM_DefaultExtension( filename, sizeof( filename ), ".txt" );
+
+	if (!COM_CompareExtension(filename, ".txt"))
+	{
+		Com_Printf("Con_Dump_f: Only the \".txt\" extension is supported by this command!\n");
+		return;
+	}
 
 	f = FS_FOpenFileWrite( filename );
 	if (!f)
@@ -348,6 +358,7 @@ void Con_Init (void) {
 
 	con_notifytime = Cvar_Get ("con_notifytime", "3", 0);
 	con_conspeed = Cvar_Get ("scr_conspeed", "3", 0);
+	con_autoclear = Cvar_Get("con_autoclear", "1", CVAR_ARCHIVE);
 
 	Field_Clear( &g_consoleField );
 	g_consoleField.widthInChars = g_console_field_width;
@@ -583,8 +594,8 @@ void Con_DrawNotify (void)
 			if ( ( text[x] & 0xff ) == ' ' ) {
 				continue;
 			}
-			if ( ( (text[x]>>8)&7 ) != currentColor ) {
-				currentColor = (text[x]>>8)&7;
+			if ( ColorIndexForNumber( text[x]>>8 ) != currentColor ) {
+				currentColor = ColorIndexForNumber( text[x]>>8 );
 				re.SetColor( g_color_table[currentColor] );
 			}
 			SCR_DrawSmallChar( cl_conXOffset->integer + con.xadjust + (x+1)*SMALLCHAR_WIDTH, v, text[x] & 0xff );
@@ -677,7 +688,7 @@ void Con_DrawSolidConsole( float frac ) {
 
 	// draw the text
 	con.vislines = lines;
-	rows = (lines-SMALLCHAR_WIDTH)/SMALLCHAR_WIDTH;		// rows of text to draw
+	rows = (lines-SMALLCHAR_HEIGHT)/SMALLCHAR_HEIGHT;		// rows of text to draw
 
 	y = lines - (SMALLCHAR_HEIGHT*3);
 
@@ -717,8 +728,8 @@ void Con_DrawSolidConsole( float frac ) {
 				continue;
 			}
 
-			if ( ( (text[x]>>8)&7 ) != currentColor ) {
-				currentColor = (text[x]>>8)&7;
+			if ( ColorIndexForNumber( text[x]>>8 ) != currentColor ) {
+				currentColor = ColorIndexForNumber( text[x]>>8 );
 				re.SetColor( g_color_table[currentColor] );
 			}
 			SCR_DrawSmallChar(  con.xadjust + (x+1)*SMALLCHAR_WIDTH, y, text[x] & 0xff );

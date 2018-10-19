@@ -36,12 +36,12 @@ void CG_TargetCommand_f( void ) {
 	char	test[4];
 
 	targetNum = CG_CrosshairPlayer();
-	if (!targetNum ) {
+	if ( targetNum == -1 ) {
 		return;
 	}
 
 	trap_Argv( 1, test, 4 );
-	trap_SendConsoleCommand( va( "gc %i %i", targetNum, atoi( test ) ) );
+	trap_SendClientCommand( va( "gc %i %i", targetNum, atoi( test ) ) );
 }
 
 
@@ -358,7 +358,7 @@ static void CG_TauntDeathInsult_f (void ) {
 }
 
 static void CG_TauntGauntlet_f (void ) {
-	trap_SendConsoleCommand("cmd vsay kill_guantlet\n");
+	trap_SendConsoleCommand("cmd vsay kill_gauntlet\n");
 }
 
 static void CG_TaskSuicide_f (void ) {
