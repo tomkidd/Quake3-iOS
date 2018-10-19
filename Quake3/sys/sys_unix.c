@@ -59,7 +59,24 @@ char *Sys_DefaultHomePath(void)
 {
 	char *p;
 
-	if( !*homePath && com_homepath != NULL )
+#ifdef IOS
+    if (*homePath)
+        return homePath;
+    
+    if ((p = getenv("HOME")) != NULL) {
+        Q_strncpyz(homePath, p, sizeof(homePath));
+        
+        Q_strcat(homePath, sizeof(homePath), "/");
+        
+        if (mkdir(homePath, 0777)) {
+            if (errno != EEXIST)
+                Sys_Error("Unable to create directory \"%s\", error is %s(%d)\n", homePath, strerror(errno), errno);
+        }
+        return homePath;
+    }
+    return ""; // assume current dir
+#else
+    if( !*homePath && com_homepath != NULL )
 	{
 		if( ( p = getenv( "HOME" ) ) != NULL )
 		{
@@ -81,6 +98,7 @@ char *Sys_DefaultHomePath(void)
 		}
 	}
 
+#endif
 	return homePath;
 }
 
@@ -119,6 +137,36 @@ char *Sys_GogPath( void )
 	// GOG also doesn't let you install Quake 3 on Mac/Linux
 	return gogPath;
 }
+
+
+#ifdef IOS
+/*
+ =================
+ Sys_StripAppBundle
+ 
+ Discovers if passed dir is suffixed with the directory structure of an iOS
+ .app bundle. If it is, the .app directory structure is stripped off the end and
+ the result is returned. If not, dir is returned untouched.
+ =================
+ */
+char *Sys_StripAppBundle( char *dir )
+{
+    static char cwd[MAX_OSPATH];
+    
+    Q_strncpyz(cwd, dir, sizeof(cwd));
+    if(!strstr(Sys_Basename(cwd), ".app"))
+        return dir;
+    Q_strncpyz(cwd, Sys_Dirname(cwd), sizeof(cwd));
+    return cwd;
+}
+
+
+void Sys_SetHomeDir( const char* newHomeDir )
+{
+    Q_strncpyz(homePath, newHomeDir, sizeof(homePath));
+    Q_strcat(homePath, sizeof(homePath), "/");
+}
+#endif
 
 /*
 ================
@@ -201,10 +249,12 @@ Sys_LowPhysicalMemory
 TODO
 ==================
 */
+#ifndef IOS
 qboolean Sys_LowPhysicalMemory( void )
 {
 	return qfalse;
 }
+#endif
 
 /*
 ==================
@@ -811,6 +861,15 @@ dialogResult_t Sys_Dialog( dialogType_t type, const char *message, const char *t
 	Com_DPrintf( S_COLOR_YELLOW "WARNING: failed to show a dialog\n" );
 	return DR_OK;
 }
+#endif
+
+#ifdef IOS
+/*
+ ==============
+ Sys_Dialog
+ ==============
+ */
+dialogResult_t Sys_Dialog( dialogType_t type, const char *message, const char *title ) { return NULL; }
 #endif
 
 /*

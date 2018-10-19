@@ -336,7 +336,7 @@ Dlls will call this directly
 ============
 */
 intptr_t QDECL VM_DllSyscall( intptr_t arg, ... ) {
-#if !id386 || defined __clang__
+#if !id386 || defined __clang__ || defined IOS
   // rcg010206 - see commentary above
   intptr_t args[MAX_VMSYSCALL_ARGS];
   int i;
@@ -617,7 +617,7 @@ vm_t *VM_Create( const char *module, intptr_t (*systemCalls)(intptr_t *),
 		if(retval == VMI_NATIVE)
 		{
 			Com_Printf("Try loading dll file %s\n", filename);
-
+#ifndef IOS
 			vm->dllHandle = Sys_LoadGameDll(filename, &vm->entryPoint, VM_DllSyscall);
 			
 			if(vm->dllHandle)
@@ -625,7 +625,7 @@ vm_t *VM_Create( const char *module, intptr_t (*systemCalls)(intptr_t *),
 				vm->systemCall = systemCalls;
 				return vm;
 			}
-			
+#endif
 			Com_Printf("Failed loading dll, trying next\n");
 		}
 		else if(retval == VMI_COMPILED)

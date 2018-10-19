@@ -358,6 +358,10 @@ extern	clientStatic_t		cls;
 extern	char		cl_oldGame[MAX_QPATH];
 extern	qboolean	cl_oldGameSet;
 
+#ifdef IOS
+int cl_joyscale_x[2];
+int cl_joyscale_y[2];
+#endif
 //=============================================================================
 
 extern	vm_t			*cgvm;	// interface to cgame dll or vm

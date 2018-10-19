@@ -24,6 +24,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "../botlib/botlib.h"
 
+#ifdef IOS
+#include "../renderercommon/tr_common.h"
+#endif
+
 extern	botlib_export_t	*botlib_export;
 
 vm_t *uivm;
@@ -1108,14 +1112,18 @@ void CL_InitUI( void ) {
 	vmInterpret_t		interpret;
 
 	// load the dll or bytecode
-	interpret = Cvar_VariableValue("vm_ui");
+#ifdef IOS
+    interpret = VMI_BYTECODE;
+#else
+    interpret = Cvar_VariableValue("vm_ui");
 	if(cl_connectedToPureServer)
 	{
 		// if sv_pure is set we only allow qvms to be loaded
 		if(interpret != VMI_COMPILED && interpret != VMI_BYTECODE)
 			interpret = VMI_COMPILED;
 	}
-
+#endif
+    
 	uivm = VM_Create( "ui", CL_UISystemCalls, interpret );
 	if ( !uivm ) {
 		Com_Error( ERR_FATAL, "VM_Create on UI failed" );

@@ -38,8 +38,15 @@ int demo_protocols[] =
 
 #define MIN_DEDICATED_COMHUNKMEGS 1
 #define MIN_COMHUNKMEGS		56
+
+#if defined(IOS)
+#define DEF_COMHUNKMEGS     56
+#define DEF_COMZONEMEGS     16
+#else
 #define DEF_COMHUNKMEGS 	128
 #define DEF_COMZONEMEGS		24
+#endif
+
 #define DEF_COMHUNKMEGS_S	XSTRING(DEF_COMHUNKMEGS)
 #define DEF_COMZONEMEGS_S	XSTRING(DEF_COMZONEMEGS)
 
@@ -388,7 +395,11 @@ void Com_Quit_f( void ) {
 		Com_Shutdown ();
 		FS_Shutdown(qtrue);
 	}
-	Sys_Quit ();
+#if defined(IOS)
+    Sys_UnloadGame();
+#else
+    Sys_Quit ();
+#endif
 }
 
 

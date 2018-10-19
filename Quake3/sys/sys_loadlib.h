@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
+#ifndef IOS
 #ifdef DEDICATED
 #	ifdef _WIN32
 #		include <windows.h>
@@ -46,6 +47,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #	define Sys_UnloadLibrary(h) SDL_UnloadObject(h)
 #	define Sys_LoadFunction(h,fn) SDL_LoadFunction(h,fn)
 #	define Sys_LibraryError() SDL_GetError()
+#endif
 #endif
 
 void * QDECL Sys_LoadDll(const char *name, qboolean useSystemLib);

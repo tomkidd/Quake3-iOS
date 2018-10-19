@@ -24,20 +24,23 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "../qcommon/qcommon.h"
 
 #ifndef DEDICATED
+#ifndef IOS
 #ifdef USE_LOCAL_HEADERS
 #	include "SDL_version.h"
 #else
 #	include <SDL_version.h>
 #endif
+#endif
 
 // Require a minimum version of SDL
 #define MINSDL_MAJOR 2
 #define MINSDL_MINOR 0
-#if SDL_VERSION_ATLEAST( 2, 0, 5 )
-#define MINSDL_PATCH 5
-#else
+// tkidd - commenting out for now
+//#if SDL_VERSION_ATLEAST( 2, 0, 5 )
+//#define MINSDL_PATCH 5
+//#else
 #define MINSDL_PATCH 0
-#endif
+//#endif
 #endif
 
 // Console
@@ -52,6 +55,10 @@ unsigned int CON_LogRead( char *out, unsigned int outSize );
 
 #ifdef __APPLE__
 char *Sys_StripAppBundle( char *pwd );
+#ifdef IOS
+char *Sys_DefaultLibraryPath(void);
+void Sys_SetHomeDir( const char *newHomeDir );
+#endif
 #endif
 
 void Sys_GLimpSafeInit( void );

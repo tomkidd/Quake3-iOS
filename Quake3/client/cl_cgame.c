@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "client.h"
 
 #include "../botlib/botlib.h"
+#include "../renderergl1/tr_local.h"
 
 #ifdef USE_MUMBLE
 #include "libmumblelink.h"
@@ -725,6 +726,9 @@ void CL_InitCGame( void ) {
 	Com_sprintf( cl.mapname, sizeof( cl.mapname ), "maps/%s.bsp", mapname );
 
 	// load the dll or bytecode
+#ifdef IOS
+    interpret = VMI_BYTECODE;
+#else
 	interpret = Cvar_VariableValue("vm_cgame");
 	if(cl_connectedToPureServer)
 	{
@@ -732,6 +736,7 @@ void CL_InitCGame( void ) {
 		if(interpret != VMI_COMPILED && interpret != VMI_BYTECODE)
 			interpret = VMI_COMPILED;
 	}
+#endif
 
 	cgvm = VM_Create( "cgame", CL_CgameSystemCalls, interpret );
 	if ( !cgvm ) {
@@ -881,6 +886,11 @@ void CL_FirstSnapshot( void ) {
 		return;
 	}
 	clc.state = CA_ACTIVE;
+    
+#ifdef IOS
+    // Force the device into right landscape mode:
+    GLimp_SetMode(90);
+#endif // IOS
 
 	// set the timedelta so we are exactly on this first frame
 	cl.serverTimeDelta = cl.snap.serverTime - cls.realtime;

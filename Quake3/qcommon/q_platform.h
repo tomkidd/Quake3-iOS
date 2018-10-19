@@ -162,6 +162,33 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #endif
 
+//=================================================================== iOS ===
+
+#if defined(IOS)
+
+// make sure this is defined, just for sanity's sake...
+#ifndef MACOS_X
+#define MACOS_X
+#endif
+
+// removes compiler warnings
+#ifdef OS_STRING
+#undef OS_STRING
+#endif
+
+#define OS_STRING "ios"
+#define ID_INLINE inline
+#define PATH_SEP '/'
+
+#if defined __arm64__
+#define ARCH_STRING "__arm64__"
+#define Q3_LITTLE_ENDIAN
+#endif
+
+#define DLL_EXT ".dylib"
+
+#endif
+
 //================================================================= LINUX ===
 
 #if defined(__linux__) || defined(__FreeBSD_kernel__) || defined(__GNU__)

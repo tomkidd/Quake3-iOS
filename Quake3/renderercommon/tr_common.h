@@ -24,7 +24,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "../qcommon/q_shared.h"
 #include "../renderercommon/tr_public.h"
+
+#ifdef IOS
+#include "../ios/qgl.h"
+#else
 #include "qgl.h"
+#endif
 
 typedef enum
 {
@@ -156,11 +161,23 @@ IMPLEMENTATION SPECIFIC FUNCTIONS
 */
 
 void		GLimp_Init( qboolean fixedFunction );
+#ifdef IOS
+void            GLimp_SetMode(float rotation);
+#endif // IOS
 void		GLimp_Shutdown( void );
+void            GLimp_AcquireGL( void );
+#ifdef IOS
+void            GLimp_ReleaseGL( void );
+#endif // IOS
 void		GLimp_EndFrame( void );
 
+qboolean        GLimp_SpawnRenderThread( void (*function)( void ) );
+void            *GLimp_RendererSleep( void );
+void            GLimp_FrontEndSleep( void );
+void            GLimp_WakeRenderer( void *data );
+
 void		GLimp_LogComment( char *comment );
-void		GLimp_Minimize(void);
+//void		GLimp_Minimize(void);
 
 void		GLimp_SetGamma( unsigned char red[256],
 		unsigned char green[256],

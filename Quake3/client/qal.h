@@ -42,6 +42,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
   // OSX framework also needs this
   #include <al.h>
   #include <alc.h>
+#elif defined(IOS)
+  #include "al.h"
+  #include "alc.h"
 #else
   #include <AL/al.h>
   #include <AL/alc.h>
