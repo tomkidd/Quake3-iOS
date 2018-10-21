@@ -1335,6 +1335,10 @@ void S_Update_(void) {
 		& ~(dma.submission_chunk-1);
 
 	// never mix more than the complete buffer
+#ifdef IOS
+    // todo: this is supposed to be calculated by SDL2
+    dma.fullsamples = dma.samples / dma.channels;
+#endif
 	if (endtime - s_soundtime > dma.fullsamples)
 		endtime = s_soundtime + dma.fullsamples;
 
