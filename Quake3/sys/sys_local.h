@@ -23,16 +23,25 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "../qcommon/q_shared.h"
 #include "../qcommon/qcommon.h"
 
-// Require a minimum version of SDL
-#define MINSDL_MAJOR 1
-#define MINSDL_MINOR 2
-#define MINSDL_PATCH 10
+#ifndef DEDICATED
+#ifndef IOS
+#ifdef USE_LOCAL_HEADERS
+#	include "SDL_version.h"
+#else
+#	include <SDL_version.h>
+#endif
+#endif
 
-// Input subsystem
-void IN_Init( void );
-void IN_Frame( void );
-void IN_Shutdown( void );
-void IN_Restart( void );
+// Require a minimum version of SDL
+#define MINSDL_MAJOR 2
+#define MINSDL_MINOR 0
+// tkidd - commenting out for now
+//#if SDL_VERSION_ATLEAST( 2, 0, 5 )
+//#define MINSDL_PATCH 5
+//#else
+#define MINSDL_PATCH 0
+//#endif
+#endif
 
 // Console
 void CON_Shutdown( void );
@@ -44,7 +53,7 @@ unsigned int CON_LogSize( void );
 unsigned int CON_LogWrite( const char *in );
 unsigned int CON_LogRead( char *out, unsigned int outSize );
 
-#ifdef MACOS_X
+#ifdef __APPLE__
 char *Sys_StripAppBundle( char *pwd );
 #ifdef IOS
 char *Sys_DefaultLibraryPath(void);

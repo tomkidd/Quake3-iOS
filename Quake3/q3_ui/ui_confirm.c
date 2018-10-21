@@ -63,21 +63,26 @@ ConfirmMenu_Event
 =================
 */
 static void ConfirmMenu_Event( void* ptr, int event ) {
-	qboolean	result = qtrue;
-	
-	if( event != QM_ACTIVATED )
+	qboolean	result;
+
+	if( event != QM_ACTIVATED ) {
 		return;
-	
-	if ( ((menucommon_s*)ptr)->id == ID_CONFIRM_NO )
-		result = qfalse;
-	else if ( ((menucommon_s*)ptr)->id != ID_CONFIRM_YES )
-		return;
-	
+	}
+
 	UI_PopMenu();
-	
-	if( s_confirm.action )
+
+	if( ((menucommon_s*)ptr)->id == ID_CONFIRM_NO ) {
+		result = qfalse;
+	}
+	else {
+		result = qtrue;
+	}
+
+	if( s_confirm.action ) {
 		s_confirm.action( result );
+	}
 }
+
 
 /*
 =================
@@ -158,6 +163,7 @@ ConfirmMenu_Cache
 void ConfirmMenu_Cache( void ) {
 	trap_R_RegisterShaderNoMip( ART_CONFIRM_FRAME );
 }
+
 
 /*
 =================

@@ -139,7 +139,7 @@ void UI_PopMenu (void)
 
 	if (uis.menusp < 0)
 		trap_Error ("UI_PopMenu: menu stack underflow");
-	
+
 	if (uis.menusp) {
 		uis.activemenu = uis.stack[uis.menusp-1];
 		uis.firstdraw = qtrue;
@@ -512,6 +512,10 @@ void UI_DrawProportionalString( int x, int y, const char* str, int style, vec4_t
 	int		width;
 	float	sizeScale;
 
+	if( !str ) {
+		return;
+	}
+
 	sizeScale = UI_ProportionalSizeScale( style );
 
 	switch( style & UI_FORMATMASK ) {
@@ -803,7 +807,7 @@ static void NeedCDKeyAction( qboolean result ) {
 
 void UI_SetActiveMenu( uiMenuCommand_t menu ) {
 	// this should be the ONLY way the menu system is brought up
-	// enusure minumum menu data is cached
+	// ensure minimum menu data is cached
 	Menu_Cache();
 
 	switch ( menu ) {
@@ -869,40 +873,39 @@ void UI_KeyEvent( int key, int down ) {
 UI_MouseEvent
 =================
 */
-void UI_MouseEvent ( int dx, int dy, qboolean absolute ) {
+void UI_MouseEvent( int dx, int dy )
+{
 	int				i;
+	int				bias;
 	menucommon_s*	m;
 
 	if (!uis.activemenu)
 		return;
-	
-	// update mouse screen position
-	
-	if (absolute) uis.cursorx = dx;
-	else uis.cursorx += dx;
 
-	if (uis.cursorx < -uis.bias)
-		uis.cursorx = -uis.bias;
-	else if (uis.cursorx > SCREEN_WIDTH+uis.bias)
-		uis.cursorx = SCREEN_WIDTH+uis.bias;
-	
-	if (absolute) uis.cursory = dy;
-	else uis.cursory += dy;
-	
+	// convert X bias to 640 coords
+	bias = uis.bias / uis.xscale;
+
+	// update mouse screen position
+	uis.cursorx += dx;
+	if (uis.cursorx < -bias)
+		uis.cursorx = -bias;
+	else if (uis.cursorx > SCREEN_WIDTH+bias)
+		uis.cursorx = SCREEN_WIDTH+bias;
+
+	uis.cursory += dy;
 	if (uis.cursory < 0)
 		uis.cursory = 0;
 	else if (uis.cursory > SCREEN_HEIGHT)
 		uis.cursory = SCREEN_HEIGHT;
-	
+
 	// region test the active menu items
-	
 	for (i=0; i<uis.activemenu->nitems; i++)
 	{
 		m = (menucommon_s*)uis.activemenu->items[i];
-		
+
 		if (m->flags & (QMF_GRAYED|QMF_INACTIVE))
 			continue;
-		
+
 		if ((uis.cursorx < m->left) ||
 			(uis.cursorx > m->right) ||
 			(uis.cursory < m->top) ||
@@ -911,22 +914,22 @@ void UI_MouseEvent ( int dx, int dy, qboolean absolute ) {
 			// cursor out of item bounds
 			continue;
 		}
-		
+
 		// set focus to item at cursor
 		if (uis.activemenu->cursor != i)
 		{
 			Menu_SetCursor( uis.activemenu, i );
 			((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor_prev]))->flags &= ~QMF_HASMOUSEFOCUS;
-			
+
 			if ( !(((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags & QMF_SILENT ) ) {
 				trap_S_StartLocalSound( menu_move_sound, CHAN_LOCAL_SOUND );
 			}
 		}
-		
+
 		((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags |= QMF_HASMOUSEFOCUS;
 		return;
-	}
-	
+	}  
+
 	if (uis.activemenu->nitems > 0) {
 		// out of any region
 		((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags &= ~QMF_HASMOUSEFOCUS;
@@ -1224,7 +1227,7 @@ void UI_Refresh( int realtime )
 			Menu_Draw( uis.activemenu );
 
 		if( uis.firstdraw ) {
-			UI_MouseEvent( 0, 0, qtrue );
+			UI_MouseEvent( 0, 0 );
 			uis.firstdraw = qfalse;
 		}
 	}

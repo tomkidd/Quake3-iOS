@@ -571,7 +571,7 @@ static uint32_t DecompressIDATs(struct BufferedFile *BF, uint8_t **Buffer)
 		{
 			/*
 			 *  Rewind to the start of this adventure
-			 *  and return unsuccessfull
+			 *  and return unsuccessful
 			 */
 
 			BufferedFileRewind(BF, BytesToRewind);
@@ -754,7 +754,7 @@ static uint32_t DecompressIDATs(struct BufferedFile *BF, uint8_t **Buffer)
 	ri.Free(CompressedData);
 
 	/*
-	 *  Check if the last puff() was successfull.
+	 *  Check if the last puff() was successful.
 	 */
 
 	if(!((puffResult == 0) && (puffDestLen > 0)))
@@ -2274,7 +2274,7 @@ void R_LoadPNG(const char *name, byte **pic, int *width, int *height)
 		{
 			case PNG_ColourType_Grey :
 			{
-				if(!ChunkHeaderLength == 2)
+				if(ChunkHeaderLength != 2)
 				{
 					CloseBufferedFile(ThePNG);
 
@@ -2296,7 +2296,7 @@ void R_LoadPNG(const char *name, byte **pic, int *width, int *height)
 
 			case PNG_ColourType_True :
 			{
-				if(!ChunkHeaderLength == 6)
+				if(ChunkHeaderLength != 6)
 				{
 					CloseBufferedFile(ThePNG);
 

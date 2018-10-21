@@ -222,7 +222,6 @@ void GLimp_SetMode(float rotation) {
 //    glConfig.colorBits = (int)[_screenView numColorBits];
 //    glConfig.depthBits = (int)[_screenView numDepthBits];
 	glConfig.stencilBits = 0;
-	vidRotation = rotation;
 
 	
 	if (cls.uiStarted) {
@@ -240,7 +239,7 @@ void GLimp_SetMode(float rotation) {
 	}
 }
 
-void GLimp_Init(void) {
+void GLimp_Init(qboolean fixedFunction) {
 //    Q3Application *application = (Q3Application *)[Q3Application sharedApplication];
 	
 	ri.Printf(PRINT_ALL, "Initializing OpenGL subsystem\n");

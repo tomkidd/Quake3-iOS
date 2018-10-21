@@ -538,56 +538,22 @@ void R_SetupProjection(viewParms_t *dest, float zProj, qboolean computeFrustum)
 
 	width = xmax - xmin;
 	height = ymax - ymin;
-#ifdef IOS
-	if ( vidRotation == 90 ) {
-		dest->projectionMatrix[0] = 0;
-		dest->projectionMatrix[4] = -2 * zProj / height;
-		dest->projectionMatrix[8] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[12] = 0;
-		
-		dest->projectionMatrix[1] = 2 * zProj / width;
-		dest->projectionMatrix[5] = 0;
-		dest->projectionMatrix[9] = ( xmax + xmin ) / width;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	} else if ( vidRotation == 180 ) {
-		dest->projectionMatrix[0] = -2 * zProj / width;
-		dest->projectionMatrix[4] = 0;
-		dest->projectionMatrix[8] = ( xmax + xmin ) / width;	// normally 0
-		dest->projectionMatrix[12] = 0;
-		
-		dest->projectionMatrix[1] = 0;
-		dest->projectionMatrix[5] = -2 * zProj / height;
-		dest->projectionMatrix[9] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	} else if ( vidRotation == 270 ) {
-		dest->projectionMatrix[0] = 0;
-		dest->projectionMatrix[4] = 2 * zProj / height;
-		dest->projectionMatrix[8] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[12] = 0;
-		
-		dest->projectionMatrix[1] = -2 * zProj / width;
-		dest->projectionMatrix[5] = 0;
-		dest->projectionMatrix[9] = ( xmax + xmin ) / width;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	} else
-#endif // IOS
-	{
-		dest->projectionMatrix[0] = 2 * zProj / width;
-		dest->projectionMatrix[4] = 0;
-		dest->projectionMatrix[8] = (xmax + xmin + 2 * stereoSep) / width;
-		dest->projectionMatrix[12] = 2 * zProj * stereoSep / width;
-		
-		dest->projectionMatrix[1] = 0;
-		dest->projectionMatrix[5] = 2 * zProj / height;
-		dest->projectionMatrix[9] = ( ymax + ymin ) / height;	// normally 0
-		dest->projectionMatrix[13] = 0;
-	}
 	
+	dest->projectionMatrix[0] = 2 * zProj / width;
+	dest->projectionMatrix[4] = 0;
+	dest->projectionMatrix[8] = (xmax + xmin + 2 * stereoSep) / width;
+	dest->projectionMatrix[12] = 2 * zProj * stereoSep / width;
+
+	dest->projectionMatrix[1] = 0;
+	dest->projectionMatrix[5] = 2 * zProj / height;
+	dest->projectionMatrix[9] = ( ymax + ymin ) / height;	// normally 0
+	dest->projectionMatrix[13] = 0;
+
 	dest->projectionMatrix[3] = 0;
 	dest->projectionMatrix[7] = 0;
 	dest->projectionMatrix[11] = -1;
 	dest->projectionMatrix[15] = 0;
-
+	
 	// Now that we have all the data for the projection matrix we can also setup the view frustum.
 	if(computeFrustum)
 		R_SetupFrustum(dest, xmin, xmax, ymax, zProj, stereoSep);
@@ -1045,6 +1011,10 @@ int R_SpriteFogNum( trRefEntity_t *ent ) {
 		return 0;
 	}
 
+	if ( ent->e.renderfx & RF_CROSSHAIR ) {
+		return 0;
+	}
+
 	for ( i = 1 ; i < tr.world->numfogs ; i++ ) {
 		fog = &tr.world->fogs[i];
 		for ( j = 0 ; j < 3 ; j++ ) {
@@ -1176,13 +1146,6 @@ void R_SortDrawSurfs( drawSurf_t *drawSurfs, int numDrawSurfs ) {
 		return;
 	}
 
-	// if we overflowed MAX_DRAWSURFS, the drawsurfs
-	// wrapped around in the buffer and we will be missing
-	// the first surfaces, not the last ones
-	if ( numDrawSurfs > MAX_DRAWSURFS ) {
-		numDrawSurfs = MAX_DRAWSURFS;
-	}
-
 	// sort the drawsurfs by sort type, then orientation, then shader
 	R_RadixSort( drawSurfs, numDrawSurfs );
 
@@ -1275,9 +1238,6 @@ void R_AddEntitySurfaces (void) {
 				switch ( tr.currentModel->type ) {
 				case MOD_MESH:
 					R_AddMD3Surfaces( ent );
-					break;
-				case MOD_MD4:
-					R_AddAnimSurfaces( ent );
 					break;
 				case MOD_MDR:
 					R_MDRAddAnimSurfaces( ent );
@@ -1372,6 +1332,9 @@ Visualization aid for movement clipping debugging
 ====================
 */
 void R_DebugGraphics( void ) {
+	if ( tr.refdef.rdflags & RDF_NOWORLDMODEL ) {
+		return;
+	}
 	if ( !r_debugSurface->integer ) {
 		return;
 	}
@@ -1394,6 +1357,7 @@ or a mirror / remote location
 */
 void R_RenderView (viewParms_t *parms) {
 	int		firstDrawSurf;
+	int		numDrawSurfs;
 
 	if ( parms->viewportWidth <= 0 || parms->viewportHeight <= 0 ) {
 		return;
@@ -1416,7 +1380,15 @@ void R_RenderView (viewParms_t *parms) {
 
 	R_GenerateDrawSurfs();
 
-	R_SortDrawSurfs( tr.refdef.drawSurfs + firstDrawSurf, tr.refdef.numDrawSurfs - firstDrawSurf );
+	// if we overflowed MAX_DRAWSURFS, the drawsurfs
+	// wrapped around in the buffer and we will be missing
+	// the first surfaces, not the last ones
+	numDrawSurfs = tr.refdef.numDrawSurfs;
+	if ( numDrawSurfs > MAX_DRAWSURFS ) {
+		numDrawSurfs = MAX_DRAWSURFS;
+	}
+
+	R_SortDrawSurfs( tr.refdef.drawSurfs + firstDrawSurf, numDrawSurfs - firstDrawSurf );
 
 	// draw main system development information (surface outlines, etc)
 	R_DebugGraphics();

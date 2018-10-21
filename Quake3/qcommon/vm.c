@@ -390,11 +390,7 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 
 	// show where the qvm was loaded from
 	FS_Which(filename, vm->searchPath);
-	
-	// mecwerks: also set to running on ios if loading from an IOS pakfile
-	FS_iOSCheck(filename, vm->searchPath);
-	
-	
+
 	if( LittleLong( header.h->vmMagic ) == VM_MAGIC_VER2 ) {
 		Com_Printf( "...which has vmMagic VM_MAGIC_VER2\n" );
 
@@ -455,13 +451,15 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 	if(alloc)
 	{
 		// allocate zero filled space for initialized and uninitialized data
-		vm->dataBase = Hunk_Alloc(dataLength, h_high);
+		// leave some space beyond data mask so we can secure all mask operations
+		vm->dataAlloc = dataLength + 4;
+		vm->dataBase = Hunk_Alloc(vm->dataAlloc, h_high);
 		vm->dataMask = dataLength - 1;
 	}
 	else
 	{
 		// clear the data, but make sure we're not clearing more than allocated
-		if(vm->dataMask + 1 != dataLength)
+		if(vm->dataAlloc != dataLength + 4)
 		{
 			VM_Free(vm);
 			FS_FreeFile(header.v);
@@ -471,7 +469,7 @@ vmHeader_t *VM_LoadQVM( vm_t *vm, qboolean alloc, qboolean unpure)
 			return NULL;
 		}
 		
-		Com_Memset(vm->dataBase, 0, dataLength);
+		Com_Memset(vm->dataBase, 0, vm->dataAlloc);
 	}
 
 	// copy the intialized data

@@ -102,7 +102,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         
         let menuPressRecognizer = UITapGestureRecognizer()
         menuPressRecognizer.addTarget(self, action: #selector(GameViewController.menuButtonAction))
-        menuPressRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.menu.rawValue)]
+        menuPressRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.menu.rawValue)]
         
         self.view.addGestureRecognizer(menuPressRecognizer)
         
@@ -273,7 +273,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
             
             //                ri.Printf(PRINT_DEVELOPER, "%s: deltaX = %d, deltaY = %d\n", __PRETTY_FUNCTION__, deltaX, deltaY);
             
-            CL_MouseEvent(Int32(deltaX), Int32(deltaY), Sys_Milliseconds(), qtrue);
+            CL_MouseEvent(Int32(deltaX), Int32(deltaY), Sys_Milliseconds());
             
         }
     }
