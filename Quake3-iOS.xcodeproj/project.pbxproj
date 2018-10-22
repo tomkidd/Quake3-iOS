@@ -1485,7 +1485,7 @@
 		A196B6E121167B890031CEB8 /* ServerListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewCell.swift; sourceTree = "<group>"; };
 		A196B6E221167B890031CEB8 /* ServerListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerListViewCell.xib; sourceTree = "<group>"; };
 		A196B6E7211683510031CEB8 /* ServerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoViewController.swift; sourceTree = "<group>"; };
-		A196B6EE2117EC870031CEB8 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		A196B6EE2117EC870031CEB8 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		A196B6F62117EE4F0031CEB8 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		A196B6FB2117EEF00031CEB8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
