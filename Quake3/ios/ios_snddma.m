@@ -12,7 +12,10 @@
 #include <AudioToolbox/AudioOutputUnit.h>
 
 // For 'ri'
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #include "../renderergl1/tr_local.h"
+#pragma clang diagnostic pop
 
 #include "../client/client.h"
 #include "../client/snd_local.h"

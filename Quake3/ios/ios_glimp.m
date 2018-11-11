@@ -10,7 +10,10 @@
 #include "../client/client.h"
 #include "ios_glimp.h"
 #include "ios_local.h"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #include "../renderergl1/tr_local.h"
+#pragma clang diagnostic pop
 
 //#import "Q3Application.h"
 //#import "Q3ScreenView.h"

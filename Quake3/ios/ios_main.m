@@ -53,6 +53,8 @@ void Sys_Error(const char *error, ...) {
 #endif // IOS_USE_THREADS
     
 	Sys_UnloadGame();
+    
+    exit(1);
 }
 
 void Sys_Warn(const char *warning, ...) {
