@@ -32,52 +32,18 @@ static UInt32 s_offsetWithinChunk;
  S_Callback
  ===============
  */
-static OSStatus S_Callback(void *inRefCon, AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp *inTimeStamp, UInt32 inBusNumber, UInt32 inNumberFrames, AudioBufferList *ioData) {
-    
-//    Com_Printf ("********* S_Callback *********\n");
-//    Com_Printf ("S_Callback s_chunkCount: %i\n", s_chunkCount);
-//    Com_Printf ("S_Callback inNumberFrames: %i\n", inNumberFrames);
-//    Com_Printf ("S_Callback s_submissionChunk: %i\n", s_submissionChunk);
-//    Com_Printf ("S_Callback s_offsetWithinChunk: %i\n", s_offsetWithinChunk);
-//    Com_Printf ("S_Callback s_maxMixedSamples: %i\n", s_maxMixedSamples);
-
-    if ((*ioActionFlags & (kAudioUnitRenderAction_PreRender | kAudioUnitRenderAction_PostRender)) == 0) {
+static OSStatus S_Callback(void *inRefCon, AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp *inTimeStamp,
+                           UInt32 inBusNumber, UInt32 inNumberFrames, AudioBufferList *ioData) {
+	if ((*ioActionFlags & (kAudioUnitRenderAction_PreRender | kAudioUnitRenderAction_PostRender)) == 0) {
 		UInt32 offset = (s_chunkCount * s_submissionChunk + s_offsetWithinChunk) & (s_maxMixedSamples - 1);
         
-//        Com_Printf ("S_Callback 2 offset: %i\n", offset);
-        
-//        Com_Printf ("S_Callback inNumberFrames * sizeof(*s_mixedSamples) * 2: %lu\n", inNumberFrames * sizeof(*s_mixedSamples) * 2);
-        
-//        Com_Printf ("S_Callback offset + inNumberFrames * sizeof(*s_mixedSamples) * 2: %lu\n", offset + (inNumberFrames * sizeof(*s_mixedSamples) * 2));
-        
-        if ((offset + (inNumberFrames * 2)) > s_maxMixedSamples) {
-            
-            UInt32 s_offsetWithinChunk = (offset + (inNumberFrames * 2)) - s_maxMixedSamples;
-            
-//            Com_Printf ("S_Callback %i ***CLICK*** (%i over)\n", s_chunkCount, s_offsetWithinChunk);
-
-            bcopy(s_mixedSamples + offset, ioData->mBuffers[0].mData, s_offsetWithinChunk * sizeof(*s_mixedSamples));
-
-            bcopy(s_mixedSamples + 0, ioData->mBuffers[0].mData, (s_offsetWithinChunk - (inNumberFrames / 2)) * sizeof(*s_mixedSamples) * 2);
-
-            ++s_chunkCount;
-        } else {
-            bcopy(s_mixedSamples + offset, ioData->mBuffers[0].mData, inNumberFrames * sizeof(*s_mixedSamples) * 2);
-
-            s_offsetWithinChunk += inNumberFrames * 2;
-        }
-        
-//        Com_Printf ("S_Callback *NEW* s_offsetWithinChunk: %i\n", s_offsetWithinChunk);
-        
+		bcopy(s_mixedSamples + offset, ioData->mBuffers[0].mData, inNumberFrames * sizeof(*s_mixedSamples) * 2);
+		s_offsetWithinChunk += inNumberFrames * 2;
 		if (s_offsetWithinChunk >= s_submissionChunk) {
 			++s_chunkCount;
-//            s_offsetWithinChunk &= (s_submissionChunk - 1);
-            s_offsetWithinChunk = 0;
-            
-//            Com_Printf ("S_Callback *NEW* *NEW* s_offsetWithinChunk: %i\n", s_offsetWithinChunk);
+			s_offsetWithinChunk &= (s_submissionChunk - 1);
 		}
 	}
-    
 	return noErr;
 }
 
@@ -124,11 +90,8 @@ qboolean SNDDMA_Init(void) {
 	s_outputAudioUnit = NULL;
 	s_mixedSamples = NULL;
     
-//    chunkSize = ri.Cvar_Get("s_chunksize", "2048", CVAR_ARCHIVE);
-//    bufferSize = ri.Cvar_Get("s_buffersize", "16384", CVAR_ARCHIVE);
-    
-    chunkSize = ri.Cvar_Get("s_chunksize", "4096", CVAR_ARCHIVE);
-    bufferSize = ri.Cvar_Get("s_buffersize", "32768", CVAR_ARCHIVE);
+	chunkSize = ri.Cvar_Get("s_chunksize", "2048", CVAR_ARCHIVE);
+	bufferSize = ri.Cvar_Get("s_buffersize", "16384", CVAR_ARCHIVE);
     
 	if (!chunkSize->integer) {
 		ri.Error(ERR_FATAL, "snd_chunkSize must be non-zero\n");
@@ -154,12 +117,7 @@ qboolean SNDDMA_Init(void) {
     NSError* error = nil;
     [[AVAudioSession sharedInstance] setActive:YES error:&error];
     if( error != nil ) {
-        NSLog(@"error1: %@", error);
-    }
-    
-    [[AVAudioSession sharedInstance] setPreferredSampleRate:22050 error:&error];
-    if( error != nil ) {
-        NSLog(@"error2: %@", error);
+        NSLog(@"%@", error);
     }
     
 	outputComponent = AudioComponentFindNext(NULL, &outputDesc);
@@ -173,7 +131,7 @@ qboolean SNDDMA_Init(void) {
 		return qfalse;
 	}
     
-	outputFormat.mSampleRate = 22050;
+    outputFormat.mSampleRate = [[AVAudioSession sharedInstance] sampleRate];
 	outputFormat.mFormatID = kAudioFormatLinearPCM;
 	outputFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagsNativeEndian | kAudioFormatFlagIsPacked;
 	outputFormat.mChannelsPerFrame = 2;
@@ -181,16 +139,6 @@ qboolean SNDDMA_Init(void) {
 	outputFormat.mFramesPerPacket = 1;
 	outputFormat.mBytesPerFrame = (outputFormat.mBitsPerChannel >> 3) * outputFormat.mChannelsPerFrame;
 	outputFormat.mBytesPerPacket = outputFormat.mBytesPerFrame * outputFormat.mFramesPerPacket;
-    
-    Com_Printf ("SNDDMA_Init: outputFormat mSampleRate: %f\n", outputFormat.mSampleRate);
-    Com_Printf ("SNDDMA_Init: outputFormat mFormatID: %i\n", outputFormat.mFormatID);
-    Com_Printf ("SNDDMA_Init: outputFormat mFormatFlags: %i\n", outputFormat.mFormatFlags);
-    Com_Printf ("SNDDMA_Init: outputFormat mChannelsPerFrame: %i\n", outputFormat.mChannelsPerFrame);
-    Com_Printf ("SNDDMA_Init: outputFormat mBitsPerChannel: %i\n", outputFormat.mBitsPerChannel);
-    Com_Printf ("SNDDMA_Init: outputFormat mFramesPerPacket: %i\n", outputFormat.mFramesPerPacket);
-    Com_Printf ("SNDDMA_Init: outputFormat mBytesPerFrame: %i\n", outputFormat.mBytesPerFrame);
-    Com_Printf ("SNDDMA_Init: outputFormat mBytesPerPacket: %i\n", outputFormat.mBytesPerPacket);
-
     
 	if ((result = AudioUnitSetProperty(s_outputAudioUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0,
 	                                   &outputFormat, sizeof(outputFormat))) != noErr) {
@@ -202,11 +150,7 @@ qboolean SNDDMA_Init(void) {
 	s_maxMixedSamples = bufferSize->integer;
 	maxFramesPerSlice = s_submissionChunk / 2;
     
-    Com_Printf ("SNDDMA_Init: s_submissionChunk: %i\n", s_submissionChunk);
-    Com_Printf ("SNDDMA_Init: s_maxMixedSamples: %i\n", s_maxMixedSamples);
-    Com_Printf ("SNDDMA_Init: maxFramesPerSlice: %i\n", maxFramesPerSlice);
-
-    if ((result = AudioUnitSetProperty(s_outputAudioUnit, kAudioUnitProperty_MaximumFramesPerSlice,
+	if ((result = AudioUnitSetProperty(s_outputAudioUnit, kAudioUnitProperty_MaximumFramesPerSlice,
 	                                   kAudioUnitScope_Global, 0, &maxFramesPerSlice, sizeof(maxFramesPerSlice))) != noErr) {
 		ri.Printf(PRINT_ERROR, "Could not set maximum audio output chunk size, result=%d\n", result);
 		return qfalse;
