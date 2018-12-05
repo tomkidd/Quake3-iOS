@@ -108,7 +108,10 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         
         #endif
         
-        Sys_SetHomeDir(Bundle.main.resourcePath!)
+        let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        
+//        Sys_SetHomeDir(Bundle.main.resourcePath!)
+        Sys_SetHomeDir(documentsDir)
         
         in_strafe.active = qtrue
         
@@ -159,7 +162,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // from Beben 3 init code
         
-        var argv: [String?] = ["b3", "+set", "com_basegame", "baseq3", "+name", defaults.string(forKey: "playerName")]
+        var argv: [String?] = [ Bundle.main.resourcePath! + "/quake3", "+set", "com_basegame", "baseq3", "+name", defaults.string(forKey: "playerName")]
 
         if !selectedMap.isEmpty {
             argv.append("+spmap")
