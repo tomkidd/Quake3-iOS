@@ -1,6 +1,6 @@
 #  Quake III: Arena for iOS and tvOS for Apple TV
 
-This is my port of Quake for iOS, running in modern resolutions including the full width of the iPhone X. I have also made a target and version for tvOS to run on Apple TV.
+This is my port of Quake III: Arena for iOS, running in modern resolutions including the full width of the iPhone X. I have also made a target and version for tvOS to run on Apple TV.
 
 Features
 
@@ -15,7 +15,7 @@ This commit does not need any placeholder resources as it is not an update of an
 
 You will need to provide your own copies of the `baseq3` directory from an existing instalation of Quake III: Arena. You can grab the whole thing with expansions on [GOG](https://www.gog.com/game/quake_iii_gold) or [Steam](https://store.steampowered.com/app/2200/Quake_III_Arena/).
 
-You will need to drag your directories into the project and select "Create Folder References" and add them to both the Quake and QuakeTV targets. The folders will be blue if you've done it right:
+You will need to drag your directories into the project and select "Create Folder References" and add them to both the Quake3-iOS and Quake-tvOS targets. The folders will be blue if you've done it right:
 
 ![folders](https://github.com/tomkidd/Quake3-iOS/raw/master/folders.png)
 
