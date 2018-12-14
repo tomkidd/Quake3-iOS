@@ -177,7 +177,7 @@ void            GLimp_FrontEndSleep( void );
 void            GLimp_WakeRenderer( void *data );
 
 void		GLimp_LogComment( char *comment );
-//void		GLimp_Minimize(void);
+void		GLimp_Minimize(void);
 
 void		GLimp_SetGamma( unsigned char red[256],
 		unsigned char green[256],

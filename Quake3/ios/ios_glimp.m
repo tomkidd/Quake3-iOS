@@ -313,3 +313,6 @@ void qglUnlockArraysEXT(void) {
 void qglArrayElement(GLint i) {
 	UNIMPL();
 }
+
+void        GLimp_Minimize( void ) {
+}
