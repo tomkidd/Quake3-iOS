@@ -1154,17 +1154,32 @@ static inline void qglGetPointerv(GLenum pname, void **params) {
 
 // const GLubyte * glGetString (GLenum name);
 static inline const GLubyte *qglGetString(GLenum name) {
-	const GLubyte *returnValue;
+    const GLubyte *returnValue;
 #if !defined(NDEBUG) && defined(QGL_LOG_GL_CALLS)
-	if (QGLLogGLCalls)
-		fprintf(QGLDebugFile(), "glGetString(name=%lu)\n", name);
+    if (QGLLogGLCalls)
+        fprintf(QGLDebugFile(), "glGetString(name=%lu)\n", name);
 #endif
-	returnValue = glGetString(name);
+    returnValue = glGetString(name);
 #if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
-	if (!QGLBeginStarted)
-		QGLCheckError("glGetString");
+    if (!QGLBeginStarted)
+        QGLCheckError("glGetString");
 #endif
-	return returnValue;
+    return returnValue;
+}
+
+// const GLubyte * glGetStringi (GLenum name);
+static inline const GLubyte *qglGetStringi(GLenum name, GLuint index) {
+    const GLubyte *returnValue;
+#if !defined(NDEBUG) && defined(QGL_LOG_GL_CALLS)
+    if (QGLLogGLCalls)
+        fprintf(QGLDebugFile(), "glGetStringi(name=%lu, index=%u)\n", name, index);
+#endif
+    returnValue = qglGetStringi(name, index);
+#if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
+    if (!QGLBeginStarted)
+        QGLCheckError("glGetStringi");
+#endif
+    return returnValue;
 }
 
 // void glGetTexEnviv (GLenum env, GLenum pname, GLint *params);

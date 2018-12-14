@@ -8,6 +8,7 @@
 #define IOS_GLIMP_H
 
 #include <OpenGLES/ES1/gl.h>
+#include <OpenGLES/ES3/gl.h>
 
 extern void qglArrayElement(GLint i);
 extern void qglLockArraysEXT(GLint i, GLint size);
