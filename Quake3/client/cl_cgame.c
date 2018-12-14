@@ -725,9 +725,6 @@ void CL_InitCGame( void ) {
 	Com_sprintf( cl.mapname, sizeof( cl.mapname ), "maps/%s.bsp", mapname );
 
 	// load the dll or bytecode
-#ifdef IOS
-    interpret = VMI_BYTECODE;
-#else
 	interpret = Cvar_VariableValue("vm_cgame");
 	if(cl_connectedToPureServer)
 	{
@@ -735,7 +732,6 @@ void CL_InitCGame( void ) {
 		if(interpret != VMI_COMPILED && interpret != VMI_BYTECODE)
 			interpret = VMI_COMPILED;
 	}
-#endif
 
 	cgvm = VM_Create( "cgame", CL_CgameSystemCalls, interpret );
 	if ( !cgvm ) {

@@ -1108,9 +1108,6 @@ void CL_InitUI( void ) {
 	vmInterpret_t		interpret;
 
 	// load the dll or bytecode
-#ifdef IOS
-    interpret = VMI_BYTECODE;
-#else
     interpret = Cvar_VariableValue("vm_ui");
 	if(cl_connectedToPureServer)
 	{
@@ -1118,8 +1115,7 @@ void CL_InitUI( void ) {
 		if(interpret != VMI_COMPILED && interpret != VMI_BYTECODE)
 			interpret = VMI_COMPILED;
 	}
-#endif
-    
+
 	uivm = VM_Create( "ui", CL_UISystemCalls, interpret );
 	if ( !uivm ) {
 		Com_Error( ERR_FATAL, "VM_Create on UI failed" );
