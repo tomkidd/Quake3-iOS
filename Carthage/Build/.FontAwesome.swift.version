@@ -5,20 +5,20 @@
   "watchOS" : [
     {
       "name" : "FontAwesome",
-      "hash" : "5c77b24db36d07e993a86ee4a2cd426e7f00e80e461b116169d5bc236bee1168"
+      "hash" : "4daf7f9ca84ee5598804108face3e4c945fdc18aaad63da9f0fdaf17d98d2e4d"
     }
   ],
   "tvOS" : [
     {
       "name" : "FontAwesome",
-      "hash" : "690d224d64b2f8b9e7f1a94e47fd0e0387d562a60b5f56a08b1f30fa9b4181ec"
+      "hash" : "07c864024f68e59edfbbd4d221b20ae77e925a88aa45fbe7f486667eed2d7ad6"
     }
   ],
-  "commitish" : "1.4.4",
+  "commitish" : "1.4.6",
   "iOS" : [
     {
       "name" : "FontAwesome",
-      "hash" : "61c65bb68f89f98d3570ce9c5d24b995bacfc435feb53d8c4e60c6c5fb25d084"
+      "hash" : "55ed3e16d6d8648038193464164ce472f465c4ae13f03025a48bd3a154059a67"
     }
   ]
 }

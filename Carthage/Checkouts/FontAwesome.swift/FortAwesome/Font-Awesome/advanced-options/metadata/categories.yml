@@ -18,13 +18,21 @@ accessibility:
   label: Accessibility
 animals:
   icons:
+    - cat
     - crow
+    - dog
     - dove
+    - dragon
     - feather
     - feather-alt
     - fish
     - frog
+    - hippo
+    - horse
     - kiwi-bird
+    - otter
+    - paw
+    - spider
   label: Animals
 arrows:
   icons:
@@ -163,6 +171,7 @@ audio-video:
     - undo-alt
     - video
     - volume-down
+    - volume-mute
     - volume-off
     - volume-up
     - youtube
@@ -189,6 +198,20 @@ automotive:
     - truck-monster
     - truck-pickup
   label: Automotive
+autumn:
+  icons:
+    - apple-alt
+    - campground
+    - cloud-sun
+    - drumstick-bite
+    - football-ball
+    - hiking
+    - mountain
+    - tractor
+    - tree
+    - wind
+    - wine-bottle
+  label: Autumn
 buildings:
   icons:
     - building
@@ -197,6 +220,7 @@ buildings:
     - home
     - hospital
     - hospital-alt
+    - house-damage
     - industry
     - mosque
     - place-of-worship
@@ -432,6 +456,7 @@ currency:
     - euro-sign
     - gg
     - gg-circle
+    - hryvnia
     - lira-sign
     - money-bill
     - money-bill-alt
@@ -661,6 +686,26 @@ files:
     - save
     - sticky-note
   label: Files
+gaming-tabletop:
+  icons:
+    - acquisitions-incorporated
+    - book-dead
+    - critical-role
+    - d-and-d
+    - d-and-d-beyond
+    - dice-d20
+    - dice-d6
+    - dragon
+    - dungeon
+    - fantasy-flight-games
+    - fist-raised
+    - hat-wizard
+    - penny-arcade
+    - ring
+    - scroll
+    - skull-crossbones
+    - wizards-of-the-coast
+  label: Tabletop Gaming
 gender:
   icons:
     - genderless
@@ -677,9 +722,24 @@ gender:
     - venus-double
     - venus-mars
   label: Genders
+halloween:
+  icons:
+    - book-dead
+    - broom
+    - cat
+    - cloud-moon
+    - crow
+    - ghost
+    - hat-wizard
+    - mask
+    - skull-crossbones
+    - spider
+    - toilet-paper
+  label: Halloween
 hands:
   icons:
     - allergies
+    - fist-raised
     - hand-holding
     - hand-lizard
     - hand-paper
@@ -885,6 +945,7 @@ interfaces:
     - user-alt
     - user-circle
     - volume-down
+    - volume-mute
     - volume-off
     - volume-up
     - wifi
@@ -1140,6 +1201,7 @@ objects:
     - blender
     - bomb
     - book
+    - book-dead
     - bookmark
     - briefcase
     - broadcast-tower
@@ -1168,6 +1230,8 @@ objects:
     - cubes
     - cut
     - dice
+    - dice-d20
+    - dice-d6
     - dice-five
     - dice-four
     - dice-one
@@ -1206,8 +1270,8 @@ objects:
     - glasses
     - globe
     - graduation-cap
+    - hat-wizard
     - hdd
-    - headphones
     - headphones
     - headphones-alt
     - headset
@@ -1246,7 +1310,6 @@ objects:
     - mobile
     - mobile-alt
     - money-bill
-    - money-bill
     - money-bill-alt
     - money-check
     - money-check-alt
@@ -1268,6 +1331,7 @@ objects:
     - plug
     - print
     - puzzle-piece
+    - ring
     - road
     - rocket
     - ruler-combined
@@ -1276,12 +1340,14 @@ objects:
     - save
     - school
     - screwdriver
+    - scroll
     - search
     - shield-alt
     - shopping-bag
     - shopping-basket
     - shopping-cart
     - shower
+    - skull-crossbones
     - snowflake
     - space-shuttle
     - star
@@ -1367,6 +1433,23 @@ payments-shopping:
     - thumbs-up
     - trophy
   label: Payments & Shopping
+political:
+  icons:
+    - award
+    - balance-scale
+    - bullhorn
+    - check-double
+    - democrat
+    - donate
+    - dove
+    - fist-raised
+    - flag-usa
+    - handshake
+    - person-booth
+    - piggy-bank
+    - republican
+    - vote-yea
+  label: Political
 religion:
   icons:
     - ankh
@@ -1378,6 +1461,7 @@ religion:
     - dove
     - gopuram
     - hamsa
+    - hanukiah
     - haykal
     - jedi
     - journal-whills
@@ -1532,6 +1616,7 @@ status:
     - video
     - video-slash
     - volume-down
+    - volume-mute
     - volume-off
     - volume-up
     - wifi
@@ -1605,6 +1690,7 @@ users-people:
     - user-edit
     - user-friends
     - user-graduate
+    - user-injured
     - user-lock
     - user-md
     - user-minus
@@ -1648,6 +1734,30 @@ vehicles:
     - truck-pickup
     - wheelchair
   label: Vehicles
+weather:
+  icons:
+    - bolt
+    - cloud
+    - cloud-meatball
+    - cloud-moon
+    - cloud-moon-rain
+    - cloud-rain
+    - cloud-showers-heavy
+    - cloud-sun
+    - cloud-sun-rain
+    - meteor
+    - moon
+    - poo-storm
+    - rainbow
+    - smog
+    - snowflake
+    - sun
+    - temperature-high
+    - temperature-low
+    - umbrella
+    - water
+    - wind
+  label: Weather
 writing:
   icons:
     - archive
