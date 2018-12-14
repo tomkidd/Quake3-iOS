@@ -1176,7 +1176,7 @@ static inline const GLubyte *qglGetStringi(GLenum name, GLuint index) {
     if (QGLLogGLCalls)
         fprintf(QGLDebugFile(), "glGetStringi(name=%lu, index=%u)\n", name, index);
 #endif
-    returnValue = qglGetStringi(name, index);
+    returnValue = glGetStringi(name, index);
 #if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
     if (!QGLBeginStarted)
         QGLCheckError("glGetStringi");

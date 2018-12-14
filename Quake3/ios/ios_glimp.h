@@ -27,14 +27,14 @@ enum {
 #define GL_LINE                 GL_LINE_DONT_USE
 #undef GL_FILL
 #define GL_FILL                 GL_FILL_DONT_USE
-#undef GL_RGB5
-#define GL_RGB5                 GL_RGB5_DONT_USE
+//#undef GL_RGB5
+//#define GL_RGB5                 GL_RGB5_DONT_USE
 //#undef GL_RGB8
 //#define GL_RGB8                 GL_RGB8_DONT_USE
-#undef GL_RGBA4
-#define GL_RGBA4                GL_RGBA4_DONT_USE
-#undef GL_RGBA8
-#define GL_RGBA8                GL_RGBA8_DONT_USE
+//#undef GL_RGBA4
+//#define GL_RGBA4                GL_RGBA4_DONT_USE
+//#undef GL_RGBA8
+//#define GL_RGBA8                GL_RGBA8_DONT_USE
 #undef GL_QUADS
 #define GL_QUADS                IOS_QUADS
 #undef GL_STENCIL_INDEX
@@ -51,6 +51,26 @@ enum {
 #define GL_POLYGON              IOS_POLYGON
 #undef GL_UNSIGNED_INT
 #define GL_UNSIGNED_INT         GL_UNSIGNED_INT_DONT_USE
+
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT 0x8C4D // ok
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT 0x8C4F // ok
+#define GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB 0x8E8D //ok
+#define GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT 0x8C72 //ok
+#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1 //ok
+#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3 //ok
+#define GL_COMPRESSED_RGBA_BPTC_UNORM_ARB 0x8E8C //ok
+#define GL_LUMINANCE8                 0x8040 //ok
+#define GL_RGB5                       0x8050 //ok
+#define GL_LUMINANCE8_ALPHA8           0x8045 //ok
+#define GL_SRGB_EXT                       0x8C40 //ok
+#define GL_SRGB8_EXT                      0x8C41 //ok
+#define GL_SRGB_ALPHA_EXT                 0x8C42 //ok
+#define GL_SRGB8_ALPHA8_EXT               0x8C43 //ok
+#define GL_SLUMINANCE_ALPHA_EXT           0x8C44 //ok
+#define GL_SLUMINANCE8_ALPHA8_EXT         0x8C45 //ok
+#define GL_SLUMINANCE_EXT                 0x8C46 //ok
+#define GL_SLUMINANCE8_EXT                0x8C47 //ok
+#define GL_TEXTURE_MAX_ANISOTROPY_EXT     0x84FE
 
 void qglBegin(GLenum mode);
 void qglDrawBuffer(GLenum mode);
