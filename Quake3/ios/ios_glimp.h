@@ -29,8 +29,8 @@ enum {
 #define GL_FILL                 GL_FILL_DONT_USE
 #undef GL_RGB5
 #define GL_RGB5                 GL_RGB5_DONT_USE
-#undef GL_RGB8
-#define GL_RGB8                 GL_RGB8_DONT_USE
+//#undef GL_RGB8
+//#define GL_RGB8                 GL_RGB8_DONT_USE
 #undef GL_RGBA4
 #define GL_RGBA4                GL_RGBA4_DONT_USE
 #undef GL_RGBA8
@@ -38,7 +38,7 @@ enum {
 #undef GL_QUADS
 #define GL_QUADS                IOS_QUADS
 #undef GL_STENCIL_INDEX
-#define GL_STENCIL_INDEX        GL_STENCIL_INDEX_DONT_USE
+#define GL_STENCIL_INDEX        GL_STENCIL_INDEX8
 #undef GL_BACK_LEFT
 #define GL_BACK_LEFT            GL_BACK_LEFT_DONT_USE
 #undef GL_BACK_RIGHT

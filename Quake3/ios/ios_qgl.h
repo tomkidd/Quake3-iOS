@@ -3,6 +3,8 @@
 #ifndef __IOS_QGL_H__
 #define __IOS_QGL_H__
 
+#define GLdouble     GLfloat
+
 #ifdef QGL_LOG_GL_CALLS
 extern unsigned int QGLLogGLCalls;
 extern FILE *QGLDebugFile(void);
