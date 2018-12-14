@@ -1084,10 +1084,6 @@ void	* QDECL Sys_LoadGameDll( const char *name, intptr_t (QDECL **entryPoint)(in
 				  intptr_t (QDECL *systemcalls)(intptr_t, ...) );
 void	Sys_UnloadDll( void *dllHandle );
 
-// tkidd: adding back in
-void    Sys_UnloadGame( void );
-
-
 qboolean Sys_DllExtension( const char *name );
 
 char	*Sys_GetCurrentUser( void );

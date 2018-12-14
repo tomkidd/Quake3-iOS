@@ -388,11 +388,7 @@ void Com_Quit_f( void ) {
 		Com_Shutdown ();
 		FS_Shutdown(qtrue);
 	}
-#if defined(IOS)
-    Sys_UnloadGame();
-#else
-    Sys_Quit ();
-#endif
+    Sys_Quit();
 }
 
 
