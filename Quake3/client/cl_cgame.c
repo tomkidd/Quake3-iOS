@@ -24,7 +24,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "client.h"
 
 #include "../botlib/botlib.h"
-#include "../renderergl1/tr_local.h"
 
 #ifdef USE_MUMBLE
 #include "libmumblelink.h"

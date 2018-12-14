@@ -24,10 +24,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "../botlib/botlib.h"
 
-#ifdef IOS
-#include "../renderercommon/tr_common.h"
-#endif
-
 extern	botlib_export_t	*botlib_export;
 
 vm_t *uivm;
