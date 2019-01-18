@@ -171,11 +171,6 @@ void            GLimp_ReleaseGL( void );
 #endif // IOS
 void		GLimp_EndFrame( void );
 
-qboolean        GLimp_SpawnRenderThread( void (*function)( void ) );
-void            *GLimp_RendererSleep( void );
-void            GLimp_FrontEndSleep( void );
-void            GLimp_WakeRenderer( void *data );
-
 void		GLimp_LogComment( char *comment );
 void		GLimp_Minimize(void);
 

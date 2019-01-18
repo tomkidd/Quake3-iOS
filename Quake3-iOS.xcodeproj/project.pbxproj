@@ -38,7 +38,6 @@
 		A1565F2F2109F30E00FA9BC9 /* snd_wavelet.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E72101471000D3C611 /* snd_wavelet.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F302109F30E00FA9BC9 /* be_ai_move.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0532101470F00D3C611 /* be_ai_move.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F312109F30E00FA9BC9 /* tr_sky.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0992101471000D3C611 /* tr_sky.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F322109F30E00FA9BC9 /* ios_glsmp_null.c in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8921029766008823BB /* ios_glsmp_null.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F332109F30E00FA9BC9 /* vm_interpreted.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2AC2101472E00D3C611 /* vm_interpreted.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F342109F30E00FA9BC9 /* tr_scene.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A02101471000D3C611 /* tr_scene.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F352109F30E00FA9BC9 /* jcsample.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C06E2101470F00D3C611 /* jcsample.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -404,7 +403,6 @@
 		A17EE1AF211A630600811AE1 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; };
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A17EE1B2211A630900811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A1902E9121029767008823BB /* ios_glsmp_null.c in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8921029766008823BB /* ios_glsmp_null.c */; };
 		A1902E9221029767008823BB /* ios_snddma.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8A21029766008823BB /* ios_snddma.m */; };
 		A1902E9421029767008823BB /* ios_input.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8C21029767008823BB /* ios_input.m */; };
 		A1902E9521029767008823BB /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; };
@@ -548,7 +546,6 @@
 		A1902F272108237E008823BB /* be_aas_route.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0592101470F00D3C611 /* be_aas_route.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F282108237E008823BB /* vm_none.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C29A2101472E00D3C611 /* vm_none.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F292108237E008823BB /* be_aas_file.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0242101470F00D3C611 /* be_aas_file.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1902F2A2108237E008823BB /* ios_glsmp_null.c in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8921029766008823BB /* ios_glsmp_null.c */; };
 		A1902F2B2108237E008823BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179BFE6210142FA00D3C611 /* AppDelegate.swift */; };
 		A1902F2C2108237E008823BB /* l_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0472101470F00D3C611 /* l_memory.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F2D2108237E008823BB /* tr_light.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A62101471000D3C611 /* tr_light.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -645,7 +642,6 @@
 		A1902FA821093B86008823BB /* snd_openal.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E62101471000D3C611 /* snd_openal.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902FA921093B86008823BB /* snd_wavelet.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E72101471000D3C611 /* snd_wavelet.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902FAA21093BA4008823BB /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1902FAB21093BA4008823BB /* ios_glsmp_null.c in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8921029766008823BB /* ios_glsmp_null.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902FAC21093BA4008823BB /* ios_input.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8C21029767008823BB /* ios_input.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902FAD21093BA4008823BB /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902FAE21093BA4008823BB /* ios_snddma.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8A21029766008823BB /* ios_snddma.m */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -1198,7 +1194,6 @@
 		A179C2B92101472E00D3C611 /* cm_polylib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cm_polylib.h; sourceTree = "<group>"; };
 		A179C2BB2101472E00D3C611 /* cm_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cm_patch.c; sourceTree = "<group>"; };
 		A1902E8821028F97008823BB /* qgl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qgl.h; sourceTree = "<group>"; };
-		A1902E8921029766008823BB /* ios_glsmp_null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ios_glsmp_null.c; sourceTree = "<group>"; };
 		A1902E8A21029766008823BB /* ios_snddma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_snddma.m; sourceTree = "<group>"; };
 		A1902E8B21029767008823BB /* ios_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_main.m; sourceTree = "<group>"; };
 		A1902E8C21029767008823BB /* ios_input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_input.m; sourceTree = "<group>"; };
@@ -1719,7 +1714,6 @@
 			children = (
 				A1902E8D21029767008823BB /* ios_glimp.h */,
 				A1902E8E21029767008823BB /* ios_glimp.m */,
-				A1902E8921029766008823BB /* ios_glsmp_null.c */,
 				A1902E8C21029767008823BB /* ios_input.m */,
 				A1902E8F21029767008823BB /* ios_local.h */,
 				A1902E8B21029767008823BB /* ios_main.m */,
@@ -2053,7 +2047,6 @@
 				A1565F2F2109F30E00FA9BC9 /* snd_wavelet.c in Sources */,
 				A1565F302109F30E00FA9BC9 /* be_ai_move.c in Sources */,
 				A1565F312109F30E00FA9BC9 /* tr_sky.c in Sources */,
-				A1565F322109F30E00FA9BC9 /* ios_glsmp_null.c in Sources */,
 				A1565F332109F30E00FA9BC9 /* vm_interpreted.c in Sources */,
 				A1565F342109F30E00FA9BC9 /* tr_scene.c in Sources */,
 				A1565F352109F30E00FA9BC9 /* jcsample.c in Sources */,
@@ -2412,7 +2405,6 @@
 				A179C2F42101472E00D3C611 /* be_aas_route.c in Sources */,
 				A179C4962101472F00D3C611 /* vm_none.c in Sources */,
 				A179C2DC2101472E00D3C611 /* be_aas_file.c in Sources */,
-				A1902E9121029767008823BB /* ios_glsmp_null.c in Sources */,
 				A179BFE7210142FA00D3C611 /* AppDelegate.swift in Sources */,
 				A179C2ED2101472E00D3C611 /* l_memory.c in Sources */,
 				A179C3352101472E00D3C611 /* tr_light.c in Sources */,
@@ -2615,7 +2607,6 @@
 				A196B6C62115F7C50031CEB8 /* QueryOperation.swift in Sources */,
 				A1902F292108237E008823BB /* be_aas_file.c in Sources */,
 				A196B6C22115F7C50031CEB8 /* Q3Operation.swift in Sources */,
-				A1902F2A2108237E008823BB /* ios_glsmp_null.c in Sources */,
 				A1902F2B2108237E008823BB /* AppDelegate.swift in Sources */,
 				A1902F2C2108237E008823BB /* l_memory.c in Sources */,
 				A1902F2D2108237E008823BB /* tr_light.c in Sources */,
@@ -2678,7 +2669,6 @@
 				A1902F8821093B34008823BB /* be_ai_move.c in Sources */,
 				A196B7312117F0430031CEB8 /* Parsable.swift in Sources */,
 				A190300E21093C35008823BB /* tr_sky.c in Sources */,
-				A1902FAB21093BA4008823BB /* ios_glsmp_null.c in Sources */,
 				A1902FF121093BFF008823BB /* vm_interpreted.c in Sources */,
 				A190300921093C35008823BB /* tr_scene.c in Sources */,
 				A1902FBE21093BBE008823BB /* jcsample.c in Sources */,
