@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="https://raw.githubusercontent.com/tomkidd/Quake2-iOS/master/icon_quake3.png">  
+<img align="left" width="100" height="100" src="https://raw.githubusercontent.com/tomkidd/Quake3-iOS/master/icon_quake3.png">  
 
 #  Quake III: Arena for iOS and tvOS for Apple TV
 
