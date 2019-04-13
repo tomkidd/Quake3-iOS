@@ -110,7 +110,6 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         
         let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         
-//        Sys_SetHomeDir(Bundle.main.resourcePath!)
         Sys_SetHomeDir(documentsDir)
         
         in_strafe.active = qtrue

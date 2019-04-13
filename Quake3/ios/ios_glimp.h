@@ -93,8 +93,8 @@ void qglColor4fv(GLfloat *v);
 #define qglClearDepth qglClearDepthf
 #define qglColor4ubv(v)     qglColor4f(v[0] / 255.0, v[1] / 255.0, v[2] / 255.0, v[3] / 255.0)
 void qglTexCoord2fv(GLfloat *v);
-void qglCallList(GLuint list);
+//void qglCallList(GLuint list);
 
-void GLimp_MakeCurrent(void);
+//void GLimp_MakeCurrent(void);
 
 #endif // IOS_GLIMP_H
