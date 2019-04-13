@@ -53,7 +53,7 @@ class Q3Coordinator: NSObject, Coordinator {
     
     @discardableResult
     func removeTimeoutServer(ip: String, port: String) -> Server? {
-        if let index = serversList.index(where: {$0.ip == ip && $0.port == port}) {
+        if let index = serversList.firstIndex(where: {$0.ip == ip && $0.port == port}) {
             let server = serversList[index]
             serversList.remove(at: index)
             return server

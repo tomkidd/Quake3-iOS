@@ -9,16 +9,16 @@ import Foundation
 
 class Q3Server: NSObject, Server {
     
-    @objc internal(set) var ping: String = ""
+    @objc var ping: String = ""
     @objc let ip: String
     let port: String
-    internal(set) var originalName: String = ""
-    @objc internal(set) var name: String = ""
-    @objc internal(set) var map: String = ""
-    internal(set) var maxPlayers: String = ""
-    @objc internal(set) var currentPlayers: String = ""
-    @objc internal(set) var mod: String = ""
-    @objc internal(set) var gametype: String = ""
+    var originalName: String = ""
+    @objc var name: String = ""
+    @objc var map: String = ""
+    var maxPlayers: String = ""
+    @objc var currentPlayers: String = ""
+    @objc var mod: String = ""
+    @objc var gametype: String = ""
     var rules: [String: String] = [:]
     var players: [Player]? = nil
 

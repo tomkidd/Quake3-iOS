@@ -2,7 +2,7 @@
   "Mac" : [
     {
       "name" : "CocoaAsyncSocket",
-      "hash" : "c3735226cabdbd44516382a9ce707bcc4a97925a29f73b007efbb798091f32de"
+      "hash" : "da240d386c47ef8a99b2d99bb296e58aa9366fcf23b11557d61e52cd39f225b6"
     }
   ],
   "watchOS" : [
@@ -11,14 +11,14 @@
   "tvOS" : [
     {
       "name" : "CocoaAsyncSocket",
-      "hash" : "8e48cb8fd1a82cb98641e5916d21e8b859cc6d4d27c0dddbc0b4c4e88eff0a10"
+      "hash" : "6dc65811180c238d81a46c3d010be6a1fb7af958576dd189588a8e844403e811"
     }
   ],
   "commitish" : "f33ea53c298fcad69d55f387ead174e30c2446cf",
   "iOS" : [
     {
       "name" : "CocoaAsyncSocket",
-      "hash" : "c71f252cf48f9146b9b2e34af299050a345ed9bb10bc95f25f3be38fea36c82f"
+      "hash" : "83072c44de1ce0d3c036c8793418fd97f1c6169aeaf21f26c8faea7c764ae220"
     }
   ]
 }

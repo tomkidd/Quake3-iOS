@@ -26,6 +26,15 @@ import XCTest
 
 class FontAwesomeTests: XCTestCase {
 
+    func testFontsShouldBeLoaded() {
+        let solidFont = UIFont.fontAwesome(ofSize: 200, style: .solid)
+        let regularFont = UIFont.fontAwesome(ofSize: 200, style: .regular)
+        let brandsFont = UIFont.fontAwesome(ofSize: 200, style: .brands)
+        XCTAssertNotNil(solidFont, "Solid font should be loaded.")
+        XCTAssertNotNil(regularFont, "Regular font should be loaded.")
+        XCTAssertNotNil(brandsFont, "Brands font should be loaded.")
+    }
+
     func testIconFontShouldBeRegistered() {
         let label = UILabel()
         label.font = UIFont.fontAwesome(ofSize: 200, style: .brands)
@@ -77,5 +86,46 @@ class FontAwesomeTests: XCTestCase {
         let barItem = UIBarButtonItem()
         barItem.image = UIImage.fontAwesomeIcon(code: "fa-github", style: .brands, textColor: UIColor.blue, size: CGSize(width: 4000, height: 4000), backgroundColor: UIColor.red)
         XCTAssertNotNil(barItem.image)
+    }
+    
+    func testFontsShouldBeLoadedForAllDynamicTypes() {
+        let bodyFont = UIFont.fontAwesome(forTextStyle: .body, style: .brands)
+        let caption1Font = UIFont.fontAwesome(forTextStyle: .caption1, style: .brands)
+        let caption2Font = UIFont.fontAwesome(forTextStyle: .caption2, style: .brands)
+        let footnoteFont = UIFont.fontAwesome(forTextStyle: .footnote, style: .brands)
+        let headlineFont = UIFont.fontAwesome(forTextStyle: .headline, style: .brands)
+        let subheadlineFont = UIFont.fontAwesome(forTextStyle: .subheadline, style: .brands)
+        
+        XCTAssertNotNil(bodyFont, "Body font should be loaded.")
+        XCTAssertNotNil(caption1Font, "Caption1 font should be loaded.")
+        XCTAssertNotNil(caption2Font, "Caption2 font should be loaded.")
+        XCTAssertNotNil(footnoteFont, "Footnote font should be loaded.")
+        XCTAssertNotNil(headlineFont, "Headline font should be loaded.")
+        XCTAssertNotNil(subheadlineFont, "Subheadline font should be loaded.")
+        
+        if #available(iOS 9.0, *) {
+            let calloutFont = UIFont.fontAwesome(forTextStyle: .callout, style: .brands)
+            let title1Font = UIFont.fontAwesome(forTextStyle: .title1, style: .brands)
+            let title2Font = UIFont.fontAwesome(forTextStyle: .title2, style: .brands)
+            let title3Font = UIFont.fontAwesome(forTextStyle: .title3, style: .brands)
+            
+            XCTAssertNotNil(calloutFont, "Callout font should be loaded.")
+            XCTAssertNotNil(title1Font, "Title1 font should be loaded.")
+            XCTAssertNotNil(title2Font, "Title2 font should be loaded.")
+            XCTAssertNotNil(title3Font, "Title3 font should be loaded.")
+        }
+        
+        if #available(iOS 11.0, *) {
+            let largeTitleFont = UIFont.fontAwesome(forTextStyle: .largeTitle, style: .brands)
+            
+            XCTAssertNotNil(largeTitleFont, "LargeTitle font should be loaded.")
+        }
+    }
+    
+    func testLabelTextUsingDynamicType() {
+        let label = UILabel()
+        label.font = UIFont.fontAwesome(forTextStyle: .body, style: .brands)
+        label.text = String.fontAwesomeIcon(name: FontAwesome.github)
+        XCTAssertEqual(label.text, "\u{f09b}")
     }
 }

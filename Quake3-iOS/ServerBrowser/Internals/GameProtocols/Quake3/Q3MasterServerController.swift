@@ -28,7 +28,7 @@ class Q3MasterServerController: NSObject, MasterServerController {
             guard let port = UInt16(port) else {
                 return
             }
-            let data = Data(bytes: self.getServersRequestMarker)
+            let data = Data(self.getServersRequestMarker)
             self.socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
             do {
                 self.delegate?.didStartFetchingServers(forMasterController: self)

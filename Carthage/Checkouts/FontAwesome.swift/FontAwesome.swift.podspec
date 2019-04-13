@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FontAwesome.swift"
-  s.version          = "1.4.6"
+  s.version          = "1.7.0"
   s.summary          = "Use Font Awesome in your Swift projects"
   s.homepage         = "https://github.com/thii/FontAwesome.swift"
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.source_files = 'FontAwesome/*.{swift}'
   s.resource_bundle = { 'FontAwesome.swift' => 'FontAwesome/*.otf' }
   s.frameworks = 'UIKit', 'CoreText'
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 end

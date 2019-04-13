@@ -1,8 +1,8 @@
 desc "Runs all the tests"
 lane :test do
   Dir.chdir("..") do
-    sh("xcodebuild test -project FontAwesome.xcodeproj -scheme FontAwesome -destination 'platform=iOS Simulator,name=iPhone 7' | bundle exec xcpretty -c")
-    sh("xcodebuild -project FontAwesome.xcodeproj -scheme FontAwesome-watchOS -destination 'OS=4.3,name=Apple Watch - 42mm' | bundle exec xcpretty -c")
+    sh("xcodebuild test -project FontAwesome.xcodeproj -scheme FontAwesome -destination 'platform=iOS Simulator,name=iPhone XS' | xcbeautify")
+    sh("xcodebuild -project FontAwesome.xcodeproj -scheme FontAwesome-watchOS -destination 'OS=5.1,name=Apple Watch Series 4 - 44mm' | xcbeautify")
   end
 end
 
@@ -12,7 +12,7 @@ lane :update_font do |options|
   raise "The version is missed. Use `bundle exec fastlane bum_web_font version:{version_number}`.`" if target_version.nil?
 
   sh("cd #{ENV["PWD"]}/FortAwesome/Font-Awesome && git fetch origin && git checkout #{target_version}")
-  sh("/bin/cp -f #{ENV["PWD"]}/FortAwesome/Font-Awesome/use-on-desktop/*.otf #{ENV["PWD"]}/FontAwesome")
+  sh("/bin/cp -f #{ENV["PWD"]}/FortAwesome/Font-Awesome/otfs/*.otf #{ENV["PWD"]}/FontAwesome")
   sh("cd #{ENV["PWD"]} && ./codegen.swift")
   sh("git commit -m \"Update font version to #{target_version}\" ../FontAwesome ../FortAwesome")
 end

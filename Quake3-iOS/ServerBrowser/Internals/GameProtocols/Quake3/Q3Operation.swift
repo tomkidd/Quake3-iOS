@@ -78,7 +78,7 @@ class Q3Operation: Operation, QueryOperation {
         
         self._executing = true
         
-        let data = Data(bytes: self.requestMarker)
+        let data = Data(self.requestMarker)
         do {
             self.socket?.send(data, toHost: self.ip, port: self.port, withTimeout: timeout, tag: 42)
             try self.socket?.receiveOnce()
