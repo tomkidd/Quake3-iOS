@@ -112,25 +112,30 @@ class MFiGameController: NSObject
                 }
                 
                 remote!.extendedGamepad!.rightThumbstick.xAxis.valueChangedHandler = { (button: GCControllerAxisInput, value: Float) -> () in
-                    yawValue = (value * 8)
+                    yawValue = (value * 4)
                 }
                 
                 remote!.extendedGamepad!.rightThumbstick.yAxis.valueChangedHandler = { (button: GCControllerAxisInput, value: Float) -> () in
-                    pitchValue = (value * 8)
+                    pitchValue = (value * 4)
                 }
                 
                 remote!.extendedGamepad!.rightTrigger.pressedChangedHandler = { (button: GCControllerButtonInput, value: Float, pressed: Bool) -> () in
                     
                     KeyEvent(key: K_MOUSE1, down: pressed)
+                }
+                
+                remote!.extendedGamepad!.leftTrigger.pressedChangedHandler = { (button: GCControllerButtonInput, value: Float, pressed: Bool) -> () in
+                    
+                    KeyEvent(key: K_MOUSE3, down: pressed)
                     
                 }
                 
                 remote!.extendedGamepad!.rightShoulder.pressedChangedHandler = { (button: GCControllerButtonInput, value: Float, pressed: Bool) -> () in
-                    KeyEvent(key: K_MWHEELUP, down: pressed)
+                    KeyEvent(key: K_MWHEELDOWN, down: pressed)
                 }
                 
                 remote!.extendedGamepad!.leftShoulder.pressedChangedHandler = { (button: GCControllerButtonInput, value: Float, pressed: Bool) -> () in
-                    KeyEvent(key: K_MWHEELDOWN, down: pressed)
+                    KeyEvent(key: K_MWHEELUP, down: pressed)
                 }
 
                 break
