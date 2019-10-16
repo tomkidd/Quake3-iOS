@@ -1,4 +1,5 @@
-export type IconPrefix = "fas" | "fab" | "far" | "fal";
+export type IconPrefix = "fas" | "fab" | "far" | "fal" | "fad";
+export type IconPathData = string | string[]
 
 export interface IconLookup {
   prefix: IconPrefix;
@@ -12,7 +13,7 @@ export interface IconDefinition extends IconLookup {
     number, // height
     string[], // ligatures
     string, // unicode
-    string // svgPathData
+    IconPathData // svgPathData
   ];
 }
 
@@ -93,6 +94,7 @@ export type IconName = '500px' |
   'confluence' | 
   'connectdevelop' | 
   'contao' | 
+  'cotton-bureau' | 
   'cpanel' | 
   'creative-commons' | 
   'creative-commons-by' | 
@@ -181,6 +183,7 @@ export type IconName = '500px' |
   'gg' | 
   'gg-circle' | 
   'git' | 
+  'git-alt' | 
   'git-square' | 
   'github' | 
   'github-alt' | 
@@ -273,7 +276,6 @@ export type IconName = '500px' |
   'napster' | 
   'neos' | 
   'nimblr' | 
-  'nintendo-switch' | 
   'node' | 
   'node-js' | 
   'npm' | 
@@ -362,6 +364,7 @@ export type IconName = '500px' |
   'squarespace' | 
   'stack-exchange' | 
   'stack-overflow' | 
+  'stackpath' | 
   'staylinked' | 
   'steam' | 
   'steam-square' | 
@@ -653,6 +656,8 @@ export type IconName = '500px' |
   'backward' | 
   'bacon' | 
   'balance-scale' | 
+  'balance-scale-left' | 
+  'balance-scale-right' | 
   'ban' | 
   'band-aid' | 
   'barcode' | 
@@ -672,6 +677,7 @@ export type IconName = '500px' |
   'bezier-curve' | 
   'bible' | 
   'bicycle' | 
+  'biking' | 
   'binoculars' | 
   'biohazard' | 
   'birthday-cake' | 
@@ -690,6 +696,9 @@ export type IconName = '500px' |
   'book-open' | 
   'book-reader' | 
   'bookmark' | 
+  'border-all' | 
+  'border-none' | 
+  'border-style' | 
   'bowling-ball' | 
   'box' | 
   'box-open' | 
@@ -896,6 +905,7 @@ export type IconName = '500px' |
   'eye' | 
   'eye-dropper' | 
   'eye-slash' | 
+  'fan' | 
   'fast-backward' | 
   'fast-forward' | 
   'fax' | 
@@ -1057,6 +1067,7 @@ export type IconName = '500px' |
   'i-cursor' | 
   'ice-cream' | 
   'icicles' | 
+  'icons' | 
   'id-badge' | 
   'id-card' | 
   'id-card-alt' | 
@@ -1209,9 +1220,12 @@ export type IconName = '500px' |
   'percentage' | 
   'person-booth' | 
   'phone' | 
+  'phone-alt' | 
   'phone-slash' | 
   'phone-square' | 
+  'phone-square-alt' | 
   'phone-volume' | 
+  'photo-video' | 
   'piggy-bank' | 
   'pills' | 
   'pizza-slice' | 
@@ -1259,6 +1273,7 @@ export type IconName = '500px' |
   'redo' | 
   'redo-alt' | 
   'registered' | 
+  'remove-format' | 
   'reply' | 
   'reply-all' | 
   'republican' | 
@@ -1341,15 +1356,22 @@ export type IconName = '500px' |
   'solar-panel' | 
   'sort' | 
   'sort-alpha-down' | 
+  'sort-alpha-down-alt' | 
   'sort-alpha-up' | 
+  'sort-alpha-up-alt' | 
   'sort-amount-down' | 
+  'sort-amount-down-alt' | 
   'sort-amount-up' | 
+  'sort-amount-up-alt' | 
   'sort-down' | 
   'sort-numeric-down' | 
+  'sort-numeric-down-alt' | 
   'sort-numeric-up' | 
+  'sort-numeric-up-alt' | 
   'sort-up' | 
   'spa' | 
   'space-shuttle' | 
+  'spell-check' | 
   'spider' | 
   'spinner' | 
   'splotch' | 
@@ -1507,6 +1529,7 @@ export type IconName = '500px' |
   'video' | 
   'video-slash' | 
   'vihara' | 
+  'voicemail' | 
   'volleyball-ball' | 
   'volume-down' | 
   'volume-mute' | 

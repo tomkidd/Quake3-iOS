@@ -1625,6 +1625,7 @@ enum GCDAsyncSocketConfig
 				{
 					LogVerbose(@"close(socket4FD)");
                     close(self->socket4FD);
+                    self->socket4FD = SOCKET_NULL;
 				}
 				
 				return_from_block;
@@ -1863,8 +1864,9 @@ enum GCDAsyncSocketConfig
 		
 		NSError *error = nil;
 		NSFileManager *fileManager = [NSFileManager defaultManager];
-		if ([fileManager fileExistsAtPath:url.path]) {
-			if (![[NSFileManager defaultManager] removeItemAtURL:url error:&error]) {
+		NSString *urlPath = url.path;
+		if (urlPath && [fileManager fileExistsAtPath:urlPath]) {
+			if (![fileManager removeItemAtURL:url error:&error]) {
 				NSString *msg = @"Could not remove previous unix domain socket at given url.";
 				err = [self otherError:msg];
 				
@@ -1918,15 +1920,15 @@ enum GCDAsyncSocketConfig
         dispatch_source_set_cancel_handler(self->acceptUNSource, ^{
 			
 #if NEEDS_DISPATCH_RETAIN_RELEASE
-			LogVerbose(@"dispatch_release(accept4Source)");
+			LogVerbose(@"dispatch_release(acceptUNSource)");
 			dispatch_release(acceptSource);
 #endif
 			
-			LogVerbose(@"close(socket4FD)");
+			LogVerbose(@"close(socketUN)");
 			close(socketFD);
 		});
 		
-		LogVerbose(@"dispatch_resume(accept4Source)");
+		LogVerbose(@"dispatch_resume(acceptUNSource)");
         dispatch_resume(self->acceptUNSource);
 		
         self->flags |= kSocketStarted;
@@ -2539,6 +2541,21 @@ enum GCDAsyncSocketConfig
 	}
 	
 	return result;
+}
+
+- (BOOL)connectToNetService:(NSNetService *)netService error:(NSError **)errPtr
+{
+	NSArray* addresses = [netService addresses];
+	for (NSData* address in addresses)
+	{
+		BOOL result = [self connectToAddress:address error:errPtr];
+		if (result)
+		{
+			return YES;
+		}
+	}
+	
+	return NO;
 }
 
 - (void)lookup:(int)aStateIndex didSucceedWithAddress4:(NSData *)address4 address6:(NSData *)address6
@@ -7084,7 +7101,7 @@ static OSStatus SSLWriteFunction(SSLConnectionRef connection, const void *data, 
 		for (cipherIndex = 0; cipherIndex < numberCiphers; cipherIndex++)
 		{
 			NSNumber *cipherObject = [cipherSuites objectAtIndex:cipherIndex];
-			ciphers[cipherIndex] = [cipherObject shortValue];
+			ciphers[cipherIndex] = (SSLCipherSuite)[cipherObject unsignedIntValue];
 		}
 		
 		status = SSLSetEnabledCiphers(sslContext, ciphers, numberCiphers);

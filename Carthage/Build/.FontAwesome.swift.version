@@ -5,23 +5,28 @@
   "watchOS" : [
     {
       "name" : "FontAwesome",
-      "hash" : "5032b772467a077bb58f8a3c10326f245b9bd9d462c35515ac262355f01041a3",
-      "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+      "hash" : "ad7abb8a4a7c92ca0c9e82d1c0a2900d9ba88021b3634748071e1b45feef92b7",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
     }
   ],
   "tvOS" : [
     {
       "name" : "FontAwesome",
-      "hash" : "665c2ddbccf2c9ed14cbcc724a02f08c37e12a350cb41fa30b6701f988c79b0c",
-      "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+      "hash" : "b743e47b53667949cf93378af743b861d2536a33c2a1d6c7cebfd889bc3c7947",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
+    },
+    {
+      "name" : "FontAwesome",
+      "hash" : "b743e47b53667949cf93378af743b861d2536a33c2a1d6c7cebfd889bc3c7947",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
     }
   ],
-  "commitish" : "1.7.0",
+  "commitish" : "1.8.2",
   "iOS" : [
     {
       "name" : "FontAwesome",
-      "hash" : "2d829f2efac7fc18319058273726881858dc8b489ad95961b1eb9f81c850680c",
-      "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+      "hash" : "84ce6880a1bb3a7bf03a33a3a66d0e1028feaa641337d88a2ae9ced78896f4aa",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
     }
   ]
 }
