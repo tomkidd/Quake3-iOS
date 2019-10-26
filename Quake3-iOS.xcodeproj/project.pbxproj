@@ -456,7 +456,6 @@
 		A1902ECD2108237E008823BB /* be_ai_char.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C03E2101470F00D3C611 /* be_ai_char.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902ECE2108237E008823BB /* snd_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E82101471000D3C611 /* snd_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902ECF2108237E008823BB /* jcomapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0862101470F00D3C611 /* jcomapi.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1902ED02108237E008823BB /* ftola.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C27C2101472D00D3C611 /* ftola.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902ED12108237E008823BB /* sys_unix.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C1C62101472C00D3C611 /* sys_unix.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902ED22108237E008823BB /* jdinput.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0622101470F00D3C611 /* jdinput.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902ED32108237E008823BB /* snd_dma.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CC2101471000D3C611 /* snd_dma.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -554,7 +553,6 @@
 		A1902F302108237E008823BB /* sv_client.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0ED2101471000D3C611 /* sv_client.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F312108237E008823BB /* snd_codec.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CF2101471000D3C611 /* snd_codec.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F322108237E008823BB /* l_log.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C03A2101470F00D3C611 /* l_log.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1902F332108237E008823BB /* snapvector.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C27B2101472D00D3C611 /* snapvector.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F342108237E008823BB /* be_ai_move.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0532101470F00D3C611 /* be_ai_move.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F352108237E008823BB /* snd_wavelet.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E72101471000D3C611 /* snd_wavelet.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F362108237E008823BB /* tr_image_bmp.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0C02101471000D3C611 /* tr_image_bmp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -589,8 +587,6 @@
 		A1902F6F21093A45008823BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179BFE6210142FA00D3C611 /* AppDelegate.swift */; };
 		A1902F7421093AAB008823BB /* MFiGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F582108B4E4008823BB /* MFiGameController.swift */; };
 		A1902F7521093AAF008823BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179BFE8210142FA00D3C611 /* GameViewController.swift */; };
-		A1902F7621093AD1008823BB /* ftola.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C27C2101472D00D3C611 /* ftola.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1902F7721093AD9008823BB /* snapvector.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C27B2101472D00D3C611 /* snapvector.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F7821093B08008823BB /* be_aas_bspq3.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0362101470F00D3C611 /* be_aas_bspq3.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F7921093B34008823BB /* be_aas_cluster.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0582101470F00D3C611 /* be_aas_cluster.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1902F7A21093B34008823BB /* be_aas_debug.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0462101470F00D3C611 /* be_aas_debug.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -2500,7 +2496,6 @@
 				A1902ECE2108237E008823BB /* snd_main.c in Sources */,
 				A15AA92B211B470200DE867F /* MainMenuViewController.swift in Sources */,
 				A1902ECF2108237E008823BB /* jcomapi.c in Sources */,
-				A1902ED02108237E008823BB /* ftola.c in Sources */,
 				A1902ED12108237E008823BB /* sys_unix.c in Sources */,
 				A1902ED22108237E008823BB /* jdinput.c in Sources */,
 				A1902ED32108237E008823BB /* snd_dma.c in Sources */,
@@ -2618,7 +2613,6 @@
 				A1902F312108237E008823BB /* snd_codec.c in Sources */,
 				A196B6A82115F7C50031CEB8 /* Server.swift in Sources */,
 				A1902F322108237E008823BB /* l_log.c in Sources */,
-				A1902F332108237E008823BB /* snapvector.c in Sources */,
 				A196B6B62115F7C50031CEB8 /* GSServerController.swift in Sources */,
 				A1902F342108237E008823BB /* be_ai_move.c in Sources */,
 				A1902F352108237E008823BB /* snd_wavelet.c in Sources */,
@@ -2716,7 +2710,6 @@
 				A1902FEC21093BFF008823BB /* net_ip.c in Sources */,
 				A196B7242117F0430031CEB8 /* ServerController.swift in Sources */,
 				A1902FA821093B86008823BB /* snd_openal.c in Sources */,
-				A1902F7621093AD1008823BB /* ftola.c in Sources */,
 				A196B72F2117F0430031CEB8 /* String+Q3Name.swift in Sources */,
 				A196B72B2117F0430031CEB8 /* Q3Parser.swift in Sources */,
 				A1902FA321093B86008823BB /* snd_codec.c in Sources */,
@@ -2774,7 +2767,6 @@
 				A1902F8C21093B34008823BB /* be_interface.c in Sources */,
 				A1902FFF21093C35008823BB /* tr_curve.c in Sources */,
 				A190300A21093C35008823BB /* tr_shade_calc.c in Sources */,
-				A1902F7721093AD9008823BB /* snapvector.c in Sources */,
 				A1902FDA21093BBE008823BB /* jquant1.c in Sources */,
 				A1902F8E21093B34008823BB /* l_libvar.c in Sources */,
 				A1902FEA21093BFF008823BB /* msg.c in Sources */,

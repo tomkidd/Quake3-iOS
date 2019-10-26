@@ -2591,6 +2591,8 @@ Find out whether we have SSE support for Q_ftol function
 =================
 */
 
+// there's probably a smarter way to do this -tkidd
+#ifndef IOS
 #if id386 || idx64
 
 static void Com_DetectSSE(void)
@@ -2624,6 +2626,12 @@ static void Com_DetectSSE(void)
 	}
 #endif
 }
+
+#else
+
+#define Com_DetectSSE()
+
+#endif
 
 #else
 
