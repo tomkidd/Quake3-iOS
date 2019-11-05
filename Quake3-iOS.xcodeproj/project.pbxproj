@@ -438,6 +438,8 @@
 		A1E8B31B2370E6CE005C6CA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */; };
 		A1E8B31E23712A37005C6CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B31D23712A37005C6CA8 /* AppDelegate.m */; };
 		A1E8B31F23712A37005C6CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B31D23712A37005C6CA8 /* AppDelegate.m */; };
+		A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; };
+		A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -817,6 +819,7 @@
 		A1E0ECF1236A9F51003F22FB /* sdl_input.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_input.c; sourceTree = "<group>"; };
 		A1E8B31C23712A37005C6CA8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A1E8B31D23712A37005C6CA8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1E8B3242372397C005C6CA8 /* qgl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qgl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1092,6 +1095,7 @@
 		A179C0B92101471000D3C611 /* renderercommon */ = {
 			isa = PBXGroup;
 			children = (
+				A1E8B3242372397C005C6CA8 /* qgl.h */,
 				A179C0BF2101471000D3C611 /* iqm.h */,
 				A179C0C52101471000D3C611 /* tr_common.h */,
 				A179C0C12101471000D3C611 /* tr_font.c */,
@@ -1676,6 +1680,7 @@
 				A1565F892109F30E00FA9BC9 /* cl_cgame.c in Sources */,
 				A1565F8A2109F30E00FA9BC9 /* be_interface.c in Sources */,
 				A1565F8B2109F30E00FA9BC9 /* tr_curve.c in Sources */,
+				A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */,
 				A1565F8C2109F30E00FA9BC9 /* tr_shade_calc.c in Sources */,
 				A1565F8E2109F30E00FA9BC9 /* jquant1.c in Sources */,
 				A196B71D2117F0420031CEB8 /* Parsable.swift in Sources */,
@@ -1924,6 +1929,7 @@
 				A179C35E2101472E00D3C611 /* snd_mem.c in Sources */,
 				A179C4982101472F00D3C611 /* q_math.c in Sources */,
 				A179C2F42101472E00D3C611 /* be_aas_route.c in Sources */,
+				A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */,
 				A179C4962101472F00D3C611 /* vm_none.c in Sources */,
 				A179C2DC2101472E00D3C611 /* be_aas_file.c in Sources */,
 				A179C2ED2101472E00D3C611 /* l_memory.c in Sources */,

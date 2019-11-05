@@ -6,23 +6,15 @@
 //  Copyright © 2018 Tom Kidd. All rights reserved.
 //
 
-import GLKit
 import GameController
 
 #if os(iOS)
 import CoreMotion
 #endif
 
-// todo: not sure if Quake 3 is gonna use these
-public var gameInterrupted : Bool = false
-
-public var startGame : Bool = false
-
-class GameViewController: GLKViewController, GLKViewControllerDelegate {
+class GameViewController: UIViewController {
     
-    var context: EAGLContext!
-    
-    var joysticksInitialized = false
+//    var joysticksInitialized = false
     
     var selectedMap = ""
     
@@ -52,28 +44,8 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.context = EAGLContext(api: EAGLRenderingAPI.openGLES1)!
-        EAGLContext.setCurrent(self.context)
-        
-        if self.context == nil {
-            print("Failed to create ES context")
-        }
-        
-        let view = self.view as! GLKView
-        view.context = self.context
-        view.delegate = self
-        self.delegate = self
-        view.enableSetNeedsDisplay = true
-        view.drawableDepthFormat = .format24
-        view.drawableMultisample = .multisampleNone
-        view.drawableColorFormat = .RGBA8888
-        view.drawableStencilFormat = .format8
-        view.bindDrawable()
-        self.preferredFramesPerSecond = 60
-        
         (UIApplication.shared.delegate as! AppDelegate).gameViewControllerView = self.view
-        
-        
+
         var size = view.layer.bounds.size;
         size.width = CGFloat(roundf(Float(size.width * factor)))
         size.height = CGFloat(roundf(Float(size.height * factor)))
@@ -114,77 +86,33 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         
         in_strafe.active = qtrue
         
-        #if os(iOS)
-        
-        if !joysticksInitialized {
-            
-            let rect = view.frame
-            let size = CGSize(width: 100.0, height: 100.0)
-            let joystick1Frame = CGRect(origin: CGPoint(x: 50.0,
-                                                        y: (rect.height - size.height - 50.0)),
-                                        size: size)
-            joystick1 = JoyStickView(frame: joystick1Frame)
-            joystick1.delegate = self
-            
-            view.addSubview(joystick1)
-            
-            joystick1.movable = false
-            joystick1.alpha = 0.5
-            joystick1.baseAlpha = 0.5 // let the background bleed thru the base
-            joystick1.handleTintColor = UIColor.darkGray // Colorize the handle
-            
-            fireButton = UIButton(frame: CGRect(x: rect.width - 155, y: rect.height - 90, width: 75, height: 75))
-            fireButton.setTitle("FIRE", for: .normal)
-            fireButton.setBackgroundImage(UIImage(named: "JoyStickBase")!, for: .normal)
-            fireButton.addTarget(self, action: #selector(firePressed), for: .touchDown)
-            fireButton.addTarget(self, action: #selector(fireReleased), for: .touchUpInside)
-            fireButton.alpha = 0.5
-            
-            view.addSubview(fireButton)
-            
-            jumpButton = UIButton(frame: CGRect(x: rect.width - 90, y: rect.height - 135, width: 75, height: 75))
-            jumpButton.setTitle("JUMP", for: .normal)
-            jumpButton.setBackgroundImage(UIImage(named: "JoyStickBase")!, for: .normal)
-            jumpButton.addTarget(self, action: #selector(jumpPressed), for: .touchDown)
-            jumpButton.addTarget(self, action: #selector(jumpReleased), for: .touchUpInside)
-            jumpButton.alpha = 0.5
-            
-            view.addSubview(jumpButton)
-            
-            joysticksInitialized = true
-        }
-        
-        #endif
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // from Beben 3 init code
-        
-        var argv: [String?] = [ Bundle.main.resourcePath! + "/quake3", "+set", "com_basegame", "baseq3", "+name", defaults.string(forKey: "playerName")]
+        var argv: [String?] = [ Bundle.main.resourcePath! + "/quake3", "+set", "com_basegame", "baseq3", "+name", self.defaults.string(forKey: "playerName")]
 
-        if !selectedMap.isEmpty {
-            argv.append("+spmap")
-            argv.append(selectedMap)
-            argv.append("+g_spSkill")
-            argv.append(String(selectedDifficulty))
-        }
-        
-        if selectedServer != nil {
-            argv.append("+connect")
-            argv.append("\(selectedServer!.ip):\(selectedServer!.port)")
-        }
+            if !self.selectedMap.isEmpty {
+                argv.append("+spmap")
+                argv.append(self.selectedMap)
+                argv.append("+g_spSkill")
+                argv.append(String(self.selectedDifficulty))
+            }
+                
+            if self.selectedServer != nil {
+                argv.append("+connect")
+                argv.append("\(self.selectedServer!.ip):\(self.selectedServer!.port)")
+            }
 
-        argv.append(nil)
-        
-        let argc:Int32 = Int32(argv.count - 1)
-        var cargs = argv.map { $0.flatMap { UnsafeMutablePointer<Int8>(strdup($0)) } }
-        
-        Sys_Startup(argc, &cargs)
-        
-        for ptr in cargs { free(UnsafeMutablePointer(mutating: ptr)) }
-        
-        gameInitialized = true
+            argv.append(nil)
+            
+            let argc:Int32 = Int32(argv.count - 1)
+            var cargs = argv.map { $0.flatMap { UnsafeMutablePointer<Int8>(strdup($0)) } }
+            
+            Sys_Startup(argc, &cargs)
+            
+            for ptr in cargs { free(UnsafeMutablePointer(mutating: ptr)) }
+                
+           self.gameInitialized = true
+        }
     }
     
     @objc func menuButtonAction() {
@@ -195,9 +123,9 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        if EAGLContext.current() == self.context {
-            EAGLContext.setCurrent(nil)
-        }
+//        if EAGLContext.current() == self.context {
+//            EAGLContext.setCurrent(nil)
+//        }
 
     }
     
@@ -237,12 +165,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
     }
     
     //MARK: GLKViewDelegate
-    
-    override func glkView(_ view: GLKView, drawIn rect: CGRect) {
         
-        
-    }
-    
     func handleTouches(_ touches: Set<UITouch>) {
         for touch in touches {
             var mouseLocation = CGPoint(x: 0, y: 0)
@@ -307,66 +230,66 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
 
     // MARK: GLKViewControllerDelegate
     
-    func glkViewControllerUpdate(_ controller: GLKViewController) {
-        cl.viewangles.1 -= MFiGameController.yawValue
-        cl.viewangles.0 -= MFiGameController.pitchValue
-        
-        if gameInitialized {
-            Com_Frame();
-            
-            #if os(iOS)
-            if Key_GetCatcher() & KEYCATCH_UI != 0 {
-                joystick1.isHidden = true
-                fireButton.isHidden = true
-                jumpButton.isHidden = true
-                prevWeaponButton.isHidden = true
-                nextWeaponButton.isHidden = true
-                tildeButton.isHidden = true
-            } else {
-                joystick1.isHidden = false
-                fireButton.isHidden = false
-                jumpButton.isHidden = false
-                prevWeaponButton.isHidden = false
-                nextWeaponButton.isHidden = false
-                tildeButton.isHidden = false
-            }
-            #endif
-            
-        
-        }
-
-    }
+//    func glkViewControllerUpdate(_ controller: GLKViewController) {
+//        cl.viewangles.1 -= MFiGameController.yawValue
+//        cl.viewangles.0 -= MFiGameController.pitchValue
+//
+//        if gameInitialized {
+//            Com_Frame();
+//
+//            #if os(iOS)
+//            if Key_GetCatcher() & KEYCATCH_UI != 0 {
+//                joystick1.isHidden = true
+//                fireButton.isHidden = true
+//                jumpButton.isHidden = true
+//                prevWeaponButton.isHidden = true
+//                nextWeaponButton.isHidden = true
+//                tildeButton.isHidden = true
+//            } else {
+//                joystick1.isHidden = false
+//                fireButton.isHidden = false
+//                jumpButton.isHidden = false
+//                prevWeaponButton.isHidden = false
+//                nextWeaponButton.isHidden = false
+//                tildeButton.isHidden = false
+//            }
+//            #endif
+//
+//
+//        }
+//
+//    }
 
 
 }
 
-#if os(iOS)
-extension GameViewController: JoystickDelegate {
-    
-    func handleJoyStickPosition(x: CGFloat, y: CGFloat) {
-        
-        if y > 0 {
-            cl_joyscale_y.0 = Int32(abs(y) * 60)
-            MFiGameController.KeyEvent(key: K_UPARROW, down: true)
-            MFiGameController.KeyEvent(key: K_DOWNARROW, down: false)
-        } else if y < 0 {
-            cl_joyscale_y.1 = Int32(abs(y) * 60)
-            MFiGameController.KeyEvent(key: K_UPARROW, down: false)
-            MFiGameController.KeyEvent(key: K_DOWNARROW, down: true)
-        } else {
-            cl_joyscale_y.0 = 0
-            cl_joyscale_y.1 = 0
-            MFiGameController.KeyEvent(key: K_UPARROW, down: false)
-            MFiGameController.KeyEvent(key: K_DOWNARROW, down: false)
-        }
-
-        MFiGameController.yawValue = Float((x * 8))
-    }
-    
-    func handleJoyStick(angle: CGFloat, displacement: CGFloat) {
-        //        print("angle: \(angle) displacement: \(displacement)")
-    }
-    
-}
-#endif
+//#if os(iOS)
+//extension GameViewController: JoystickDelegate {
+//
+//    func handleJoyStickPosition(x: CGFloat, y: CGFloat) {
+//
+//        if y > 0 {
+//            cl_joyscale_y.0 = Int32(abs(y) * 60)
+//            MFiGameController.KeyEvent(key: K_UPARROW, down: true)
+//            MFiGameController.KeyEvent(key: K_DOWNARROW, down: false)
+//        } else if y < 0 {
+//            cl_joyscale_y.1 = Int32(abs(y) * 60)
+//            MFiGameController.KeyEvent(key: K_UPARROW, down: false)
+//            MFiGameController.KeyEvent(key: K_DOWNARROW, down: true)
+//        } else {
+//            cl_joyscale_y.0 = 0
+//            cl_joyscale_y.1 = 0
+//            MFiGameController.KeyEvent(key: K_UPARROW, down: false)
+//            MFiGameController.KeyEvent(key: K_DOWNARROW, down: false)
+//        }
+//
+//        MFiGameController.yawValue = Float((x * 8))
+//    }
+//
+//    func handleJoyStick(angle: CGFloat, displacement: CGFloat) {
+//        //        print("angle: \(angle) displacement: \(displacement)")
+//    }
+//
+//}
+//#endif
 

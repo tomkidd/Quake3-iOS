@@ -5,6 +5,8 @@
  */
 
 #include <sys/param.h>
+#include <SDL.h>
+#include <SDL_video.h>
 #include <UIKit/UIKit.h>
 #include <GLKit/GLKit.h>
 #include "../client/client.h"
@@ -37,6 +39,8 @@ static float _GLimp_colors[MAX_ARRAY_SIZE][4];
 static GLuint _GLimp_numInputVerts, _GLimp_numOutputVerts;
 static qboolean _GLimp_texcoordbuffer;
 static qboolean _GLimp_colorbuffer;
+
+cvar_t *vid_displayrefreshrate;
 
 unsigned int QGLBeginStarted = 0;
 
@@ -244,56 +248,28 @@ void GLimp_SetMode(float rotation) {
 }
 
 void GLimp_Init(qboolean fixedFunction) {
-//    Q3Application *application = (Q3Application *)[Q3Application sharedApplication];
-	
-	ri.Printf(PRINT_ALL, "Initializing OpenGL subsystem\n");
-	
-	bzero(&glConfig, sizeof(glConfig));
+    vid_displayrefreshrate = Cvar_Get("vid_displayrefreshrate", "-1", CVAR_ARCHIVE);
 
-//    if(application.tvOut) {
-    AppDelegate *appDelegate = (AppDelegate *)(UIApplication.sharedApplication.delegate);
-    
-    _screenView = (GLKView *)[appDelegate gameViewControllerView];
-//    } else {
-//        _screenView = application.screenViewController.screenView;
-//    }
+    if (!SDL_WasInit(SDL_INIT_VIDEO))
+    {
+        if (SDL_Init(SDL_INIT_VIDEO) == -1)
+        {
+            Com_Printf("Couldn't init SDL video: %s.\n", SDL_GetError());
+            return;
+        }
 
-	_context = _screenView.context;
-	
-	GLimp_SetMode(0);
-	
-	ri.Printf(PRINT_ALL, "------------------\n");
-	
-	Q_strncpyz(glConfig.vendor_string, (const char *)qglGetString(GL_VENDOR), sizeof(glConfig.vendor_string));
-	Q_strncpyz(glConfig.renderer_string, (const char *)qglGetString(GL_RENDERER), sizeof(glConfig.renderer_string));
-	Q_strncpyz(glConfig.version_string, (const char *)qglGetString(GL_VERSION), sizeof(glConfig.version_string));
-	Q_strncpyz(glConfig.extensions_string,
-	           (const char *)qglGetString(GL_EXTENSIONS),
-	           sizeof(glConfig.extensions_string));
-	
-	//	qglLockArraysEXT = qglLockArrays;
-	//	qglUnlockArraysEXT = qglUnlockArrays;
-	
-	glConfig.textureCompression = TC_NONE;
-}
+        SDL_version version;
 
-void GLimp_AcquireGL(void) {
-#ifdef IOS_USE_THREADS
-	[EAGLContext setCurrentContext:_context];
-#endif // IOS_USE_THREADS
+        SDL_GetVersion(&version);
+        Com_Printf("SDL version is: %i.%i.%i\n", (int)version.major, (int)version.minor, (int)version.patch);
+        Com_Printf("SDL video driver is \"%s\".\n", SDL_GetCurrentVideoDriver());
+    }
 }
 
 void GLimp_LogComment(char *comment) {
 }
 
-void GLimp_ReleaseGL(void) {
-#ifdef IOS_USE_THREADS
-	[EAGLContext setCurrentContext:nil];
-#endif // IOS_USE_THREADS
-}
-
 void GLimp_EndFrame(void) {
-	GLimp_ReleaseGL();
     // unknown whether or not this is necessary anymore -tkidd
 //    Q3Application *application = (Q3Application *)[Q3Application sharedApplication];
 //    if([application isRunning])
