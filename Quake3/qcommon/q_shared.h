@@ -493,14 +493,14 @@ int Q_isnan(float x);
   // its address
   #define Q_ftol lrintf
   #define Q_SnapVector(vec)\
-    do\
-    {\
-        vec3_t *temp = (vec);\
-        \
-        (*temp)[0] = round((*temp)[0]);\
-        (*temp)[1] = round((*temp)[1]);\
-        (*temp)[2] = round((*temp)[2]);\
-    } while(0)
+	do\
+	{\
+		vec3_t *temp = (vec);\
+		\
+		(*temp)[0] = round((*temp)[0]);\
+		(*temp)[1] = round((*temp)[1]);\
+		(*temp)[2] = round((*temp)[2]);\
+	} while(0)
 #endif
 /*
 // if your system does not have lrintf() and round() you can try this block. Please also open a bug report at bugzilla.icculus.org

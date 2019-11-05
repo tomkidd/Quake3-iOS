@@ -78,7 +78,6 @@
 		A1565F632109F30E00FA9BC9 /* tr_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A72101471000D3C611 /* tr_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F642109F30E00FA9BC9 /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0712101470F00D3C611 /* jmemnobs.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F652109F30E00FA9BC9 /* jcmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0642101470F00D3C611 /* jcmaster.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F662109F30E00FA9BC9 /* ios_input.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8C21029767008823BB /* ios_input.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F672109F30E00FA9BC9 /* jdarith.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0812101470F00D3C611 /* jdarith.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F682109F30E00FA9BC9 /* jctrans.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C08D2101470F00D3C611 /* jctrans.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F692109F30E00FA9BC9 /* jcomapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0862101470F00D3C611 /* jcomapi.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -122,7 +121,6 @@
 		A1565F902109F30E00FA9BC9 /* msg.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2972101472E00D3C611 /* msg.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F912109F30E00FA9BC9 /* tr_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09E2101471000D3C611 /* tr_backend.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F922109F30E00FA9BC9 /* jcprepct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0742101470F00D3C611 /* jcprepct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F932109F30E00FA9BC9 /* ios_snddma.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8A21029766008823BB /* ios_snddma.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F942109F30E00FA9BC9 /* tr_animation.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09C2101471000D3C611 /* tr_animation.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F952109F30E00FA9BC9 /* cmd.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2AB2101472E00D3C611 /* cmd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F962109F30E00FA9BC9 /* snd_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E82101471000D3C611 /* snd_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -373,8 +371,6 @@
 		A17EE1AA211A62BB00811AE1 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7372117F0610031CEB8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A17EE1AF211A630600811AE1 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; };
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A1902E9221029767008823BB /* ios_snddma.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8A21029766008823BB /* ios_snddma.m */; };
-		A1902E9421029767008823BB /* ios_input.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8C21029767008823BB /* ios_input.m */; };
 		A1902E9521029767008823BB /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; };
 		A1902E992103F323008823BB /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
@@ -435,6 +431,13 @@
 		A196B7402117F18D0031CEB8 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6F62117EE4F0031CEB8 /* FontAwesome.framework */; };
 		A196B7412117F18D0031CEB8 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6F62117EE4F0031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A196B7432117FFA30031CEB8 /* ServerFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B7422117FFA30031CEB8 /* ServerFilterViewController.swift */; };
+		A1E0ECEA236A9B9C003F22FB /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E0ECE7236A9AB5003F22FB /* libSDL2.a */; };
+		A1E0ECEB236A9BB7003F22FB /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E0ECE9236A9AB5003F22FB /* libSDL2.a */; };
+		A1E0ECF6236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; };
+		A1E0ECF7236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; };
+		A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; };
+		A1E0ECF9236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; };
+		A1E8B31B2370E6CE005C6CA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -807,6 +810,11 @@
 		A196B7372117F0610031CEB8 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		A196B7422117FFA30031CEB8 /* ServerFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFilterViewController.swift; sourceTree = "<group>"; };
 		A1E0ECDE236A9AB5003F22FB /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		A1E0ECED236A9F51003F22FB /* sdl_icon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdl_icon.h; sourceTree = "<group>"; };
+		A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_gamma.c; sourceTree = "<group>"; };
+		A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_glimp.c; sourceTree = "<group>"; };
+		A1E0ECF0236A9F51003F22FB /* sdl_snd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_snd.c; sourceTree = "<group>"; };
+		A1E0ECF1236A9F51003F22FB /* sdl_input.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_input.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -814,6 +822,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E0ECEB236A9BB7003F22FB /* libSDL2.a in Frameworks */,
 				A196B73A2117F0610031CEB8 /* CocoaAsyncSocket.framework in Frameworks */,
 				A1565FF2210A0F4900FA9BC9 /* libcrypto.a in Frameworks */,
 				A1565FF3210A0F4900FA9BC9 /* libnghttp2_tvOS.a in Frameworks */,
@@ -832,8 +841,10 @@
 			files = (
 				A1565FEB210A0E6F00FA9BC9 /* libnghttp2_iOS.a in Frameworks */,
 				A196B7402117F18D0031CEB8 /* FontAwesome.framework in Frameworks */,
+				A1E8B31B2370E6CE005C6CA8 /* AVFoundation.framework in Frameworks */,
 				A1565FE8210A0E4A00FA9BC9 /* libssl.a in Frameworks */,
 				A196B6F12117ECCD0031CEB8 /* CocoaAsyncSocket.framework in Frameworks */,
+				A1E0ECEA236A9B9C003F22FB /* libSDL2.a in Frameworks */,
 				A1565FE9210A0E4A00FA9BC9 /* libcrypto.a in Frameworks */,
 				A1565FE4210A0DEF00FA9BC9 /* libcurl_iOS.a in Frameworks */,
 				A196B7012117EF3F0031CEB8 /* AudioToolbox.framework in Frameworks */,
@@ -904,6 +915,7 @@
 				A179C2912101472E00D3C611 /* qcommon */,
 				A179C0B92101471000D3C611 /* renderercommon */,
 				A179C0952101471000D3C611 /* renderergl1 */,
+				A1E0ECEC236A9F51003F22FB /* sdl */,
 				A179C0E92101471000D3C611 /* server */,
 				A179C1BA2101472C00D3C611 /* sys */,
 			);
@@ -1391,6 +1403,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A1E0ECEC236A9F51003F22FB /* sdl */ = {
+			isa = PBXGroup;
+			children = (
+				A1E0ECED236A9F51003F22FB /* sdl_icon.h */,
+				A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */,
+				A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */,
+				A1E0ECF0236A9F51003F22FB /* sdl_snd.c */,
+				A1E0ECF1236A9F51003F22FB /* sdl_input.c */,
+			);
+			path = sdl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1606,7 +1630,6 @@
 				A196B7182117F0420031CEB8 /* Q3Operation.swift in Sources */,
 				A1565F642109F30E00FA9BC9 /* jmemnobs.c in Sources */,
 				A1565F652109F30E00FA9BC9 /* jcmaster.c in Sources */,
-				A1565F662109F30E00FA9BC9 /* ios_input.m in Sources */,
 				A196B7172117F0420031CEB8 /* Q3Parser.swift in Sources */,
 				A1565F672109F30E00FA9BC9 /* jdarith.c in Sources */,
 				A1565F682109F30E00FA9BC9 /* jctrans.c in Sources */,
@@ -1641,6 +1664,7 @@
 				A1565F822109F30E00FA9BC9 /* jdcoefct.c in Sources */,
 				A1565F832109F30E00FA9BC9 /* jdpostct.c in Sources */,
 				A1565F842109F30E00FA9BC9 /* ios_glimp.m in Sources */,
+				A1E0ECF9236A9F51003F22FB /* sdl_input.c in Sources */,
 				A1565F852109F30E00FA9BC9 /* tr_surface.c in Sources */,
 				A1565F862109F30E00FA9BC9 /* be_ai_char.c in Sources */,
 				A1565F872109F30E00FA9BC9 /* l_crc.c in Sources */,
@@ -1655,7 +1679,6 @@
 				A1565F902109F30E00FA9BC9 /* msg.c in Sources */,
 				A1565F912109F30E00FA9BC9 /* tr_backend.c in Sources */,
 				A1565F922109F30E00FA9BC9 /* jcprepct.c in Sources */,
-				A1565F932109F30E00FA9BC9 /* ios_snddma.m in Sources */,
 				A17EE1A5211A613E00811AE1 /* ServerInfoViewController.swift in Sources */,
 				A1565F942109F30E00FA9BC9 /* tr_animation.c in Sources */,
 				A1565F952109F30E00FA9BC9 /* cmd.c in Sources */,
@@ -1677,6 +1700,7 @@
 				A1565FA32109F30E00FA9BC9 /* snd_mem.c in Sources */,
 				A1565FA42109F30E00FA9BC9 /* cm_load.c in Sources */,
 				A1565FA52109F30E00FA9BC9 /* cl_parse.c in Sources */,
+				A1E0ECF7236A9F51003F22FB /* sdl_snd.c in Sources */,
 				A1565FA62109F30E00FA9BC9 /* jdmainct.c in Sources */,
 				A1565FA72109F30E00FA9BC9 /* tr_image_jpg.c in Sources */,
 				A1565FA82109F30E00FA9BC9 /* sv_game.c in Sources */,
@@ -1756,6 +1780,7 @@
 				A179C3572101472E00D3C611 /* snd_adpcm.c in Sources */,
 				A179C3192101472E00D3C611 /* jmemmgr.c in Sources */,
 				A196B6AD2115F7C50031CEB8 /* Coordinator.swift in Sources */,
+				A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */,
 				A179C2D92101472E00D3C611 /* be_ai_gen.c in Sources */,
 				A179C31E2101472E00D3C611 /* jctrans.c in Sources */,
 				A196B6BF2115F7C50031CEB8 /* Q3Parser.swift in Sources */,
@@ -1801,7 +1826,6 @@
 				A179C32E2101472E00D3C611 /* tr_world.c in Sources */,
 				A15AA925211B43A400DE867F /* OptionsViewController.swift in Sources */,
 				A179C4A92101472F00D3C611 /* cvar.c in Sources */,
-				A1902E9221029767008823BB /* ios_snddma.m in Sources */,
 				A196B6AF2115F7C50031CEB8 /* ServerController.swift in Sources */,
 				A179C4AC2101472F00D3C611 /* cm_patch.c in Sources */,
 				A179C3092101472E00D3C611 /* jcarith.c in Sources */,
@@ -1816,6 +1840,7 @@
 				A179C2FE2101472E00D3C611 /* jdmarker.c in Sources */,
 				A179C3082101472E00D3C611 /* jmemnobs.c in Sources */,
 				A151039C210B7A890087EA86 /* CoreGraphics+Additions.swift in Sources */,
+				A1E0ECF6236A9F51003F22FB /* sdl_snd.c in Sources */,
 				A196B6CD2115F7C50031CEB8 /* Parsable.swift in Sources */,
 				A196B7432117FFA30031CEB8 /* ServerFilterViewController.swift in Sources */,
 				A179C3072101472E00D3C611 /* jchuff.c in Sources */,
@@ -1861,7 +1886,6 @@
 				A179C2E22101472E00D3C611 /* be_aas_bspq3.c in Sources */,
 				A179C3302101472E00D3C611 /* tr_init.c in Sources */,
 				A179C3442101472E00D3C611 /* tr_image_png.c in Sources */,
-				A1902E9421029767008823BB /* ios_input.m in Sources */,
 				A196B6BD2115F7C50031CEB8 /* Q3Player.swift in Sources */,
 				A179C3202101472E00D3C611 /* jcinit.c in Sources */,
 				A179C33B2101472E00D3C611 /* tr_shader.c in Sources */,
@@ -1984,10 +2008,6 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
-					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
-				);
 				INFOPLIST_FILE = "Quake3-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2028,10 +2048,6 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
-					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
-				);
 				INFOPLIST_FILE = "Quake3-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2099,6 +2115,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
+					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
+					"$(PROJECT_DIR)/SDL/SDL2/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2153,6 +2174,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
+					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
+					"$(PROJECT_DIR)/SDL/SDL2/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -2185,10 +2211,6 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
-					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
-				);
 				INFOPLIST_FILE = "Quake3-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2230,10 +2252,6 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
-					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
-				);
 				INFOPLIST_FILE = "Quake3-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

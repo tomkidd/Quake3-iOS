@@ -388,7 +388,7 @@ void Com_Quit_f( void ) {
 		Com_Shutdown ();
 		FS_Shutdown(qtrue);
 	}
-    Sys_Quit();
+	Sys_Quit ();
 }
 
 

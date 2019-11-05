@@ -32,14 +32,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include <errno.h>
 
 #ifndef DEDICATED
-#ifndef IOS
 #ifdef USE_LOCAL_HEADERS
 #	include "SDL.h"
 #	include "SDL_cpuinfo.h"
 #else
 #	include <SDL.h>
 #	include <SDL_cpuinfo.h>
-#endif
 #endif
 #endif
 
@@ -115,13 +113,11 @@ Restart the input subsystem
 void Sys_In_Restart_f( void )
 {
 #ifndef DEDICATED
-#ifndef IOS
 	if( !SDL_WasInit( SDL_INIT_VIDEO ) )
 	{
 		Com_Printf( "in_restart: Cannot restart input while video is shutdown\n" );
 		return;
 	}
-#endif
 #endif
 
 	IN_Restart( );
@@ -147,9 +143,7 @@ Sys_GetClipboardData
 char *Sys_GetClipboardData(void)
 {
 #ifdef DEDICATED
-    return NULL;
-#elif IOS
-    return NULL;
+	return NULL;
 #else
 	char *data = NULL;
 	char *cliptext;
@@ -292,9 +286,7 @@ static __attribute__ ((noreturn)) void Sys_Exit( int exitCode )
 	CON_Shutdown( );
 
 #ifndef DEDICATED
-#ifndef IOS
 	SDL_Quit( );
-#endif
 #endif
 
 	if( exitCode < 2 && com_fullyInitialized )
@@ -330,14 +322,12 @@ cpuFeatures_t Sys_GetProcessorFeatures( void )
 	cpuFeatures_t features = 0;
 
 #ifndef DEDICATED
-#ifndef IOS
 	if( SDL_HasRDTSC( ) )      features |= CF_RDTSC;
 	if( SDL_Has3DNow( ) )      features |= CF_3DNOW;
 	if( SDL_HasMMX( ) )        features |= CF_MMX;
 	if( SDL_HasSSE( ) )        features |= CF_SSE;
 	if( SDL_HasSSE2( ) )       features |= CF_SSE2;
 	if( SDL_HasAltiVec( ) )    features |= CF_ALTIVEC;
-#endif
 #endif
 
 	return features;
@@ -753,8 +743,7 @@ int main( int argc, char **argv )
 	Sys_LaunchAutoupdater(argc, argv);
     
 #endif
-
-#if !defined(DEDICATED) && !defined(IOS)
+#ifndef DEDICATED
 	// SDL version check
 
 	// Compile time
