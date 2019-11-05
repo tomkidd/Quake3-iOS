@@ -71,7 +71,7 @@ class GameViewController: GLKViewController, GLKViewControllerDelegate {
         view.bindDrawable()
         self.preferredFramesPerSecond = 60
         
-        (UIApplication.shared.delegate as! AppDelegate).gameViewController = self
+        (UIApplication.shared.delegate as! AppDelegate).gameViewControllerView = self.view
         
         
         var size = view.layer.bounds.size;

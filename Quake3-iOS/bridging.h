@@ -13,6 +13,7 @@
 #include "q_shared.h"
 #include "keycodes.h"
 #include "client.h"
+#import "AppDelegate.h"
 
 void Sys_Startup( int argc, char **argv );
 

@@ -13,6 +13,7 @@
 #import "Quake3_iOS-Swift.h"
 #endif
 
+#import "AppDelegate.h"
 
 //#import "Q3Application.h"
 
@@ -28,7 +29,8 @@ void Sys_UnloadGame() {
 	                                                 waitUntilDone:YES];
 #else
 //    [(Q3Application *)[Q3Application sharedApplication] unloadGame];
-    [(AppDelegate *)UIApplication.sharedApplication.delegate unloadGame];
+    // Removing for now -tkidd
+    //[(AppDelegate *)UIApplication.sharedApplication.delegate unloadGame];
 #endif // IOS_USE_THREADS
 }
 
@@ -48,7 +50,8 @@ void Sys_Error(const char *error, ...) {
 	                                                 waitUntilDone:YES];
 #else
 //    [(Q3Application *)[Q3Application sharedApplication] presentErrorMessage : errorString];
-    [(AppDelegate *)UIApplication.sharedApplication.delegate presentErrorMessageWithErrorMessage: errorString];
+    // Removing for now -tkidd
+    //[(AppDelegate *)UIApplication.sharedApplication.delegate presentErrorMessageWithErrorMessage: errorString];
 
 #endif // IOS_USE_THREADS
     
@@ -70,7 +73,8 @@ void Sys_Warn(const char *warning, ...) {
 	                                                    withObject:warningString waitUntilDone:YES];
 #else
 //    [(Q3Application *)[Q3Application sharedApplication] presentWarningMessage : warningString];
-    [(AppDelegate *)UIApplication.sharedApplication.delegate presentWarningMessageWithWarningMessage: warningString];
+    // Removing for now -tkidd
+    //[(AppDelegate *)UIApplication.sharedApplication.delegate presentWarningMessageWithWarningMessage: warningString];
 #endif // IOS_USE_THREADS
 }
 

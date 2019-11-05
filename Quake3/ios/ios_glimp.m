@@ -14,6 +14,7 @@
 #pragma clang diagnostic ignored "-Weverything"
 #include "../renderergl1/tr_local.h"
 #pragma clang diagnostic pop
+#include "AppDelegate.h"
 
 //#import "Q3Application.h"
 //#import "Q3ScreenView.h"
@@ -252,7 +253,7 @@ void GLimp_Init(qboolean fixedFunction) {
 //    if(application.tvOut) {
     AppDelegate *appDelegate = (AppDelegate *)(UIApplication.sharedApplication.delegate);
     
-    _screenView = (GLKView *)[[appDelegate gameViewController] view];
+    _screenView = (GLKView *)[appDelegate gameViewControllerView];
 //    } else {
 //        _screenView = application.screenViewController.screenView;
 //    }
