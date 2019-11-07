@@ -811,13 +811,13 @@ int main( int argc, char **argv )
 	signal( SIGTERM, Sys_SigHandler );
 	signal( SIGINT, Sys_SigHandler );
 
-#ifndef IOS // Need to add IN_Frame to IOS loop
+//#ifndef IOS // Need to add IN_Frame to IOS loop
 	while( 1 )
 	{
 		Com_Frame( );
 	}
 
-	return 0;
-#endif
+//	return 0;
+//#endif
 }
 

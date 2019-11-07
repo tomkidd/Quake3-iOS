@@ -84,7 +84,8 @@ class GameViewController: UIViewController {
         
         Sys_SetHomeDir(documentsDir)
         
-        in_strafe.active = qtrue
+        // Come back to this later -tkidd
+        //in_strafe.active = qtrue
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
 

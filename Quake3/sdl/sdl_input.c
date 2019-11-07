@@ -348,7 +348,7 @@ static void IN_ActivateMouse( qboolean isFullscreen )
 
 	if( !mouseActive )
 	{
-		SDL_SetRelativeMouseMode( SDL_TRUE );
+//		SDL_SetRelativeMouseMode( SDL_TRUE );
 		SDL_SetWindowGrab( SDL_window, SDL_TRUE );
 
 		IN_GobbleMotionEvents( );

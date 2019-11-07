@@ -33,15 +33,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #    include <SDL_opengles.h>
 #endif
 
+#include "../ios/ios_glimp.h"
+
 typedef double        GLclampd;    /* double precision float in [0,1] */
 typedef double        GLdouble;    /* double precision float */
 
-enum {
-    IOS_QUADS = 0x10000,
-    GL_BACK_LEFT_DONT_USE=0x0402,
-    GL_BACK_RIGHT_DONT_USE=0x0403,
-    IOS_POLYGON
-};
+//enum {
+//    IOS_QUADS = 0x10000,
+//    GL_BACK_LEFT_DONT_USE=0x0402,
+//    GL_BACK_RIGHT_DONT_USE=0x0403,
+//    IOS_POLYGON
+//};
 
 #undef GL_QUADS
 #define GL_QUADS                IOS_QUADS
@@ -215,7 +217,7 @@ extern void (APIENTRYP qglUnlockArraysEXT) (void);
 
 // OpenGL ES 1.1 and OpenGL ES 2.0 but not desktop OpenGL 1.x
 #define QGL_ES_1_1_PROCS \
-	GLE(void, ClearDepthf, GLclampf depth) \
+//	GLE(void, ClearDepthf, GLclampf depth) \
 	GLE(void, DepthRangef, GLclampf near_val, GLclampf far_val) \
 
 // OpenGL ES 1.1 but not OpenGL ES 2.0 or desktop OpenGL 1.x

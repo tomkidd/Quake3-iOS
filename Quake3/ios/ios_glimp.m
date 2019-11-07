@@ -21,11 +21,11 @@
 //#import "Q3Application.h"
 //#import "Q3ScreenView.h"
 //#import "BebenTvViewController.h"
-#if TARGET_OS_TV
-#import "Quake3_tvOS-Swift.h"
-#else
-#import "Quake3_iOS-Swift.h"
-#endif
+//#if TARGET_OS_TV
+//#import "Quake3_tvOS-Swift.h"
+//#else
+//#import "Quake3_iOS-Swift.h"
+//#endif
 #define MAX_ARRAY_SIZE      1024
 
 //static Q3ScreenView *_screenView;
@@ -86,58 +86,58 @@ void QGLCheckError(const char *message) {
 
 #endif // NDEBUG
 
-void qglBegin(GLenum mode) {
-	assert(!QGLBeginStarted);
-	QGLBeginStarted = qtrue;
-	_GLimp_beginmode = mode;
-	_GLimp_numInputVerts = _GLimp_numOutputVerts = 0;
-	_GLimp_texcoordbuffer = qfalse;
-	_GLimp_colorbuffer = qfalse;
-}
+//void qglBegin(GLenum mode) {
+//	assert(!QGLBeginStarted);
+//	QGLBeginStarted = qtrue;
+//	_GLimp_beginmode = mode;
+//	_GLimp_numInputVerts = _GLimp_numOutputVerts = 0;
+//	_GLimp_texcoordbuffer = qfalse;
+//	_GLimp_colorbuffer = qfalse;
+//}
 
-void qglDrawBuffer(GLenum mode) {
-	if (mode != GL_BACK)
-		UNIMPL();
-}
+//void qglDrawBuffer(GLenum mode) {
+//	if (mode != GL_BACK)
+//		UNIMPL();
+//}
+//
+//void qglEnd(void) {
+//	GLenum mode;
+//
+//	assert(QGLBeginStarted);
+//	QGLBeginStarted = qfalse;
+//
+//	if (_GLimp_texcoordbuffer) {
+//		qglTexCoordPointer(2, GL_FLOAT, sizeof(_GLimp_texcoords[0]), _GLimp_texcoords);
+//		qglEnableClientState(GL_TEXTURE_COORD_ARRAY);
+//	}
+//	else
+//		qglDisableClientState(GL_TEXTURE_COORD_ARRAY);
+//
+//	if (_GLimp_colorbuffer) {
+//		qglColorPointer(4, GL_FLOAT, sizeof(_GLimp_colors[0]), _GLimp_colors);
+//		qglEnableClientState(GL_COLOR_ARRAY);
+//	}
+//	else
+//		qglDisableClientState(GL_COLOR_ARRAY);
+//
+//	qglVertexPointer(3, GL_FLOAT, sizeof(_GLimp_vertexes[0]), _GLimp_vertexes);
+//	qglEnableClientState(GL_VERTEX_ARRAY);
+//
+//	if (_GLimp_beginmode == IOS_QUADS)
+//		mode = GL_TRIANGLES;
+//	else if (_GLimp_beginmode == IOS_POLYGON)
+//		assert(0);
+//	else
+//		mode = _GLimp_beginmode;
+//
+//	qglDrawArrays(mode, 0, _GLimp_numOutputVerts);
+//}
 
-void qglEnd(void) {
-	GLenum mode;
-	
-	assert(QGLBeginStarted);
-	QGLBeginStarted = qfalse;
-	
-	if (_GLimp_texcoordbuffer) {
-		qglTexCoordPointer(2, GL_FLOAT, sizeof(_GLimp_texcoords[0]), _GLimp_texcoords);
-		qglEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	}
-	else
-		qglDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-	if (_GLimp_colorbuffer) {
-		qglColorPointer(4, GL_FLOAT, sizeof(_GLimp_colors[0]), _GLimp_colors);
-		qglEnableClientState(GL_COLOR_ARRAY);
-	}
-	else
-		qglDisableClientState(GL_COLOR_ARRAY);
-	
-	qglVertexPointer(3, GL_FLOAT, sizeof(_GLimp_vertexes[0]), _GLimp_vertexes);
-	qglEnableClientState(GL_VERTEX_ARRAY);
-	
-	if (_GLimp_beginmode == IOS_QUADS)
-		mode = GL_TRIANGLES;
-	else if (_GLimp_beginmode == IOS_POLYGON)
-		assert(0);
-	else
-		mode = _GLimp_beginmode;
-	
-	qglDrawArrays(mode, 0, _GLimp_numOutputVerts);
-}
-
-void qglColor4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a) {
-	GLfloat v[4] = { r, g, b, a };
-	
-	qglColor4fv(v);
-}
+//void qglColor4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a) {
+//	GLfloat v[4] = { r, g, b, a };
+//
+//	qglColor4fv(v);
+//}
 
 void qglColor4fv(GLfloat *v) {
 	if (QGLBeginStarted) {
@@ -153,56 +153,56 @@ void qglColor4fv(GLfloat *v) {
 	}
 }
 
-void qglTexCoord2f(GLfloat s, GLfloat t) {
-	GLfloat v[2] = { s, t };
-	
-	qglTexCoord2fv(v);
-}
-
-void qglTexCoord2fv(GLfloat *v) {
-	assert(_GLimp_numOutputVerts < MAX_ARRAY_SIZE);
-	bcopy(v, _GLimp_texcoords[_GLimp_numOutputVerts], sizeof(_GLimp_texcoords[0]));
-	_GLimp_texcoordbuffer = qtrue;
-}
-
-void qglVertex3f(GLfloat x, GLfloat y, GLfloat z) {
-	GLfloat v[3] = { x, y, z };
-	
-	qglVertex3fv(v);
-}
-
-void qglVertex3fv(GLfloat *v) {
-	assert(_GLimp_numOutputVerts < MAX_ARRAY_SIZE);
-	bcopy(v, _GLimp_vertexes[_GLimp_numOutputVerts++], sizeof(_GLimp_vertexes[0]));
-	++_GLimp_numInputVerts;
-	
-	if (_GLimp_beginmode == IOS_QUADS && _GLimp_numInputVerts % 4 == 0) {
-		assert(_GLimp_numOutputVerts < MAX_ARRAY_SIZE - 2);
-		bcopy(_GLimp_vertexes[_GLimp_numOutputVerts - 4],
-		      _GLimp_vertexes[_GLimp_numOutputVerts],
-		      sizeof(_GLimp_vertexes[0]));
-		bcopy(_GLimp_texcoords[_GLimp_numOutputVerts - 4],
-		      _GLimp_texcoords[_GLimp_numOutputVerts],
-		      sizeof(_GLimp_texcoords[0]));
-		bcopy(_GLimp_vertexes[_GLimp_numOutputVerts - 2],
-		      _GLimp_vertexes[_GLimp_numOutputVerts + 1],
-		      sizeof(_GLimp_vertexes[0]));
-		bcopy(_GLimp_texcoords[_GLimp_numOutputVerts - 2],
-		      _GLimp_texcoords[_GLimp_numOutputVerts + 1],
-		      sizeof(_GLimp_texcoords[0]));
-		_GLimp_numOutputVerts += 2;
-	}
-	else if (_GLimp_beginmode == IOS_POLYGON)
-		assert(0);
-}
+//void qglTexCoord2f(GLfloat s, GLfloat t) {
+//	GLfloat v[2] = { s, t };
+//
+//	qglTexCoord2fv(v);
+//}
+//
+//void qglTexCoord2fv(GLfloat *v) {
+//	assert(_GLimp_numOutputVerts < MAX_ARRAY_SIZE);
+//	bcopy(v, _GLimp_texcoords[_GLimp_numOutputVerts], sizeof(_GLimp_texcoords[0]));
+//	_GLimp_texcoordbuffer = qtrue;
+//}
+//
+//void qglVertex3f(GLfloat x, GLfloat y, GLfloat z) {
+//	GLfloat v[3] = { x, y, z };
+//
+//	qglVertex3fv(v);
+//}
+//
+//void qglVertex3fv(GLfloat *v) {
+//	assert(_GLimp_numOutputVerts < MAX_ARRAY_SIZE);
+//	bcopy(v, _GLimp_vertexes[_GLimp_numOutputVerts++], sizeof(_GLimp_vertexes[0]));
+//	++_GLimp_numInputVerts;
+//
+//	if (_GLimp_beginmode == IOS_QUADS && _GLimp_numInputVerts % 4 == 0) {
+//		assert(_GLimp_numOutputVerts < MAX_ARRAY_SIZE - 2);
+//		bcopy(_GLimp_vertexes[_GLimp_numOutputVerts - 4],
+//		      _GLimp_vertexes[_GLimp_numOutputVerts],
+//		      sizeof(_GLimp_vertexes[0]));
+//		bcopy(_GLimp_texcoords[_GLimp_numOutputVerts - 4],
+//		      _GLimp_texcoords[_GLimp_numOutputVerts],
+//		      sizeof(_GLimp_texcoords[0]));
+//		bcopy(_GLimp_vertexes[_GLimp_numOutputVerts - 2],
+//		      _GLimp_vertexes[_GLimp_numOutputVerts + 1],
+//		      sizeof(_GLimp_vertexes[0]));
+//		bcopy(_GLimp_texcoords[_GLimp_numOutputVerts - 2],
+//		      _GLimp_texcoords[_GLimp_numOutputVerts + 1],
+//		      sizeof(_GLimp_texcoords[0]));
+//		_GLimp_numOutputVerts += 2;
+//	}
+//	else if (_GLimp_beginmode == IOS_POLYGON)
+//		assert(0);
+//}
 
 void qglCallList(GLuint list) {
 	UNIMPL();
 }
 
-void GLimp_SetGamma(unsigned char red[256], unsigned char green[256], unsigned char blue[256]) {
-	UNIMPL();
-}
+//void GLimp_SetGamma(unsigned char red[256], unsigned char green[256], unsigned char blue[256]) {
+//	UNIMPL();
+//}
 
 void GLimp_SetMode(float rotation) {
 	rotation = 0;
@@ -247,49 +247,49 @@ void GLimp_SetMode(float rotation) {
 	}
 }
 
-void GLimp_Init(qboolean fixedFunction) {
-    vid_displayrefreshrate = Cvar_Get("vid_displayrefreshrate", "-1", CVAR_ARCHIVE);
+//void GLimp_Init(qboolean fixedFunction) {
+//    vid_displayrefreshrate = Cvar_Get("vid_displayrefreshrate", "-1", CVAR_ARCHIVE);
+//
+//    if (!SDL_WasInit(SDL_INIT_VIDEO))
+//    {
+//        if (SDL_Init(SDL_INIT_VIDEO) == -1)
+//        {
+//            Com_Printf("Couldn't init SDL video: %s.\n", SDL_GetError());
+//            return;
+//        }
+//
+//        SDL_version version;
+//
+//        SDL_GetVersion(&version);
+//        Com_Printf("SDL version is: %i.%i.%i\n", (int)version.major, (int)version.minor, (int)version.patch);
+//        Com_Printf("SDL video driver is \"%s\".\n", SDL_GetCurrentVideoDriver());
+//    }
+//}
 
-    if (!SDL_WasInit(SDL_INIT_VIDEO))
-    {
-        if (SDL_Init(SDL_INIT_VIDEO) == -1)
-        {
-            Com_Printf("Couldn't init SDL video: %s.\n", SDL_GetError());
-            return;
-        }
+//void GLimp_LogComment(char *comment) {
+//}
 
-        SDL_version version;
+//void GLimp_EndFrame(void) {
+//    // unknown whether or not this is necessary anymore -tkidd
+////    Q3Application *application = (Q3Application *)[Q3Application sharedApplication];
+////    if([application isRunning])
+////        [_screenView swapBuffers];
+//}
 
-        SDL_GetVersion(&version);
-        Com_Printf("SDL version is: %i.%i.%i\n", (int)version.major, (int)version.minor, (int)version.patch);
-        Com_Printf("SDL video driver is \"%s\".\n", SDL_GetCurrentVideoDriver());
-    }
-}
+//void GLimp_Shutdown(void) {
+//}
 
-void GLimp_LogComment(char *comment) {
-}
+//void qglLockArraysEXT(GLint i, GLint size) {
+//	//UNIMPL();
+//}
+//
+//void qglUnlockArraysEXT(void) {
+//	//UNIMPL();
+//}
+//
+//void qglArrayElement(GLint i) {
+//	UNIMPL();
+//}
 
-void GLimp_EndFrame(void) {
-    // unknown whether or not this is necessary anymore -tkidd
-//    Q3Application *application = (Q3Application *)[Q3Application sharedApplication];
-//    if([application isRunning])
-//        [_screenView swapBuffers];
-}
-
-void GLimp_Shutdown(void) {
-}
-
-void qglLockArraysEXT(GLint i, GLint size) {
-	//UNIMPL();
-}
-
-void qglUnlockArraysEXT(void) {
-	//UNIMPL();
-}
-
-void qglArrayElement(GLint i) {
-	UNIMPL();
-}
-
-void        GLimp_Minimize( void ) {
-}
+//void        GLimp_Minimize( void ) {
+//}

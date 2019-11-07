@@ -10,9 +10,9 @@
 #include <OpenGLES/ES1/gl.h>
 #include <OpenGLES/ES3/gl.h>
 
-extern void qglArrayElement(GLint i);
-extern void qglLockArraysEXT(GLint i, GLint size);
-extern void qglUnlockArraysEXT(void);
+//extern void qglArrayElement(GLint i);
+//extern void qglLockArraysEXT(GLint i, GLint size);
+//extern void qglUnlockArraysEXT(void);
 
 enum {
 	IOS_QUADS = 0x10000,
@@ -72,27 +72,40 @@ enum {
 #define GL_SLUMINANCE8_EXT                0x8C47 //ok
 #define GL_TEXTURE_MAX_ANISOTROPY_EXT     0x84FE
 
-void qglBegin(GLenum mode);
-void qglDrawBuffer(GLenum mode);
-void qglEnd(void);
+//void qglBegin(GLenum mode);
+//void qglDrawBuffer(GLenum mode);
+//void qglEnd(void);
 
-#define qglOrtho qglOrthof
+//#define qglOrtho qglOrthof
 #define qglPolygonMode(f, m)
-void qglTexCoord2f(GLfloat s, GLfloat t);
+//void qglTexCoord2f(GLfloat s, GLfloat t);
 
 #define qglVertex2f(x, y)   qglVertex3f(x, y, 0.0)
-void qglVertex3f(GLfloat x, GLfloat y, GLfloat z);
-void qglVertex3fv(GLfloat *v);
+//void qglVertex3f(GLfloat x, GLfloat y, GLfloat z);
+//void qglVertex3fv(GLfloat *v);
 
-#define qglClipPlane qglClipPlanef
+//#define qglClipPlane qglClipPlanef
 #define qglColor3f(r, g, b) qglColor4f(r, g, b, 1.0f)
-void qglColor4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a);
+//void qglColor4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a);
 void qglColor4fv(GLfloat *v);
 
-#define qglDepthRange qglDepthRangef
-#define qglClearDepth qglClearDepthf
+//#define qglDepthRange qglDepthRangef
+
+static inline void qglClearDepthf(GLclampf depth) {
+#if !defined(NDEBUG) && defined(QGL_LOG_GL_CALLS)
+    if (QGLLogGLCalls)
+        fprintf(QGLDebugFile(), "glClearDepthf(depth=%f)\n", depth);
+#endif
+    glClearDepthf(depth);
+#if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
+    if (!QGLBeginStarted)
+        QGLCheckError("glClearDepthf");
+#endif
+}
+
+//#define qglClearDepth qglClearDepthf
 #define qglColor4ubv(v)     qglColor4f(v[0] / 255.0, v[1] / 255.0, v[2] / 255.0, v[3] / 255.0)
-void qglTexCoord2fv(GLfloat *v);
+//void qglTexCoord2fv(GLfloat *v);
 //void qglCallList(GLuint list);
 
 //void GLimp_MakeCurrent(void);
