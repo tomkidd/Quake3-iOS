@@ -14,6 +14,7 @@
 #include "keycodes.h"
 #include "client.h"
 #import "AppDelegate.h"
+#include "SDL_uikitviewcontroller.h"
 
 void Sys_Startup( int argc, char **argv );
 

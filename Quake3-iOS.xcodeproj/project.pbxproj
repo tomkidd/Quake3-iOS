@@ -107,7 +107,6 @@
 		A1565F812109F30E00FA9BC9 /* q_math.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C29C2101472E00D3C611 /* q_math.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F822109F30E00FA9BC9 /* jdcoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0912101470F00D3C611 /* jdcoefct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F832109F30E00FA9BC9 /* jdpostct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0942101470F00D3C611 /* jdpostct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F842109F30E00FA9BC9 /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F852109F30E00FA9BC9 /* tr_surface.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09A2101471000D3C611 /* tr_surface.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F862109F30E00FA9BC9 /* be_ai_char.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C03E2101470F00D3C611 /* be_ai_char.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F872109F30E00FA9BC9 /* l_crc.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0432101470F00D3C611 /* l_crc.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -369,7 +368,7 @@
 		A17EE1AA211A62BB00811AE1 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7372117F0610031CEB8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A17EE1AF211A630600811AE1 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; };
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A1902E9521029767008823BB /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; };
+		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
 		A1902E992103F323008823BB /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A1902F592108B4E4008823BB /* MFiGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F582108B4E4008823BB /* MFiGameController.swift */; };
@@ -440,6 +439,8 @@
 		A1E8B31F23712A37005C6CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B31D23712A37005C6CA8 /* AppDelegate.m */; };
 		A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; };
 		A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; };
+		A1E8B32C2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; };
+		A1E8B32D2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -759,6 +760,7 @@
 		A179C2B72101472E00D3C611 /* puff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = puff.c; sourceTree = "<group>"; };
 		A179C2B92101472E00D3C611 /* cm_polylib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cm_polylib.h; sourceTree = "<group>"; };
 		A179C2BB2101472E00D3C611 /* cm_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cm_patch.c; sourceTree = "<group>"; };
+		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
 		A1902E8821028F97008823BB /* qgl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qgl.h; sourceTree = "<group>"; };
 		A1902E8A21029766008823BB /* ios_snddma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_snddma.m; sourceTree = "<group>"; };
 		A1902E8B21029767008823BB /* ios_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_main.m; sourceTree = "<group>"; };
@@ -899,6 +901,7 @@
 				A15AA929211B470200DE867F /* MainMenuViewController.swift */,
 				A1902F582108B4E4008823BB /* MFiGameController.swift */,
 				A15AA924211B43A400DE867F /* OptionsViewController.swift */,
+				A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */,
 				A196B68A2115F7A10031CEB8 /* ServerBrowser */,
 				A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */,
 				A196B7422117FFA30031CEB8 /* ServerFilterViewController.swift */,
@@ -1557,6 +1560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1565F232109F30E00FA9BC9 /* cvar.c in Sources */,
+				A1E8B32D2372856F005C6CA8 /* sdl_gamma.c in Sources */,
 				A1565F242109F30E00FA9BC9 /* md4.c in Sources */,
 				A1565F252109F30E00FA9BC9 /* vm.c in Sources */,
 				A1565F262109F30E00FA9BC9 /* jdmerge.c in Sources */,
@@ -1671,7 +1675,6 @@
 				A1565F812109F30E00FA9BC9 /* q_math.c in Sources */,
 				A1565F822109F30E00FA9BC9 /* jdcoefct.c in Sources */,
 				A1565F832109F30E00FA9BC9 /* jdpostct.c in Sources */,
-				A1565F842109F30E00FA9BC9 /* ios_glimp.m in Sources */,
 				A1E0ECF9236A9F51003F22FB /* sdl_input.c in Sources */,
 				A1565F852109F30E00FA9BC9 /* tr_surface.c in Sources */,
 				A1565F862109F30E00FA9BC9 /* be_ai_char.c in Sources */,
@@ -1770,10 +1773,10 @@
 				A179C3372101472E00D3C611 /* tr_mesh.c in Sources */,
 				A179C2EF2101472E00D3C611 /* be_ai_weight.c in Sources */,
 				A179C4A32101472F00D3C611 /* cmd.c in Sources */,
-				A1902E9521029767008823BB /* ios_glimp.m in Sources */,
 				A179C3582101472E00D3C611 /* cl_console.c in Sources */,
 				A179C3562101472E00D3C611 /* cl_main.c in Sources */,
 				A179C3222101472E00D3C611 /* jdcoefct.c in Sources */,
+				A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */,
 				A179C3152101472E00D3C611 /* jdarith.c in Sources */,
 				A179C49D2101472F00D3C611 /* vm.c in Sources */,
 				A179C2E02101472E00D3C611 /* be_aas_routealt.c in Sources */,
@@ -1788,6 +1791,7 @@
 				A179C49A2101472F00D3C611 /* net_ip.c in Sources */,
 				A179C3572101472E00D3C611 /* snd_adpcm.c in Sources */,
 				A179C3192101472E00D3C611 /* jmemmgr.c in Sources */,
+				A1E8B32C2372856F005C6CA8 /* sdl_gamma.c in Sources */,
 				A196B6AD2115F7C50031CEB8 /* Coordinator.swift in Sources */,
 				A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */,
 				A179C2D92101472E00D3C611 /* be_ai_gen.c in Sources */,
@@ -2128,7 +2132,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
 					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
-					"$(PROJECT_DIR)/SDL/SDL2/**",
+					"$(PROJECT_DIR)/SDL/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -2187,7 +2191,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Quake3/curl-7.54.0/include/",
 					"$(PROJECT_DIR)/Quake3/jpeg-8c/",
-					"$(PROJECT_DIR)/SDL/SDL2/**",
+					"$(PROJECT_DIR)/SDL/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;

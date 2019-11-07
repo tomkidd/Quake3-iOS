@@ -38,6 +38,7 @@ GLimp_SetGamma
 */
 void GLimp_SetGamma( unsigned char red[256], unsigned char green[256], unsigned char blue[256] )
 {
+#ifndef IOS
 	Uint16 table[3][256];
 	int i, j;
 
@@ -92,5 +93,6 @@ void GLimp_SetGamma( unsigned char red[256], unsigned char green[256], unsigned 
 	{
 		ri.Printf( PRINT_DEVELOPER, "SDL_SetWindowGammaRamp() failed: %s\n", SDL_GetError() );
 	}
+#endif
 }
 

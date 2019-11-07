@@ -32,6 +32,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "../renderercommon/iqm.h"
 #include "../renderercommon/qgl.h"
 
+
+#ifdef IOS
+#define GL_INDEX_TYPE           GL_UNSIGNED_SHORT
+typedef unsigned short glIndex_t;
+#else
+#define GL_INDEX_TYPE        GL_UNSIGNED_INT
+typedef unsigned int glIndex_t;
+#endif // IOS
+
+
 #define GLE(ret, name, ...) extern name##proc * qgl##name;
 QGL_1_1_PROCS;
 QGL_1_1_FIXED_FUNCTION_PROCS;
@@ -39,14 +49,6 @@ QGL_DESKTOP_1_1_PROCS;
 QGL_DESKTOP_1_1_FIXED_FUNCTION_PROCS;
 QGL_3_0_PROCS;
 #undef GLE
-
-#ifdef IOS
-#define GL_INDEX_TYPE           GL_UNSIGNED_SHORT
-typedef unsigned short glIndex_t;
-#else
-#define GL_INDEX_TYPE		GL_UNSIGNED_INT
-typedef unsigned int glIndex_t;
-#endif // IOS
 
 // 14 bits
 // can't be increased without changing bit packing for drawsurfs

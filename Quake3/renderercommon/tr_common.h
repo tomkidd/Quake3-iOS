@@ -157,9 +157,9 @@ IMPLEMENTATION SPECIFIC FUNCTIONS
 */
 
 void		GLimp_Init( qboolean fixedFunction );
-#ifdef IOS
-void            GLimp_SetMode(float rotation);
-#endif // IOS
+//#ifdef IOS
+//void            GLimp_SetMode(float rotation);
+//#endif // IOS
 void		GLimp_Shutdown( void );
 void		GLimp_EndFrame( void );
 
