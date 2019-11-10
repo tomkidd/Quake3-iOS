@@ -703,7 +703,11 @@ void	RB_SetGL2D (void) {
 	qglScissor( 0, 0, glConfig.vidWidth, glConfig.vidHeight );
 	qglMatrixMode(GL_PROJECTION);
     qglLoadIdentity ();
-	qglOrtho (0, glConfig.vidWidth, glConfig.vidHeight, 0, 0, 1);
+#ifdef IOS
+	qglOrthof (0, glConfig.vidWidth, glConfig.vidHeight, 0, 0, 1);
+#else
+    qglOrtho (0, glConfig.vidWidth, glConfig.vidHeight, 0, 0, 1);
+#endif
 	qglMatrixMode(GL_MODELVIEW);
     qglLoadIdentity ();
 
@@ -937,7 +941,9 @@ const void	*RB_DrawBuffer( const void *data ) {
 
 	cmd = (const drawBufferCommand_t *)data;
 
+#ifndef IOS
 	qglDrawBuffer( cmd->buffer );
+#endif
 
 	// clear screen for debugging
 	if ( r_clear->integer ) {

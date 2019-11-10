@@ -832,7 +832,11 @@ const void *RB_TakeVideoFrameCmd( const void *data )
 */
 void GL_SetDefaultState( void )
 {
+#ifdef IOS
+    qglClearDepthf( 1.0f );
+#else
     qglClearDepth( 1.0f );
+#endif
 
 	qglCullFace(GL_FRONT);
 

@@ -91,17 +91,17 @@ void qglColor4fv(GLfloat *v);
 
 //#define qglDepthRange qglDepthRangef
 
-static inline void qglClearDepthf(GLclampf depth) {
-#if !defined(NDEBUG) && defined(QGL_LOG_GL_CALLS)
-    if (QGLLogGLCalls)
-        fprintf(QGLDebugFile(), "glClearDepthf(depth=%f)\n", depth);
-#endif
-    glClearDepthf(depth);
-#if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
-    if (!QGLBeginStarted)
-        QGLCheckError("glClearDepthf");
-#endif
-}
+//static inline void qglClearDepthf(GLclampf depth) {
+//#if !defined(NDEBUG) && defined(QGL_LOG_GL_CALLS)
+//    if (QGLLogGLCalls)
+//        fprintf(QGLDebugFile(), "glClearDepthf(depth=%f)\n", depth);
+//#endif
+//    glClearDepthf(depth);
+//#if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
+//    if (!QGLBeginStarted)
+//        QGLCheckError("glClearDepthf");
+//#endif
+//}
 
 //#define qglClearDepth qglClearDepthf
 #define qglColor4ubv(v)     qglColor4f(v[0] / 255.0, v[1] / 255.0, v[2] / 255.0, v[3] / 255.0)

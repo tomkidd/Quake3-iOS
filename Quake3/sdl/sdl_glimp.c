@@ -288,6 +288,10 @@ static qboolean GLimp_GetProcAddresses( qboolean fixedFunction ) {
 			QGL_1_1_FIXED_FUNCTION_PROCS;
 			QGL_ES_1_1_PROCS;
 			QGL_ES_1_1_FIXED_FUNCTION_PROCS;
+            
+            #undef qglClearDepth
+            #define qglClearDepth(x) qglClearDepthf(x)
+
 			// error so this doesn't segfault due to NULL desktop GL functions being used
 //			Com_Error( ERR_FATAL, "Unsupported OpenGL Version: %s", version );
 		} else {

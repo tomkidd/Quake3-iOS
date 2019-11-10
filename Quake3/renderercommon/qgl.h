@@ -217,7 +217,7 @@ extern void (APIENTRYP qglUnlockArraysEXT) (void);
 
 // OpenGL ES 1.1 and OpenGL ES 2.0 but not desktop OpenGL 1.x
 #define QGL_ES_1_1_PROCS \
-//	GLE(void, ClearDepthf, GLclampf depth) \
+	GLE(void, ClearDepthf, GLclampf depth) \
 	GLE(void, DepthRangef, GLclampf near_val, GLclampf far_val) \
 
 // OpenGL ES 1.1 but not OpenGL ES 2.0 or desktop OpenGL 1.x
