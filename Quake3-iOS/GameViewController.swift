@@ -102,6 +102,33 @@ class GameViewController: UIViewController {
                 argv.append("+connect")
                 argv.append("\(self.selectedServer!.ip):\(self.selectedServer!.port)")
             }
+            
+            // not sure if needed
+            argv.append("+set")
+            argv.append("r_useOpenGLES")
+            argv.append("1")
+            
+            let screenBounds = UIScreen.main.bounds
+            let screenScale:CGFloat = 1//UIScreen.main.scale
+            let screenSize = CGSize(width: screenBounds.size.width * screenScale, height: screenBounds.size.height * screenScale)
+
+            argv.append("+set")
+            argv.append("r_mode")
+            argv.append("-1")
+
+            argv.append("+set")
+            argv.append("r_customwidth")
+            argv.append("\(screenSize.width)")
+
+            argv.append("+set")
+            argv.append("r_customheight")
+            argv.append("\(screenSize.height)")
+
+
+//            CGRect screenBounds = [[UIScreen mainScreen] bounds];
+//            CGFloat screenScale = [[UIScreen mainScreen] scale];
+//            CGSize screenSize = CGSizeMake(screenBounds.size.width * screenScale, screenBounds.size.height * screenScale);
+
 
             argv.append(nil)
             

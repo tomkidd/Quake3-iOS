@@ -1236,7 +1236,9 @@ void IN_Init( void *windowData )
 	in_joystick = Cvar_Get( "in_joystick", "0", CVAR_ARCHIVE|CVAR_LATCH );
 	in_joystickThreshold = Cvar_Get( "joy_threshold", "0.15", CVAR_ARCHIVE );
 
+#ifndef IOS
 	SDL_StartTextInput( );
+#endif
 
 	mouseAvailable = ( in_mouse->value != 0 );
 	IN_DeactivateMouse( Cvar_VariableIntegerValue( "r_fullscreen" ) != 0 );
