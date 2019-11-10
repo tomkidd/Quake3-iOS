@@ -81,6 +81,7 @@ extern qboolean  textureFilterAnisotropic;
 extern int       maxAnisotropy;
 extern float     displayAspect;
 extern qboolean  haveClampToEdge;
+extern qboolean  readFormatAvailable;
 
 //
 // cvars
@@ -157,9 +158,6 @@ IMPLEMENTATION SPECIFIC FUNCTIONS
 */
 
 void		GLimp_Init( qboolean fixedFunction );
-//#ifdef IOS
-//void            GLimp_SetMode(float rotation);
-//#endif // IOS
 void		GLimp_Shutdown( void );
 void		GLimp_EndFrame( void );
 

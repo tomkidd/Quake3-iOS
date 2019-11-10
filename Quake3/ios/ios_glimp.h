@@ -52,24 +52,24 @@ enum {
 #undef GL_UNSIGNED_INT
 #define GL_UNSIGNED_INT         GL_UNSIGNED_INT_DONT_USE
 
-#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT 0x8C4D // ok
-#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT 0x8C4F // ok
-#define GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB 0x8E8D //ok
-#define GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT 0x8C72 //ok
-#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1 //ok
-#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3 //ok
-#define GL_COMPRESSED_RGBA_BPTC_UNORM_ARB 0x8E8C //ok
-#define GL_LUMINANCE8                 0x8040 //ok
-#define GL_RGB5                       0x8050 //ok
-#define GL_LUMINANCE8_ALPHA8           0x8045 //ok
-#define GL_SRGB_EXT                       0x8C40 //ok
-#define GL_SRGB8_EXT                      0x8C41 //ok
-#define GL_SRGB_ALPHA_EXT                 0x8C42 //ok
-#define GL_SRGB8_ALPHA8_EXT               0x8C43 //ok
-#define GL_SLUMINANCE_ALPHA_EXT           0x8C44 //ok
-#define GL_SLUMINANCE8_ALPHA8_EXT         0x8C45 //ok
-#define GL_SLUMINANCE_EXT                 0x8C46 //ok
-#define GL_SLUMINANCE8_EXT                0x8C47 //ok
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT 0x8C4D
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT 0x8C4F
+#define GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB 0x8E8D
+#define GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT 0x8C72
+#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1
+#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3
+#define GL_COMPRESSED_RGBA_BPTC_UNORM_ARB 0x8E8C
+#define GL_LUMINANCE8                 0x8040
+#define GL_RGB5                       0x8050
+#define GL_LUMINANCE8_ALPHA8           0x8045
+#define GL_SRGB_EXT                       0x8C40
+#define GL_SRGB8_EXT                      0x8C41
+#define GL_SRGB_ALPHA_EXT                 0x8C42
+#define GL_SRGB8_ALPHA8_EXT               0x8C43
+#define GL_SLUMINANCE_ALPHA_EXT           0x8C44
+#define GL_SLUMINANCE8_ALPHA8_EXT         0x8C45
+#define GL_SLUMINANCE_EXT                 0x8C46
+#define GL_SLUMINANCE8_EXT                0x8C47
 #define GL_TEXTURE_MAX_ANISOTROPY_EXT     0x84FE
 
 //void qglBegin(GLenum mode);

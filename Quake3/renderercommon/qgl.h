@@ -32,97 +32,50 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #else
 #    include <SDL_opengles.h>
 #endif
-
-#include "../ios/ios_glimp.h"
-
-typedef double        GLclampd;    /* double precision float in [0,1] */
-typedef double        GLdouble;    /* double precision float */
-
-//enum {
-//    IOS_QUADS = 0x10000,
-//    GL_BACK_LEFT_DONT_USE=0x0402,
-//    GL_BACK_RIGHT_DONT_USE=0x0403,
-//    IOS_POLYGON
-//};
-
-#undef GL_QUADS
-#define GL_QUADS                IOS_QUADS
-#undef GL_FILL
-#define GL_FILL                 GL_FILL_DONT_USE
-
-#undef qglPolygonMode
-#define qglPolygonMode(f, m)
-#define GL_NUM_EXTENSIONS 0x821D
-#undef GL_POLYGON
-#define GL_POLYGON              IOS_POLYGON
-#undef GL_DEPTH_COMPONENT
-#define GL_DEPTH_COMPONENT      0 //GL_DEPTH_COMPONENT_DONT_USE
-#undef GL_BACK_LEFT
-#define GL_BACK_LEFT            GL_BACK_LEFT_DONT_USE
-#undef GL_BACK_RIGHT
-#define GL_BACK_RIGHT           GL_BACK_RIGHT_DONT_USE
-#define GL_TEXTURE0_ARB                     0x84C0
-#define GL_TEXTURE1_ARB                     0x84C1
-#define GL_TEXTURE2_ARB                     0x84C2
-#define GL_TEXTURE3_ARB                     0x84C3
-#define GL_RGB8                    0x8051
-#undef GL_CLAMP
-#define GL_CLAMP                GL_CLAMP_TO_EDGE
-#define GL_STENCIL_INDEX8 0x8D48
-#undef GL_STENCIL_INDEX
-#define GL_STENCIL_INDEX        GL_STENCIL_INDEX8
-#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT 0x8C4D // ok
-#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT 0x8C4F // ok
-#define GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB 0x8E8D //ok
-#define GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT 0x8C72 //ok
-#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1 //ok
-#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3 //ok
-#define GL_COMPRESSED_RGBA_BPTC_UNORM_ARB 0x8E8C //ok
-#define GL_LUMINANCE8                 0x8040 //ok
-#define GL_RGB5                       0x8050 //ok
-#define GL_LUMINANCE8_ALPHA8           0x8045 //ok
-#define GL_SRGB_EXT                       0x8C40 //ok
-#define GL_SRGB8_EXT                      0x8C41 //ok
-#define GL_SRGB_ALPHA_EXT                 0x8C42 //ok
-#define GL_SRGB8_ALPHA8_EXT               0x8C43 //ok
-#define GL_SLUMINANCE_ALPHA_EXT           0x8C44 //ok
-#define GL_SLUMINANCE8_ALPHA8_EXT         0x8C45 //ok
-#define GL_SLUMINANCE_EXT                 0x8C46 //ok
-#define GL_SLUMINANCE8_EXT                0x8C47 //ok
-#define GL_TEXTURE_MAX_ANISOTROPY_EXT     0x84FE
-// S3TC compression constants
-#define GL_RGB_S3TC                            0x83A0
-#define GL_RGB4_S3TC                        0x83A1
-#define GL_RGBA4                0x8056
-#define GL_RGBA8                0x8058
-#define GL_MAX_TEXTURE_UNITS_ARB        0x84E2
-
-#ifndef APIENTRYP
-#define APIENTRYP APIENTRY *
-#endif
-
-//#define qglDepthRange qglDepthRangef
-//#define qglClearDepth qglClearDepthf
-
-//static inline void qglClearDepthf(GLclampf depth) {
-//#if !defined(NDEBUG) && defined(QGL_LOG_GL_CALLS)
-//    if (QGLLogGLCalls)
-//        fprintf(QGLDebugFile(), "glClearDepthf(depth=%f)\n", depth);
-//#endif
-//    glClearDepthf(depth);
-//#if !defined(NDEBUG) && defined(QGL_CHECK_GL_ERRORS)
-//    if (!QGLBeginStarted)
-//        QGLCheckError("glClearDepthf");
-//#endif
-//}
-#else
 #ifdef USE_LOCAL_HEADERS
 #	include "SDL_opengl.h"
 #else
 #	include <SDL_opengl.h>
 #endif
-
 #endif
+
+// TODO: Why are these not being imported from the SDL_opengl.h file above?
+typedef unsigned int    GLenum;
+#define APIENTRYP APIENTRY *
+typedef float        GLfloat;    /* single precision float */
+typedef double        GLdouble;    /* double precision float */
+typedef double        GLclampd;    /* double precision float in [0,1] */
+#define GL_FILL                    0x1B02
+#define GL_NUM_EXTENSIONS 0x821D
+#define GL_BACK_LEFT                0x0402
+#define GL_BACK_RIGHT                0x0403
+#define GL_DEPTH_COMPONENT            0x1902
+#define GL_TEXTURE0_ARB                     0x84C0
+#define GL_TEXTURE1_ARB                     0x84C1
+#define GL_LINE                    0x1B01
+#define GL_RGB8                    0x8051
+#define GL_CLAMP                0x2900
+#define GL_STENCIL_INDEX            0x1901
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT 0x8C4D
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT 0x8C4F
+#define GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT 0x8C72
+#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1
+#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3
+#define GL_RGB4_S3TC                        0x83A1
+#define GL_RGBA4                0x8056
+#define GL_RGBA8                0x8058
+#define GL_LUMINANCE8                0x8040
+#define GL_RGB5                    0x8050
+#define GL_LUMINANCE8_ALPHA8            0x8045
+#define GL_SRGB_EXT                       0x8C40
+#define GL_SRGB8_EXT                      0x8C41
+#define GL_SRGB_ALPHA_EXT                 0x8C42
+#define GL_SRGB8_ALPHA8_EXT               0x8C43
+#define GL_SLUMINANCE_EXT                 0x8C46
+#define GL_SLUMINANCE8_EXT                0x8C47
+#define GL_SLUMINANCE_ALPHA_EXT           0x8C44
+#define GL_SLUMINANCE8_ALPHA8_EXT         0x8C45
+#define GL_MAX_TEXTURE_UNITS_ARB        0x84E2
 
 extern void (APIENTRYP qglActiveTextureARB) (GLenum texture);
 extern void (APIENTRYP qglClientActiveTextureARB) (GLenum texture);
@@ -179,6 +132,7 @@ extern void (APIENTRYP qglUnlockArraysEXT) (void);
 #define QGL_1_1_FIXED_FUNCTION_PROCS \
 	GLE(void, AlphaFunc, GLenum func, GLclampf ref) \
 	GLE(void, Color4f, GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) \
+	GLE(void, Color4ub, GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha) \
 	GLE(void, ColorPointer, GLint size, GLenum type, GLsizei stride, const GLvoid *ptr) \
 	GLE(void, DisableClientState, GLenum cap) \
 	GLE(void, EnableClientState, GLenum cap) \

@@ -369,8 +369,6 @@
 		A17EE1AF211A630600811AE1 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; };
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
-		A1836240237490B30060FE55 /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; };
-		A1836241237490B40060FE55 /* ios_glimp.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8E21029767008823BB /* ios_glimp.m */; };
 		A1902E992103F323008823BB /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A1902F592108B4E4008823BB /* MFiGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F582108B4E4008823BB /* MFiGameController.swift */; };
@@ -1698,7 +1696,6 @@
 				A1565F952109F30E00FA9BC9 /* cmd.c in Sources */,
 				A1565F962109F30E00FA9BC9 /* snd_main.c in Sources */,
 				A1565F982109F30E00FA9BC9 /* jcapistd.c in Sources */,
-				A1836241237490B40060FE55 /* ios_glimp.m in Sources */,
 				A1565F992109F30E00FA9BC9 /* jdatasrc.c in Sources */,
 				A1565F9A2109F30E00FA9BC9 /* net_chan.c in Sources */,
 				A1565F9B2109F30E00FA9BC9 /* jdmarker.c in Sources */,
@@ -1787,7 +1784,6 @@
 				A15AA92A211B470200DE867F /* MainMenuViewController.swift in Sources */,
 				A196B6DA2115FDB70031CEB8 /* Game.swift in Sources */,
 				A179C3482101472E00D3C611 /* tr_noise.c in Sources */,
-				A1836240237490B30060FE55 /* ios_glimp.m in Sources */,
 				A196B6C92115F7C50031CEB8 /* MasterServerController.swift in Sources */,
 				A1510399210B7A390087EA86 /* JoyStickView.swift in Sources */,
 				A179C2FC2101472E00D3C611 /* jdapistd.c in Sources */,
