@@ -193,8 +193,8 @@
 		A15AA927211B43A400DE867F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA924211B43A400DE867F /* OptionsViewController.swift */; };
 		A15AA92A211B470200DE867F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA929211B470200DE867F /* MainMenuViewController.swift */; };
 		A15AA92C211B470200DE867F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA929211B470200DE867F /* MainMenuViewController.swift */; };
-		A176FBD52377B149009DC413 /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
-		A176FBD62377B14A009DC413 /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
+		A176FBD9237A2610009DC413 /* sys_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = A176FBD8237A2610009DC413 /* sys_ios.m */; };
+		A176FBDA237A2610009DC413 /* sys_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = A176FBD8237A2610009DC413 /* sys_ios.m */; };
 		A179BFE9210142FA00D3C611 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179BFE8210142FA00D3C611 /* GameViewController.swift */; };
 		A179BFEC210142FA00D3C611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A179BFEA210142FA00D3C611 /* Main.storyboard */; };
 		A179BFEE210142FB00D3C611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A179BFED210142FB00D3C611 /* Assets.xcassets */; };
@@ -505,6 +505,7 @@
 		A15AA921211A68E900DE867F /* ServerListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerListViewCell.xib; sourceTree = "<group>"; };
 		A15AA924211B43A400DE867F /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		A15AA929211B470200DE867F /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		A176FBD8237A2610009DC413 /* sys_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sys_ios.m; sourceTree = "<group>"; };
 		A179BFE3210142FA00D3C611 /* Quake3-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quake3-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A179BFE6210142FA00D3C611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A179BFE8210142FA00D3C611 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -761,7 +762,6 @@
 		A179C2B92101472E00D3C611 /* cm_polylib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cm_polylib.h; sourceTree = "<group>"; };
 		A179C2BB2101472E00D3C611 /* cm_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cm_patch.c; sourceTree = "<group>"; };
 		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
-		A1902E8B21029767008823BB /* ios_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_main.m; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = ../../../Dropbox/Files/quake3/baseq3; sourceTree = "<group>"; };
 		A1902F582108B4E4008823BB /* MFiGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFiGameController.swift; sourceTree = "<group>"; };
@@ -913,7 +913,6 @@
 				A179C2782101472D00D3C611 /* asm */,
 				A179C01C2101470F00D3C611 /* botlib */,
 				A179C0C62101471000D3C611 /* client */,
-				A1902E8721028F46008823BB /* ios */,
 				A179C05B2101470F00D3C611 /* jpeg-8c */,
 				A179C2912101472E00D3C611 /* qcommon */,
 				A179C0B92101471000D3C611 /* renderercommon */,
@@ -1186,6 +1185,7 @@
 				A179C1BB2101472C00D3C611 /* sys_local.h */,
 				A179C1BE2101472C00D3C611 /* sys_main.c */,
 				A179C1C62101472C00D3C611 /* sys_unix.c */,
+				A176FBD8237A2610009DC413 /* sys_ios.m */,
 			);
 			path = sys;
 			sourceTree = "<group>";
@@ -1252,14 +1252,6 @@
 				A196B6FA2117EE750031CEB8 /* tvOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A1902E8721028F46008823BB /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				A1902E8B21029767008823BB /* ios_main.m */,
-			);
-			path = ios;
 			sourceTree = "<group>";
 		};
 		A1902F60210939BA008823BB /* Quake3-tvOS */ = {
@@ -1600,7 +1592,6 @@
 				A196B7202117F0420031CEB8 /* SQLError.swift in Sources */,
 				A196B70E2117F0420031CEB8 /* Coordinator.swift in Sources */,
 				A1565F4F2109F30E00FA9BC9 /* cl_main.c in Sources */,
-				A176FBD62377B14A009DC413 /* ios_main.m in Sources */,
 				A196B7102117F0420031CEB8 /* ServerController.swift in Sources */,
 				A1565F502109F30E00FA9BC9 /* jcdctmgr.c in Sources */,
 				A1565F512109F30E00FA9BC9 /* ioapi.c in Sources */,
@@ -1654,6 +1645,7 @@
 				A1565F7A2109F30E00FA9BC9 /* jchuff.c in Sources */,
 				A1565F7B2109F30E00FA9BC9 /* q_shared.c in Sources */,
 				A1565F7C2109F30E00FA9BC9 /* puff.c in Sources */,
+				A176FBDA237A2610009DC413 /* sys_ios.m in Sources */,
 				A1565F7D2109F30E00FA9BC9 /* sv_net_chan.c in Sources */,
 				A1565F7E2109F30E00FA9BC9 /* cm_polylib.c in Sources */,
 				A15AA927211B43A400DE867F /* OptionsViewController.swift in Sources */,
@@ -1818,6 +1810,7 @@
 				A179C2F92101472E00D3C611 /* jdinput.c in Sources */,
 				A179C34D2101472E00D3C611 /* snd_dma.c in Sources */,
 				A179C3212101472E00D3C611 /* jdmainct.c in Sources */,
+				A176FBD9237A2610009DC413 /* sys_ios.m in Sources */,
 				A179C4A22101472F00D3C611 /* huffman.c in Sources */,
 				A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */,
 				A196B6C12115F7C50031CEB8 /* Q3Operation.swift in Sources */,
@@ -1908,7 +1901,6 @@
 				A179C4932101472F00D3C611 /* md4.c in Sources */,
 				A179C3F72101472F00D3C611 /* con_tty.c in Sources */,
 				A196B6AB2115F7C50031CEB8 /* Player.swift in Sources */,
-				A176FBD52377B149009DC413 /* ios_main.m in Sources */,
 				A179C34A2101472E00D3C611 /* cl_scrn.c in Sources */,
 				A179C2E72101472E00D3C611 /* be_ai_goal.c in Sources */,
 				A179C30E2101472E00D3C611 /* jquant1.c in Sources */,

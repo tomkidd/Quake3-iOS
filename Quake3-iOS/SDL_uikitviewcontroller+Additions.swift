@@ -392,7 +392,21 @@ extension SDL_uikitviewcontroller: JoystickDelegate {
             Key_Event(133, qboolean(0), qboolean(1))
         }
         
-        cl_joyscale_x.0 = Int32(x * 20)        
+        if x > 0 {
+            cl_joyscale_x.0 = Int32(abs(y) * 20)
+            Key_Event(135, qboolean(1), qboolean(1))
+            Key_Event(134, qboolean(0), qboolean(1))
+        } else if x < 0 {
+            cl_joyscale_x.1 = Int32(abs(y) * 20)
+            Key_Event(135, qboolean(0), qboolean(1))
+            Key_Event(134, qboolean(1), qboolean(1))
+        } else {
+            cl_joyscale_x.0 = 0
+            cl_joyscale_x.1 = 0
+            Key_Event(135, qboolean(0), qboolean(1))
+            Key_Event(134, qboolean(0), qboolean(1))
+        }
+        
     }
     
     func handleJoyStick(angle: CGFloat, displacement: CGFloat) {

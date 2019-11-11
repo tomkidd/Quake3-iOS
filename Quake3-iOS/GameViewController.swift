@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         Sys_SetHomeDir(documentsDir)
         
         // Come back to this later -tkidd
-        //in_strafe.active = qtrue
+//        in_strafe.active = qtrue
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
 

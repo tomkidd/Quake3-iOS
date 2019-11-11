@@ -825,6 +825,10 @@ static int GLimp_SetMode(int mode, qboolean fullscreen, qboolean noborder, qbool
 		ri.Printf( PRINT_ALL, "Couldn't get a visual\n" );
 		return RSERR_INVALID_MODE;
 	}
+    
+#ifdef IOS
+    Sys_AddControls(SDL_window);
+#endif
 
 	GLimp_DetectAvailableModes();
 
