@@ -53,6 +53,7 @@ cvar_t *r_allowResize; // make window resizable
 cvar_t *r_centerWindow;
 cvar_t *r_sdlDriver;
 cvar_t *r_useOpenGLES;
+cvar_t *r_useHiDPI;
 
 int qglMajorVersion, qglMinorVersion;
 int qglesMajorVersion, qglesMinorVersion;
@@ -439,6 +440,9 @@ static int GLimp_SetMode(int mode, qboolean fullscreen, qboolean noborder, qbool
 
 	if ( r_allowResize->integer )
 		flags |= SDL_WINDOW_RESIZABLE;
+
+    if ( r_useHiDPI->integer )
+        flags |= SDL_WINDOW_ALLOW_HIGHDPI;
 
 #ifdef USE_ICON
 	icon = SDL_CreateRGBSurfaceFrom(
@@ -1104,7 +1108,8 @@ void GLimp_Init( qboolean fixedFunction )
 	r_sdlDriver = ri.Cvar_Get( "r_sdlDriver", "", CVAR_ROM );
 	r_allowResize = ri.Cvar_Get( "r_allowResize", "0", CVAR_ARCHIVE | CVAR_LATCH );
 	r_centerWindow = ri.Cvar_Get( "r_centerWindow", "0", CVAR_ARCHIVE | CVAR_LATCH );
-	r_useOpenGLES = ri.Cvar_Get( "r_useOpenGLES", "-1", CVAR_NORESTART | CVAR_LATCH );
+    r_useOpenGLES = ri.Cvar_Get( "r_useOpenGLES", "-1", CVAR_NORESTART | CVAR_LATCH );
+    r_useHiDPI = ri.Cvar_Get( "r_useHiDPI", "0", CVAR_NORESTART | CVAR_LATCH );
 
 	if( ri.Cvar_VariableIntegerValue( "com_abnormalExit" ) )
 	{

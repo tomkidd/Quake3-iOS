@@ -25,7 +25,7 @@ extension SDL_uikitviewcontroller {
         static var _f1Button = UIButton()
         static var _prevWeaponButton = UIButton()
         static var _nextWeaponButton = UIButton()
- }
+    }
     
     var fireButton:UIButton {
         get {
@@ -359,8 +359,17 @@ extension SDL_uikitviewcontroller {
             self.quickSaveButton.isHidden = !self.buttonStackExpanded
             self.quickSaveButton.alpha = self.buttonStackExpanded ? 1 : 0
         }
-        
     }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
     
 }
 

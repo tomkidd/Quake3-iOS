@@ -15,10 +15,13 @@
 
 @implementation SDLUIKitDelegate (customDelegate)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 // hijack the the SDL_UIKitAppDelegate to use the UIApplicationDelegate we implement here
 + (NSString *)getAppDelegateClassName {
     return @"AppDelegate";
 }
+#pragma clang diagnostic pop
 
 @end
 
@@ -48,10 +51,6 @@
     self.uiwindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.uiwindow.backgroundColor = [UIColor blackColor];
     
-//    NSString *controllerName = (IS_IPAD() ? @"MainMenuViewController-iPad" : @"MainMenuViewController-iPhone");
-//    self.mainViewController = [[MainMenuViewController alloc] initWithNibName:controllerName bundle:nil];
-//    self.uiwindow.rootViewController = self.mainViewController;
-
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 
     rootNavigationController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"RootNC"];

@@ -157,7 +157,6 @@
 		A1565FB72109F30E00FA9BC9 /* snd_mix.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CA2101471000D3C611 /* snd_mix.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FB82109F30E00FA9BC9 /* jaricom.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0802101470F00D3C611 /* jaricom.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FB92109F30E00FA9BC9 /* sv_world.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0F42101471000D3C611 /* sv_world.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565FBA2109F30E00FA9BC9 /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FBB2109F30E00FA9BC9 /* be_ai_weight.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C04A2101470F00D3C611 /* be_ai_weight.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FBC2109F30E00FA9BC9 /* jidctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C05F2101470F00D3C611 /* jidctfst.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FBD2109F30E00FA9BC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F63210939BA008823BB /* ViewController.swift */; };
@@ -194,6 +193,8 @@
 		A15AA927211B43A400DE867F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA924211B43A400DE867F /* OptionsViewController.swift */; };
 		A15AA92A211B470200DE867F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA929211B470200DE867F /* MainMenuViewController.swift */; };
 		A15AA92C211B470200DE867F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA929211B470200DE867F /* MainMenuViewController.swift */; };
+		A176FBD52377B149009DC413 /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
+		A176FBD62377B14A009DC413 /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
 		A179BFE9210142FA00D3C611 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179BFE8210142FA00D3C611 /* GameViewController.swift */; };
 		A179BFEC210142FA00D3C611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A179BFEA210142FA00D3C611 /* Main.storyboard */; };
 		A179BFEE210142FB00D3C611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A179BFED210142FB00D3C611 /* Assets.xcassets */; };
@@ -369,7 +370,6 @@
 		A17EE1AF211A630600811AE1 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; };
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
-		A1902E992103F323008823BB /* ios_main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1902E8B21029767008823BB /* ios_main.m */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A1902F592108B4E4008823BB /* MFiGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F582108B4E4008823BB /* MFiGameController.swift */; };
 		A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */; };
@@ -430,17 +430,17 @@
 		A196B7432117FFA30031CEB8 /* ServerFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B7422117FFA30031CEB8 /* ServerFilterViewController.swift */; };
 		A1E0ECEA236A9B9C003F22FB /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E0ECE7236A9AB5003F22FB /* libSDL2.a */; };
 		A1E0ECEB236A9BB7003F22FB /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E0ECE9236A9AB5003F22FB /* libSDL2.a */; };
-		A1E0ECF6236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; };
-		A1E0ECF7236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; };
-		A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; };
-		A1E0ECF9236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; };
+		A1E0ECF6236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A1E0ECF7236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A1E0ECF9236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1E8B31B2370E6CE005C6CA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */; };
 		A1E8B31E23712A37005C6CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B31D23712A37005C6CA8 /* AppDelegate.m */; };
 		A1E8B31F23712A37005C6CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B31D23712A37005C6CA8 /* AppDelegate.m */; };
-		A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; };
-		A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; };
-		A1E8B32C2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; };
-		A1E8B32D2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; };
+		A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A1E8B32C2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A1E8B32D2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -761,14 +761,7 @@
 		A179C2B92101472E00D3C611 /* cm_polylib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cm_polylib.h; sourceTree = "<group>"; };
 		A179C2BB2101472E00D3C611 /* cm_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cm_patch.c; sourceTree = "<group>"; };
 		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
-		A1902E8821028F97008823BB /* qgl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qgl.h; sourceTree = "<group>"; };
-		A1902E8A21029766008823BB /* ios_snddma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_snddma.m; sourceTree = "<group>"; };
 		A1902E8B21029767008823BB /* ios_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_main.m; sourceTree = "<group>"; };
-		A1902E8C21029767008823BB /* ios_input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_input.m; sourceTree = "<group>"; };
-		A1902E8D21029767008823BB /* ios_glimp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_glimp.h; sourceTree = "<group>"; };
-		A1902E8E21029767008823BB /* ios_glimp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ios_glimp.m; sourceTree = "<group>"; };
-		A1902E8F21029767008823BB /* ios_local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_local.h; sourceTree = "<group>"; };
-		A1902E9021029767008823BB /* ios_qgl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_qgl.h; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = ../../../Dropbox/Files/quake3/baseq3; sourceTree = "<group>"; };
 		A1902F582108B4E4008823BB /* MFiGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFiGameController.swift; sourceTree = "<group>"; };
@@ -1264,14 +1257,7 @@
 		A1902E8721028F46008823BB /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				A1902E8D21029767008823BB /* ios_glimp.h */,
-				A1902E8E21029767008823BB /* ios_glimp.m */,
-				A1902E8C21029767008823BB /* ios_input.m */,
-				A1902E8F21029767008823BB /* ios_local.h */,
 				A1902E8B21029767008823BB /* ios_main.m */,
-				A1902E9021029767008823BB /* ios_qgl.h */,
-				A1902E8A21029766008823BB /* ios_snddma.m */,
-				A1902E8821028F97008823BB /* qgl.h */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -1614,6 +1600,7 @@
 				A196B7202117F0420031CEB8 /* SQLError.swift in Sources */,
 				A196B70E2117F0420031CEB8 /* Coordinator.swift in Sources */,
 				A1565F4F2109F30E00FA9BC9 /* cl_main.c in Sources */,
+				A176FBD62377B14A009DC413 /* ios_main.m in Sources */,
 				A196B7102117F0420031CEB8 /* ServerController.swift in Sources */,
 				A1565F502109F30E00FA9BC9 /* jcdctmgr.c in Sources */,
 				A1565F512109F30E00FA9BC9 /* ioapi.c in Sources */,
@@ -1736,7 +1723,6 @@
 				A1565FB72109F30E00FA9BC9 /* snd_mix.c in Sources */,
 				A1565FB82109F30E00FA9BC9 /* jaricom.c in Sources */,
 				A1565FB92109F30E00FA9BC9 /* sv_world.c in Sources */,
-				A1565FBA2109F30E00FA9BC9 /* ios_main.m in Sources */,
 				A1565FBB2109F30E00FA9BC9 /* be_ai_weight.c in Sources */,
 				A1565FBC2109F30E00FA9BC9 /* jidctfst.c in Sources */,
 				A1565FBD2109F30E00FA9BC9 /* ViewController.swift in Sources */,
@@ -1894,7 +1880,6 @@
 				A179C3292101472E00D3C611 /* tr_surface.c in Sources */,
 				A179C3382101472E00D3C611 /* tr_shade_calc.c in Sources */,
 				A179C36C2101472E00D3C611 /* sv_world.c in Sources */,
-				A1902E992103F323008823BB /* ios_main.m in Sources */,
 				A196B6B32115F7C50031CEB8 /* GSMasterServerController.swift in Sources */,
 				A179C31B2101472E00D3C611 /* jquant2.c in Sources */,
 				A179C2E22101472E00D3C611 /* be_aas_bspq3.c in Sources */,
@@ -1923,6 +1908,7 @@
 				A179C4932101472F00D3C611 /* md4.c in Sources */,
 				A179C3F72101472F00D3C611 /* con_tty.c in Sources */,
 				A196B6AB2115F7C50031CEB8 /* Player.swift in Sources */,
+				A176FBD52377B149009DC413 /* ios_main.m in Sources */,
 				A179C34A2101472E00D3C611 /* cl_scrn.c in Sources */,
 				A179C2E72101472E00D3C611 /* be_ai_goal.c in Sources */,
 				A179C30E2101472E00D3C611 /* jquant1.c in Sources */,

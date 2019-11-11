@@ -9,16 +9,17 @@
 #ifndef bridging_h
 #define bridging_h
 
-#include "ios_glimp.h"
 #include "q_shared.h"
 #include "keycodes.h"
-//#include "client.h"
 #import "AppDelegate.h"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #include "SDL_uikitviewcontroller.h"
+#pragma clang diagnostic pop
 
 void Sys_Startup( int argc, char **argv );
 
-void Com_Frame();
+void Com_Frame(void);
 
 void CL_KeyEvent(int key, qboolean down, unsigned time);
 
