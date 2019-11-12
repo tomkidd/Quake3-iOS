@@ -16,7 +16,7 @@ class MFiGameController: NSObject
     static var pitchValue:Float = 0.0
     static var yawValue:Float = 0.0
 
-    static func connect(_ controller: GCController?)
+    @objc static func connect(_ controller: GCController?)
     {
         for controller in GCController.controllers()
         {
@@ -143,7 +143,7 @@ class MFiGameController: NSObject
         }
     }
     
-    static func disconnect(_ controller: GCController?)
+    @objc static func disconnect(_ controller: GCController?)
     {
         if remote == controller
         {

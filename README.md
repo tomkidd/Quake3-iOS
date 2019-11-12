@@ -6,6 +6,8 @@
 
 This is my port of Quake III: Arena for iOS, running in modern resolutions including the full width of the iPhone X. I have also made a target and version for tvOS to run on Apple TV.
 
+**NOTE:** I am in the process of converting the app to use SDL2 and as of this writing everything is working *except* for MFi Controller support. If you need or require MFi Controller support (which is required for the tvOS port) please use the [legacy](https://github.com/tomkidd/Quake3-iOS/tree/legacy) branch for now instead. 
+
 ![screenshot](https://raw.githubusercontent.com/tomkidd/Quake3-iOS/master/ss_quake3.png)
 
 Features

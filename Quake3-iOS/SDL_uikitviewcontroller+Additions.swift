@@ -392,11 +392,11 @@ extension SDL_uikitviewcontroller: JoystickDelegate {
             Key_Event(133, qboolean(0), qboolean(1))
         }
         
-        if x > 0 {
+        if x > 0.25 {
             cl_joyscale_x.0 = Int32(abs(y) * 20)
             Key_Event(135, qboolean(1), qboolean(1))
             Key_Event(134, qboolean(0), qboolean(1))
-        } else if x < 0 {
+        } else if x < -0.25 {
             cl_joyscale_x.1 = Int32(abs(y) * 20)
             Key_Event(135, qboolean(0), qboolean(1))
             Key_Event(134, qboolean(1), qboolean(1))
