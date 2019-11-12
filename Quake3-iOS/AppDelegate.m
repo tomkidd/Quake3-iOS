@@ -15,13 +15,10 @@
 
 @implementation SDLUIKitDelegate (customDelegate)
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 // hijack the the SDL_UIKitAppDelegate to use the UIApplicationDelegate we implement here
 + (NSString *)getAppDelegateClassName {
     return @"AppDelegate";
 }
-#pragma clang diagnostic pop
 
 @end
 

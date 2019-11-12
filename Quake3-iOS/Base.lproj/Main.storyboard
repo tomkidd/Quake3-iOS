@@ -190,60 +190,16 @@
             </objects>
             <point key="canvasLocation" x="211.84407796101951" y="1096.8"/>
         </scene>
-        <!--Delegate-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GLKView">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ5-xm-vLq">
-                                <rect key="frame" x="44" y="0.0" width="30" height="30"/>
-                                <state key="normal" title="~">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tilde:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dla-AS-AIa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPr-ud-ycR">
-                                <rect key="frame" x="300" y="0.0" width="296" height="207"/>
-                                <connections>
-                                    <action selector="nextWeaponWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dc-wk-H5e"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CF-kQ-2OE">
-                                <rect key="frame" x="300" y="186" width="296" height="207"/>
-                                <connections>
-                                    <action selector="prevWeaponWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQe-Kv-n3z"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="UPr-ud-ycR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="0eT-IR-VBX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5CF-kQ-2OE" secondAttribute="bottom" id="3xW-80-TgS"/>
-                            <constraint firstItem="5CF-kQ-2OE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="D0P-Tj-faP"/>
-                            <constraint firstItem="IJ5-xm-vLq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lwk-c6-9tq"/>
-                            <constraint firstItem="UPr-ud-ycR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ntl-zi-BRl"/>
-                            <constraint firstItem="5CF-kQ-2OE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViN-Tu-rGg"/>
-                            <constraint firstItem="UPr-ud-ycR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z0E-gr-WSB"/>
-                            <constraint firstItem="UPr-ud-ycR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="a7K-z0-MTj"/>
-                            <constraint firstItem="5CF-kQ-2OE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="nbU-72-Gso"/>
-                            <constraint firstItem="IJ5-xm-vLq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qK9-hX-0PU"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outlet property="delegate" destination="BYZ-38-t0r" id="Pjk-QF-1K9"/>
-                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="nextWeaponButton" destination="UPr-ud-ycR" id="wvh-2E-EtH"/>
-                        <outlet property="prevWeaponButton" destination="5CF-kQ-2OE" id="YBX-hA-UWI"/>
-                        <outlet property="tildeButton" destination="IJ5-xm-vLq" id="II5-Na-hkf"/>
-                        <outlet property="view" destination="8bC-Xf-vdC" id="cYc-25-VU8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -752,6 +708,6 @@
         <image name="quake_3_background" width="1920" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T1e-r3-Itb"/>
+        <segue reference="CVW-g3-IVQ"/>
     </inferredMetricsTieBreakers>
 </document>
