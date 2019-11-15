@@ -6,8 +6,6 @@
 
 This is my port of Quake III: Arena for iOS, running in modern resolutions including the full width of the iPhone X. I have also made a target and version for tvOS to run on Apple TV.
 
-**NOTE:** I am in the process of converting the app to use SDL2 and as of this writing everything is working *except* for MFi Controller support. If you need or require MFi Controller support (which is required for the tvOS port) please use the [legacy](https://github.com/tomkidd/Quake3-iOS/tree/legacy) branch for now instead. 
-
 ![screenshot](https://raw.githubusercontent.com/tomkidd/Quake3-iOS/master/ss_quake3.png)
 
 Features
@@ -30,6 +28,8 @@ You will need to drag your directories into the project and select "Create Folde
 You can read a lengthy blog article on how I did all this [here](http://schnapple.com/quake-3-for-ios-and-tvos-for-apple-tv/).
 
 This repo was based on the code from *[Beben III](https://itunes.apple.com/us/app/beben-iii/id771105890?mt=8)* by Ronny Stiftel (more info [here](http://www.mac-and-i.net/2013/12/beben-iii-openarenaquake-3-for-ios.html)), ultimately derived from [ioquake3](https://ioquake3.org/).  On-screen joystick code came from [this repo](https://github.com/bradhowes/Joystick) by Brad Howe. Quake font DpQuake by Dead Pete available [here](https://www.dafont.com/quake.font). Code to query servers came from [Q3ServerBrowser](https://github.com/andreagiavatto/Q3ServerBrowser) on GitHub by Andrea Giavatto.
+
+I have now modified the code to use [SDL for iOS](https://www.libsdl.org/), employing [OpenGL ES work](https://github.com/zturtleman/ioq3/tree/opengles1) from Zack Middleton. The original, GLKit-based version is available on the [legacy](https://github.com/tomkidd/Quake3-iOS/tree/legacy) branch. 
 
 [Video of Quake III: Arena running on an iPhone X](https://www.youtube.com/watch?v=4Fu1fmXtcvo)
 

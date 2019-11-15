@@ -334,23 +334,7 @@ void CL_KeyMove( usercmd_t *cmd ) {
 	forward = 0;
 	side = 0;
 	up = 0;
-//#ifdef IOS
-//    if ( in_strafe.active ) {
-//        side += movespeed * CL_KeyState (&in_right);
-//        side -= movespeed * CL_KeyState (&in_left);
-//    }
-//
-//    side += cl_joyscale_x[0] * 4.0f * CL_KeyState (&in_moveright);
-//    side -= cl_joyscale_x[1] * 4.0f * CL_KeyState (&in_moveleft);
-//
-//
-//    up = movespeed * CL_KeyState (&in_up);
-//    up -= movespeed * CL_KeyState (&in_down);
-//
-//    forward += cl_joyscale_y[0] * 4.0f * CL_KeyState (&in_forward);
-//    forward -= cl_joyscale_y[1] * 4.0f * CL_KeyState (&in_back);
-//#else
-    if ( in_strafe.active ) {
+	if ( in_strafe.active ) {
 		side += movespeed * CL_KeyState (&in_right);
 		side -= movespeed * CL_KeyState (&in_left);
 	}
@@ -364,7 +348,6 @@ void CL_KeyMove( usercmd_t *cmd ) {
 
 	forward += movespeed * CL_KeyState (&in_forward);
 	forward -= movespeed * CL_KeyState (&in_back);
-//#endif
 
 	cmd->forwardmove = ClampChar( forward );
 	cmd->rightmove = ClampChar( side );

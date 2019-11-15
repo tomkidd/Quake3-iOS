@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tom Kidd. All rights reserved.
 //
 
-//import GameController
+import GameController
 
 #if os(iOS)
 import CoreMotion
@@ -214,19 +214,19 @@ class GameViewController: UIViewController {
     }
     
     @objc func firePressed(sender: UIButton!) {
-        MFiGameController.KeyEvent(key: K_MOUSE1, down: true)
+        KeyEvent(key: K_MOUSE1, down: true)
     }
     
     @objc func fireReleased(sender: UIButton!) {
-        MFiGameController.KeyEvent(key: K_MOUSE1, down: false)
+        KeyEvent(key: K_MOUSE1, down: false)
     }
     
     @objc func jumpPressed(sender: UIButton!) {
-        MFiGameController.KeyEvent(key: K_SPACE, down: true)
+        KeyEvent(key: K_SPACE, down: true)
     }
     
     @objc func jumpReleased(sender: UIButton!) {
-        MFiGameController.KeyEvent(key: K_SPACE, down: false)
+        KeyEvent(key: K_SPACE, down: false)
     }
 
     @IBAction func snd_restart(_ sender: UIButton) {
@@ -303,10 +303,15 @@ class GameViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if Key_GetCatcher() & KEYCATCH_UI != 0 {
-            MFiGameController.KeyEvent(key: K_MOUSE1, down: true)
-            MFiGameController.KeyEvent(key: K_MOUSE1, down: false)
+            KeyEvent(key: K_MOUSE1, down: true)
+            KeyEvent(key: K_MOUSE1, down: false)
         } else {
             super.touchesBegan(touches, with: event)
         }
     }
+    
+    func KeyEvent(key: keyNum_t, down: Bool) {
+        CL_KeyEvent(Int32(key.rawValue), qboolean(rawValue: down ? 1 : 0), UInt32(Sys_Milliseconds()))
+    }
+    
 }

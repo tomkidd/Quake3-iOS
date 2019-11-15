@@ -191,6 +191,7 @@ void UI_SPSkillMenu_Cache( void ) {
 	skillMenuInfo.silenceSound = trap_S_RegisterSound( "sound/misc/silence.wav", qfalse );
 }
 
+
 /*
 =================
 UI_SPSkillMenu_Init

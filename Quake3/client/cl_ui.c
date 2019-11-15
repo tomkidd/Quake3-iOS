@@ -1108,7 +1108,7 @@ void CL_InitUI( void ) {
 	vmInterpret_t		interpret;
 
 	// load the dll or bytecode
-    interpret = Cvar_VariableValue("vm_ui");
+	interpret = Cvar_VariableValue("vm_ui");
 	if(cl_connectedToPureServer)
 	{
 		// if sv_pure is set we only allow qvms to be loaded

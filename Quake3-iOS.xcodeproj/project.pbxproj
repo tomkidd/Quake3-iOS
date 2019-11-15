@@ -140,7 +140,6 @@
 		A1565FA62109F30E00FA9BC9 /* jdmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0902101470F00D3C611 /* jdmainct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FA72109F30E00FA9BC9 /* tr_image_jpg.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0C22101471000D3C611 /* tr_image_jpg.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FA82109F30E00FA9BC9 /* sv_game.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0F12101471000D3C611 /* sv_game.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565FA92109F30E00FA9BC9 /* MFiGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F582108B4E4008823BB /* MFiGameController.swift */; };
 		A1565FAA2109F30E00FA9BC9 /* cl_curl.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CD2101471000D3C611 /* cl_curl.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FAB2109F30E00FA9BC9 /* cm_test.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C29D2101472E00D3C611 /* cm_test.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FAC2109F30E00FA9BC9 /* tr_bsp.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09B2101471000D3C611 /* tr_bsp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -371,7 +370,6 @@
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
-		A1902F592108B4E4008823BB /* MFiGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1902F582108B4E4008823BB /* MFiGameController.swift */; };
 		A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */; };
 		A196B6A72115F7C50031CEB8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B68B2115F7C50031CEB8 /* Server.swift */; };
 		A196B6AB2115F7C50031CEB8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B68D2115F7C50031CEB8 /* Player.swift */; };
@@ -439,8 +437,6 @@
 		A1E8B31F23712A37005C6CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B31D23712A37005C6CA8 /* AppDelegate.m */; };
 		A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1E8B32C2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1E8B32D2372856F005C6CA8 /* sdl_gamma.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -763,7 +759,6 @@
 		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = ../../../Dropbox/Files/quake3/baseq3; sourceTree = "<group>"; };
-		A1902F582108B4E4008823BB /* MFiGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFiGameController.swift; sourceTree = "<group>"; };
 		A1902F63210939BA008823BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1902F66210939BA008823BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1902F68210939BC008823BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -890,7 +885,6 @@
 				A179BFEF210142FB00D3C611 /* LaunchScreen.storyboard */,
 				A179BFEA210142FA00D3C611 /* Main.storyboard */,
 				A15AA929211B470200DE867F /* MainMenuViewController.swift */,
-				A1902F582108B4E4008823BB /* MFiGameController.swift */,
 				A15AA924211B43A400DE867F /* OptionsViewController.swift */,
 				A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */,
 				A196B68A2115F7A10031CEB8 /* ServerBrowser */,
@@ -1536,7 +1530,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1565F232109F30E00FA9BC9 /* cvar.c in Sources */,
-				A1E8B32D2372856F005C6CA8 /* sdl_gamma.c in Sources */,
 				A1565F242109F30E00FA9BC9 /* md4.c in Sources */,
 				A1565F252109F30E00FA9BC9 /* vm.c in Sources */,
 				A1565F262109F30E00FA9BC9 /* jdmerge.c in Sources */,
@@ -1693,7 +1686,6 @@
 				A1565FA62109F30E00FA9BC9 /* jdmainct.c in Sources */,
 				A1565FA72109F30E00FA9BC9 /* tr_image_jpg.c in Sources */,
 				A1565FA82109F30E00FA9BC9 /* sv_game.c in Sources */,
-				A1565FA92109F30E00FA9BC9 /* MFiGameController.swift in Sources */,
 				A1565FAA2109F30E00FA9BC9 /* cl_curl.c in Sources */,
 				A1565FAB2109F30E00FA9BC9 /* cm_test.c in Sources */,
 				A17EE19D211A60F800811AE1 /* TiersListViewController.swift in Sources */,
@@ -1767,7 +1759,6 @@
 				A179C49A2101472F00D3C611 /* net_ip.c in Sources */,
 				A179C3572101472E00D3C611 /* snd_adpcm.c in Sources */,
 				A179C3192101472E00D3C611 /* jmemmgr.c in Sources */,
-				A1E8B32C2372856F005C6CA8 /* sdl_gamma.c in Sources */,
 				A196B6AD2115F7C50031CEB8 /* Coordinator.swift in Sources */,
 				A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */,
 				A179C2D92101472E00D3C611 /* be_ai_gen.c in Sources */,
@@ -1824,7 +1815,6 @@
 				A179C3132101472E00D3C611 /* jfdctfst.c in Sources */,
 				A179C49F2101472F00D3C611 /* cm_polylib.c in Sources */,
 				A179C2E32101472E00D3C611 /* be_aas_sample.c in Sources */,
-				A1902F592108B4E4008823BB /* MFiGameController.swift in Sources */,
 				A15103A7210D76F50087EA86 /* DifficultyViewController.swift in Sources */,
 				A179C2FF2101472E00D3C611 /* jdmerge.c in Sources */,
 				A179C3102101472E00D3C611 /* jutils.c in Sources */,

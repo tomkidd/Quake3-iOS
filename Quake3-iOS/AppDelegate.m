@@ -54,12 +54,6 @@
 
     self.uiwindow.rootViewController = self.rootNavigationController;
     
-    NSLog(@"postFinishLaunch\n");
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerDidConnect:) name:@"GCControllerDidConnectNotification" object:nil];
-//
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerDidDisconnect:) name:@"GCControllerDidDisconnectNotification" object:nil];
-    
     [self.uiwindow makeKeyAndVisible];
 }
 
@@ -74,16 +68,6 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     [super applicationDidFinishLaunching:application];
-}
-
-- (void) controllerDidConnect:(NSNotification *) notification
-{
-//    [MFiGameController connect:(GCController *)notification.object];
-}
-
-- (void) controllerDidDisconnect:(NSNotification *) notification
-{
-//    [MFiGameController disconnect:(GCController *)notification.object];
 }
 
 // dummy function to prevent linkage fail

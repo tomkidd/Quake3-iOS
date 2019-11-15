@@ -53,6 +53,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #define	RF_SHADOW_PLANE		0x0100		// use refEntity->shadowPlane
 #define	RF_WRAP_FRAMES		0x0200		// mod the model frames by the maxframes to allow continuous
+										// animation without needing to know the frame count
 
 // refdef flags
 #define RDF_NOWORLDMODEL	0x0001		// used for player configuration screen
@@ -172,7 +173,7 @@ typedef enum {
 } glDriverType_t;
 
 typedef enum {
-	GLHW_GENERIC,			// where everthing works the way it should
+	GLHW_GENERIC,			// where everything works the way it should
 	GLHW_3DFX_2D3D,			// Voodoo Banshee or Voodoo3, relevant since if this is
 							// the hardware type then there can NOT exist a secondary
 							// display adapter

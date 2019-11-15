@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #include "sys_local.h"
+#include "qcommon.h"
 
 #if TARGET_OS_TV
 #import "Quake3_tvOS-Swift.h"
@@ -78,3 +79,35 @@ void Sys_AddControls(SDL_Window *sdlWindow) {
         [rootVC.view addSubview:[rootVC nextWeaponButtonWithRect:[rootVC.view frame]]];
     #endif
 }
+
+void GLimp_SetGamma( unsigned char red[256], unsigned char green[256], unsigned char blue[256] )
+{
+    // unused in iOS
+}
+
+/*
+ =================
+ Sys_StripAppBundle
+ 
+ Discovers if passed dir is suffixed with the directory structure of an iOS
+ .app bundle. If it is, the .app directory structure is stripped off the end and
+ the result is returned. If not, dir is returned untouched.
+ =================
+ */
+char *Sys_StripAppBundle( char *dir )
+{
+    static char cwd[MAX_OSPATH];
+    
+    Q_strncpyz(cwd, dir, sizeof(cwd));
+    if(!strstr(Sys_Basename(cwd), ".app"))
+        return dir;
+    Q_strncpyz(cwd, Sys_Dirname(cwd), sizeof(cwd));
+    return cwd;
+}
+
+/*
+ ==============
+ Sys_Dialog
+ ==============
+ */
+dialogResult_t Sys_Dialog( dialogType_t type, const char *message, const char *title ) { return NULL; }
