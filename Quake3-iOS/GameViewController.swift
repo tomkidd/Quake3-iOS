@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tom Kidd. All rights reserved.
 //
 
-import GameController
+//import GameController
 
 #if os(iOS)
 import CoreMotion
@@ -129,7 +129,69 @@ class GameViewController: UIViewController {
             argv.append("+set")
             argv.append("r_useHiDPI")
             argv.append("1")
-
+            
+            argv.append("+set")
+            argv.append("in_joystick")
+            argv.append("1")
+            
+            argv.append("+set")
+            argv.append("in_joystickUseAnalog")
+            argv.append("1")
+            
+            argv.append("+bind")
+            argv.append("PAD0_RIGHTTRIGGER")
+            argv.append("\"+attack\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_LEFTSTICK_UP")
+            argv.append("\"+forward\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_LEFTSTICK_DOWN")
+            argv.append("\"+back\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_LEFTSTICK_LEFT")
+            argv.append("\"+moveleft\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_LEFTSTICK_RIGHT")
+            argv.append("\"+moveright\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_RIGHTSTICK_UP")
+            argv.append("\"+lookup\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_RIGHTSTICK_DOWN")
+            argv.append("\"+lookdown\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_RIGHTSTICK_LEFT")
+            argv.append("\"+left\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_RIGHTSTICK_RIGHT")
+            argv.append("\"+right\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_A")
+            argv.append("\"+moveup\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_LEFTSHOULDER")
+            argv.append("\"weapnext\"")
+            
+            argv.append("+bind")
+            argv.append("PAD0_RIGHTSHOULDER")
+            argv.append("\"weapprev\"")
+            
+            #if DEBUG
+            argv.append("+set")
+            argv.append("developer")
+            argv.append("1")
+            #endif
+            
             argv.append(nil)
             
             let argc:Int32 = Int32(argv.count - 1)

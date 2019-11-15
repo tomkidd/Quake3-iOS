@@ -1238,6 +1238,9 @@ void IN_Init( void *windowData )
 
 #ifndef IOS
 	SDL_StartTextInput( );
+#else
+    SDL_SetHint(SDL_HINT_ACCELEROMETER_AS_JOYSTICK, "0");
+    SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
 #endif
 
 	mouseAvailable = ( in_mouse->value != 0 );

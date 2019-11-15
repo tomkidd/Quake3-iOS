@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import <GameController/GameController.h>
+//#import <GameController/GameController.h>
 #if TARGET_OS_TV
 #import "Quake3_tvOS-Swift.h"
 #else
@@ -56,9 +56,9 @@
     
     NSLog(@"postFinishLaunch\n");
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerDidConnect:) name:@"GCControllerDidConnectNotification" object:nil];
-        
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerDidDisconnect:) name:@"GCControllerDidDisconnectNotification" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerDidConnect:) name:@"GCControllerDidConnectNotification" object:nil];
+//
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerDidDisconnect:) name:@"GCControllerDidDisconnectNotification" object:nil];
     
     [self.uiwindow makeKeyAndVisible];
 }
@@ -78,12 +78,12 @@
 
 - (void) controllerDidConnect:(NSNotification *) notification
 {
-    [MFiGameController connect:(GCController *)notification.object];
+//    [MFiGameController connect:(GCController *)notification.object];
 }
 
 - (void) controllerDidDisconnect:(NSNotification *) notification
 {
-    [MFiGameController disconnect:(GCController *)notification.object];
+//    [MFiGameController disconnect:(GCController *)notification.object];
 }
 
 // dummy function to prevent linkage fail
