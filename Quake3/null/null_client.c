@@ -33,7 +33,7 @@ void CL_Init( void ) {
 	cl_shownet = Cvar_Get ("cl_shownet", "0", CVAR_TEMP );
 }
 
-void CL_MouseEvent( int dx, int dy, int time ) {
+void CL_MouseEvent( int dx, int dy, int time, qboolean absolute ) {
 }
 
 void Key_WriteBindings( fileHandle_t f ) {

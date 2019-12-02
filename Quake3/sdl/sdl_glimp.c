@@ -1257,4 +1257,9 @@ void GLimp_EndFrame( void )
 
 		r_fullscreen->modified = qfalse;
 	}
+    
+    #ifdef IOS
+        Sys_ToggleControls(SDL_window);
+    #endif
+    
 }

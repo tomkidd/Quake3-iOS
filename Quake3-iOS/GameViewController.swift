@@ -131,6 +131,10 @@ class GameViewController: UIViewController {
             argv.append("1")
             
             argv.append("+set")
+            argv.append("r_fullscreen")
+            argv.append("1")
+            
+            argv.append("+set")
             argv.append("in_joystick")
             argv.append("1")
             
@@ -280,7 +284,7 @@ class GameViewController: UIViewController {
             
             //                ri.Printf(PRINT_DEVELOPER, "%s: deltaX = %d, deltaY = %d\n", __PRETTY_FUNCTION__, deltaX, deltaY);
             
-            CL_MouseEvent(Int32(deltaX), Int32(deltaY), Sys_Milliseconds());
+            CL_MouseEvent(Int32(deltaX), Int32(deltaY), Sys_Milliseconds(), qtrue);
             
         }
     }

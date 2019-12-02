@@ -38,7 +38,7 @@ typedef struct {
 int cl_joyscale_x[2];
 int cl_joyscale_y[2];
 
-void CL_MouseEvent( int dx, int dy, int time );
+void CL_MouseEvent( int dx, int dy, int time, qboolean absolute );
 
 kbutton_t    in_strafe;
 

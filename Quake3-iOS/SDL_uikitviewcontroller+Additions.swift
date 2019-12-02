@@ -361,6 +361,15 @@ extension SDL_uikitviewcontroller {
         }
     }
     
+    @objc func toggleControls(_ hide: Bool) {
+        self.fireButton.isHidden = hide
+        self.jumpButton.isHidden = hide
+        self.joystickView.isHidden = hide
+        self.buttonStack.isHidden = hide
+        self.prevWeaponButton.isHidden = hide
+        self.nextWeaponButton.isHidden = hide
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
     }

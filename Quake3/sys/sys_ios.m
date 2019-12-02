@@ -80,6 +80,14 @@ void Sys_AddControls(SDL_Window *sdlWindow) {
     #endif
 }
 
+void Sys_ToggleControls(SDL_Window *sdlWindow) {
+    #if !TARGET_OS_TV
+    SDL_uikitviewcontroller *rootVC = (SDL_uikitviewcontroller *)GetSDLViewController(sdlWindow);
+    [rootVC toggleControls:Key_GetCatcher( ) & KEYCATCH_UI];
+    #endif
+}
+
+
 void GLimp_SetGamma( unsigned char red[256], unsigned char green[256], unsigned char blue[256] )
 {
     // unused in iOS

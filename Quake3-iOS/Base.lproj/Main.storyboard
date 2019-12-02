@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -82,7 +82,7 @@
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="T1e-r3-Itb"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="MozartsGhostSegue" id="T1e-r3-Itb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPq-ng-ZBi">
@@ -708,6 +708,6 @@
         <image name="quake_3_background" width="1920" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CVW-g3-IVQ"/>
+        <segue reference="T1e-r3-Itb"/>
     </inferredMetricsTieBreakers>
 </document>
