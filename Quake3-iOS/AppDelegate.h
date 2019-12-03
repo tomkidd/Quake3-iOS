@@ -11,12 +11,10 @@
 @interface AppDelegate : SDLUIKitDelegate {
     UINavigationController *rootNavigationController;     // required to dismiss the SettingsBaseViewController
     UIWindow *uiwindow;
-    UIView *gameViewControllerView;
 }
 
 @property (nonatomic, strong) UINavigationController *rootNavigationController;
 @property (nonatomic, strong) UIWindow *uiwindow;
-@property (nonatomic, strong) UIView *gameViewControllerView;
 
 
 @end

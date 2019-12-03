@@ -23,7 +23,7 @@
 @end
 
 @implementation AppDelegate
-@synthesize rootNavigationController, uiwindow, gameViewControllerView;
+@synthesize rootNavigationController, uiwindow;
 
 #pragma mark -
 #pragma mark AppDelegate methods

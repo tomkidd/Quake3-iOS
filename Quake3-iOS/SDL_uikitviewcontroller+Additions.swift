@@ -18,8 +18,6 @@ extension SDL_uikitviewcontroller {
         static var _tildeButton = UIButton()
         static var _expandButton = UIButton()
         static var _escapeButton = UIButton()
-        static var _quickSaveButton: UIButton!
-        static var _quickLoadButton: UIButton!
         static var _buttonStack = UIStackView(frame: .zero)
         static var _buttonStackExpanded = false
         static var _f1Button = UIButton()
@@ -78,24 +76,6 @@ extension SDL_uikitviewcontroller {
         }
         set(newValue) {
             Holder._expandButton = newValue
-        }
-    }
-    
-    var quickLoadButton:UIButton {
-        get {
-            return Holder._quickLoadButton
-        }
-        set(newValue) {
-            Holder._quickLoadButton = newValue
-        }
-    }
-    
-    var quickSaveButton:UIButton {
-        get {
-            return Holder._quickSaveButton
-        }
-        set(newValue) {
-            Holder._quickSaveButton = newValue
         }
     }
     
@@ -205,26 +185,6 @@ extension SDL_uikitviewcontroller {
         escapeButton.alpha = 0
         escapeButton.isHidden = true
 
-        quickSaveButton = UIButton(type: .custom)
-        quickSaveButton.setTitle(" QS ", for: .normal)
-        quickSaveButton.addTarget(self, action: #selector(self.quickSavePressed), for: .touchDown)
-        quickSaveButton.addTarget(self, action: #selector(self.quickSaveReleased), for: .touchUpInside)
-        quickSaveButton.layer.borderColor = UIColor.white.cgColor
-        quickSaveButton.layer.borderWidth = CGFloat(1)
-        quickSaveButton.alpha = 0
-        quickSaveButton.isHidden = true
-
-        quickLoadButton = UIButton(type: .custom)
-        quickLoadButton.setTitle(" QL ", for: .normal)
-        quickLoadButton.addTarget(self, action: #selector(self.quickLoadPressed), for: .touchDown)
-        quickLoadButton.addTarget(self, action: #selector(self.quickLoadReleased), for: .touchUpInside)
-        quickLoadButton.layer.borderColor = UIColor.white.cgColor
-        quickLoadButton.layer.borderWidth = CGFloat(1)
-        quickLoadButton.alpha = 0
-        quickLoadButton.isHidden = true
-
-        
-//        buttonStack = UIStackView(frame: CGRect(x: 20, y: 20, width: 30, height: 300))
         buttonStack = UIStackView(frame: .zero)
         buttonStack.frame.origin = CGPoint(x: 50, y: 50)
         buttonStack.translatesAutoresizingMaskIntoConstraints = false
@@ -234,8 +194,6 @@ extension SDL_uikitviewcontroller {
         buttonStack.addArrangedSubview(expandButton)
 //        buttonStack.addArrangedSubview(tildeButton)
         buttonStack.addArrangedSubview(escapeButton)
-        buttonStack.addArrangedSubview(quickSaveButton)
-        buttonStack.addArrangedSubview(quickLoadButton)
 
         return buttonStack
         
@@ -298,23 +256,7 @@ extension SDL_uikitviewcontroller {
     @objc func escapeReleased(sender: UIButton!) {
         Key_Event(27, qboolean(0), qboolean(1))
     }
-    
-    @objc func quickSavePressed(sender: UIButton!) {
-        Key_Event(150, qboolean(1), qboolean(1))
-    }
-    
-    @objc func quickSaveReleased(sender: UIButton!) {
-        Key_Event(150, qboolean(0), qboolean(1))
-    }
-    
-    @objc func quickLoadPressed(sender: UIButton!) {
-        Key_Event(153, qboolean(1), qboolean(1))
-    }
-    
-    @objc func quickLoadReleased(sender: UIButton!) {
-        Key_Event(153, qboolean(0), qboolean(1))
-    }
-    
+        
     @objc func f1Pressed(sender: UIButton!) {
         Key_Event(145, qboolean(1), qboolean(1))
     }
@@ -354,10 +296,6 @@ extension SDL_uikitviewcontroller {
             self.escapeButton.alpha = self.buttonStackExpanded ? 1 : 0
             self.tildeButton.isHidden = !self.buttonStackExpanded
             self.tildeButton.alpha = self.buttonStackExpanded ? 1 : 0
-            self.quickLoadButton.isHidden = !self.buttonStackExpanded
-            self.quickLoadButton.alpha = self.buttonStackExpanded ? 1 : 0
-            self.quickSaveButton.isHidden = !self.buttonStackExpanded
-            self.quickSaveButton.alpha = self.buttonStackExpanded ? 1 : 0
         }
     }
     
