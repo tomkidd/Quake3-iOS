@@ -1163,42 +1163,13 @@ static void IN_ProcessEvents( void )
                         
                         // If we're not on a 4:3 screen, do the math to figure out how to
                         // translate coordinates to a 4:3 equivalent
-                        //
-                        // There has got to be a smarter/easier way to do this
-                        // If anyone wants to simplify this, go for it.
                         if (ratio43 != ratio) {
-//                            float width43 = (float)cls.glconfig.vidHeight * ratio43;
                             float width43 = 480 * ratio;
-                            //= 0.5 * (B9 - (480*(640/480)))
                             float gap = 0.5 * (width43 - (480.0f*(640.0f/480.0f)));
                             float finger = (e.tfinger.x * width43);
                             float fingerMinusGap = (e.tfinger.x * width43) - gap;
 
-                            if (e.type != SDL_FINGERDOWN) {
-                                Com_Printf("****************\n");
-                                Com_Printf("e.tfinger.x: %f\n", e.tfinger.x);
-                                Com_Printf("e.tfinger.y: %f\n", e.tfinger.y);
-//                                Com_Printf("e.tfinger.y * height * ratio43: %f\n", e.tfinger.y * cls.glconfig.vidHeight * ratio43);
-//                                Com_Printf("vidHeight: %i\n", cls.glconfig.vidHeight);
-//                                Com_Printf("vidWidth: %i\n", cls.glconfig.vidWidth);
-                                Com_Printf("ratio: %f\n", ratio);
-//                                Com_Printf("ratio43: %f\n", ratio43);
-                                Com_Printf("width43: %f\n", width43);
-                                Com_Printf("gap: %f\n", gap);
-                                Com_Printf("finger: %f\n", finger);
-                                Com_Printf("fingerMinusGap: %f\n", fingerMinusGap);
-//                                Com_Printf("fingerMinusGapRatioed: %f\n", fingerMinusGapRatioed);
-//                                Com_Printf("width minus fmgr: %f\n", width43 - fingerMinusGapRatioed);
-                            }
-
-                            float uiDCbias = 0.5 * ( cls.glconfig.vidWidth - ( cls.glconfig.vidHeight * (640.0/480.0) ) );
-                            float uisxscale = cls.glconfig.vidWidth * (1.0/640.0);
-
-//                            CL_MouseEvent(e.tfinger.y * 480 * ratio43, e.tfinger.y * 480, Sys_Milliseconds(), qtrue);
-                            
                             CL_MouseEvent(fingerMinusGap, e.tfinger.y * 480, Sys_Milliseconds(), qtrue);
-
-                            
                         } else {
                             CL_MouseEvent(e.tfinger.x * 640, e.tfinger.y * 480, Sys_Milliseconds(), qtrue);
                         }

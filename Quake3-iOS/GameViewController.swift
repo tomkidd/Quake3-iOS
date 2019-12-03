@@ -94,6 +94,12 @@ class GameViewController: UIViewController {
                 argv.append(self.selectedMap)
                 argv.append("+g_spSkill")
                 argv.append(String(self.selectedDifficulty))
+                
+                // For single-player, we turn off pure servers so the absolute
+                // cursor positioning can work in-game
+                argv.append("+set")
+                argv.append("sv_pure")
+                argv.append("0")
             }
                 
             if self.selectedServer != nil {

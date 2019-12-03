@@ -902,8 +902,6 @@ void UI_MouseEvent( int dx, int dy, qboolean absolute )
 	else if (uis.cursory > SCREEN_HEIGHT)
 		uis.cursory = SCREEN_HEIGHT;
 
-	Com_Printf("uivm -> uis.cursory: %i uis.cursorx: %i bias: %i \n", uis.cursory, uis.cursorx, bias);
-
 	// region test the active menu items
 	for (i=0; i<uis.activemenu->nitems; i++)
 	{

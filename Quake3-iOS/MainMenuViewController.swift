@@ -19,7 +19,7 @@ class MainMenuViewController: UIViewController {
             defaults.set("unnamedPlayer", forKey: "playerName")
         }
         
-        performSegue(withIdentifier: "MozartsGhostSegue", sender: nil)
+        //performSegue(withIdentifier: "MozartsGhostSegue", sender: nil)
 
         // Do any additional setup after loading the view.
     }
