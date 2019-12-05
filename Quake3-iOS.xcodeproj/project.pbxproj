@@ -368,6 +368,8 @@
 		A17EE1AA211A62BB00811AE1 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7372117F0610031CEB8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A17EE1AF211A630600811AE1 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; };
 		A17EE1B0211A630600811AE1 /* FontAwesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A196B7362117F0610031CEB8 /* FontAwesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A17FF27D23986C860003D2E5 /* BotMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FF27C23986C860003D2E5 /* BotMatchViewController.swift */; };
+		A17FF27E23986C860003D2E5 /* BotMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FF27C23986C860003D2E5 /* BotMatchViewController.swift */; };
 		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */; };
@@ -756,6 +758,7 @@
 		A179C2B72101472E00D3C611 /* puff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = puff.c; sourceTree = "<group>"; };
 		A179C2B92101472E00D3C611 /* cm_polylib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cm_polylib.h; sourceTree = "<group>"; };
 		A179C2BB2101472E00D3C611 /* cm_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cm_patch.c; sourceTree = "<group>"; };
+		A17FF27C23986C860003D2E5 /* BotMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMatchViewController.swift; sourceTree = "<group>"; };
 		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = "../../../Library/Application Support/Quake3/baseq3"; sourceTree = "<group>"; };
@@ -894,6 +897,7 @@
 				A196B6E121167B890031CEB8 /* ServerListViewCell.swift */,
 				A196B6E221167B890031CEB8 /* ServerListViewCell.xib */,
 				A15103A3210D5DFF0087EA86 /* TiersListViewController.swift */,
+				A17FF27C23986C860003D2E5 /* BotMatchViewController.swift */,
 			);
 			path = "Quake3-iOS";
 			sourceTree = "<group>";
@@ -1603,6 +1607,7 @@
 				A1565F5E2109F30E00FA9BC9 /* snd_codec.c in Sources */,
 				A1565F5F2109F30E00FA9BC9 /* jfdctfst.c in Sources */,
 				A196B7192117F0420031CEB8 /* Q3MasterServerController.swift in Sources */,
+				A17FF27E23986C860003D2E5 /* BotMatchViewController.swift in Sources */,
 				A196B7112117F0420031CEB8 /* GSMasterServerController.swift in Sources */,
 				A1565F602109F30E00FA9BC9 /* tr_light.c in Sources */,
 				A1565F612109F30E00FA9BC9 /* jccoefct.c in Sources */,
@@ -1773,6 +1778,7 @@
 				A196B6CB2115F7C50031CEB8 /* SupportedGames.swift in Sources */,
 				A179C3022101472E00D3C611 /* jcparam.c in Sources */,
 				A179C35F2101472E00D3C611 /* snd_codec_wav.c in Sources */,
+				A17FF27D23986C860003D2E5 /* BotMatchViewController.swift in Sources */,
 				A196B6CF2115F7C50031CEB8 /* SQLError.swift in Sources */,
 				A179C4922101472F00D3C611 /* common.c in Sources */,
 				A179C3342101472E00D3C611 /* tr_shadows.c in Sources */,

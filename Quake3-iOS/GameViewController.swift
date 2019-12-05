@@ -20,6 +20,10 @@ class GameViewController: UIViewController {
     
     var selectedDifficulty = 0
     
+    var botMatch = false
+    
+    var bots = [(name: String, skill: Float)]()
+    
     let defaults = UserDefaults()
     
     override func viewDidLoad() {
@@ -34,10 +38,17 @@ class GameViewController: UIViewController {
         var argv: [String?] = [ Bundle.main.resourcePath! + "/quake3", "+set", "com_basegame", "baseq3", "+name", self.defaults.string(forKey: "playerName")]
 
             if !self.selectedMap.isEmpty {
-                argv.append("+spmap")
+                if self.botMatch {
+                    argv.append("+map")
+                } else {
+                    argv.append("+spmap")
+                }
                 argv.append(self.selectedMap)
-                argv.append("+g_spSkill")
-                argv.append(String(self.selectedDifficulty))
+
+                if !self.botMatch {
+                    argv.append("+g_spSkill")
+                    argv.append(String(self.selectedDifficulty))
+                }
                 
                 // For single-player, we turn off pure servers so the absolute
                 // cursor positioning can work in-game
@@ -49,6 +60,14 @@ class GameViewController: UIViewController {
             if self.selectedServer != nil {
                 argv.append("+connect")
                 argv.append("\(self.selectedServer!.ip):\(self.selectedServer!.port)")
+            }
+            
+            if self.botMatch {                
+                for bot in self.bots {
+                    argv.append("+addbot")
+                    argv.append(bot.name)
+                    argv.append(String(bot.skill))
+                }
             }
             
             // not sure if needed
