@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6RI-kZ-qLC">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina4_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -18,11 +18,11 @@
             <objects>
                 <viewController id="dWF-vJ-0ad" customClass="MainMenuViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uuz-Jq-TKC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quake_3_background" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-2W-XPP">
-                                <rect key="frame" x="-110" y="0.0" width="1000" height="414"/>
+                                <rect key="frame" x="-110" y="0.0" width="1000" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="J3f-2W-XPP" secondAttribute="height" multiplier="720:407" id="AQi-uG-8Ij"/>
                                     <constraint firstAttribute="width" constant="1000" id="So7-MT-UbU"/>
@@ -40,7 +40,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q U A K E  I I I  A R E N A" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW9-Ha-ihQ">
-                                <rect key="frame" x="461" y="20" width="371" height="68"/>
+                                <rect key="frame" x="177" y="20" width="371" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="68" id="Dw9-m8-S3X"/>
                                     <constraint firstAttribute="height" constant="68" id="abX-Hm-uFg"/>
@@ -53,7 +53,7 @@
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-uq-AC4">
-                                <rect key="frame" x="822" y="363" width="30" height="30"/>
+                                <rect key="frame" x="538" y="290" width="30" height="30"/>
                                 <state key="normal" title="π">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NIu-iW-DeA">
-                                <rect key="frame" x="626" y="96" width="206" height="211"/>
+                                <rect key="frame" x="342" y="96" width="206" height="211"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-Tz-OUu">
                                         <rect key="frame" x="0.0" y="0.0" width="206" height="49"/>
@@ -145,11 +145,11 @@
             <objects>
                 <viewController id="WvD-UG-yat" customClass="BotMatchViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ha-7k-E9S">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klk-Sf-dON">
-                                <rect key="frame" x="20" y="304" width="104" height="51"/>
+                                <rect key="frame" x="20" y="231" width="104" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="&lt; BACK">
@@ -161,7 +161,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLR-oG-IqI">
-                                <rect key="frame" x="775" y="304" width="86" height="51"/>
+                                <rect key="frame" x="447" y="231" width="86" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="START">
@@ -172,56 +172,118 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="BotMatchSegue" id="i4f-kW-1fr"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6li-D8-wsP">
-                                <rect key="frame" x="60" y="50.5" width="342" height="243.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="WvD-UG-yat" id="vyC-CU-LgS"/>
-                                    <outlet property="delegate" destination="WvD-UG-yat" id="Gj3-EI-vl0"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-Uy-jE8">
-                                <rect key="frame" x="60" y="20" width="43.5" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-Uy-jE8">
+                                <rect key="frame" x="67" y="21" width="41.5" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efD-Ms-QYj">
+                                <rect key="frame" x="290" y="20" width="36" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6q-s4-FGK">
+                                <rect key="frame" x="117" y="17" width="52" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="Q3DM1">
+                                    <color key="titleColor" red="0.87058824300000004" green="0.089310286559999993" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortBy:" destination="LuR-jY-oBi" eventType="touchUpInside" id="cFy-ES-KfG"/>
+                                    <segue destination="irP-Ed-f7p" kind="presentation" identifier="BotMatchMapSegue" id="eZH-hd-0mh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-JH-K1M">
+                                <rect key="frame" x="16" y="64" width="93" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8m-Yg-Ps7">
+                                <rect key="frame" x="117" y="60" width="76" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="Free For All">
+                                    <color key="titleColor" red="0.87058824300000004" green="0.089310286559999993" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortBy:" destination="LuR-jY-oBi" eventType="touchUpInside" id="HHs-4N-sWp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu0-Rm-K1S">
+                                <rect key="frame" x="28" y="108" width="81" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ban-G9-ZqQ">
+                                <rect key="frame" x="117" y="104" width="83" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="BRING IT ON">
+                                    <color key="titleColor" red="0.87058824300000004" green="0.089310286559999993" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortBy:" destination="LuR-jY-oBi" eventType="touchUpInside" id="xeK-CU-52k"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Azw-Ek-Wg3">
+                                <rect key="frame" x="290" y="58" width="243" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WvD-UG-yat" id="LBf-vg-K9k"/>
+                                    <outlet property="delegate" destination="WvD-UG-yat" id="H2D-77-chp"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPh-e0-w5f">
+                                <rect key="frame" x="479" y="16" width="54" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="Add Bot">
+                                    <color key="titleColor" red="0.87058824300000004" green="0.089310286559999993" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortBy:" destination="LuR-jY-oBi" eventType="touchUpInside" id="ftY-rv-avd"/>
+                                    <segue destination="Whp-pa-8JV" kind="presentation" identifier="BotMatchBotSegue" id="oJV-qJ-XhQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="klk-Sf-dON" firstAttribute="top" secondItem="6li-D8-wsP" secondAttribute="bottom" constant="10" id="5IH-eU-Uh4"/>
-                            <constraint firstItem="6li-D8-wsP" firstAttribute="top" secondItem="8xc-Uy-jE8" secondAttribute="bottom" constant="3" id="BJx-tL-Ep8"/>
                             <constraint firstItem="uzP-us-ASs" firstAttribute="bottom" secondItem="RLR-oG-IqI" secondAttribute="bottom" constant="38" id="Bla-sG-2su"/>
                             <constraint firstItem="uzP-us-ASs" firstAttribute="bottom" secondItem="klk-Sf-dON" secondAttribute="bottom" constant="38" id="Cyy-tF-NOF"/>
-                            <constraint firstItem="uzP-us-ASs" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8xc-Uy-jE8" secondAttribute="trailing" symbolic="YES" id="DLP-KL-SS4"/>
                             <constraint firstAttribute="trailing" secondItem="RLR-oG-IqI" secondAttribute="trailing" constant="35" id="HWf-GM-4cc"/>
-                            <constraint firstItem="6li-D8-wsP" firstAttribute="width" secondItem="6Ha-7k-E9S" secondAttribute="width" multiplier="0.381696" id="MeA-SB-9Ob"/>
                             <constraint firstItem="RLR-oG-IqI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="klk-Sf-dON" secondAttribute="trailing" constant="8" symbolic="YES" id="Qr4-kO-Chp"/>
-                            <constraint firstItem="6li-D8-wsP" firstAttribute="leading" secondItem="uzP-us-ASs" secondAttribute="leading" constant="16" id="Sfo-a7-Qqt"/>
-                            <constraint firstItem="8xc-Uy-jE8" firstAttribute="leading" secondItem="uzP-us-ASs" secondAttribute="leading" constant="16" id="U8r-yE-gN1"/>
                             <constraint firstItem="uzP-us-ASs" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="klk-Sf-dON" secondAttribute="trailing" symbolic="YES" id="kJD-dt-kl4"/>
                             <constraint firstItem="klk-Sf-dON" firstAttribute="leading" secondItem="6Ha-7k-E9S" secondAttribute="leading" constant="20" id="nlg-OQ-giB"/>
-                            <constraint firstItem="8xc-Uy-jE8" firstAttribute="leading" secondItem="6li-D8-wsP" secondAttribute="leading" id="phr-Ag-oSe"/>
-                            <constraint firstItem="8xc-Uy-jE8" firstAttribute="top" secondItem="uzP-us-ASs" secondAttribute="top" constant="20" id="zuk-1q-178"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uzP-us-ASs"/>
                     </view>
                     <navigationItem key="navigationItem" id="70D-e3-6Vv"/>
                     <connections>
-                        <outlet property="mapList" destination="6li-D8-wsP" id="uu3-PW-Kzf"/>
+                        <outlet property="botList" destination="Azw-Ek-Wg3" id="Dqf-FT-huQ"/>
+                        <outlet property="mapButton" destination="N6q-s4-FGK" id="mq2-hk-wNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsP-CW-iiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fNj-eU-b7P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1630.5803571428571" y="-662.31884057971024"/>
+            <point key="canvasLocation" x="1629.9295774647887" y="-663.75"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GLKView">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -237,11 +299,11 @@
             <objects>
                 <viewController id="ytm-JD-gql" customClass="TiersListViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iMo-fD-Gqy">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Dt-1U-06w">
-                                <rect key="frame" x="64" y="20" width="768" height="353"/>
+                                <rect key="frame" x="20" y="20" width="528" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ytm-JD-gql" id="7Pp-n7-ZnB"/>
@@ -273,11 +335,11 @@
             <objects>
                 <viewController id="gOE-px-5yC" customClass="ServerBrowserViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53K-Kb-nZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rso-ux-2dW">
-                                <rect key="frame" x="64" y="20" width="768" height="313"/>
+                                <rect key="frame" x="20" y="20" width="528" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="gOE-px-5yC" id="FCr-eb-EYo"/>
@@ -285,7 +347,7 @@
                                 </connections>
                             </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlM-0b-IFw">
-                                <rect key="frame" x="747" y="341" width="85" height="51"/>
+                                <rect key="frame" x="463" y="268" width="85" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="FIGHT">
@@ -297,7 +359,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0ni-l6-EF9">
-                                <rect key="frame" x="64" y="346" width="190" height="37"/>
+                                <rect key="frame" x="20" y="273" width="190" height="37"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-Bv-Lat">
                                         <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
@@ -320,7 +382,7 @@
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-ut-mNp">
-                                <rect key="frame" x="542" y="341" width="185" height="51"/>
+                                <rect key="frame" x="258" y="268" width="185" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="SERVER INFO">
@@ -369,11 +431,11 @@
             <objects>
                 <viewController id="LuR-jY-oBi" customClass="ServerFilterViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzI-HR-g5I">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ux-MU-lJU">
-                                <rect key="frame" x="64" y="20" width="135" height="190"/>
+                                <rect key="frame" x="20" y="20" width="135" height="190"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cxm-EY-BbC">
                                         <rect key="frame" x="0.0" y="0.0" width="135" height="36"/>
@@ -481,7 +543,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaA-jM-zne">
-                                <rect key="frame" x="54" y="332" width="104" height="51"/>
+                                <rect key="frame" x="10" y="259" width="104" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="&lt; BACK">
@@ -522,11 +584,11 @@
             <objects>
                 <viewController id="dBM-hw-OcU" customClass="DifficultyViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IRp-sc-De8">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTq-wa-mWv">
-                                <rect key="frame" x="365.5" y="51" width="165" height="56"/>
+                                <rect key="frame" x="201.5" y="4" width="165" height="56"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="I CAN WIN">
@@ -538,7 +600,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-IW-WTU">
-                                <rect key="frame" x="348" y="115" width="200" height="56"/>
+                                <rect key="frame" x="184" y="68" width="200" height="56"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="BRING IT ON">
@@ -550,7 +612,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuW-sx-R42">
-                                <rect key="frame" x="310.5" y="179" width="275" height="56"/>
+                                <rect key="frame" x="146.5" y="132" width="275" height="56"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="HURT ME PLENTY">
@@ -562,7 +624,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u95-ZK-53H">
-                                <rect key="frame" x="356" y="243" width="184" height="56"/>
+                                <rect key="frame" x="192" y="196" width="184" height="56"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="HARDCORE">
@@ -574,7 +636,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ar-zK-sKb">
-                                <rect key="frame" x="343" y="307" width="210" height="56"/>
+                                <rect key="frame" x="179" y="260" width="210" height="56"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="NIGHTMARE!">
@@ -615,11 +677,11 @@
             <objects>
                 <viewController id="i2Z-g0-ZUh" customClass="ServerInfoViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbg-K2-e50">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjY-3E-K3Q">
-                                <rect key="frame" x="54" y="332" width="104" height="51"/>
+                                <rect key="frame" x="10" y="259" width="104" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="&lt; BACK">
@@ -631,7 +693,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWh-5I-eKw">
-                                <rect key="frame" x="757" y="332" width="85" height="51"/>
+                                <rect key="frame" x="473" y="259" width="85" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="FIGHT">
@@ -644,7 +706,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FV9-o6-gcq">
-                                <rect key="frame" x="80" y="75" width="403" height="244"/>
+                                <rect key="frame" x="36" y="75" width="255.5" height="171"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="i2Z-g0-ZUh" id="g4a-7j-e4o"/>
@@ -652,7 +714,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MLc-63-Pey">
-                                <rect key="frame" x="429" y="75" width="403" height="244"/>
+                                <rect key="frame" x="292.5" y="75" width="255.5" height="171"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="i2Z-g0-ZUh" id="Pr7-cC-sAR"/>
@@ -660,19 +722,19 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k11-6g-5bn">
-                                <rect key="frame" x="80" y="44.5" width="59.5" height="27.5"/>
+                                <rect key="frame" x="36" y="44.5" width="59.5" height="27.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5O-4Y-BsG">
-                                <rect key="frame" x="576" y="44" width="45" height="28"/>
+                                <rect key="frame" x="292.5" y="44" width="0.5" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-7y-x7h">
-                                <rect key="frame" x="80" y="1.5" width="128" height="35"/>
+                                <rect key="frame" x="36" y="1.5" width="128" height="35"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -740,25 +802,25 @@
             <objects>
                 <viewController id="lOA-Gf-EOQ" customClass="OptionsViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RWg-Jw-W6H">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA7-NO-b6C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA7-NO-b6C">
                                 <rect key="frame" x="20" y="20" width="136" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBa-Jt-UQv">
-                                <rect key="frame" x="164" y="22" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBa-Jt-UQv">
+                                <rect key="frame" x="164" y="20.5" width="251" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="qJc-RA-Xjr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-tQ-tfs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-tQ-tfs">
                                 <rect key="frame" x="423" y="17" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="SAVE">
@@ -769,9 +831,8 @@
                                     <action selector="savePlayerName:" destination="lOA-Gf-EOQ" eventType="touchUpInside" id="bO7-ST-7Q8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-mw-aUL">
-                                <rect key="frame" x="20" y="304" width="104" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-mw-aUL">
+                                <rect key="frame" x="20" y="249" width="104" height="51"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="&lt; BACK">
@@ -784,6 +845,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VRm-mw-aUL" firstAttribute="leading" secondItem="Px2-48-ib4" secondAttribute="leading" constant="20" id="4ON-Sd-b4q"/>
+                            <constraint firstItem="Px2-48-ib4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YhQ-tQ-tfs" secondAttribute="trailing" symbolic="YES" id="F3O-Ib-Hab"/>
+                            <constraint firstItem="JA7-NO-b6C" firstAttribute="leading" secondItem="Px2-48-ib4" secondAttribute="leading" constant="20" id="OG0-sC-i87"/>
+                            <constraint firstItem="JA7-NO-b6C" firstAttribute="top" secondItem="Px2-48-ib4" secondAttribute="top" constant="20" id="T9B-cX-zGS"/>
+                            <constraint firstItem="YhQ-tQ-tfs" firstAttribute="centerY" secondItem="sBa-Jt-UQv" secondAttribute="centerY" id="a0m-Uw-73M"/>
+                            <constraint firstItem="sBa-Jt-UQv" firstAttribute="leading" secondItem="JA7-NO-b6C" secondAttribute="trailing" constant="8" id="hkh-In-ITM"/>
+                            <constraint firstItem="Px2-48-ib4" firstAttribute="bottom" secondItem="VRm-mw-aUL" secondAttribute="bottom" constant="20" id="msI-mL-QkJ"/>
+                            <constraint firstItem="YhQ-tQ-tfs" firstAttribute="leading" secondItem="sBa-Jt-UQv" secondAttribute="trailing" constant="8" id="o6s-A3-kbT"/>
+                            <constraint firstItem="Px2-48-ib4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VRm-mw-aUL" secondAttribute="trailing" symbolic="YES" id="qVd-xB-HMh"/>
+                            <constraint firstItem="sBa-Jt-UQv" firstAttribute="centerY" secondItem="JA7-NO-b6C" secondAttribute="centerY" id="xta-vv-vgR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Px2-48-ib4"/>
                     </view>
                     <navigationItem key="navigationItem" id="mWs-OJ-gs4"/>
@@ -794,7 +867,116 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-Wr-BCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ChN-nb-OLH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="221.84407796101951" y="1106.8"/>
+            <point key="canvasLocation" x="221.83098591549296" y="1106.25"/>
+        </scene>
+        <!--Bot Match Map View Controller-->
+        <scene sceneID="boH-qI-5c5">
+            <objects>
+                <viewController id="irP-Ed-f7p" customClass="BotMatchMapViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OLB-PH-sZm">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRO-QU-MnI">
+                                <rect key="frame" x="16" y="51.5" width="532" height="249.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="irP-Ed-f7p" id="Edw-Hy-QKn"/>
+                                    <outlet property="delegate" destination="irP-Ed-f7p" id="vvW-hp-hcS"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AD-Qx-FVa">
+                                <rect key="frame" x="16" y="20" width="111" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.76862745099999996" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="bottom" secondItem="sRO-QU-MnI" secondAttribute="bottom" constant="19" id="5eG-sn-UT0"/>
+                            <constraint firstItem="1AD-Qx-FVa" firstAttribute="top" secondItem="YXX-q7-WjU" secondAttribute="top" constant="20" id="Di2-mF-Yau"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1AD-Qx-FVa" secondAttribute="trailing" symbolic="YES" id="FA8-ke-mfq"/>
+                            <constraint firstItem="1AD-Qx-FVa" firstAttribute="leading" secondItem="YXX-q7-WjU" secondAttribute="leading" constant="16" id="L2W-xW-xUY"/>
+                            <constraint firstItem="sRO-QU-MnI" firstAttribute="top" secondItem="1AD-Qx-FVa" secondAttribute="bottom" constant="3.5" id="aqO-6r-TW8"/>
+                            <constraint firstItem="sRO-QU-MnI" firstAttribute="leading" secondItem="YXX-q7-WjU" secondAttribute="leading" constant="16" id="j4f-iV-gol"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" secondItem="sRO-QU-MnI" secondAttribute="trailing" constant="20" id="ypO-Gh-3Ad"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YXX-q7-WjU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IWb-G2-LLL"/>
+                    <connections>
+                        <outlet property="mapList" destination="sRO-QU-MnI" id="4kl-7z-pj7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQY-8X-87m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2307.0422535211269" y="-665.625"/>
+        </scene>
+        <!--Bot Match Bot View Controller-->
+        <scene sceneID="bPg-26-jF1">
+            <objects>
+                <viewController id="Whp-pa-8JV" customClass="BotMatchBotViewController" customModule="Quake3_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C0Z-md-10D">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hrY-Se-vdS">
+                                <rect key="frame" x="16" y="51.5" width="532" height="249.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Whp-pa-8JV" id="WOx-ng-X4q"/>
+                                    <outlet property="delegate" destination="Whp-pa-8JV" id="IcZ-02-uXc"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Bot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdg-nM-sua">
+                                <rect key="frame" x="16" y="20" width="103" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFk-6z-zky">
+                                <rect key="frame" x="518" y="15" width="30" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="3.0">
+                                    <color key="titleColor" red="0.87058824300000004" green="0.089310286559999993" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skill:" destination="Whp-pa-8JV" eventType="touchUpInside" id="NWZ-g2-L3U"/>
+                                    <action selector="sortBy:" destination="LuR-jY-oBi" eventType="touchUpInside" id="ST7-ei-EhY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xj-0G-i5Z">
+                                <rect key="frame" x="467" y="19" width="43" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.76862745099999996" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hrY-Se-vdS" firstAttribute="top" secondItem="nFk-6z-zky" secondAttribute="bottom" constant="0.5" id="0ss-ky-9n2"/>
+                            <constraint firstItem="nFk-6z-zky" firstAttribute="leading" secondItem="0xj-0G-i5Z" secondAttribute="trailing" constant="8" id="Fes-Nn-408"/>
+                            <constraint firstItem="0xj-0G-i5Z" firstAttribute="centerY" secondItem="nFk-6z-zky" secondAttribute="centerY" id="IM6-sS-Cqs"/>
+                            <constraint firstItem="qvc-GV-CSn" firstAttribute="bottom" secondItem="hrY-Se-vdS" secondAttribute="bottom" constant="19" id="J7B-65-DqK"/>
+                            <constraint firstItem="qvc-GV-CSn" firstAttribute="trailing" secondItem="nFk-6z-zky" secondAttribute="trailing" constant="20" id="OHG-EI-dsU"/>
+                            <constraint firstItem="hrY-Se-vdS" firstAttribute="leading" secondItem="qvc-GV-CSn" secondAttribute="leading" constant="16" id="OzD-4B-7rA"/>
+                            <constraint firstItem="Rdg-nM-sua" firstAttribute="top" secondItem="qvc-GV-CSn" secondAttribute="top" constant="20" id="fCg-xu-o2n"/>
+                            <constraint firstItem="qvc-GV-CSn" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rdg-nM-sua" secondAttribute="trailing" symbolic="YES" id="jAQ-O0-1HY"/>
+                            <constraint firstItem="qvc-GV-CSn" firstAttribute="trailing" secondItem="hrY-Se-vdS" secondAttribute="trailing" constant="20" id="ltA-Ov-3bT"/>
+                            <constraint firstItem="Rdg-nM-sua" firstAttribute="leading" secondItem="qvc-GV-CSn" secondAttribute="leading" constant="16" id="rvD-GL-lJU"/>
+                            <constraint firstItem="hrY-Se-vdS" firstAttribute="top" secondItem="Rdg-nM-sua" secondAttribute="bottom" constant="3.5" id="vzy-gV-zuV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qvc-GV-CSn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1aS-l6-u40"/>
+                    <connections>
+                        <outlet property="botList" destination="hrY-Se-vdS" id="8XF-5g-4pW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRX-SX-U3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2307" y="69"/>
         </scene>
     </scenes>
     <resources>
