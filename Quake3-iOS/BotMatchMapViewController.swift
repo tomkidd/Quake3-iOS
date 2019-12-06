@@ -52,7 +52,7 @@ class BotMatchMapViewController: UIViewController {
         mapList.mask = nil
         mapList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        currentWorkingPath = fileManager.currentDirectoryPath
+        currentWorkingPath = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
     }
     
     @IBAction func ok(_ sender: Any) {
