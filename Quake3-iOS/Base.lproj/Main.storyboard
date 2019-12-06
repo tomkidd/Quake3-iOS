@@ -878,7 +878,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRO-QU-MnI">
-                                <rect key="frame" x="16" y="51.5" width="532" height="249.5"/>
+                                <rect key="frame" x="16" y="51.5" width="388" height="250.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="irP-Ed-f7p" id="Edw-Hy-QKn"/>
@@ -891,22 +891,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-Sg-B0A">
+                                <rect key="frame" x="420" y="51" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Dwg-ot-9sj"/>
+                                    <constraint firstAttribute="width" constant="128" id="V2g-xD-DwA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vro-5W-eoE">
+                                <rect key="frame" x="505" y="243" width="44" height="51"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="1" green="0.0093617555430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ok:" destination="irP-Ed-f7p" eventType="touchUpInside" id="qKA-zf-g8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YXX-q7-WjU" firstAttribute="bottom" secondItem="sRO-QU-MnI" secondAttribute="bottom" constant="19" id="5eG-sn-UT0"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="bottom" secondItem="Vro-5W-eoE" secondAttribute="bottom" constant="26" id="2GY-9f-FeH"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="bottom" secondItem="sRO-QU-MnI" secondAttribute="bottom" constant="18" id="5eG-sn-UT0"/>
                             <constraint firstItem="1AD-Qx-FVa" firstAttribute="top" secondItem="YXX-q7-WjU" secondAttribute="top" constant="20" id="Di2-mF-Yau"/>
                             <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1AD-Qx-FVa" secondAttribute="trailing" symbolic="YES" id="FA8-ke-mfq"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" secondItem="BIw-Sg-B0A" secondAttribute="trailing" constant="20" id="JbI-d6-lR2"/>
                             <constraint firstItem="1AD-Qx-FVa" firstAttribute="leading" secondItem="YXX-q7-WjU" secondAttribute="leading" constant="16" id="L2W-xW-xUY"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" secondItem="Vro-5W-eoE" secondAttribute="trailing" constant="19" id="Z3U-o8-7kV"/>
                             <constraint firstItem="sRO-QU-MnI" firstAttribute="top" secondItem="1AD-Qx-FVa" secondAttribute="bottom" constant="3.5" id="aqO-6r-TW8"/>
+                            <constraint firstItem="BIw-Sg-B0A" firstAttribute="top" secondItem="YXX-q7-WjU" secondAttribute="top" constant="51" id="iG8-Mz-Wqw"/>
                             <constraint firstItem="sRO-QU-MnI" firstAttribute="leading" secondItem="YXX-q7-WjU" secondAttribute="leading" constant="16" id="j4f-iV-gol"/>
-                            <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" secondItem="sRO-QU-MnI" secondAttribute="trailing" constant="20" id="ypO-Gh-3Ad"/>
+                            <constraint firstItem="YXX-q7-WjU" firstAttribute="trailing" secondItem="sRO-QU-MnI" secondAttribute="trailing" constant="164" id="ypO-Gh-3Ad"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YXX-q7-WjU"/>
                     </view>
                     <navigationItem key="navigationItem" id="IWb-G2-LLL"/>
                     <connections>
                         <outlet property="mapList" destination="sRO-QU-MnI" id="4kl-7z-pj7"/>
+                        <outlet property="mapShot" destination="BIw-Sg-B0A" id="eLJ-wP-LUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQY-8X-87m" userLabel="First Responder" sceneMemberID="firstResponder"/>

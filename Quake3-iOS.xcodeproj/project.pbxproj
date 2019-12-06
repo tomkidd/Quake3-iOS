@@ -375,6 +375,8 @@
 		A17FF2832398CF490003D2E5 /* BotMatchBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FF2822398CF490003D2E5 /* BotMatchBotViewController.swift */; };
 		A17FF2842398CF490003D2E5 /* BotMatchBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FF2822398CF490003D2E5 /* BotMatchBotViewController.swift */; };
 		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
+		A18F9695239A10360053E3B1 /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */; };
+		A18F9696239A10360053E3B1 /* ZIPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */; };
 		A196B6A72115F7C50031CEB8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B68B2115F7C50031CEB8 /* Server.swift */; };
@@ -483,6 +485,7 @@
 			files = (
 				A196B6F22117ECCD0031CEB8 /* CocoaAsyncSocket.framework in Embed Frameworks */,
 				A196B7412117F18D0031CEB8 /* FontAwesome.framework in Embed Frameworks */,
+				A18F9696239A10360053E3B1 /* ZIPFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +769,7 @@
 		A17FF27F2398C9390003D2E5 /* BotMatchMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMatchMapViewController.swift; sourceTree = "<group>"; };
 		A17FF2822398CF490003D2E5 /* BotMatchBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMatchBotViewController.swift; sourceTree = "<group>"; };
 		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
+		A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZIPFoundation.framework; path = Carthage/Build/iOS/ZIPFoundation.framework; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = "../../../Library/Application Support/Quake3/baseq3"; sourceTree = "<group>"; };
 		A1902F63210939BA008823BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -799,9 +803,7 @@
 		A196B6E7211683510031CEB8 /* ServerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoViewController.swift; sourceTree = "<group>"; };
 		A196B6EE2117EC870031CEB8 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		A196B6F62117EE4F0031CEB8 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
-		A196B6FB2117EEF00031CEB8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A196B6FD2117EF080031CEB8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		A196B6FE2117EF0F0031CEB8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A196B7052117EF750031CEB8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.4.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		A196B7062117EF750031CEB8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.4.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -851,6 +853,7 @@
 				A1565FE9210A0E4A00FA9BC9 /* libcrypto.a in Frameworks */,
 				A1565FE4210A0DEF00FA9BC9 /* libcurl_iOS.a in Frameworks */,
 				A196B7012117EF3F0031CEB8 /* AudioToolbox.framework in Frameworks */,
+				A18F9695239A10360053E3B1 /* ZIPFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,12 +1364,11 @@
 				A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */,
 				A196B6EE2117EC870031CEB8 /* CocoaAsyncSocket.framework */,
 				A196B6F62117EE4F0031CEB8 /* FontAwesome.framework */,
-				A196B6FD2117EF080031CEB8 /* GLKit.framework */,
 				A1565FE7210A0E4A00FA9BC9 /* libcrypto.a */,
 				A1565FDC210A0CEA00FA9BC9 /* libcurl_iOS.a */,
 				A1565FEA210A0E6F00FA9BC9 /* libnghttp2_iOS.a */,
 				A1565FE6210A0E4A00FA9BC9 /* libssl.a */,
-				A196B6FB2117EEF00031CEB8 /* AudioToolbox.framework */,
+				A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";

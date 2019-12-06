@@ -1,2 +1,3 @@
 github "robbiehanson/CocoaAsyncSocket" "master"
 github "thii/FontAwesome.swift"
+github "weichsel/ZIPFoundation" ~> 0.9

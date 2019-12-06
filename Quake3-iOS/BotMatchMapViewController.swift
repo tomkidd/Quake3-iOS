@@ -11,7 +11,11 @@ import UIKit
 class BotMatchMapViewController: UIViewController {
 
     @IBOutlet weak var mapList: UITableView!
-    
+    @IBOutlet weak var mapShot: UIImageView!
+
+    let fileManager = FileManager()
+    var currentWorkingPath = ""
+
     var delegate:BotMatchProtocol?
     
     let maps:[(map: String, name: String)] =
@@ -47,7 +51,14 @@ class BotMatchMapViewController: UIViewController {
 
         mapList.mask = nil
         mapList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        currentWorkingPath = fileManager.currentDirectoryPath
     }
+    
+    @IBAction func ok(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*
@@ -66,7 +77,9 @@ extension BotMatchMapViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.setMap(map: maps[indexPath.row].map, name: maps[indexPath.row].name)
-        self.dismiss(animated: true, completion: nil)
+        var destinationURL = URL(fileURLWithPath: currentWorkingPath)
+        destinationURL.appendPathComponent("graphics/\(maps[indexPath.row].map).jpg")
+        mapShot.image = UIImage(contentsOfFile: destinationURL.path)
     }
     
 }
