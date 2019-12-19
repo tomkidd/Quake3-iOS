@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A144021A23ABEC6E00491C86 /* BotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A144021923ABEC6E00491C86 /* BotCollectionViewCell.swift */; };
+		A144021B23ABEC6E00491C86 /* BotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A144021923ABEC6E00491C86 /* BotCollectionViewCell.swift */; };
 		A1510399210B7A390087EA86 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1510398210B7A390087EA86 /* JoyStickView.swift */; };
 		A151039C210B7A890087EA86 /* CoreGraphics+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A151039B210B7A890087EA86 /* CoreGraphics+Additions.swift */; };
 		A151039F210D50D50087EA86 /* dpquake.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A151039E210D50D40087EA86 /* dpquake.ttf */; };
@@ -377,6 +379,10 @@
 		A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */; };
 		A18F9695239A10360053E3B1 /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */; };
 		A18F9696239A10360053E3B1 /* ZIPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A18F9698239B09D40053E3B1 /* UIImage-Targa.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F9697239B09D40053E3B1 /* UIImage-Targa.m */; };
+		A18F9699239B09D40053E3B1 /* UIImage-Targa.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F9697239B09D40053E3B1 /* UIImage-Targa.m */; };
+		A18F969D23A04F070053E3B1 /* tga_reader.c in Sources */ = {isa = PBXBuildFile; fileRef = A18F969C23A04F070053E3B1 /* tga_reader.c */; };
+		A18F969E23A04F070053E3B1 /* tga_reader.c in Sources */ = {isa = PBXBuildFile; fileRef = A18F969C23A04F070053E3B1 /* tga_reader.c */; };
 		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */; };
 		A196B6A72115F7C50031CEB8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B68B2115F7C50031CEB8 /* Server.swift */; };
@@ -493,6 +499,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A144021923ABEC6E00491C86 /* BotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1510398210B7A390087EA86 /* JoyStickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoyStickView.swift; sourceTree = "<group>"; };
 		A151039B210B7A890087EA86 /* CoreGraphics+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Additions.swift"; sourceTree = "<group>"; };
 		A151039E210D50D40087EA86 /* dpquake.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpquake.ttf; sourceTree = "<group>"; };
@@ -770,6 +777,10 @@
 		A17FF2822398CF490003D2E5 /* BotMatchBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMatchBotViewController.swift; sourceTree = "<group>"; };
 		A18362392373D9540060FE55 /* SDL_uikitviewcontroller+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDL_uikitviewcontroller+Additions.swift"; sourceTree = "<group>"; };
 		A18F968E239A0CF30053E3B1 /* ZIPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZIPFoundation.framework; path = Carthage/Build/iOS/ZIPFoundation.framework; sourceTree = "<group>"; };
+		A18F9697239B09D40053E3B1 /* UIImage-Targa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Targa.m"; sourceTree = "<group>"; };
+		A18F969A239B0A0E0053E3B1 /* UIImage-Targa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage-Targa.h"; sourceTree = "<group>"; };
+		A18F969B23A04F070053E3B1 /* tga_reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tga_reader.h; sourceTree = "<group>"; };
+		A18F969C23A04F070053E3B1 /* tga_reader.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tga_reader.c; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = "../../../Library/Application Support/Quake3/baseq3"; sourceTree = "<group>"; };
 		A1902F63210939BA008823BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -909,6 +920,11 @@
 				A17FF27C23986C860003D2E5 /* BotMatchViewController.swift */,
 				A17FF27F2398C9390003D2E5 /* BotMatchMapViewController.swift */,
 				A17FF2822398CF490003D2E5 /* BotMatchBotViewController.swift */,
+				A18F9697239B09D40053E3B1 /* UIImage-Targa.m */,
+				A18F969A239B0A0E0053E3B1 /* UIImage-Targa.h */,
+				A18F969B23A04F070053E3B1 /* tga_reader.h */,
+				A18F969C23A04F070053E3B1 /* tga_reader.c */,
+				A144021923ABEC6E00491C86 /* BotCollectionViewCell.swift */,
 			);
 			path = "Quake3-iOS";
 			sourceTree = "<group>";
@@ -1587,6 +1603,7 @@
 				A1565F482109F30E00FA9BC9 /* be_aas_reach.c in Sources */,
 				A1565F492109F30E00FA9BC9 /* be_ai_goal.c in Sources */,
 				A1565F4A2109F30E00FA9BC9 /* cl_console.c in Sources */,
+				A144021B23ABEC6E00491C86 /* BotCollectionViewCell.swift in Sources */,
 				A17EE1A7211A614200811AE1 /* ServerFilterViewController.swift in Sources */,
 				A196B7152117F0420031CEB8 /* Q3ServerController.swift in Sources */,
 				A1565F4B2109F30E00FA9BC9 /* cl_scrn.c in Sources */,
@@ -1610,6 +1627,7 @@
 				A1565F592109F30E00FA9BC9 /* l_log.c in Sources */,
 				A1565F5A2109F30E00FA9BC9 /* be_ai_weap.c in Sources */,
 				A196B7162117F0420031CEB8 /* Q3Player.swift in Sources */,
+				A18F969E23A04F070053E3B1 /* tga_reader.c in Sources */,
 				A17EE19F211A610200811AE1 /* DifficultyViewController.swift in Sources */,
 				A1565F5B2109F30E00FA9BC9 /* net_ip.c in Sources */,
 				A1565F5C2109F30E00FA9BC9 /* snd_openal.c in Sources */,
@@ -1630,6 +1648,7 @@
 				A1565F672109F30E00FA9BC9 /* jdarith.c in Sources */,
 				A1565F682109F30E00FA9BC9 /* jctrans.c in Sources */,
 				A1565F692109F30E00FA9BC9 /* jcomapi.c in Sources */,
+				A18F9699239B09D40053E3B1 /* UIImage-Targa.m in Sources */,
 				A1565F6A2109F30E00FA9BC9 /* jdsample.c in Sources */,
 				A1565F6B2109F30E00FA9BC9 /* l_script.c in Sources */,
 				A17EE1A1211A611400811AE1 /* ServerBrowserViewController.swift in Sources */,
@@ -1765,6 +1784,7 @@
 				A179C3152101472E00D3C611 /* jdarith.c in Sources */,
 				A179C49D2101472F00D3C611 /* vm.c in Sources */,
 				A179C2E02101472E00D3C611 /* be_aas_routealt.c in Sources */,
+				A18F9698239B09D40053E3B1 /* UIImage-Targa.m in Sources */,
 				A179C49B2101472F00D3C611 /* files.c in Sources */,
 				A15AA92A211B470200DE867F /* MainMenuViewController.swift in Sources */,
 				A196B6DA2115FDB70031CEB8 /* Game.swift in Sources */,
@@ -1778,6 +1798,7 @@
 				A179C3572101472E00D3C611 /* snd_adpcm.c in Sources */,
 				A179C3192101472E00D3C611 /* jmemmgr.c in Sources */,
 				A196B6AD2115F7C50031CEB8 /* Coordinator.swift in Sources */,
+				A144021A23ABEC6E00491C86 /* BotCollectionViewCell.swift in Sources */,
 				A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */,
 				A179C2D92101472E00D3C611 /* be_ai_gen.c in Sources */,
 				A179C31E2101472E00D3C611 /* jctrans.c in Sources */,
@@ -1948,6 +1969,7 @@
 				A179C4A72101472F00D3C611 /* md5.c in Sources */,
 				A179C4A52101472F00D3C611 /* q_shared.c in Sources */,
 				A179C32D2101472E00D3C611 /* tr_backend.c in Sources */,
+				A18F969D23A04F070053E3B1 /* tga_reader.c in Sources */,
 				A179C31D2101472E00D3C611 /* jdapimin.c in Sources */,
 				A179C34C2101472E00D3C611 /* snd_mix.c in Sources */,
 				A179C3332101472E00D3C611 /* tr_flares.c in Sources */,

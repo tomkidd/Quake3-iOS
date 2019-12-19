@@ -16,6 +16,7 @@
 #pragma clang diagnostic ignored "-Weverything"
 #include "SDL_uikitviewcontroller.h"
 #pragma clang diagnostic pop
+#include "UIImage-Targa.h"
 
 void Sys_Startup( int argc, char **argv );
 

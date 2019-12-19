@@ -147,6 +147,13 @@ class MainMenuViewController: UIViewController {
         extractFile(pk3: "baseq3/pak2.pk3", source: "models/players/tim/icon_default.tga", destination: "graphics/tim/icon_default.tga")
         extractFile(pk3: "baseq3/pak2.pk3", source: "models/players/xian/icon_default.tga", destination: "graphics/xian/icon_default.tga")
         
+        extractFile(pk3: "baseq3/pak0.pk3", source: "menu/art/skill1.tga", destination: "graphics/menu/art/skill1.tga")
+        extractFile(pk3: "baseq3/pak0.pk3", source: "menu/art/skill2.tga", destination: "graphics/menu/art/skill2.tga")
+        extractFile(pk3: "baseq3/pak0.pk3", source: "menu/art/skill3.tga", destination: "graphics/menu/art/skill3.tga")
+        extractFile(pk3: "baseq3/pak0.pk3", source: "menu/art/skill4.tga", destination: "graphics/menu/art/skill4.tga")
+        extractFile(pk3: "baseq3/pak0.pk3", source: "menu/art/skill5.tga", destination: "graphics/menu/art/skill5.tga")
+
+        
         //performSegue(withIdentifier: "MozartsGhostSegue", sender: nil)
 
         // Do any additional setup after loading the view.
