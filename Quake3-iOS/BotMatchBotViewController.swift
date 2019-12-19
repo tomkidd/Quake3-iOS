@@ -13,6 +13,12 @@ class BotMatchBotViewController: UIViewController {
     @IBOutlet weak var botGrid: UICollectionView!
     @IBOutlet weak var okButton: UIButton!
         
+    @IBOutlet weak var skill1Button: UIButton!
+    @IBOutlet weak var skill2Button: UIButton!
+    @IBOutlet weak var skill3Button: UIButton!
+    @IBOutlet weak var skill4Button: UIButton!
+    @IBOutlet weak var skill5Button: UIButton!
+
     var delegate:BotMatchProtocol?
     
     var difficulty:Float = 3.0
@@ -65,6 +71,34 @@ class BotMatchBotViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+
+        var skill1URL = URL(fileURLWithPath: documentsDir)
+        skill1URL.appendPathComponent("graphics/menu/art/skill1.tga")
+        skill1Button.setImage(UIImage.image(fromTGAFile: skill1URL.path) as? UIImage, for: .normal)
+        skill1Button.layer.borderColor = UIColor.red.cgColor
+        
+        var skill2URL = URL(fileURLWithPath: documentsDir)
+        skill2URL.appendPathComponent("graphics/menu/art/skill2.tga")
+        skill2Button.setImage(UIImage.image(fromTGAFile: skill2URL.path) as? UIImage, for: .normal)
+        skill2Button.layer.borderColor = UIColor.red.cgColor
+
+        var skill3URL = URL(fileURLWithPath: documentsDir)
+        skill3URL.appendPathComponent("graphics/menu/art/skill3.tga")
+        skill3Button.setImage(UIImage.image(fromTGAFile: skill3URL.path) as? UIImage, for: .normal)
+        skill3Button.layer.borderColor = UIColor.red.cgColor
+        skill3Button.layer.borderWidth = 2
+
+        var skill4URL = URL(fileURLWithPath: documentsDir)
+        skill4URL.appendPathComponent("graphics/menu/art/skill4.tga")
+        skill4Button.setImage(UIImage.image(fromTGAFile: skill4URL.path) as? UIImage, for: .normal)
+        skill4Button.layer.borderColor = UIColor.red.cgColor
+
+        var skill5URL = URL(fileURLWithPath: documentsDir)
+        skill5URL.appendPathComponent("graphics/menu/art/skill5.tga")
+        skill5Button.setImage(UIImage.image(fromTGAFile: skill5URL.path) as? UIImage, for: .normal)
+        skill5Button.layer.borderColor = UIColor.red.cgColor
     }
     
     @IBAction func skill(_ sender: UIButton) {
@@ -91,6 +125,41 @@ class BotMatchBotViewController: UIViewController {
         self.delegate?.addBot(bot: selectedBot, difficulty: difficulty)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func clearSkills(_ sender: UIButton) {
+        skill1Button.layer.borderWidth = 0
+        skill2Button.layer.borderWidth = 0
+        skill3Button.layer.borderWidth = 0
+        skill4Button.layer.borderWidth = 0
+        skill5Button.layer.borderWidth = 0
+        sender.layer.borderWidth = 1
+    }
+
+    @IBAction func skill1(_ sender: UIButton) {
+        self.difficulty = 1
+        clearSkills(sender)
+    }
+    
+    @IBAction func skill2(_ sender: UIButton) {
+        self.difficulty = 2
+        clearSkills(sender)
+    }
+    
+    @IBAction func skill3(_ sender: UIButton) {
+        self.difficulty = 3
+        clearSkills(sender)
+    }
+    
+    @IBAction func skill4(_ sender: UIButton) {
+        self.difficulty = 4
+        clearSkills(sender)
+    }
+    
+    @IBAction func skill5(_ sender: UIButton) {
+        self.difficulty = 5
+        clearSkills(sender)
+    }
+    
 }
 
 extension BotMatchBotViewController : UICollectionViewDelegate {
