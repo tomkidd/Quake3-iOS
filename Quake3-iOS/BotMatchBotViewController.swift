@@ -18,11 +18,16 @@ class BotMatchBotViewController: UIViewController {
     @IBOutlet weak var skill3Button: UIButton!
     @IBOutlet weak var skill4Button: UIButton!
     @IBOutlet weak var skill5Button: UIButton!
+    
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var subtractButton: UIButton!
 
     var delegate:BotMatchProtocol?
     
     var difficulty:Float = 3.0
     var selectedBot = ""
+    var botQuantity = 1
     
     let bots:[(name: String, icon: String)] = [(name: "Anarki", icon:"graphics/anarki/icon_default.tga"),
                                             (name: "Angel", icon:"graphics/lucy/icon_angel.tga"),
@@ -122,7 +127,11 @@ class BotMatchBotViewController: UIViewController {
     }
     
     @IBAction func ok(_ sender: UIButton) {
-        self.delegate?.addBot(bot: selectedBot, difficulty: difficulty)
+        
+        for i in 0..<botQuantity {
+            self.delegate?.addBot(bot: selectedBot, difficulty: difficulty)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -159,6 +168,20 @@ class BotMatchBotViewController: UIViewController {
         self.difficulty = 5
         clearSkills(sender)
     }
+    
+    @IBAction func incrementBotQuantity(_ sender: UIButton) {
+        botQuantity += 1
+        quantityLabel.text = String(botQuantity)
+    }
+    
+    @IBAction func decrementBotQuantity(_ sender: UIButton) {
+        if botQuantity > 1 {
+            botQuantity -= 1
+            quantityLabel.text = String(botQuantity)
+        }
+    }
+    
+
     
 }
 

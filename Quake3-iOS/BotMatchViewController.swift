@@ -37,21 +37,9 @@ class BotMatchViewController: UIViewController {
             (segue.destination as! GameViewController).botMatch = true
             
             (segue.destination as! GameViewController).bots = bots
-            
-    //        (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 1.0))
-    //        (segue.destination as! GameViewController).bots.append((name: "phobos", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
-//            (segue.destination as! GameViewController).bots.append((name: "ranger", skill: 3.0))
         } else if segue.identifier == "BotMatchMapSegue" {
             (segue.destination as! BotMatchMapViewController).delegate = self
+            (segue.destination as! BotMatchMapViewController).selectedMap = selectedMap
         } else if segue.identifier == "BotMatchBotSegue" {
             (segue.destination as! BotMatchBotViewController).delegate = self
         }

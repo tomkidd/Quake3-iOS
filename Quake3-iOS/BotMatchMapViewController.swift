@@ -15,6 +15,8 @@ class BotMatchMapViewController: UIViewController {
 
     let fileManager = FileManager()
     var currentWorkingPath = ""
+    
+    var selectedMap = "Q3DM1"
 
     var delegate:BotMatchProtocol?
     
@@ -92,7 +94,21 @@ extension BotMatchMapViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = maps[indexPath.row].name
+        
+        if selectedMap == maps[indexPath.row].map {
+            cell.setSelected(true, animated: false)
+            var destinationURL = URL(fileURLWithPath: currentWorkingPath)
+            destinationURL.appendPathComponent("graphics/\(maps[indexPath.row].map).jpg")
+            mapShot.image = UIImage(contentsOfFile: destinationURL.path)
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if selectedMap == maps[indexPath.row].map {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
         
     func numberOfSections(in tableView: UITableView) -> Int {
