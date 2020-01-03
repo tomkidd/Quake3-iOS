@@ -128,7 +128,7 @@ class BotMatchBotViewController: UIViewController {
     
     @IBAction func ok(_ sender: UIButton) {
         
-        for i in 0..<botQuantity {
+        for _ in 0..<botQuantity {
             self.delegate?.addBot(bot: selectedBot, difficulty: difficulty)
         }
         

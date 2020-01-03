@@ -17,8 +17,12 @@ class BotMatchViewController: UIViewController {
     
     @IBOutlet weak var botList: UITableView!
     @IBOutlet weak var mapButton: UIButton!
-    
+    @IBOutlet weak var mapShot: UIImageView!
+
     var selectedMap = "Q3DM1"
+
+    let fileManager = FileManager()
+    var currentWorkingPath = ""
 
     var bots = [(name: String, skill: Float)]()
 
@@ -27,6 +31,11 @@ class BotMatchViewController: UIViewController {
 
         botList.mask = nil
         botList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        currentWorkingPath = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        var destinationURL = URL(fileURLWithPath: currentWorkingPath)
+        destinationURL.appendPathComponent("graphics/\(selectedMap).jpg")
+        mapShot.image = UIImage(contentsOfFile: destinationURL.path)
     }
 
     // MARK: - Navigation
@@ -51,6 +60,9 @@ extension BotMatchViewController: BotMatchProtocol {
     func setMap(map: String, name: String) {
         mapButton.setTitle(map, for: .normal)
         selectedMap = map
+        var destinationURL = URL(fileURLWithPath: currentWorkingPath)
+        destinationURL.appendPathComponent("graphics/\(selectedMap).jpg")
+        mapShot.image = UIImage(contentsOfFile: destinationURL.path)
     }
     
     func addBot(bot: String, difficulty: Float) {
