@@ -21,7 +21,11 @@ class GameViewController: UIViewController {
     var selectedDifficulty = 0
     
     var botMatch = false
+    var botSkill = 3.0
     
+    var timeLimit = 0
+    var fragLimit = 20
+
     var bots = [(name: String, skill: Float)]()
     
     let defaults = UserDefaults()
@@ -66,8 +70,17 @@ class GameViewController: UIViewController {
                 for bot in self.bots {
                     argv.append("+addbot")
                     argv.append(bot.name)
-                    argv.append(String(bot.skill))
+                    argv.append(String(self.botSkill))
                 }
+                
+                argv.append("+set")
+                argv.append("timelimit")
+                argv.append(String(self.timeLimit))
+                
+                argv.append("+set")
+                argv.append("fraglimit")
+                argv.append(String(self.fragLimit))
+
             }
             
             // not sure if needed
