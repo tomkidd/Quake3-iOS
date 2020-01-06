@@ -10,7 +10,7 @@ import UIKit
 
 protocol BotMatchProtocol {
     func setMap(map:String, name: String)
-    func addBot(bot:String, difficulty: Float)
+    func addBot(bot:String, difficulty: Float, icon: String)
 }
 
 class BotMatchViewController: UIViewController {
@@ -44,12 +44,13 @@ class BotMatchViewController: UIViewController {
     let fileManager = FileManager()
     var documentsDir = ""
 
-    var bots = [(name: String, skill: Float)]()
+    var bots = [(name: String, skill: Float, icon: String)]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         botList.mask = nil
+        botList.backgroundColor = UIColor.black
         botList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
@@ -171,8 +172,8 @@ extension BotMatchViewController: BotMatchProtocol {
         mapShot.image = UIImage(contentsOfFile: destinationURL.path)
     }
     
-    func addBot(bot: String, difficulty: Float) {
-        bots.append((name: bot, skill: difficulty))
+    func addBot(bot: String, difficulty: Float, icon:String) {
+        bots.append((name: bot, skill: difficulty, icon: icon))
         botList.reloadData()
     }
 }
@@ -193,7 +194,23 @@ extension BotMatchViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(bots[indexPath.row].name) (skill: \(bots[indexPath.row].skill))"
+        
+        cell.backgroundColor = .black
+        cell.textLabel?.textColor = .orange
+        cell.textLabel?.font = UIFont(name: "AvenirNextCondensed-Bold", size: 17)
+        
+        var destinationURL = URL(fileURLWithPath: documentsDir)
+        destinationURL.appendPathComponent(bots[indexPath.row].icon)
+        
+        let fileManager = FileManager()
+        if fileManager.fileExists(atPath: destinationURL.path) {
+        
+            let img: UIImage = UIImage.image(fromTGAFile: destinationURL.path) as! UIImage
+            cell.imageView?.contentMode = .scaleAspectFit
+            cell.imageView?.image = img
+        }
+
+        cell.textLabel?.text = bots[indexPath.row].name
         return cell
     }
         

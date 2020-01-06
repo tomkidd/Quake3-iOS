@@ -26,7 +26,7 @@ class GameViewController: UIViewController {
     var timeLimit = 0
     var fragLimit = 20
 
-    var bots = [(name: String, skill: Float)]()
+    var bots = [(name: String, skill: Float, icon: String)]()
     
     let defaults = UserDefaults()
     

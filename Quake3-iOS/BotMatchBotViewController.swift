@@ -27,6 +27,7 @@ class BotMatchBotViewController: UIViewController {
     
     var difficulty:Float = 3.0
     var selectedBot = ""
+    var selectedIcon = ""
     var botQuantity = 1
     
     let bots:[(name: String, icon: String)] = [(name: "Anarki", icon:"graphics/anarki/icon_default.tga"),
@@ -129,7 +130,7 @@ class BotMatchBotViewController: UIViewController {
     @IBAction func ok(_ sender: UIButton) {
         
         for _ in 0..<botQuantity {
-            self.delegate?.addBot(bot: selectedBot, difficulty: difficulty)
+            self.delegate?.addBot(bot: selectedBot, difficulty: difficulty, icon: selectedIcon)
         }
         
         self.dismiss(animated: true, completion: nil)
@@ -223,6 +224,7 @@ extension BotMatchBotViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! BotCollectionViewCell
         self.selectedBot = bots[indexPath.row].name
+        self.selectedIcon = bots[indexPath.row].icon
         okButton.isEnabled = true
         cell.botAvatar.layer.borderColor = UIColor.red.cgColor
         cell.botAvatar.layer.borderWidth = 1
