@@ -550,60 +550,91 @@ R_ConvertTextureFormat
 Convert RGBA unsigned byte to specified format and type
 ==================
 */
+#define ROW_PADDING( width, bpp, alignment ) PAD( (width) * (bpp), (alignment) ) - (width) * (bpp)
 void R_ConvertTextureFormat( const byte *in, int width, int height, GLenum format, GLenum type, byte *out )
 {
-	int i, numPixels;
-
-	numPixels = width * height;
+	int x, y, rowPadding;
+	int unpackAlign = 4; // matches GL_UNPACK_ALIGNMENT default
 
 	if ( format == GL_RGB && type == GL_UNSIGNED_BYTE )
 	{
-		for ( i = 0; i < numPixels; i++ )
+		rowPadding = ROW_PADDING( width, 3, unpackAlign );
+
+		for ( y = 0; y < height; y++ )
 		{
-			*out++ = *in++;
-			*out++ = *in++;
-			*out++ = *in++;
-			in++;
+			for ( x = 0; x < width; x++ )
+			{
+				*out++ = *in++;
+				*out++ = *in++;
+				*out++ = *in++;
+				in++;
+			}
+
+			out += rowPadding;
 		}
 	}
 	else if ( format == GL_LUMINANCE && type == GL_UNSIGNED_BYTE )
 	{
-		for ( i = 0; i < numPixels; i++ )
+		rowPadding = ROW_PADDING( width, 1, unpackAlign );
+
+		for ( y = 0; y < height; y++ )
 		{
-			*out++ = *in++; // red
-			in += 3;
+			for ( x = 0; x < width; x++ )
+			{
+				*out++ = *in++; // red
+				in += 3;
+			}
+
+			out += rowPadding;
 		}
 	}
 	else if ( format == GL_LUMINANCE_ALPHA && type == GL_UNSIGNED_BYTE )
 	{
-		for ( i = 0; i < numPixels; i++ )
+		rowPadding = ROW_PADDING( width, 2, unpackAlign );
+
+		for ( y = 0; y < height; y++ )
 		{
-			*out++ = *in++; // red
-			in += 2;
-			*out++ = *in++; // alpha
+			for ( x = 0; x < width; x++ )
+			{
+				*out++ = *in++; // red
+				in += 2;
+				*out++ = *in++; // alpha
+			}
+
+			out += rowPadding;
 		}
 	}
 	else if ( format == GL_RGB && type == GL_UNSIGNED_SHORT_5_6_5 )
 	{
-		unsigned short *sout = (unsigned short *)out;
+		rowPadding = ROW_PADDING( width, 2, unpackAlign );
 
-		for ( i = 0; i < numPixels; i++, in += 4 )
+		for ( y = 0; y < height; y++ )
 		{
-			*sout++ = ( (unsigned short)( in[0] >> 3 ) << 11 )
-			        | ( (unsigned short)( in[1] >> 2 ) << 5 )
-			        | ( (unsigned short)( in[2] >> 3 ) << 0 );
+			for ( x = 0; x < width; x++, in += 4, out += 2 )
+			{
+				*((unsigned short*)out) = ( (unsigned short)( in[0] >> 3 ) << 11 )
+					    | ( (unsigned short)( in[1] >> 2 ) << 5 )
+					    | ( (unsigned short)( in[2] >> 3 ) << 0 );
+			}
+
+			out += rowPadding;
 		}
 	}
 	else if ( format == GL_RGBA && type == GL_UNSIGNED_SHORT_4_4_4_4 )
 	{
-		unsigned short *sout = (unsigned short *)out;
+		rowPadding = ROW_PADDING( width, 2, unpackAlign );
 
-		for ( i = 0; i < numPixels; i++, in += 4 )
+		for ( y = 0; y < height; y++ )
 		{
-			*sout++ = ( (unsigned short)( in[0] >> 4 ) << 12 )
-			        | ( (unsigned short)( in[1] >> 4 ) << 8 )
-			        | ( (unsigned short)( in[2] >> 4 ) << 4 )
-			        | ( (unsigned short)( in[3] >> 4 ) << 0 );
+			for ( x = 0; x < width; x++, in += 4, out += 2 )
+			{
+				*((unsigned short*)out) = ( (unsigned short)( in[0] >> 4 ) << 12 )
+					    | ( (unsigned short)( in[1] >> 4 ) << 8 )
+					    | ( (unsigned short)( in[2] >> 4 ) << 4 )
+					    | ( (unsigned short)( in[3] >> 4 ) << 0 );
+			}
+
+			out += rowPadding;
 		}
 	}
 	else

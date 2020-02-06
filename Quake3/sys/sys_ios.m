@@ -16,7 +16,7 @@
 #import "Quake3_iOS-Swift.h"
 #endif
 
-#include <SDL2/SDL_syswm.h>
+#include <SDL_syswm.h>
 
 
 qboolean Sys_LowPhysicalMemory(void) {
