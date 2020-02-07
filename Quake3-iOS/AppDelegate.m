@@ -16,9 +16,12 @@
 @implementation SDLUIKitDelegate (customDelegate)
 
 // hijack the the SDL_UIKitAppDelegate to use the UIApplicationDelegate we implement here
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 + (NSString *)getAppDelegateClassName {
     return @"AppDelegate";
 }
+#pragma clang diagnostic pop
 
 @end
 
@@ -35,16 +38,15 @@
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden {
+   return NO;
+}
 
 // override the direct execution of SDL_main to allow us to implement our own frontend
 - (void)postFinishLaunch
 {
     [self performSelector:@selector(hideLaunchScreen) withObject:nil afterDelay:0.0];
 
-#if !TARGET_OS_TV
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-#endif
-    
     self.uiwindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.uiwindow.backgroundColor = [UIColor blackColor];
     

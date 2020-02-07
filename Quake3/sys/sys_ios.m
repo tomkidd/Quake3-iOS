@@ -118,4 +118,4 @@ char *Sys_StripAppBundle( char *dir )
  Sys_Dialog
  ==============
  */
-dialogResult_t Sys_Dialog( dialogType_t type, const char *message, const char *title ) { return NULL; }
+dialogResult_t Sys_Dialog( dialogType_t type, const char *message, const char *title ) { return 0; }
