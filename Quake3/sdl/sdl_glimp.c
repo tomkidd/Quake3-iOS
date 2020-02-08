@@ -362,8 +362,11 @@ static qboolean GLimp_GetProcAddresses( qboolean fixedFunction ) {
 			QGL_1_3_PROCS;
 			QGL_1_5_PROCS;
 			QGL_2_0_PROCS;
-			// error so this doesn't segfault due to NULL desktop GL functions being used
-			Com_Error( ERR_FATAL, "Unsupported OpenGL Version: %s", version );
+
+			qglClearDepth = GLimp_GLES_ClearDepth;
+			qglDepthRange = GLimp_GLES_DepthRange;
+			qglDrawBuffer = GLimp_GLES_DrawBuffer;
+			qglPolygonMode = GLimp_GLES_PolygonMode;
 		} else {
 			Com_Error( ERR_FATAL, "Unsupported OpenGL Version (%s), OpenGL 2.0 is required", version );
 		}

@@ -67,6 +67,75 @@ typedef double                                      GLclampd;    /* double preci
 #define GL_SLUMINANCE8_ALPHA8_EXT                   0x8C45
 #define GL_MAX_TEXTURE_UNITS_ARB                    0x84E2
 
+// Things missing from SDL_opengles.h for iOS renderergl2
+#define GL_RGBA16                0x805B
+#define GL_TEXTURE_CUBE_MAP            0x8513
+#define GL_COLOR_ATTACHMENT0_EXT          0x8CE0
+#define GL_SAMPLES_PASSED                 0x8914
+#define GL_TEXTURE_CUBE_MAP_POSITIVE_X    0x8515
+#define GL_MAX_RENDERBUFFER_SIZE          0x84E8
+#define GL_MAX_COLOR_ATTACHMENTS          0x8CDF
+#define GL_SHADING_LANGUAGE_VERSION       0x8B8C
+#define GL_QUERY_RESULT                   0x8866
+#define GL_QUERY_RESULT_AVAILABLE         0x8867
+#define GL_UNSIGNED_INT                0x1405
+#define GL_MAX_TEXTURE_IMAGE_UNITS        0x8872
+#define GL_MAX_VERTEX_UNIFORM_COMPONENTS  0x8B4A
+#define GL_COMPRESSED_RGB_S3TC_DXT1_EXT   0x83F0
+#define GL_COMPRESSED_SRGB_S3TC_DXT1_EXT  0x8C4C
+#define GL_COMPRESSED_RGBA_S3TC_DXT3_EXT  0x83F2
+#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT 0x8C4E
+#define GL_COMPRESSED_RGB_S3TC_DXT1_EXT   0x83F0
+#define GL_INFO_LOG_LENGTH                0x8B84
+#define GL_SHADER_SOURCE_LENGTH           0x8B88
+#define GL_VERTEX_SHADER                  0x8B31
+#define GL_COMPILE_STATUS                 0x8B81
+#define GL_LINK_STATUS                    0x8B82
+#define GL_ACTIVE_UNIFORMS                0x8B86
+#define GL_FRAGMENT_SHADER                0x8B30
+#define GL_TEXTURE_CUBE_MAP_NEGATIVE_Z    0x851A
+#define GL_FRAMEBUFFER                    0x8D40
+#define GL_RENDERBUFFER                   0x8D41
+#define GL_DRAW_FRAMEBUFFER               0x8CA9
+#define GL_READ_FRAMEBUFFER               0x8CA8
+#define GL_FRAMEBUFFER_COMPLETE           0x8CD5
+#define GL_FRAMEBUFFER_UNSUPPORTED        0x8CDD
+#define GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT 0x8CD6
+#define GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT 0x8CD7
+#define GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER 0x8CDB
+#define GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER 0x8CDC
+#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE 0x8D56
+#define GL_COLOR_ATTACHMENT0              0x8CE0
+#define GL_DEPTH_COMPONENT16_ARB          0x81A5
+#define GL_DEPTH_COMPONENT24_ARB          0x81A6
+#define GL_DEPTH_COMPONENT32_ARB          0x81A7
+#define GL_DEPTH_ATTACHMENT               0x8D00
+#define GL_STENCIL_INDEX1                 0x8D46
+#define GL_STENCIL_INDEX4                 0x8D47
+#define GL_STENCIL_INDEX8                 0x8D48
+#define GL_STENCIL_INDEX16                0x8D49
+#define GL_STENCIL_ATTACHMENT             0x8D20
+#define GL_DEPTH_STENCIL                  0x84F9
+#define GL_DEPTH24_STENCIL8               0x88F0
+#define GL_DEPTH24_STENCIL8_EXT           0x88F0
+#define GL_TEXTURE_CUBE_MAP_POSITIVE_X_ARB 0x8515
+#define GL_MAX_SAMPLES                    0x8D57
+#define GL_RGBA16F                        0x881A
+#define GL_DEPTH_COMPONENT16              0x81A5
+#define GL_DEPTH_COMPONENT24              0x81A6
+#define GL_DEPTH_COMPONENT32              0x81A7
+#define GL_TEXTURE_WRAP_R                 0x8072
+#define GL_DEPTH_TEXTURE_MODE             0x884B
+#define GL_R32F                           0x822E
+#define GL_TEXTURE_COMPARE_MODE           0x884C
+#define GL_COMPARE_R_TO_TEXTURE           0x884E
+#define GL_TEXTURE_COMPARE_FUNC           0x884D
+#define GL_MAX_VERTEX_ATTRIBS               0x8869
+#define GL_IMPLEMENTATION_COLOR_READ_TYPE   0x8B9A
+#define GL_IMPLEMENTATION_COLOR_READ_FORMAT 0x8B9B
+#define GL_ANY_SAMPLES_PASSED             0x8C2F
+
+
 extern void (APIENTRYP qglActiveTextureARB) (GLenum texture);
 extern void (APIENTRYP qglClientActiveTextureARB) (GLenum texture);
 extern void (APIENTRYP qglMultiTexCoord2fARB) (GLenum target, GLfloat s, GLfloat t);
@@ -74,6 +143,7 @@ extern void (APIENTRYP qglMultiTexCoord2fARB) (GLenum target, GLfloat s, GLfloat
 extern void (APIENTRYP qglLockArraysEXT) (GLint first, GLsizei count);
 extern void (APIENTRYP qglUnlockArraysEXT) (void);
 
+#else
 #ifdef USE_LOCAL_HEADERS
 #	include "SDL_opengl.h"
 #else

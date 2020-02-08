@@ -1,0 +1,17 @@
+const char *fallbackShader_pshadow_vp =
+"attribute vec3 attr_Position;\n"
+"attribute vec3 attr_Normal;\n"
+"\n"
+"uniform mat4   u_ModelViewProjectionMatrix;\n"
+"varying vec3   var_Position;\n"
+"varying vec3   var_Normal;\n"
+"\n"
+"\n"
+"void main()\n"
+"{\n"
+"	gl_Position = u_ModelViewProjectionMatrix * vec4(attr_Position, 1.0);\n"
+"\n"
+"	var_Position  = attr_Position;\n"
+"	var_Normal    = attr_Normal;\n"
+"}\n"
+;

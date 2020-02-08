@@ -20,29 +20,22 @@
 		A1565F252109F30E00FA9BC9 /* vm.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2A12101472E00D3C611 /* vm.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F262109F30E00FA9BC9 /* jdmerge.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0682101470F00D3C611 /* jdmerge.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F272109F30E00FA9BC9 /* jdcolor.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0692101470F00D3C611 /* jdcolor.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F282109F30E00FA9BC9 /* tr_model.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0982101471000D3C611 /* tr_model.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F292109F30E00FA9BC9 /* sv_init.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0EE2101471000D3C611 /* sv_init.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F2A2109F30E00FA9BC9 /* tr_cmds.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0AC2101471000D3C611 /* tr_cmds.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F2B2109F30E00FA9BC9 /* be_ai_chat.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0222101470F00D3C611 /* be_ai_chat.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F2C2109F30E00FA9BC9 /* con_log.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C1BC2101472C00D3C611 /* con_log.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F2D2109F30E00FA9BC9 /* snd_dma.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CC2101471000D3C611 /* snd_dma.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F2E2109F30E00FA9BC9 /* tr_image_pcx.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0C42101471000D3C611 /* tr_image_pcx.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F2F2109F30E00FA9BC9 /* snd_wavelet.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E72101471000D3C611 /* snd_wavelet.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F302109F30E00FA9BC9 /* be_ai_move.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0532101470F00D3C611 /* be_ai_move.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F312109F30E00FA9BC9 /* tr_sky.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0992101471000D3C611 /* tr_sky.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F332109F30E00FA9BC9 /* vm_interpreted.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2AC2101472E00D3C611 /* vm_interpreted.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F342109F30E00FA9BC9 /* tr_scene.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A02101471000D3C611 /* tr_scene.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F352109F30E00FA9BC9 /* jcsample.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C06E2101470F00D3C611 /* jcsample.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F362109F30E00FA9BC9 /* jcmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C06F2101470F00D3C611 /* jcmainct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F372109F30E00FA9BC9 /* con_tty.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C1C42101472C00D3C611 /* con_tty.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F382109F30E00FA9BC9 /* huffman.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2A92101472E00D3C611 /* huffman.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F392109F30E00FA9BC9 /* jdinput.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0622101470F00D3C611 /* jdinput.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F3A2109F30E00FA9BC9 /* tr_shade.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A22101471000D3C611 /* tr_shade.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F3B2109F30E00FA9BC9 /* jdtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0632101470F00D3C611 /* jdtrans.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F3C2109F30E00FA9BC9 /* be_aas_move.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0442101470F00D3C611 /* be_aas_move.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F3D2109F30E00FA9BC9 /* tr_model_iqm.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0962101471000D3C611 /* tr_model_iqm.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F3E2109F30E00FA9BC9 /* l_struct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0392101470F00D3C611 /* l_struct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F3F2109F30E00FA9BC9 /* tr_flares.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A42101471000D3C611 /* tr_flares.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F402109F30E00FA9BC9 /* be_aas_optimize.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C02F2101470F00D3C611 /* be_aas_optimize.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F412109F30E00FA9BC9 /* jcapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0662101470F00D3C611 /* jcapimin.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F422109F30E00FA9BC9 /* snd_adpcm.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0D82101471000D3C611 /* snd_adpcm.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -57,7 +50,6 @@
 		A1565F4B2109F30E00FA9BC9 /* cl_scrn.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0C82101471000D3C611 /* cl_scrn.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F4C2109F30E00FA9BC9 /* qal.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0D02101471000D3C611 /* qal.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F4D2109F30E00FA9BC9 /* jutils.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C07A2101470F00D3C611 /* jutils.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F4E2109F30E00FA9BC9 /* tr_world.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09F2101471000D3C611 /* tr_world.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F4F2109F30E00FA9BC9 /* cl_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0D72101471000D3C611 /* cl_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F502109F30E00FA9BC9 /* jcdctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0792101470F00D3C611 /* jcdctmgr.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F512109F30E00FA9BC9 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2A02101472E00D3C611 /* ioapi.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -74,10 +66,7 @@
 		A1565F5C2109F30E00FA9BC9 /* snd_openal.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E62101471000D3C611 /* snd_openal.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F5E2109F30E00FA9BC9 /* snd_codec.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CF2101471000D3C611 /* snd_codec.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F5F2109F30E00FA9BC9 /* jfdctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C07F2101470F00D3C611 /* jfdctfst.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F602109F30E00FA9BC9 /* tr_light.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A62101471000D3C611 /* tr_light.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F612109F30E00FA9BC9 /* jccoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C06C2101470F00D3C611 /* jccoefct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F622109F30E00FA9BC9 /* tr_image.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A32101471000D3C611 /* tr_image.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F632109F30E00FA9BC9 /* tr_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A72101471000D3C611 /* tr_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F642109F30E00FA9BC9 /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0712101470F00D3C611 /* jmemnobs.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F652109F30E00FA9BC9 /* jcmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0642101470F00D3C611 /* jcmaster.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F672109F30E00FA9BC9 /* jdarith.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0812101470F00D3C611 /* jdarith.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -85,13 +74,11 @@
 		A1565F692109F30E00FA9BC9 /* jcomapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0862101470F00D3C611 /* jcomapi.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F6A2109F30E00FA9BC9 /* jdsample.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0922101470F00D3C611 /* jdsample.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F6B2109F30E00FA9BC9 /* l_script.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0282101470F00D3C611 /* l_script.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F6C2109F30E00FA9BC9 /* tr_marks.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0AB2101471000D3C611 /* tr_marks.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F6D2109F30E00FA9BC9 /* jddctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C05D2101470F00D3C611 /* jddctmgr.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F6E2109F30E00FA9BC9 /* sv_ccmds.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0F32101471000D3C611 /* sv_ccmds.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F6F2109F30E00FA9BC9 /* jquant2.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C08A2101470F00D3C611 /* jquant2.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F702109F30E00FA9BC9 /* jidctint.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C08B2101470F00D3C611 /* jidctint.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F712109F30E00FA9BC9 /* be_aas_bspq3.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0362101470F00D3C611 /* be_aas_bspq3.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F722109F30E00FA9BC9 /* tr_shader.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0AD2101471000D3C611 /* tr_shader.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F732109F30E00FA9BC9 /* be_aas_file.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0242101470F00D3C611 /* be_aas_file.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F742109F30E00FA9BC9 /* snd_codec_wav.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E32101471000D3C611 /* snd_codec_wav.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F752109F30E00FA9BC9 /* be_aas_route.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0592101470F00D3C611 /* be_aas_route.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -109,20 +96,15 @@
 		A1565F812109F30E00FA9BC9 /* q_math.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C29C2101472E00D3C611 /* q_math.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F822109F30E00FA9BC9 /* jdcoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0912101470F00D3C611 /* jdcoefct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F832109F30E00FA9BC9 /* jdpostct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0942101470F00D3C611 /* jdpostct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F852109F30E00FA9BC9 /* tr_surface.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09A2101471000D3C611 /* tr_surface.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F862109F30E00FA9BC9 /* be_ai_char.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C03E2101470F00D3C611 /* be_ai_char.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F872109F30E00FA9BC9 /* l_crc.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0432101470F00D3C611 /* l_crc.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F882109F30E00FA9BC9 /* be_aas_entity.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0292101470F00D3C611 /* be_aas_entity.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F892109F30E00FA9BC9 /* cl_cgame.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0D12101471000D3C611 /* cl_cgame.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F8A2109F30E00FA9BC9 /* be_interface.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0512101470F00D3C611 /* be_interface.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F8B2109F30E00FA9BC9 /* tr_curve.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0972101471000D3C611 /* tr_curve.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F8C2109F30E00FA9BC9 /* tr_shade_calc.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A92101471000D3C611 /* tr_shade_calc.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F8E2109F30E00FA9BC9 /* jquant1.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0782101470F00D3C611 /* jquant1.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F8F2109F30E00FA9BC9 /* l_libvar.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0332101470F00D3C611 /* l_libvar.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F902109F30E00FA9BC9 /* msg.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2972101472E00D3C611 /* msg.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F912109F30E00FA9BC9 /* tr_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09E2101471000D3C611 /* tr_backend.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F922109F30E00FA9BC9 /* jcprepct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0742101470F00D3C611 /* jcprepct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F942109F30E00FA9BC9 /* tr_animation.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09C2101471000D3C611 /* tr_animation.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F952109F30E00FA9BC9 /* cmd.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2AB2101472E00D3C611 /* cmd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F962109F30E00FA9BC9 /* snd_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0E82101471000D3C611 /* snd_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F982109F30E00FA9BC9 /* jcapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C07D2101470F00D3C611 /* jcapistd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -130,7 +112,6 @@
 		A1565F9A2109F30E00FA9BC9 /* net_chan.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2B62101472E00D3C611 /* net_chan.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F9B2109F30E00FA9BC9 /* jdmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0672101470F00D3C611 /* jdmarker.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F9C2109F30E00FA9BC9 /* tr_noise.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0C32101471000D3C611 /* tr_noise.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565F9D2109F30E00FA9BC9 /* tr_mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A82101471000D3C611 /* tr_mesh.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F9E2109F30E00FA9BC9 /* jdapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C08C2101470F00D3C611 /* jdapimin.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565F9F2109F30E00FA9BC9 /* cl_ui.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0DE2101471000D3C611 /* cl_ui.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FA02109F30E00FA9BC9 /* be_aas_cluster.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0582101470F00D3C611 /* be_aas_cluster.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -144,9 +125,7 @@
 		A1565FA82109F30E00FA9BC9 /* sv_game.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0F12101471000D3C611 /* sv_game.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FAA2109F30E00FA9BC9 /* cl_curl.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0CD2101471000D3C611 /* cl_curl.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FAB2109F30E00FA9BC9 /* cm_test.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C29D2101472E00D3C611 /* cm_test.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565FAC2109F30E00FA9BC9 /* tr_bsp.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09B2101471000D3C611 /* tr_bsp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FAD2109F30E00FA9BC9 /* be_ai_gen.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C01D2101470F00D3C611 /* be_ai_gen.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565FAE2109F30E00FA9BC9 /* tr_shadows.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A52101471000D3C611 /* tr_shadows.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FAF2109F30E00FA9BC9 /* cm_trace.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2B32101472E00D3C611 /* cm_trace.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FB02109F30E00FA9BC9 /* jerror.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0772101470F00D3C611 /* jerror.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FB12109F30E00FA9BC9 /* jdatadst.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0872101470F00D3C611 /* jdatadst.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -166,7 +145,6 @@
 		A1565FC02109F30E00FA9BC9 /* sv_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0EA2101471000D3C611 /* sv_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FC12109F30E00FA9BC9 /* be_ea.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0232101470F00D3C611 /* be_ea.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FC22109F30E00FA9BC9 /* jcarith.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0722101470F00D3C611 /* jcarith.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A1565FC32109F30E00FA9BC9 /* tr_init.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A12101471000D3C611 /* tr_init.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FC42109F30E00FA9BC9 /* cm_patch.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C2BB2101472E00D3C611 /* cm_patch.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FC52109F30E00FA9BC9 /* cl_keys.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0D62101471000D3C611 /* cl_keys.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FC62109F30E00FA9BC9 /* files.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C29F2101472E00D3C611 /* files.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -274,28 +252,6 @@
 		A179C3222101472E00D3C611 /* jdcoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0912101470F00D3C611 /* jdcoefct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A179C3232101472E00D3C611 /* jdsample.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0922101470F00D3C611 /* jdsample.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A179C3242101472E00D3C611 /* jdpostct.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0942101470F00D3C611 /* jdpostct.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3252101472E00D3C611 /* tr_model_iqm.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0962101471000D3C611 /* tr_model_iqm.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3262101472E00D3C611 /* tr_curve.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0972101471000D3C611 /* tr_curve.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3272101472E00D3C611 /* tr_model.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0982101471000D3C611 /* tr_model.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3282101472E00D3C611 /* tr_sky.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0992101471000D3C611 /* tr_sky.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3292101472E00D3C611 /* tr_surface.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09A2101471000D3C611 /* tr_surface.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C32A2101472E00D3C611 /* tr_bsp.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09B2101471000D3C611 /* tr_bsp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C32B2101472E00D3C611 /* tr_animation.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09C2101471000D3C611 /* tr_animation.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C32D2101472E00D3C611 /* tr_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09E2101471000D3C611 /* tr_backend.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C32E2101472E00D3C611 /* tr_world.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C09F2101471000D3C611 /* tr_world.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C32F2101472E00D3C611 /* tr_scene.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A02101471000D3C611 /* tr_scene.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3302101472E00D3C611 /* tr_init.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A12101471000D3C611 /* tr_init.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3312101472E00D3C611 /* tr_shade.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A22101471000D3C611 /* tr_shade.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3322101472E00D3C611 /* tr_image.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A32101471000D3C611 /* tr_image.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3332101472E00D3C611 /* tr_flares.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A42101471000D3C611 /* tr_flares.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3342101472E00D3C611 /* tr_shadows.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A52101471000D3C611 /* tr_shadows.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3352101472E00D3C611 /* tr_light.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A62101471000D3C611 /* tr_light.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3362101472E00D3C611 /* tr_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A72101471000D3C611 /* tr_main.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3372101472E00D3C611 /* tr_mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A82101471000D3C611 /* tr_mesh.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3382101472E00D3C611 /* tr_shade_calc.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0A92101471000D3C611 /* tr_shade_calc.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C3392101472E00D3C611 /* tr_marks.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0AB2101471000D3C611 /* tr_marks.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C33A2101472E00D3C611 /* tr_cmds.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0AC2101471000D3C611 /* tr_cmds.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		A179C33B2101472E00D3C611 /* tr_shader.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0AD2101471000D3C611 /* tr_shader.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A179C3432101472E00D3C611 /* tr_image_tga.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0BD2101471000D3C611 /* tr_image_tga.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A179C3442101472E00D3C611 /* tr_image_png.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0BE2101471000D3C611 /* tr_image_png.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A179C3452101472E00D3C611 /* tr_image_bmp.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0C02101471000D3C611 /* tr_image_bmp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -451,6 +407,122 @@
 		A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1F10DC723ECD3970030D586 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F10DBC23ECD38C0030D586 /* libSDL2.a */; };
 		A1F10DC823ECD39D0030D586 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F10DC023ECD38C0030D586 /* libSDL2.a */; };
+		A1F10F7423EF1A2C0030D586 /* tr_dsa.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3223EF1A2C0030D586 /* tr_dsa.c */; };
+		A1F10F7523EF1A2C0030D586 /* tr_dsa.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3223EF1A2C0030D586 /* tr_dsa.c */; };
+		A1F10F7623EF1A2C0030D586 /* tr_model_iqm.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3323EF1A2C0030D586 /* tr_model_iqm.c */; };
+		A1F10F7723EF1A2C0030D586 /* tr_model_iqm.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3323EF1A2C0030D586 /* tr_model_iqm.c */; };
+		A1F10F7823EF1A2C0030D586 /* tr_curve.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3423EF1A2C0030D586 /* tr_curve.c */; };
+		A1F10F7923EF1A2C0030D586 /* tr_curve.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3423EF1A2C0030D586 /* tr_curve.c */; };
+		A1F10F7A23EF1A2C0030D586 /* tr_model.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3523EF1A2C0030D586 /* tr_model.c */; };
+		A1F10F7B23EF1A2C0030D586 /* tr_model.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3523EF1A2C0030D586 /* tr_model.c */; };
+		A1F10F7C23EF1A2C0030D586 /* tr_sky.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3623EF1A2C0030D586 /* tr_sky.c */; };
+		A1F10F7D23EF1A2C0030D586 /* tr_sky.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3623EF1A2C0030D586 /* tr_sky.c */; };
+		A1F10F7E23EF1A2C0030D586 /* tr_surface.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3723EF1A2C0030D586 /* tr_surface.c */; };
+		A1F10F7F23EF1A2C0030D586 /* tr_surface.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3723EF1A2C0030D586 /* tr_surface.c */; };
+		A1F10F8023EF1A2C0030D586 /* tr_extramath.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3923EF1A2C0030D586 /* tr_extramath.c */; };
+		A1F10F8123EF1A2C0030D586 /* tr_extramath.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3923EF1A2C0030D586 /* tr_extramath.c */; };
+		A1F10F8223EF1A2C0030D586 /* tr_bsp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3A23EF1A2C0030D586 /* tr_bsp.c */; };
+		A1F10F8323EF1A2C0030D586 /* tr_bsp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3A23EF1A2C0030D586 /* tr_bsp.c */; };
+		A1F10F8423EF1A2C0030D586 /* tr_postprocess.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3B23EF1A2C0030D586 /* tr_postprocess.c */; };
+		A1F10F8523EF1A2C0030D586 /* tr_postprocess.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3B23EF1A2C0030D586 /* tr_postprocess.c */; };
+		A1F10F8623EF1A2C0030D586 /* tr_animation.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3C23EF1A2C0030D586 /* tr_animation.c */; };
+		A1F10F8723EF1A2C0030D586 /* tr_animation.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3C23EF1A2C0030D586 /* tr_animation.c */; };
+		A1F10F8A23EF1A2C0030D586 /* tr_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3E23EF1A2C0030D586 /* tr_backend.c */; };
+		A1F10F8B23EF1A2C0030D586 /* tr_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3E23EF1A2C0030D586 /* tr_backend.c */; };
+		A1F10F8C23EF1A2C0030D586 /* tr_world.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3F23EF1A2C0030D586 /* tr_world.c */; };
+		A1F10F8D23EF1A2C0030D586 /* tr_world.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F3F23EF1A2C0030D586 /* tr_world.c */; };
+		A1F10F8E23EF1A2C0030D586 /* tr_glsl.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4023EF1A2C0030D586 /* tr_glsl.c */; };
+		A1F10F8F23EF1A2C0030D586 /* tr_glsl.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4023EF1A2C0030D586 /* tr_glsl.c */; };
+		A1F10F9023EF1A2C0030D586 /* tr_scene.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4123EF1A2C0030D586 /* tr_scene.c */; };
+		A1F10F9123EF1A2C0030D586 /* tr_scene.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4123EF1A2C0030D586 /* tr_scene.c */; };
+		A1F10F9223EF1A2C0030D586 /* tr_init.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4223EF1A2C0030D586 /* tr_init.c */; };
+		A1F10F9323EF1A2C0030D586 /* tr_init.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4223EF1A2C0030D586 /* tr_init.c */; };
+		A1F10F9423EF1A2C0030D586 /* tr_shade.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4323EF1A2C0030D586 /* tr_shade.c */; };
+		A1F10F9523EF1A2C0030D586 /* tr_shade.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4323EF1A2C0030D586 /* tr_shade.c */; };
+		A1F10F9623EF1A2C0030D586 /* tr_image.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4423EF1A2C0030D586 /* tr_image.c */; };
+		A1F10F9723EF1A2C0030D586 /* tr_image.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4423EF1A2C0030D586 /* tr_image.c */; };
+		A1F10F9823EF1A2C0030D586 /* tr_flares.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4523EF1A2C0030D586 /* tr_flares.c */; };
+		A1F10F9923EF1A2C0030D586 /* tr_flares.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F4523EF1A2C0030D586 /* tr_flares.c */; };
+		A1F10FD223EF1A2C0030D586 /* tr_vbo.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6323EF1A2C0030D586 /* tr_vbo.c */; };
+		A1F10FD323EF1A2C0030D586 /* tr_vbo.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6323EF1A2C0030D586 /* tr_vbo.c */; };
+		A1F10FD423EF1A2C0030D586 /* tr_shadows.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6423EF1A2C0030D586 /* tr_shadows.c */; };
+		A1F10FD523EF1A2C0030D586 /* tr_shadows.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6423EF1A2C0030D586 /* tr_shadows.c */; };
+		A1F10FD623EF1A2C0030D586 /* tr_image_dds.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6623EF1A2C0030D586 /* tr_image_dds.c */; };
+		A1F10FD723EF1A2C0030D586 /* tr_image_dds.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6623EF1A2C0030D586 /* tr_image_dds.c */; };
+		A1F10FD823EF1A2C0030D586 /* tr_fbo.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6723EF1A2C0030D586 /* tr_fbo.c */; };
+		A1F10FD923EF1A2C0030D586 /* tr_fbo.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6723EF1A2C0030D586 /* tr_fbo.c */; };
+		A1F10FDA23EF1A2C0030D586 /* tr_light.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6923EF1A2C0030D586 /* tr_light.c */; };
+		A1F10FDB23EF1A2C0030D586 /* tr_light.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6923EF1A2C0030D586 /* tr_light.c */; };
+		A1F10FDC23EF1A2C0030D586 /* tr_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6A23EF1A2C0030D586 /* tr_main.c */; };
+		A1F10FDD23EF1A2C0030D586 /* tr_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6A23EF1A2C0030D586 /* tr_main.c */; };
+		A1F10FDE23EF1A2C0030D586 /* tr_mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6B23EF1A2C0030D586 /* tr_mesh.c */; };
+		A1F10FDF23EF1A2C0030D586 /* tr_mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6B23EF1A2C0030D586 /* tr_mesh.c */; };
+		A1F10FE023EF1A2C0030D586 /* tr_shade_calc.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6C23EF1A2C0030D586 /* tr_shade_calc.c */; };
+		A1F10FE123EF1A2C0030D586 /* tr_shade_calc.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F6C23EF1A2C0030D586 /* tr_shade_calc.c */; };
+		A1F10FE223EF1A2C0030D586 /* tr_marks.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7023EF1A2C0030D586 /* tr_marks.c */; };
+		A1F10FE323EF1A2C0030D586 /* tr_marks.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7023EF1A2C0030D586 /* tr_marks.c */; };
+		A1F10FE423EF1A2C0030D586 /* tr_cmds.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7123EF1A2C0030D586 /* tr_cmds.c */; };
+		A1F10FE523EF1A2C0030D586 /* tr_cmds.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7123EF1A2C0030D586 /* tr_cmds.c */; };
+		A1F10FE623EF1A2C0030D586 /* tr_extensions.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7223EF1A2C0030D586 /* tr_extensions.c */; };
+		A1F10FE723EF1A2C0030D586 /* tr_extensions.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7223EF1A2C0030D586 /* tr_extensions.c */; };
+		A1F10FE823EF1A2C0030D586 /* tr_shader.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7323EF1A2C0030D586 /* tr_shader.c */; };
+		A1F10FE923EF1A2C0030D586 /* tr_shader.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10F7323EF1A2C0030D586 /* tr_shader.c */; };
+		A1F1100723EF22520030D586 /* fogpass_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEB23EF22500030D586 /* fogpass_vp.c */; };
+		A1F1100823EF22520030D586 /* fogpass_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEB23EF22500030D586 /* fogpass_vp.c */; };
+		A1F1100923EF22520030D586 /* shadowfill_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEC23EF22500030D586 /* shadowfill_fp.c */; };
+		A1F1100A23EF22520030D586 /* shadowfill_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEC23EF22500030D586 /* shadowfill_fp.c */; };
+		A1F1100B23EF22520030D586 /* ssao_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FED23EF22500030D586 /* ssao_fp.c */; };
+		A1F1100C23EF22520030D586 /* ssao_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FED23EF22500030D586 /* ssao_fp.c */; };
+		A1F1100D23EF22520030D586 /* depthblur_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEE23EF22500030D586 /* depthblur_vp.c */; };
+		A1F1100E23EF22520030D586 /* depthblur_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEE23EF22500030D586 /* depthblur_vp.c */; };
+		A1F1100F23EF22520030D586 /* calclevels4x_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEF23EF22500030D586 /* calclevels4x_fp.c */; };
+		A1F1101023EF22520030D586 /* calclevels4x_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FEF23EF22500030D586 /* calclevels4x_fp.c */; };
+		A1F1101123EF22520030D586 /* depthblur_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF023EF22500030D586 /* depthblur_fp.c */; };
+		A1F1101223EF22520030D586 /* depthblur_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF023EF22500030D586 /* depthblur_fp.c */; };
+		A1F1101323EF22520030D586 /* fogpass_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF123EF22500030D586 /* fogpass_fp.c */; };
+		A1F1101423EF22520030D586 /* fogpass_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF123EF22500030D586 /* fogpass_fp.c */; };
+		A1F1101523EF22520030D586 /* pshadow_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF223EF22510030D586 /* pshadow_vp.c */; };
+		A1F1101623EF22520030D586 /* pshadow_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF223EF22510030D586 /* pshadow_vp.c */; };
+		A1F1101723EF22520030D586 /* shadowmask_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF323EF22510030D586 /* shadowmask_fp.c */; };
+		A1F1101823EF22520030D586 /* shadowmask_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF323EF22510030D586 /* shadowmask_fp.c */; };
+		A1F1101923EF22520030D586 /* down4x_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF423EF22510030D586 /* down4x_vp.c */; };
+		A1F1101A23EF22520030D586 /* down4x_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF423EF22510030D586 /* down4x_vp.c */; };
+		A1F1101B23EF22520030D586 /* texturecolor_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF523EF22510030D586 /* texturecolor_fp.c */; };
+		A1F1101C23EF22520030D586 /* texturecolor_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF523EF22510030D586 /* texturecolor_fp.c */; };
+		A1F1101D23EF22520030D586 /* lightall_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF623EF22510030D586 /* lightall_vp.c */; };
+		A1F1101E23EF22520030D586 /* lightall_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF623EF22510030D586 /* lightall_vp.c */; };
+		A1F1101F23EF22520030D586 /* tonemap_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF723EF22510030D586 /* tonemap_fp.c */; };
+		A1F1102023EF22520030D586 /* tonemap_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF723EF22510030D586 /* tonemap_fp.c */; };
+		A1F1102123EF22520030D586 /* bokeh_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF823EF22510030D586 /* bokeh_vp.c */; };
+		A1F1102223EF22520030D586 /* bokeh_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF823EF22510030D586 /* bokeh_vp.c */; };
+		A1F1102323EF22520030D586 /* generic_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF923EF22510030D586 /* generic_vp.c */; };
+		A1F1102423EF22520030D586 /* generic_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FF923EF22510030D586 /* generic_vp.c */; };
+		A1F1102523EF22520030D586 /* texturecolor_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFA23EF22510030D586 /* texturecolor_vp.c */; };
+		A1F1102623EF22520030D586 /* texturecolor_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFA23EF22510030D586 /* texturecolor_vp.c */; };
+		A1F1102723EF22520030D586 /* generic_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFB23EF22510030D586 /* generic_fp.c */; };
+		A1F1102823EF22520030D586 /* generic_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFB23EF22510030D586 /* generic_fp.c */; };
+		A1F1102923EF22520030D586 /* tonemap_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFC23EF22510030D586 /* tonemap_vp.c */; };
+		A1F1102A23EF22520030D586 /* tonemap_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFC23EF22510030D586 /* tonemap_vp.c */; };
+		A1F1102B23EF22520030D586 /* dlight_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFD23EF22510030D586 /* dlight_fp.c */; };
+		A1F1102C23EF22520030D586 /* dlight_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFD23EF22510030D586 /* dlight_fp.c */; };
+		A1F1102D23EF22520030D586 /* shadowfill_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFE23EF22510030D586 /* shadowfill_vp.c */; };
+		A1F1102E23EF22520030D586 /* shadowfill_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFE23EF22510030D586 /* shadowfill_vp.c */; };
+		A1F1102F23EF22520030D586 /* pshadow_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFF23EF22510030D586 /* pshadow_fp.c */; };
+		A1F1103023EF22520030D586 /* pshadow_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F10FFF23EF22510030D586 /* pshadow_fp.c */; };
+		A1F1103123EF22520030D586 /* bokeh_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100023EF22510030D586 /* bokeh_fp.c */; };
+		A1F1103223EF22520030D586 /* bokeh_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100023EF22510030D586 /* bokeh_fp.c */; };
+		A1F1103323EF22520030D586 /* calclevels4x_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100123EF22510030D586 /* calclevels4x_vp.c */; };
+		A1F1103423EF22520030D586 /* calclevels4x_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100123EF22510030D586 /* calclevels4x_vp.c */; };
+		A1F1103523EF22520030D586 /* lightall_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100223EF22510030D586 /* lightall_fp.c */; };
+		A1F1103623EF22520030D586 /* lightall_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100223EF22510030D586 /* lightall_fp.c */; };
+		A1F1103723EF22520030D586 /* ssao_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100323EF22510030D586 /* ssao_vp.c */; };
+		A1F1103823EF22520030D586 /* ssao_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100323EF22510030D586 /* ssao_vp.c */; };
+		A1F1103923EF22520030D586 /* shadowmask_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100423EF22520030D586 /* shadowmask_vp.c */; };
+		A1F1103A23EF22520030D586 /* shadowmask_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100423EF22520030D586 /* shadowmask_vp.c */; };
+		A1F1103B23EF22520030D586 /* dlight_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100523EF22520030D586 /* dlight_vp.c */; };
+		A1F1103C23EF22520030D586 /* dlight_vp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100523EF22520030D586 /* dlight_vp.c */; };
+		A1F1103D23EF22520030D586 /* down4x_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100623EF22520030D586 /* down4x_fp.c */; };
+		A1F1103E23EF22520030D586 /* down4x_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = A1F1100623EF22520030D586 /* down4x_fp.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -859,6 +931,99 @@
 		A1E8B31D23712A37005C6CA8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A1E8B3242372397C005C6CA8 /* qgl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qgl.h; sourceTree = "<group>"; };
 		A1F10DAF23ECD38B0030D586 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "SDL/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
+		A1F10F3223EF1A2C0030D586 /* tr_dsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_dsa.c; sourceTree = "<group>"; };
+		A1F10F3323EF1A2C0030D586 /* tr_model_iqm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_model_iqm.c; sourceTree = "<group>"; };
+		A1F10F3423EF1A2C0030D586 /* tr_curve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_curve.c; sourceTree = "<group>"; };
+		A1F10F3523EF1A2C0030D586 /* tr_model.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_model.c; sourceTree = "<group>"; };
+		A1F10F3623EF1A2C0030D586 /* tr_sky.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_sky.c; sourceTree = "<group>"; };
+		A1F10F3723EF1A2C0030D586 /* tr_surface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_surface.c; sourceTree = "<group>"; };
+		A1F10F3823EF1A2C0030D586 /* tr_fbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_fbo.h; sourceTree = "<group>"; };
+		A1F10F3923EF1A2C0030D586 /* tr_extramath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_extramath.c; sourceTree = "<group>"; };
+		A1F10F3A23EF1A2C0030D586 /* tr_bsp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_bsp.c; sourceTree = "<group>"; };
+		A1F10F3B23EF1A2C0030D586 /* tr_postprocess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_postprocess.c; sourceTree = "<group>"; };
+		A1F10F3C23EF1A2C0030D586 /* tr_animation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_animation.c; sourceTree = "<group>"; };
+		A1F10F3D23EF1A2C0030D586 /* tr_subs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_subs.c; sourceTree = "<group>"; };
+		A1F10F3E23EF1A2C0030D586 /* tr_backend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_backend.c; sourceTree = "<group>"; };
+		A1F10F3F23EF1A2C0030D586 /* tr_world.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_world.c; sourceTree = "<group>"; };
+		A1F10F4023EF1A2C0030D586 /* tr_glsl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_glsl.c; sourceTree = "<group>"; };
+		A1F10F4123EF1A2C0030D586 /* tr_scene.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_scene.c; sourceTree = "<group>"; };
+		A1F10F4223EF1A2C0030D586 /* tr_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_init.c; sourceTree = "<group>"; };
+		A1F10F4323EF1A2C0030D586 /* tr_shade.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_shade.c; sourceTree = "<group>"; };
+		A1F10F4423EF1A2C0030D586 /* tr_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_image.c; sourceTree = "<group>"; };
+		A1F10F4523EF1A2C0030D586 /* tr_flares.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_flares.c; sourceTree = "<group>"; };
+		A1F10F4723EF1A2C0030D586 /* ssao_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssao_fp.glsl; sourceTree = "<group>"; };
+		A1F10F4823EF1A2C0030D586 /* pshadow_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pshadow_vp.glsl; sourceTree = "<group>"; };
+		A1F10F4923EF1A2C0030D586 /* calclevels4x_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calclevels4x_vp.glsl; sourceTree = "<group>"; };
+		A1F10F4A23EF1A2C0030D586 /* bokeh_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bokeh_fp.glsl; sourceTree = "<group>"; };
+		A1F10F4B23EF1A2C0030D586 /* texturecolor_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = texturecolor_fp.glsl; sourceTree = "<group>"; };
+		A1F10F4C23EF1A2C0030D586 /* dlight_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlight_fp.glsl; sourceTree = "<group>"; };
+		A1F10F4D23EF1A2C0030D586 /* generic_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generic_vp.glsl; sourceTree = "<group>"; };
+		A1F10F4E23EF1A2C0030D586 /* down4x_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = down4x_vp.glsl; sourceTree = "<group>"; };
+		A1F10F4F23EF1A2C0030D586 /* shadowfill_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shadowfill_vp.glsl; sourceTree = "<group>"; };
+		A1F10F5023EF1A2C0030D586 /* fogpass_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fogpass_vp.glsl; sourceTree = "<group>"; };
+		A1F10F5123EF1A2C0030D586 /* shadowmask_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shadowmask_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5223EF1A2C0030D586 /* depthblur_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depthblur_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5323EF1A2C0030D586 /* lightall_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lightall_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5423EF1A2C0030D586 /* tonemap_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tonemap_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5523EF1A2C0030D586 /* ssao_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssao_vp.glsl; sourceTree = "<group>"; };
+		A1F10F5623EF1A2C0030D586 /* calclevels4x_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calclevels4x_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5723EF1A2C0030D586 /* pshadow_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pshadow_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5823EF1A2C0030D586 /* texturecolor_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = texturecolor_vp.glsl; sourceTree = "<group>"; };
+		A1F10F5923EF1A2C0030D586 /* bokeh_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bokeh_vp.glsl; sourceTree = "<group>"; };
+		A1F10F5A23EF1A2C0030D586 /* down4x_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = down4x_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5B23EF1A2C0030D586 /* generic_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generic_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5C23EF1A2C0030D586 /* dlight_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlight_vp.glsl; sourceTree = "<group>"; };
+		A1F10F5D23EF1A2C0030D586 /* fogpass_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fogpass_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5E23EF1A2C0030D586 /* shadowfill_fp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shadowfill_fp.glsl; sourceTree = "<group>"; };
+		A1F10F5F23EF1A2C0030D586 /* depthblur_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = depthblur_vp.glsl; sourceTree = "<group>"; };
+		A1F10F6023EF1A2C0030D586 /* shadowmask_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shadowmask_vp.glsl; sourceTree = "<group>"; };
+		A1F10F6123EF1A2C0030D586 /* tonemap_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tonemap_vp.glsl; sourceTree = "<group>"; };
+		A1F10F6223EF1A2C0030D586 /* lightall_vp.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lightall_vp.glsl; sourceTree = "<group>"; };
+		A1F10F6323EF1A2C0030D586 /* tr_vbo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_vbo.c; sourceTree = "<group>"; };
+		A1F10F6423EF1A2C0030D586 /* tr_shadows.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_shadows.c; sourceTree = "<group>"; };
+		A1F10F6523EF1A2C0030D586 /* tr_dsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_dsa.h; sourceTree = "<group>"; };
+		A1F10F6623EF1A2C0030D586 /* tr_image_dds.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_image_dds.c; sourceTree = "<group>"; };
+		A1F10F6723EF1A2C0030D586 /* tr_fbo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_fbo.c; sourceTree = "<group>"; };
+		A1F10F6823EF1A2C0030D586 /* tr_extramath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_extramath.h; sourceTree = "<group>"; };
+		A1F10F6923EF1A2C0030D586 /* tr_light.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_light.c; sourceTree = "<group>"; };
+		A1F10F6A23EF1A2C0030D586 /* tr_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_main.c; sourceTree = "<group>"; };
+		A1F10F6B23EF1A2C0030D586 /* tr_mesh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_mesh.c; sourceTree = "<group>"; };
+		A1F10F6C23EF1A2C0030D586 /* tr_shade_calc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_shade_calc.c; sourceTree = "<group>"; };
+		A1F10F6D23EF1A2C0030D586 /* tr_local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_local.h; sourceTree = "<group>"; };
+		A1F10F6E23EF1A2C0030D586 /* tr_extratypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_extratypes.h; sourceTree = "<group>"; };
+		A1F10F6F23EF1A2C0030D586 /* tr_postprocess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_postprocess.h; sourceTree = "<group>"; };
+		A1F10F7023EF1A2C0030D586 /* tr_marks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_marks.c; sourceTree = "<group>"; };
+		A1F10F7123EF1A2C0030D586 /* tr_cmds.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_cmds.c; sourceTree = "<group>"; };
+		A1F10F7223EF1A2C0030D586 /* tr_extensions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_extensions.c; sourceTree = "<group>"; };
+		A1F10F7323EF1A2C0030D586 /* tr_shader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tr_shader.c; sourceTree = "<group>"; };
+		A1F10FEB23EF22500030D586 /* fogpass_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fogpass_vp.c; sourceTree = "<group>"; };
+		A1F10FEC23EF22500030D586 /* shadowfill_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shadowfill_fp.c; sourceTree = "<group>"; };
+		A1F10FED23EF22500030D586 /* ssao_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ssao_fp.c; sourceTree = "<group>"; };
+		A1F10FEE23EF22500030D586 /* depthblur_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = depthblur_vp.c; sourceTree = "<group>"; };
+		A1F10FEF23EF22500030D586 /* calclevels4x_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = calclevels4x_fp.c; sourceTree = "<group>"; };
+		A1F10FF023EF22500030D586 /* depthblur_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = depthblur_fp.c; sourceTree = "<group>"; };
+		A1F10FF123EF22500030D586 /* fogpass_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fogpass_fp.c; sourceTree = "<group>"; };
+		A1F10FF223EF22510030D586 /* pshadow_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pshadow_vp.c; sourceTree = "<group>"; };
+		A1F10FF323EF22510030D586 /* shadowmask_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shadowmask_fp.c; sourceTree = "<group>"; };
+		A1F10FF423EF22510030D586 /* down4x_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = down4x_vp.c; sourceTree = "<group>"; };
+		A1F10FF523EF22510030D586 /* texturecolor_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texturecolor_fp.c; sourceTree = "<group>"; };
+		A1F10FF623EF22510030D586 /* lightall_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lightall_vp.c; sourceTree = "<group>"; };
+		A1F10FF723EF22510030D586 /* tonemap_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tonemap_fp.c; sourceTree = "<group>"; };
+		A1F10FF823EF22510030D586 /* bokeh_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bokeh_vp.c; sourceTree = "<group>"; };
+		A1F10FF923EF22510030D586 /* generic_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generic_vp.c; sourceTree = "<group>"; };
+		A1F10FFA23EF22510030D586 /* texturecolor_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texturecolor_vp.c; sourceTree = "<group>"; };
+		A1F10FFB23EF22510030D586 /* generic_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generic_fp.c; sourceTree = "<group>"; };
+		A1F10FFC23EF22510030D586 /* tonemap_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tonemap_vp.c; sourceTree = "<group>"; };
+		A1F10FFD23EF22510030D586 /* dlight_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dlight_fp.c; sourceTree = "<group>"; };
+		A1F10FFE23EF22510030D586 /* shadowfill_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shadowfill_vp.c; sourceTree = "<group>"; };
+		A1F10FFF23EF22510030D586 /* pshadow_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pshadow_fp.c; sourceTree = "<group>"; };
+		A1F1100023EF22510030D586 /* bokeh_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bokeh_fp.c; sourceTree = "<group>"; };
+		A1F1100123EF22510030D586 /* calclevels4x_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = calclevels4x_vp.c; sourceTree = "<group>"; };
+		A1F1100223EF22510030D586 /* lightall_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lightall_fp.c; sourceTree = "<group>"; };
+		A1F1100323EF22510030D586 /* ssao_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ssao_vp.c; sourceTree = "<group>"; };
+		A1F1100423EF22520030D586 /* shadowmask_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shadowmask_vp.c; sourceTree = "<group>"; };
+		A1F1100523EF22520030D586 /* dlight_vp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dlight_vp.c; sourceTree = "<group>"; };
+		A1F1100623EF22520030D586 /* down4x_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = down4x_fp.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -968,6 +1133,7 @@
 				A179C2912101472E00D3C611 /* qcommon */,
 				A179C0B92101471000D3C611 /* renderercommon */,
 				A179C0952101471000D3C611 /* renderergl1 */,
+				A1F10F3123EF1A2C0030D586 /* renderergl2 */,
 				A1E0ECEC236A9F51003F22FB /* sdl */,
 				A179C0E92101471000D3C611 /* server */,
 				A179C1BA2101472C00D3C611 /* sys */,
@@ -1458,6 +1624,114 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A1F10F3123EF1A2C0030D586 /* renderergl2 */ = {
+			isa = PBXGroup;
+			children = (
+				A1F10F3223EF1A2C0030D586 /* tr_dsa.c */,
+				A1F10F3323EF1A2C0030D586 /* tr_model_iqm.c */,
+				A1F10F3423EF1A2C0030D586 /* tr_curve.c */,
+				A1F10F3523EF1A2C0030D586 /* tr_model.c */,
+				A1F10F3623EF1A2C0030D586 /* tr_sky.c */,
+				A1F10F3723EF1A2C0030D586 /* tr_surface.c */,
+				A1F10F3823EF1A2C0030D586 /* tr_fbo.h */,
+				A1F10F3923EF1A2C0030D586 /* tr_extramath.c */,
+				A1F10F3A23EF1A2C0030D586 /* tr_bsp.c */,
+				A1F10F3B23EF1A2C0030D586 /* tr_postprocess.c */,
+				A1F10F3C23EF1A2C0030D586 /* tr_animation.c */,
+				A1F10F3D23EF1A2C0030D586 /* tr_subs.c */,
+				A1F10F3E23EF1A2C0030D586 /* tr_backend.c */,
+				A1F10F3F23EF1A2C0030D586 /* tr_world.c */,
+				A1F10F4023EF1A2C0030D586 /* tr_glsl.c */,
+				A1F10F4123EF1A2C0030D586 /* tr_scene.c */,
+				A1F10F4223EF1A2C0030D586 /* tr_init.c */,
+				A1F10F4323EF1A2C0030D586 /* tr_shade.c */,
+				A1F10F4423EF1A2C0030D586 /* tr_image.c */,
+				A1F10F4523EF1A2C0030D586 /* tr_flares.c */,
+				A1F10F4623EF1A2C0030D586 /* glsl */,
+				A1F10F6323EF1A2C0030D586 /* tr_vbo.c */,
+				A1F10F6423EF1A2C0030D586 /* tr_shadows.c */,
+				A1F10F6523EF1A2C0030D586 /* tr_dsa.h */,
+				A1F10F6623EF1A2C0030D586 /* tr_image_dds.c */,
+				A1F10F6723EF1A2C0030D586 /* tr_fbo.c */,
+				A1F10F6823EF1A2C0030D586 /* tr_extramath.h */,
+				A1F10F6923EF1A2C0030D586 /* tr_light.c */,
+				A1F10F6A23EF1A2C0030D586 /* tr_main.c */,
+				A1F10F6B23EF1A2C0030D586 /* tr_mesh.c */,
+				A1F10F6C23EF1A2C0030D586 /* tr_shade_calc.c */,
+				A1F10F6D23EF1A2C0030D586 /* tr_local.h */,
+				A1F10F6E23EF1A2C0030D586 /* tr_extratypes.h */,
+				A1F10F6F23EF1A2C0030D586 /* tr_postprocess.h */,
+				A1F10F7023EF1A2C0030D586 /* tr_marks.c */,
+				A1F10F7123EF1A2C0030D586 /* tr_cmds.c */,
+				A1F10F7223EF1A2C0030D586 /* tr_extensions.c */,
+				A1F10F7323EF1A2C0030D586 /* tr_shader.c */,
+			);
+			path = renderergl2;
+			sourceTree = "<group>";
+		};
+		A1F10F4623EF1A2C0030D586 /* glsl */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1100023EF22510030D586 /* bokeh_fp.c */,
+				A1F10F4A23EF1A2C0030D586 /* bokeh_fp.glsl */,
+				A1F10FF823EF22510030D586 /* bokeh_vp.c */,
+				A1F10F5923EF1A2C0030D586 /* bokeh_vp.glsl */,
+				A1F10FEF23EF22500030D586 /* calclevels4x_fp.c */,
+				A1F10F5623EF1A2C0030D586 /* calclevels4x_fp.glsl */,
+				A1F1100123EF22510030D586 /* calclevels4x_vp.c */,
+				A1F10F4923EF1A2C0030D586 /* calclevels4x_vp.glsl */,
+				A1F10FF023EF22500030D586 /* depthblur_fp.c */,
+				A1F10F5223EF1A2C0030D586 /* depthblur_fp.glsl */,
+				A1F10FEE23EF22500030D586 /* depthblur_vp.c */,
+				A1F10F5F23EF1A2C0030D586 /* depthblur_vp.glsl */,
+				A1F10FFD23EF22510030D586 /* dlight_fp.c */,
+				A1F10F4C23EF1A2C0030D586 /* dlight_fp.glsl */,
+				A1F1100523EF22520030D586 /* dlight_vp.c */,
+				A1F10F5C23EF1A2C0030D586 /* dlight_vp.glsl */,
+				A1F1100623EF22520030D586 /* down4x_fp.c */,
+				A1F10F5A23EF1A2C0030D586 /* down4x_fp.glsl */,
+				A1F10FF423EF22510030D586 /* down4x_vp.c */,
+				A1F10F4E23EF1A2C0030D586 /* down4x_vp.glsl */,
+				A1F10FF123EF22500030D586 /* fogpass_fp.c */,
+				A1F10F5D23EF1A2C0030D586 /* fogpass_fp.glsl */,
+				A1F10FEB23EF22500030D586 /* fogpass_vp.c */,
+				A1F10F5023EF1A2C0030D586 /* fogpass_vp.glsl */,
+				A1F10FFB23EF22510030D586 /* generic_fp.c */,
+				A1F10F5B23EF1A2C0030D586 /* generic_fp.glsl */,
+				A1F10FF923EF22510030D586 /* generic_vp.c */,
+				A1F10F4D23EF1A2C0030D586 /* generic_vp.glsl */,
+				A1F1100223EF22510030D586 /* lightall_fp.c */,
+				A1F10F5323EF1A2C0030D586 /* lightall_fp.glsl */,
+				A1F10FF623EF22510030D586 /* lightall_vp.c */,
+				A1F10F6223EF1A2C0030D586 /* lightall_vp.glsl */,
+				A1F10FFF23EF22510030D586 /* pshadow_fp.c */,
+				A1F10F5723EF1A2C0030D586 /* pshadow_fp.glsl */,
+				A1F10FF223EF22510030D586 /* pshadow_vp.c */,
+				A1F10F4823EF1A2C0030D586 /* pshadow_vp.glsl */,
+				A1F10FEC23EF22500030D586 /* shadowfill_fp.c */,
+				A1F10F5E23EF1A2C0030D586 /* shadowfill_fp.glsl */,
+				A1F10FFE23EF22510030D586 /* shadowfill_vp.c */,
+				A1F10F4F23EF1A2C0030D586 /* shadowfill_vp.glsl */,
+				A1F10FF323EF22510030D586 /* shadowmask_fp.c */,
+				A1F10F5123EF1A2C0030D586 /* shadowmask_fp.glsl */,
+				A1F1100423EF22520030D586 /* shadowmask_vp.c */,
+				A1F10F6023EF1A2C0030D586 /* shadowmask_vp.glsl */,
+				A1F10FED23EF22500030D586 /* ssao_fp.c */,
+				A1F10F4723EF1A2C0030D586 /* ssao_fp.glsl */,
+				A1F1100323EF22510030D586 /* ssao_vp.c */,
+				A1F10F5523EF1A2C0030D586 /* ssao_vp.glsl */,
+				A1F10FF523EF22510030D586 /* texturecolor_fp.c */,
+				A1F10F4B23EF1A2C0030D586 /* texturecolor_fp.glsl */,
+				A1F10FFA23EF22510030D586 /* texturecolor_vp.c */,
+				A1F10F5823EF1A2C0030D586 /* texturecolor_vp.glsl */,
+				A1F10FF723EF22510030D586 /* tonemap_fp.c */,
+				A1F10F5423EF1A2C0030D586 /* tonemap_fp.glsl */,
+				A1F10FFC23EF22510030D586 /* tonemap_vp.c */,
+				A1F10F6123EF1A2C0030D586 /* tonemap_vp.glsl */,
+			);
+			path = glsl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1483,6 +1757,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A179BFF5210142FB00D3C611 /* Build configuration list for PBXNativeTarget "Quake3-iOS" */;
 			buildPhases = (
+				A1F10FEA23EF21DE0030D586 /* Run Script */,
 				A179BFDF210142F900D3C611 /* Sources */,
 				A179BFE0210142F900D3C611 /* Frameworks */,
 				A179BFE1210142F900D3C611 /* Resources */,
@@ -1614,6 +1889,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A1F10FEA23EF21DE0030D586 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GLSLPATH=\"${SRCROOT}/Quake3/renderergl2/glsl\"\n\nfunction glslToDotC()\n{\n    INFILE=\"${1}\"\n    INEXT=\"${1##*.}\"\n    INSTRIP=\"${1##*/}\"\n    INBASE=\"${INSTRIP%.glsl}\"\n    OUTFILE=\"${1%.glsl}.c\"\n\n    if [ ! ${INFILE} ] || [ ! -e ${INFILE} ]; then\n        echo \"**** ERROR: no input file\"\n        exit -1\n    fi\n\n    if [ ${INEXT} != \"glsl\" ]; then\n        echo \"**** ERROR: input file must have .glsl extension\"\n        exit -2\n    fi\n\n    echo \"const char *fallbackShader_${INBASE} =\" > ${OUTFILE}\n    cat ${INFILE} | sed 's/^/\\\"/;s/$/\\\\n\\\"/' >> ${OUTFILE}\n    echo \";\" >> ${OUTFILE}\n}\n\npushd \"${GLSLPATH}\"\n\nfind *.glsl | while read GLSLFILE; do glslToDotC \"${GLSLFILE}\"; done\n\npopd\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1565F222109F30E00FA9BC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1623,19 +1919,18 @@
 				A1565F242109F30E00FA9BC9 /* md4.c in Sources */,
 				A1565F252109F30E00FA9BC9 /* vm.c in Sources */,
 				A1565F262109F30E00FA9BC9 /* jdmerge.c in Sources */,
+				A1F10F9723EF1A2C0030D586 /* tr_image.c in Sources */,
 				A1565F272109F30E00FA9BC9 /* jdcolor.c in Sources */,
-				A1565F282109F30E00FA9BC9 /* tr_model.c in Sources */,
 				A1565F292109F30E00FA9BC9 /* sv_init.c in Sources */,
-				A1565F2A2109F30E00FA9BC9 /* tr_cmds.c in Sources */,
 				A1565F2B2109F30E00FA9BC9 /* be_ai_chat.c in Sources */,
 				A1565F2C2109F30E00FA9BC9 /* con_log.c in Sources */,
 				A1565F2D2109F30E00FA9BC9 /* snd_dma.c in Sources */,
 				A1565F2E2109F30E00FA9BC9 /* tr_image_pcx.c in Sources */,
+				A1F10F9123EF1A2C0030D586 /* tr_scene.c in Sources */,
 				A1565F2F2109F30E00FA9BC9 /* snd_wavelet.c in Sources */,
 				A1565F302109F30E00FA9BC9 /* be_ai_move.c in Sources */,
-				A1565F312109F30E00FA9BC9 /* tr_sky.c in Sources */,
 				A1565F332109F30E00FA9BC9 /* vm_interpreted.c in Sources */,
-				A1565F342109F30E00FA9BC9 /* tr_scene.c in Sources */,
+				A1F1101A23EF22520030D586 /* down4x_vp.c in Sources */,
 				A1565F352109F30E00FA9BC9 /* jcsample.c in Sources */,
 				A1565F362109F30E00FA9BC9 /* jcmainct.c in Sources */,
 				A196B71A2117F0420031CEB8 /* QueryOperation.swift in Sources */,
@@ -1643,34 +1938,41 @@
 				A1565F382109F30E00FA9BC9 /* huffman.c in Sources */,
 				A196B7142117F0420031CEB8 /* Q3Server.swift in Sources */,
 				A196B7132117F0420031CEB8 /* Q3Coordinator.swift in Sources */,
+				A1F1100A23EF22520030D586 /* shadowfill_fp.c in Sources */,
 				A1565F392109F30E00FA9BC9 /* jdinput.c in Sources */,
-				A1565F3A2109F30E00FA9BC9 /* tr_shade.c in Sources */,
 				A1565F3B2109F30E00FA9BC9 /* jdtrans.c in Sources */,
 				A1565F3C2109F30E00FA9BC9 /* be_aas_move.c in Sources */,
-				A1565F3D2109F30E00FA9BC9 /* tr_model_iqm.c in Sources */,
+				A1F10FD323EF1A2C0030D586 /* tr_vbo.c in Sources */,
 				A1565F3E2109F30E00FA9BC9 /* l_struct.c in Sources */,
-				A1565F3F2109F30E00FA9BC9 /* tr_flares.c in Sources */,
 				A17EE1A3211A611E00811AE1 /* ServerListViewCell.swift in Sources */,
 				A1565F402109F30E00FA9BC9 /* be_aas_optimize.c in Sources */,
 				A1565F412109F30E00FA9BC9 /* jcapimin.c in Sources */,
+				A1F1102C23EF22520030D586 /* dlight_fp.c in Sources */,
 				A1565F422109F30E00FA9BC9 /* snd_adpcm.c in Sources */,
 				A1565F432109F30E00FA9BC9 /* sv_snapshot.c in Sources */,
+				A1F1101C23EF22520030D586 /* texturecolor_fp.c in Sources */,
 				A1565F442109F30E00FA9BC9 /* be_aas_sample.c in Sources */,
 				A1565F452109F30E00FA9BC9 /* jfdctflt.c in Sources */,
 				A196B71F2117F0420031CEB8 /* Server.swift in Sources */,
 				A1565F462109F30E00FA9BC9 /* common.c in Sources */,
+				A1F10F9323EF1A2C0030D586 /* tr_init.c in Sources */,
 				A1565F472109F30E00FA9BC9 /* jcparam.c in Sources */,
 				A1565F482109F30E00FA9BC9 /* be_aas_reach.c in Sources */,
+				A1F1100823EF22520030D586 /* fogpass_vp.c in Sources */,
+				A1F10FD523EF1A2C0030D586 /* tr_shadows.c in Sources */,
 				A1565F492109F30E00FA9BC9 /* be_ai_goal.c in Sources */,
+				A1F1103823EF22520030D586 /* ssao_vp.c in Sources */,
 				A1565F4A2109F30E00FA9BC9 /* cl_console.c in Sources */,
 				A144021B23ABEC6E00491C86 /* BotCollectionViewCell.swift in Sources */,
+				A1F1103A23EF22520030D586 /* shadowmask_vp.c in Sources */,
 				A17EE1A7211A614200811AE1 /* ServerFilterViewController.swift in Sources */,
 				A196B7152117F0420031CEB8 /* Q3ServerController.swift in Sources */,
+				A1F10F8D23EF1A2C0030D586 /* tr_world.c in Sources */,
+				A1F10F7723EF1A2C0030D586 /* tr_model_iqm.c in Sources */,
 				A1565F4B2109F30E00FA9BC9 /* cl_scrn.c in Sources */,
 				A196B71B2117F0420031CEB8 /* String+Q3Name.swift in Sources */,
 				A1565F4C2109F30E00FA9BC9 /* qal.c in Sources */,
 				A1565F4D2109F30E00FA9BC9 /* jutils.c in Sources */,
-				A1565F4E2109F30E00FA9BC9 /* tr_world.c in Sources */,
 				A196B7202117F0420031CEB8 /* SQLError.swift in Sources */,
 				A196B70E2117F0420031CEB8 /* Coordinator.swift in Sources */,
 				A1565F4F2109F30E00FA9BC9 /* cl_main.c in Sources */,
@@ -1678,8 +1980,11 @@
 				A1565F502109F30E00FA9BC9 /* jcdctmgr.c in Sources */,
 				A1565F512109F30E00FA9BC9 /* ioapi.c in Sources */,
 				A1565F522109F30E00FA9BC9 /* cl_input.c in Sources */,
+				A1F1102823EF22520030D586 /* generic_fp.c in Sources */,
 				A1565F532109F30E00FA9BC9 /* cl_avi.c in Sources */,
+				A1F1101823EF22520030D586 /* shadowmask_fp.c in Sources */,
 				A1565F542109F30E00FA9BC9 /* GameViewController.swift in Sources */,
+				A1F10FE123EF1A2C0030D586 /* tr_shade_calc.c in Sources */,
 				A1565F552109F30E00FA9BC9 /* jfdctint.c in Sources */,
 				A1565F562109F30E00FA9BC9 /* md5.c in Sources */,
 				A1565F572109F30E00FA9BC9 /* be_aas_main.c in Sources */,
@@ -1689,6 +1994,7 @@
 				A196B7162117F0420031CEB8 /* Q3Player.swift in Sources */,
 				A18F969E23A04F070053E3B1 /* tga_reader.c in Sources */,
 				A17EE19F211A610200811AE1 /* DifficultyViewController.swift in Sources */,
+				A1F1102023EF22520030D586 /* tonemap_fp.c in Sources */,
 				A1565F5B2109F30E00FA9BC9 /* net_ip.c in Sources */,
 				A1565F5C2109F30E00FA9BC9 /* snd_openal.c in Sources */,
 				A196B71E2117F0420031CEB8 /* Player.swift in Sources */,
@@ -1696,30 +2002,35 @@
 				A1565F5F2109F30E00FA9BC9 /* jfdctfst.c in Sources */,
 				A196B7192117F0420031CEB8 /* Q3MasterServerController.swift in Sources */,
 				A17FF27E23986C860003D2E5 /* BotMatchViewController.swift in Sources */,
+				A1F1103023EF22520030D586 /* pshadow_fp.c in Sources */,
 				A196B7112117F0420031CEB8 /* GSMasterServerController.swift in Sources */,
-				A1565F602109F30E00FA9BC9 /* tr_light.c in Sources */,
 				A1565F612109F30E00FA9BC9 /* jccoefct.c in Sources */,
-				A1565F622109F30E00FA9BC9 /* tr_image.c in Sources */,
-				A1565F632109F30E00FA9BC9 /* tr_main.c in Sources */,
 				A196B7182117F0420031CEB8 /* Q3Operation.swift in Sources */,
+				A1F10F7F23EF1A2C0030D586 /* tr_surface.c in Sources */,
 				A1565F642109F30E00FA9BC9 /* jmemnobs.c in Sources */,
+				A1F1102E23EF22520030D586 /* shadowfill_vp.c in Sources */,
 				A1565F652109F30E00FA9BC9 /* jcmaster.c in Sources */,
+				A1F10F8F23EF1A2C0030D586 /* tr_glsl.c in Sources */,
 				A196B7172117F0420031CEB8 /* Q3Parser.swift in Sources */,
 				A1565F672109F30E00FA9BC9 /* jdarith.c in Sources */,
 				A1565F682109F30E00FA9BC9 /* jctrans.c in Sources */,
 				A1565F692109F30E00FA9BC9 /* jcomapi.c in Sources */,
+				A1F10F7523EF1A2C0030D586 /* tr_dsa.c in Sources */,
+				A1F10F9523EF1A2C0030D586 /* tr_shade.c in Sources */,
 				A18F9699239B09D40053E3B1 /* UIImage-Targa.m in Sources */,
+				A1F10F7D23EF1A2C0030D586 /* tr_sky.c in Sources */,
 				A1565F6A2109F30E00FA9BC9 /* jdsample.c in Sources */,
+				A1F10FE723EF1A2C0030D586 /* tr_extensions.c in Sources */,
 				A1565F6B2109F30E00FA9BC9 /* l_script.c in Sources */,
 				A17EE1A1211A611400811AE1 /* ServerBrowserViewController.swift in Sources */,
-				A1565F6C2109F30E00FA9BC9 /* tr_marks.c in Sources */,
 				A1565F6D2109F30E00FA9BC9 /* jddctmgr.c in Sources */,
 				A1565F6E2109F30E00FA9BC9 /* sv_ccmds.c in Sources */,
+				A1F10FDD23EF1A2C0030D586 /* tr_main.c in Sources */,
 				A1565F6F2109F30E00FA9BC9 /* jquant2.c in Sources */,
 				A1565F702109F30E00FA9BC9 /* jidctint.c in Sources */,
 				A1565F712109F30E00FA9BC9 /* be_aas_bspq3.c in Sources */,
 				A17FF2842398CF490003D2E5 /* BotMatchBotViewController.swift in Sources */,
-				A1565F722109F30E00FA9BC9 /* tr_shader.c in Sources */,
+				A1F1103423EF22520030D586 /* calclevels4x_vp.c in Sources */,
 				A1565F732109F30E00FA9BC9 /* be_aas_file.c in Sources */,
 				A1565F742109F30E00FA9BC9 /* snd_codec_wav.c in Sources */,
 				A1565F752109F30E00FA9BC9 /* be_aas_route.c in Sources */,
@@ -1727,6 +2038,7 @@
 				A1565F762109F30E00FA9BC9 /* unzip.c in Sources */,
 				A1565F772109F30E00FA9BC9 /* cl_net_chan.c in Sources */,
 				A1565F782109F30E00FA9BC9 /* jidctflt.c in Sources */,
+				A1F1101E23EF22520030D586 /* lightall_vp.c in Sources */,
 				A1565F792109F30E00FA9BC9 /* sv_client.c in Sources */,
 				A1565F7A2109F30E00FA9BC9 /* jchuff.c in Sources */,
 				A1565F7B2109F30E00FA9BC9 /* q_shared.c in Sources */,
@@ -1734,60 +2046,77 @@
 				A176FBDA237A2610009DC413 /* sys_ios.m in Sources */,
 				A1565F7D2109F30E00FA9BC9 /* sv_net_chan.c in Sources */,
 				A1565F7E2109F30E00FA9BC9 /* cm_polylib.c in Sources */,
+				A1F1102A23EF22520030D586 /* tonemap_vp.c in Sources */,
+				A1F10F8123EF1A2C0030D586 /* tr_extramath.c in Sources */,
+				A1F10F8B23EF1A2C0030D586 /* tr_backend.c in Sources */,
 				A15AA927211B43A400DE867F /* OptionsViewController.swift in Sources */,
 				A1565F7F2109F30E00FA9BC9 /* l_memory.c in Sources */,
+				A1F1101623EF22520030D586 /* pshadow_vp.c in Sources */,
 				A1565F802109F30E00FA9BC9 /* jccolor.c in Sources */,
 				A1565F812109F30E00FA9BC9 /* q_math.c in Sources */,
 				A1565F822109F30E00FA9BC9 /* jdcoefct.c in Sources */,
 				A1565F832109F30E00FA9BC9 /* jdpostct.c in Sources */,
 				A1E0ECF9236A9F51003F22FB /* sdl_input.c in Sources */,
-				A1565F852109F30E00FA9BC9 /* tr_surface.c in Sources */,
 				A1565F862109F30E00FA9BC9 /* be_ai_char.c in Sources */,
 				A1565F872109F30E00FA9BC9 /* l_crc.c in Sources */,
 				A1565F882109F30E00FA9BC9 /* be_aas_entity.c in Sources */,
 				A1565F892109F30E00FA9BC9 /* cl_cgame.c in Sources */,
 				A1565F8A2109F30E00FA9BC9 /* be_interface.c in Sources */,
-				A1565F8B2109F30E00FA9BC9 /* tr_curve.c in Sources */,
 				A1E8B323237234F8005C6CA8 /* sdl_glimp.c in Sources */,
-				A1565F8C2109F30E00FA9BC9 /* tr_shade_calc.c in Sources */,
 				A1565F8E2109F30E00FA9BC9 /* jquant1.c in Sources */,
 				A196B71D2117F0420031CEB8 /* Parsable.swift in Sources */,
+				A1F1100C23EF22520030D586 /* ssao_fp.c in Sources */,
+				A1F10FE523EF1A2C0030D586 /* tr_cmds.c in Sources */,
 				A1565F8F2109F30E00FA9BC9 /* l_libvar.c in Sources */,
+				A1F1103623EF22520030D586 /* lightall_fp.c in Sources */,
 				A1565F902109F30E00FA9BC9 /* msg.c in Sources */,
-				A1565F912109F30E00FA9BC9 /* tr_backend.c in Sources */,
+				A1F10FE323EF1A2C0030D586 /* tr_marks.c in Sources */,
+				A1F1100E23EF22520030D586 /* depthblur_vp.c in Sources */,
+				A1F1102423EF22520030D586 /* generic_vp.c in Sources */,
 				A1565F922109F30E00FA9BC9 /* jcprepct.c in Sources */,
+				A1F10F8323EF1A2C0030D586 /* tr_bsp.c in Sources */,
 				A17EE1A5211A613E00811AE1 /* ServerInfoViewController.swift in Sources */,
-				A1565F942109F30E00FA9BC9 /* tr_animation.c in Sources */,
 				A1565F952109F30E00FA9BC9 /* cmd.c in Sources */,
 				A1565F962109F30E00FA9BC9 /* snd_main.c in Sources */,
 				A1565F982109F30E00FA9BC9 /* jcapistd.c in Sources */,
+				A1F1103E23EF22520030D586 /* down4x_fp.c in Sources */,
 				A1565F992109F30E00FA9BC9 /* jdatasrc.c in Sources */,
 				A1565F9A2109F30E00FA9BC9 /* net_chan.c in Sources */,
 				A1565F9B2109F30E00FA9BC9 /* jdmarker.c in Sources */,
 				A1565F9C2109F30E00FA9BC9 /* tr_noise.c in Sources */,
-				A1565F9D2109F30E00FA9BC9 /* tr_mesh.c in Sources */,
 				A196B71C2117F0420031CEB8 /* MasterServerController.swift in Sources */,
 				A1565F9E2109F30E00FA9BC9 /* jdapimin.c in Sources */,
+				A1F10F8723EF1A2C0030D586 /* tr_animation.c in Sources */,
 				A196B7212117F0420031CEB8 /* SupportedGames.swift in Sources */,
 				A1565F9F2109F30E00FA9BC9 /* cl_ui.c in Sources */,
 				A1565FA02109F30E00FA9BC9 /* be_aas_cluster.c in Sources */,
 				A1565FA12109F30E00FA9BC9 /* tr_image_tga.c in Sources */,
 				A1565FA22109F30E00FA9BC9 /* tr_image_bmp.c in Sources */,
+				A1F10FDB23EF1A2C0030D586 /* tr_light.c in Sources */,
 				A1565FA32109F30E00FA9BC9 /* snd_mem.c in Sources */,
+				A1F10FD723EF1A2C0030D586 /* tr_image_dds.c in Sources */,
 				A1E8B31F23712A37005C6CA8 /* AppDelegate.m in Sources */,
+				A1F1103C23EF22520030D586 /* dlight_vp.c in Sources */,
+				A1F10F8523EF1A2C0030D586 /* tr_postprocess.c in Sources */,
 				A1565FA42109F30E00FA9BC9 /* cm_load.c in Sources */,
+				A1F10FD923EF1A2C0030D586 /* tr_fbo.c in Sources */,
 				A1565FA52109F30E00FA9BC9 /* cl_parse.c in Sources */,
+				A1F10F7923EF1A2C0030D586 /* tr_curve.c in Sources */,
+				A1F1101423EF22520030D586 /* fogpass_fp.c in Sources */,
 				A1E0ECF7236A9F51003F22FB /* sdl_snd.c in Sources */,
 				A1565FA62109F30E00FA9BC9 /* jdmainct.c in Sources */,
+				A1F10F9923EF1A2C0030D586 /* tr_flares.c in Sources */,
 				A1565FA72109F30E00FA9BC9 /* tr_image_jpg.c in Sources */,
 				A1565FA82109F30E00FA9BC9 /* sv_game.c in Sources */,
 				A1565FAA2109F30E00FA9BC9 /* cl_curl.c in Sources */,
+				A1F1102223EF22520030D586 /* bokeh_vp.c in Sources */,
 				A1565FAB2109F30E00FA9BC9 /* cm_test.c in Sources */,
+				A1F1103223EF22520030D586 /* bokeh_fp.c in Sources */,
+				A1F1101023EF22520030D586 /* calclevels4x_fp.c in Sources */,
 				A17EE19D211A60F800811AE1 /* TiersListViewController.swift in Sources */,
 				A196B73C2117F0800031CEB8 /* GSCoordinator.swift in Sources */,
-				A1565FAC2109F30E00FA9BC9 /* tr_bsp.c in Sources */,
+				A1F1101223EF22520030D586 /* depthblur_fp.c in Sources */,
 				A1565FAD2109F30E00FA9BC9 /* be_ai_gen.c in Sources */,
-				A1565FAE2109F30E00FA9BC9 /* tr_shadows.c in Sources */,
 				A1565FAF2109F30E00FA9BC9 /* cm_trace.c in Sources */,
 				A1565FB02109F30E00FA9BC9 /* jerror.c in Sources */,
 				A1565FB12109F30E00FA9BC9 /* jdatadst.c in Sources */,
@@ -1800,19 +2129,22 @@
 				A1565FB72109F30E00FA9BC9 /* snd_mix.c in Sources */,
 				A1565FB82109F30E00FA9BC9 /* jaricom.c in Sources */,
 				A1565FB92109F30E00FA9BC9 /* sv_world.c in Sources */,
+				A1F1102623EF22520030D586 /* texturecolor_vp.c in Sources */,
 				A1565FBB2109F30E00FA9BC9 /* be_ai_weight.c in Sources */,
 				A1565FBC2109F30E00FA9BC9 /* jidctfst.c in Sources */,
 				A1565FBD2109F30E00FA9BC9 /* ViewController.swift in Sources */,
 				A1565FBE2109F30E00FA9BC9 /* jdmaster.c in Sources */,
+				A1F10F7B23EF1A2C0030D586 /* tr_model.c in Sources */,
 				A1565FBF2109F30E00FA9BC9 /* l_precomp.c in Sources */,
 				A1565FC02109F30E00FA9BC9 /* sv_main.c in Sources */,
 				A1565FC12109F30E00FA9BC9 /* be_ea.c in Sources */,
 				A1565FC22109F30E00FA9BC9 /* jcarith.c in Sources */,
-				A1565FC32109F30E00FA9BC9 /* tr_init.c in Sources */,
 				A1565FC42109F30E00FA9BC9 /* cm_patch.c in Sources */,
 				A1565FC52109F30E00FA9BC9 /* cl_keys.c in Sources */,
 				A1565FC62109F30E00FA9BC9 /* files.c in Sources */,
+				A1F10FE923EF1A2C0030D586 /* tr_shader.c in Sources */,
 				A1565FC72109F30E00FA9BC9 /* vm_none.c in Sources */,
+				A1F10FDF23EF1A2C0030D586 /* tr_mesh.c in Sources */,
 				A1565FC82109F30E00FA9BC9 /* tr_image_png.c in Sources */,
 				A17FF2812398C93A0003D2E5 /* BotMatchMapViewController.swift in Sources */,
 				A1565FC92109F30E00FA9BC9 /* tr_font.c in Sources */,
@@ -1834,11 +2166,14 @@
 				A179C2E42101472E00D3C611 /* be_aas_main.c in Sources */,
 				A179C3242101472E00D3C611 /* jdpostct.c in Sources */,
 				A179C2EB2101472E00D3C611 /* be_aas_move.c in Sources */,
-				A179C3372101472E00D3C611 /* tr_mesh.c in Sources */,
+				A1F1101923EF22520030D586 /* down4x_vp.c in Sources */,
 				A179C2EF2101472E00D3C611 /* be_ai_weight.c in Sources */,
 				A179C4A32101472F00D3C611 /* cmd.c in Sources */,
 				A179C3582101472E00D3C611 /* cl_console.c in Sources */,
 				A179C3562101472E00D3C611 /* cl_main.c in Sources */,
+				A1F10F9623EF1A2C0030D586 /* tr_image.c in Sources */,
+				A1F10F7623EF1A2C0030D586 /* tr_model_iqm.c in Sources */,
+				A1F10F8023EF1A2C0030D586 /* tr_extramath.c in Sources */,
 				A179C3222101472E00D3C611 /* jdcoefct.c in Sources */,
 				A183623F2373D9550060FE55 /* SDL_uikitviewcontroller+Additions.swift in Sources */,
 				A179C3152101472E00D3C611 /* jdarith.c in Sources */,
@@ -1847,13 +2182,17 @@
 				A18F9698239B09D40053E3B1 /* UIImage-Targa.m in Sources */,
 				A179C49B2101472F00D3C611 /* files.c in Sources */,
 				A15AA92A211B470200DE867F /* MainMenuViewController.swift in Sources */,
+				A1F1103D23EF22520030D586 /* down4x_fp.c in Sources */,
 				A196B6DA2115FDB70031CEB8 /* Game.swift in Sources */,
 				A179C3482101472E00D3C611 /* tr_noise.c in Sources */,
 				A196B6C92115F7C50031CEB8 /* MasterServerController.swift in Sources */,
 				A1510399210B7A390087EA86 /* JoyStickView.swift in Sources */,
 				A179C2FC2101472E00D3C611 /* jdapistd.c in Sources */,
 				A17FF2802398C93A0003D2E5 /* BotMatchMapViewController.swift in Sources */,
+				A1F1101123EF22520030D586 /* depthblur_fp.c in Sources */,
+				A1F1100923EF22520030D586 /* shadowfill_fp.c in Sources */,
 				A179C2DE2101472E00D3C611 /* be_aas_entity.c in Sources */,
+				A1F10F9023EF1A2C0030D586 /* tr_scene.c in Sources */,
 				A179C49A2101472F00D3C611 /* net_ip.c in Sources */,
 				A179C3572101472E00D3C611 /* snd_adpcm.c in Sources */,
 				A179C3192101472E00D3C611 /* jmemmgr.c in Sources */,
@@ -1861,44 +2200,52 @@
 				A144021A23ABEC6E00491C86 /* BotCollectionViewCell.swift in Sources */,
 				A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */,
 				A179C2D92101472E00D3C611 /* be_ai_gen.c in Sources */,
+				A1F1102323EF22520030D586 /* generic_vp.c in Sources */,
 				A179C31E2101472E00D3C611 /* jctrans.c in Sources */,
 				A196B6BF2115F7C50031CEB8 /* Q3Parser.swift in Sources */,
 				A179C30C2101472E00D3C611 /* jccolor.c in Sources */,
-				A179C3252101472E00D3C611 /* tr_model_iqm.c in Sources */,
+				A1F10FE823EF1A2C0030D586 /* tr_shader.c in Sources */,
+				A1F1102F23EF22520030D586 /* pshadow_fp.c in Sources */,
 				A196B6B92115F7C50031CEB8 /* Q3Server.swift in Sources */,
 				A179C3542101472E00D3C611 /* cl_input.c in Sources */,
 				A179C3012101472E00D3C611 /* jfdctflt.c in Sources */,
-				A179C33A2101472E00D3C611 /* tr_cmds.c in Sources */,
 				A196B6CB2115F7C50031CEB8 /* SupportedGames.swift in Sources */,
 				A179C3022101472E00D3C611 /* jcparam.c in Sources */,
+				A1F10FD423EF1A2C0030D586 /* tr_shadows.c in Sources */,
 				A179C35F2101472E00D3C611 /* snd_codec_wav.c in Sources */,
 				A17FF27D23986C860003D2E5 /* BotMatchViewController.swift in Sources */,
+				A1F10F8423EF1A2C0030D586 /* tr_postprocess.c in Sources */,
 				A196B6CF2115F7C50031CEB8 /* SQLError.swift in Sources */,
 				A179C4922101472F00D3C611 /* common.c in Sources */,
-				A179C3342101472E00D3C611 /* tr_shadows.c in Sources */,
+				A1F1103923EF22520030D586 /* shadowmask_vp.c in Sources */,
 				A179C35D2101472E00D3C611 /* cl_cin.c in Sources */,
+				A1F1101F23EF22520030D586 /* tonemap_fp.c in Sources */,
 				A1E8B31E23712A37005C6CA8 /* AppDelegate.m in Sources */,
 				A179C4AA2101472F00D3C611 /* net_chan.c in Sources */,
 				A179C35B2101472E00D3C611 /* cl_ui.c in Sources */,
-				A179C32F2101472E00D3C611 /* tr_scene.c in Sources */,
 				A179C3462101472E00D3C611 /* tr_font.c in Sources */,
-				A179C3262101472E00D3C611 /* tr_curve.c in Sources */,
 				A179C2EA2101472E00D3C611 /* l_crc.c in Sources */,
 				A179C2EC2101472E00D3C611 /* be_aas_debug.c in Sources */,
+				A1F1102923EF22520030D586 /* tonemap_vp.c in Sources */,
 				A179C3492101472E00D3C611 /* tr_image_pcx.c in Sources */,
 				A179C2E12101472E00D3C611 /* l_libvar.c in Sources */,
+				A1F10FE423EF1A2C0030D586 /* tr_cmds.c in Sources */,
 				A17FF2832398CF490003D2E5 /* BotMatchBotViewController.swift in Sources */,
 				A196B6E8211683510031CEB8 /* ServerInfoViewController.swift in Sources */,
 				A179C3472101472E00D3C611 /* tr_image_jpg.c in Sources */,
+				A1F10F7A23EF1A2C0030D586 /* tr_model.c in Sources */,
 				A179C2F82101472E00D3C611 /* jdhuff.c in Sources */,
 				A179C2DB2101472E00D3C611 /* be_ea.c in Sources */,
 				A179C2E82101472E00D3C611 /* be_ai_char.c in Sources */,
 				A179C3622101472E00D3C611 /* snd_main.c in Sources */,
+				A1F1100723EF22520030D586 /* fogpass_vp.c in Sources */,
 				A196B6C32115F7C50031CEB8 /* Q3MasterServerController.swift in Sources */,
 				A179C3172101472E00D3C611 /* jcomapi.c in Sources */,
 				A179C3F82101472F00D3C611 /* sys_unix.c in Sources */,
+				A1F1101523EF22520030D586 /* pshadow_vp.c in Sources */,
 				A179C2F92101472E00D3C611 /* jdinput.c in Sources */,
 				A179C34D2101472E00D3C611 /* snd_dma.c in Sources */,
+				A1F10F8223EF1A2C0030D586 /* tr_bsp.c in Sources */,
 				A179C3212101472E00D3C611 /* jdmainct.c in Sources */,
 				A176FBD9237A2610009DC413 /* sys_ios.m in Sources */,
 				A179C4A22101472F00D3C611 /* huffman.c in Sources */,
@@ -1906,16 +2253,19 @@
 				A196B6C12115F7C50031CEB8 /* Q3Operation.swift in Sources */,
 				A179C2DD2101472E00D3C611 /* l_script.c in Sources */,
 				A179C3122101472E00D3C611 /* jcapistd.c in Sources */,
-				A179C32E2101472E00D3C611 /* tr_world.c in Sources */,
 				A15AA925211B43A400DE867F /* OptionsViewController.swift in Sources */,
 				A179C4A92101472F00D3C611 /* cvar.c in Sources */,
 				A196B6AF2115F7C50031CEB8 /* ServerController.swift in Sources */,
 				A179C4AC2101472F00D3C611 /* cm_patch.c in Sources */,
+				A1F10FDC23EF1A2C0030D586 /* tr_main.c in Sources */,
 				A179C3092101472E00D3C611 /* jcarith.c in Sources */,
-				A179C3392101472E00D3C611 /* tr_marks.c in Sources */,
+				A1F1103123EF22520030D586 /* bokeh_fp.c in Sources */,
 				A179C3132101472E00D3C611 /* jfdctfst.c in Sources */,
 				A179C49F2101472F00D3C611 /* cm_polylib.c in Sources */,
+				A1F1103323EF22520030D586 /* calclevels4x_vp.c in Sources */,
 				A179C2E32101472E00D3C611 /* be_aas_sample.c in Sources */,
+				A1F1100B23EF22520030D586 /* ssao_fp.c in Sources */,
+				A1F1100F23EF22520030D586 /* calclevels4x_fp.c in Sources */,
 				A15103A7210D76F50087EA86 /* DifficultyViewController.swift in Sources */,
 				A179C2FF2101472E00D3C611 /* jdmerge.c in Sources */,
 				A179C3102101472E00D3C611 /* jutils.c in Sources */,
@@ -1925,8 +2275,11 @@
 				A1E0ECF6236A9F51003F22FB /* sdl_snd.c in Sources */,
 				A196B6CD2115F7C50031CEB8 /* Parsable.swift in Sources */,
 				A196B7432117FFA30031CEB8 /* ServerFilterViewController.swift in Sources */,
+				A1F10FDE23EF1A2C0030D586 /* tr_mesh.c in Sources */,
+				A1F1102723EF22520030D586 /* generic_fp.c in Sources */,
+				A1F10F9223EF1A2C0030D586 /* tr_init.c in Sources */,
 				A179C3072101472E00D3C611 /* jchuff.c in Sources */,
-				A179C32B2101472E00D3C611 /* tr_animation.c in Sources */,
+				A1F10FD623EF1A2C0030D586 /* tr_image_dds.c in Sources */,
 				A179C3142101472E00D3C611 /* jaricom.c in Sources */,
 				A179C4942101472F00D3C611 /* msg.c in Sources */,
 				A179C3632101472E00D3C611 /* sv_main.c in Sources */,
@@ -1937,39 +2290,43 @@
 				A179C4AB2101472F00D3C611 /* puff.c in Sources */,
 				A179C2FA2101472E00D3C611 /* jdtrans.c in Sources */,
 				A196B6C72115F7C50031CEB8 /* String+Q3Name.swift in Sources */,
+				A1F10F7C23EF1A2C0030D586 /* tr_sky.c in Sources */,
 				A179C31F2101472E00D3C611 /* jidctflt.c in Sources */,
 				A179C3062101472E00D3C611 /* jcmainct.c in Sources */,
 				A196B6BB2115F7C50031CEB8 /* Q3ServerController.swift in Sources */,
+				A1F10FE023EF1A2C0030D586 /* tr_shade_calc.c in Sources */,
 				A179C3652101472E00D3C611 /* sv_snapshot.c in Sources */,
 				A179C2FB2101472E00D3C611 /* jcmaster.c in Sources */,
 				A179C3032101472E00D3C611 /* jccoefct.c in Sources */,
 				A179C2FD2101472E00D3C611 /* jcapimin.c in Sources */,
+				A1F1101D23EF22520030D586 /* lightall_vp.c in Sources */,
+				A1F10FD223EF1A2C0030D586 /* tr_vbo.c in Sources */,
 				A179C36B2101472E00D3C611 /* sv_ccmds.c in Sources */,
 				A196B6E321167B890031CEB8 /* ServerListViewCell.swift in Sources */,
+				A1F10F9423EF1A2C0030D586 /* tr_shade.c in Sources */,
 				A179BFE9210142FA00D3C611 /* GameViewController.swift in Sources */,
+				A1F10F8623EF1A2C0030D586 /* tr_animation.c in Sources */,
 				A179C2F12101472E00D3C611 /* be_interface.c in Sources */,
 				A179C3F02101472E00D3C611 /* con_log.c in Sources */,
-				A179C3272101472E00D3C611 /* tr_model.c in Sources */,
-				A179C32A2101472E00D3C611 /* tr_bsp.c in Sources */,
+				A1F10F8A23EF1A2C0030D586 /* tr_backend.c in Sources */,
 				A179C2F02101472E00D3C611 /* be_ai_weap.c in Sources */,
 				A179C3F12101472E00D3C611 /* sys_main.c in Sources */,
-				A179C3362101472E00D3C611 /* tr_main.c in Sources */,
 				A179C3232101472E00D3C611 /* jdsample.c in Sources */,
+				A1F1102523EF22520030D586 /* texturecolor_vp.c in Sources */,
 				A179C4952101472F00D3C611 /* unzip.c in Sources */,
+				A1F10F9823EF1A2C0030D586 /* tr_flares.c in Sources */,
 				A179C34B2101472E00D3C611 /* cl_net_chan.c in Sources */,
 				A179C3532101472E00D3C611 /* cl_avi.c in Sources */,
-				A179C3282101472E00D3C611 /* tr_sky.c in Sources */,
-				A179C3292101472E00D3C611 /* tr_surface.c in Sources */,
-				A179C3382101472E00D3C611 /* tr_shade_calc.c in Sources */,
+				A1F1101B23EF22520030D586 /* texturecolor_fp.c in Sources */,
 				A179C36C2101472E00D3C611 /* sv_world.c in Sources */,
 				A196B6B32115F7C50031CEB8 /* GSMasterServerController.swift in Sources */,
 				A179C31B2101472E00D3C611 /* jquant2.c in Sources */,
 				A179C2E22101472E00D3C611 /* be_aas_bspq3.c in Sources */,
-				A179C3302101472E00D3C611 /* tr_init.c in Sources */,
 				A179C3442101472E00D3C611 /* tr_image_png.c in Sources */,
+				A1F1101323EF22520030D586 /* fogpass_fp.c in Sources */,
+				A1F1102B23EF22520030D586 /* dlight_fp.c in Sources */,
 				A196B6BD2115F7C50031CEB8 /* Q3Player.swift in Sources */,
 				A179C3202101472E00D3C611 /* jcinit.c in Sources */,
-				A179C33B2101472E00D3C611 /* tr_shader.c in Sources */,
 				A179C4A82101472F00D3C611 /* cm_trace.c in Sources */,
 				A179C3052101472E00D3C611 /* jcsample.c in Sources */,
 				A179C4A42101472F00D3C611 /* vm_interpreted.c in Sources */,
@@ -1978,6 +2335,7 @@
 				A179C3432101472E00D3C611 /* tr_image_tga.c in Sources */,
 				A179C49E2101472F00D3C611 /* cm_load.c in Sources */,
 				A196B6B72115F7C50031CEB8 /* Q3Coordinator.swift in Sources */,
+				A1F1102D23EF22520030D586 /* shadowfill_vp.c in Sources */,
 				A179C2DA2101472E00D3C611 /* be_ai_chat.c in Sources */,
 				A179C49C2101472F00D3C611 /* ioapi.c in Sources */,
 				A179C3682101472E00D3C611 /* sv_bot.c in Sources */,
@@ -1985,26 +2343,34 @@
 				A179C2F32101472E00D3C611 /* be_aas_cluster.c in Sources */,
 				A179C3182101472E00D3C611 /* jdatadst.c in Sources */,
 				A179C3522101472E00D3C611 /* cl_cgame.c in Sources */,
+				A1F10FDA23EF1A2C0030D586 /* tr_light.c in Sources */,
 				A179C3002101472E00D3C611 /* jdcolor.c in Sources */,
 				A196B6B12115F7C50031CEB8 /* GSCoordinator.swift in Sources */,
+				A1F10F7E23EF1A2C0030D586 /* tr_surface.c in Sources */,
 				A179C4932101472F00D3C611 /* md4.c in Sources */,
 				A179C3F72101472F00D3C611 /* con_tty.c in Sources */,
 				A196B6AB2115F7C50031CEB8 /* Player.swift in Sources */,
 				A179C34A2101472E00D3C611 /* cl_scrn.c in Sources */,
 				A179C2E72101472E00D3C611 /* be_ai_goal.c in Sources */,
 				A179C30E2101472E00D3C611 /* jquant1.c in Sources */,
+				A1F10F8E23EF1A2C0030D586 /* tr_glsl.c in Sources */,
 				A179C31C2101472E00D3C611 /* jidctint.c in Sources */,
 				A179C3602101472E00D3C611 /* snd_openal.c in Sources */,
 				A15103A4210D5DFF0087EA86 /* TiersListViewController.swift in Sources */,
 				A179C3672101472E00D3C611 /* sv_init.c in Sources */,
 				A179C35E2101472E00D3C611 /* snd_mem.c in Sources */,
 				A179C4982101472F00D3C611 /* q_math.c in Sources */,
+				A1F1102123EF22520030D586 /* bokeh_vp.c in Sources */,
+				A1F1101723EF22520030D586 /* shadowmask_fp.c in Sources */,
 				A179C2F42101472E00D3C611 /* be_aas_route.c in Sources */,
+				A1F10FE223EF1A2C0030D586 /* tr_marks.c in Sources */,
+				A1F10FD823EF1A2C0030D586 /* tr_fbo.c in Sources */,
+				A1F10F8C23EF1A2C0030D586 /* tr_world.c in Sources */,
 				A1E8B32223714505005C6CA8 /* sdl_glimp.c in Sources */,
 				A179C4962101472F00D3C611 /* vm_none.c in Sources */,
 				A179C2DC2101472E00D3C611 /* be_aas_file.c in Sources */,
 				A179C2ED2101472E00D3C611 /* l_memory.c in Sources */,
-				A179C3352101472E00D3C611 /* tr_light.c in Sources */,
+				A1F10F7423EF1A2C0030D586 /* tr_dsa.c in Sources */,
 				A179C3512101472E00D3C611 /* qal.c in Sources */,
 				A179C2DF2101472E00D3C611 /* be_aas_optimize.c in Sources */,
 				A179C3662101472E00D3C611 /* sv_client.c in Sources */,
@@ -2013,26 +2379,28 @@
 				A179C2F22101472E00D3C611 /* be_ai_move.c in Sources */,
 				A179C3612101472E00D3C611 /* snd_wavelet.c in Sources */,
 				A179C3452101472E00D3C611 /* tr_image_bmp.c in Sources */,
+				A1F1100D23EF22520030D586 /* depthblur_vp.c in Sources */,
 				A179C4992101472F00D3C611 /* cm_test.c in Sources */,
 				A179C34E2101472E00D3C611 /* cl_curl.c in Sources */,
+				A1F1103523EF22520030D586 /* lightall_fp.c in Sources */,
 				A179C3552101472E00D3C611 /* cl_keys.c in Sources */,
+				A1F10F7823EF1A2C0030D586 /* tr_curve.c in Sources */,
+				A1F10FE623EF1A2C0030D586 /* tr_extensions.c in Sources */,
 				A179C31A2101472E00D3C611 /* jcmarker.c in Sources */,
+				A1F1103723EF22520030D586 /* ssao_vp.c in Sources */,
 				A179C3692101472E00D3C611 /* sv_net_chan.c in Sources */,
-				A179C3322101472E00D3C611 /* tr_image.c in Sources */,
 				A179C3162101472E00D3C611 /* jdmaster.c in Sources */,
 				A196B6C52115F7C50031CEB8 /* QueryOperation.swift in Sources */,
+				A1F1103B23EF22520030D586 /* dlight_vp.c in Sources */,
 				A179C2F72101472E00D3C611 /* jdatasrc.c in Sources */,
-				A179C3312101472E00D3C611 /* tr_shade.c in Sources */,
 				A179C30B2101472E00D3C611 /* jcprepct.c in Sources */,
 				A179C2E92101472E00D3C611 /* be_aas_reach.c in Sources */,
 				A179C2F62101472E00D3C611 /* jidctfst.c in Sources */,
 				A179C4A72101472F00D3C611 /* md5.c in Sources */,
 				A179C4A52101472F00D3C611 /* q_shared.c in Sources */,
-				A179C32D2101472E00D3C611 /* tr_backend.c in Sources */,
 				A18F969D23A04F070053E3B1 /* tga_reader.c in Sources */,
 				A179C31D2101472E00D3C611 /* jdapimin.c in Sources */,
 				A179C34C2101472E00D3C611 /* snd_mix.c in Sources */,
-				A179C3332101472E00D3C611 /* tr_flares.c in Sources */,
 				A179C2E52101472E00D3C611 /* l_struct.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

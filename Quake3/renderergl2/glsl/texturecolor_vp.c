@@ -1,0 +1,15 @@
+const char *fallbackShader_texturecolor_vp =
+"attribute vec3 attr_Position;\n"
+"attribute vec4 attr_TexCoord0;\n"
+"\n"
+"uniform mat4   u_ModelViewProjectionMatrix;\n"
+"\n"
+"varying vec2   var_Tex1;\n"
+"\n"
+"\n"
+"void main()\n"
+"{\n"
+"	gl_Position = u_ModelViewProjectionMatrix * vec4(attr_Position, 1.0);\n"
+"	var_Tex1 = attr_TexCoord0.st;\n"
+"}\n"
+;
