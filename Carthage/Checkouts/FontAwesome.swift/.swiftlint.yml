@@ -1,5 +1,0 @@
-disabled_rules:
-  - line_length
-identifier_name:
-  min_length:
-    warning: 2
