@@ -434,6 +434,7 @@
 		A1DBB61724A161A40021BA6F /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A1DBB61624A161A40021BA6F /* ZIPFoundation */; };
 		A1DBB61824A164F90021BA6F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6FE2117EF0F0031CEB8 /* AudioToolbox.framework */; };
 		A1DBB61924A164F90021BA6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */; };
+		A1DBB64D24A183770021BA6F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DBB64C24A183590021BA6F /* CoreBluetooth.framework */; };
 		A1E0ECF6236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1E0ECF7236A9F51003F22FB /* sdl_snd.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF0236A9F51003F22FB /* sdl_snd.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1E0ECF8236A9F51003F22FB /* sdl_input.c in Sources */ = {isa = PBXBuildFile; fileRef = A1E0ECF1236A9F51003F22FB /* sdl_input.c */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -832,6 +833,7 @@
 		A196B7422117FFA30031CEB8 /* ServerFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFilterViewController.swift; sourceTree = "<group>"; };
 		A1DBB61E24A165580021BA6F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS13.4.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		A1DBB61F24A165580021BA6F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS13.4.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		A1DBB64C24A183590021BA6F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A1E0ECED236A9F51003F22FB /* sdl_icon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdl_icon.h; sourceTree = "<group>"; };
 		A1E0ECEE236A9F51003F22FB /* sdl_gamma.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_gamma.c; sourceTree = "<group>"; };
 		A1E0ECEF236A9F51003F22FB /* sdl_glimp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_glimp.c; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DBB64D24A183770021BA6F /* CoreBluetooth.framework in Frameworks */,
 				A1F10DC723ECD3970030D586 /* libSDL2.a in Frameworks */,
 				A1565FEB210A0E6F00FA9BC9 /* libnghttp2_iOS.a in Frameworks */,
 				A1DBB61924A164F90021BA6F /* AVFoundation.framework in Frameworks */,
@@ -1386,6 +1389,7 @@
 			children = (
 				A196B6FE2117EF0F0031CEB8 /* AudioToolbox.framework */,
 				A196B6FC2117EEFD0031CEB8 /* AVFoundation.framework */,
+				A1DBB64C24A183590021BA6F /* CoreBluetooth.framework */,
 				A1565FE7210A0E4A00FA9BC9 /* libcrypto.a */,
 				A1565FDC210A0CEA00FA9BC9 /* libcurl_iOS.a */,
 				A1565FEA210A0E6F00FA9BC9 /* libnghttp2_iOS.a */,
@@ -2064,10 +2068,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UY8SFDNQ8;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2103,10 +2104,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UY8SFDNQ8;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2269,7 +2267,6 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2309,7 +2306,6 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
