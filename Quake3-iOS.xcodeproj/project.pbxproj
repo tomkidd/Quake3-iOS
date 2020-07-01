@@ -194,6 +194,12 @@
 		A15AA927211B43A400DE867F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA924211B43A400DE867F /* OptionsViewController.swift */; };
 		A15AA92A211B470200DE867F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA929211B470200DE867F /* MainMenuViewController.swift */; };
 		A15AA92C211B470200DE867F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15AA929211B470200DE867F /* MainMenuViewController.swift */; };
+		A16B764C24ACC4C000D96F09 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = A16B764024ACC4BF00D96F09 /* Font Awesome 5 Free-Regular-400.otf */; };
+		A16B764D24ACC4C000D96F09 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = A16B764024ACC4BF00D96F09 /* Font Awesome 5 Free-Regular-400.otf */; };
+		A16B764E24ACC4C000D96F09 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = A16B764A24ACC4BF00D96F09 /* Font Awesome 5 Free-Solid-900.otf */; };
+		A16B764F24ACC4C000D96F09 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = A16B764A24ACC4BF00D96F09 /* Font Awesome 5 Free-Solid-900.otf */; };
+		A16B765024ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = A16B764B24ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf */; };
+		A16B765124ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = A16B764B24ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf */; };
 		A176FBD9237A2610009DC413 /* sys_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = A176FBD8237A2610009DC413 /* sys_ios.m */; };
 		A176FBDA237A2610009DC413 /* sys_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = A176FBD8237A2610009DC413 /* sys_ios.m */; };
 		A179BFE9210142FA00D3C611 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179BFE8210142FA00D3C611 /* GameViewController.swift */; };
@@ -534,6 +540,9 @@
 		A15AA921211A68E900DE867F /* ServerListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerListViewCell.xib; sourceTree = "<group>"; };
 		A15AA924211B43A400DE867F /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		A15AA929211B470200DE867F /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		A16B764024ACC4BF00D96F09 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		A16B764A24ACC4BF00D96F09 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		A16B764B24ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		A176FBD8237A2610009DC413 /* sys_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sys_ios.m; sourceTree = "<group>"; };
 		A179BFE3210142FA00D3C611 /* Quake3-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quake3-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A179BFE8210142FA00D3C611 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -917,6 +926,9 @@
 				A151039B210B7A890087EA86 /* CoreGraphics+Additions.swift */,
 				A15103A6210D76F50087EA86 /* DifficultyViewController.swift */,
 				A151039E210D50D40087EA86 /* dpquake.ttf */,
+				A16B764B24ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf */,
+				A16B764024ACC4BF00D96F09 /* Font Awesome 5 Free-Regular-400.otf */,
+				A16B764A24ACC4BF00D96F09 /* Font Awesome 5 Free-Solid-900.otf */,
 				A179BFE8210142FA00D3C611 /* GameViewController.swift */,
 				A179BFF2210142FB00D3C611 /* Info.plist */,
 				A1510398210B7A390087EA86 /* JoyStickView.swift */,
@@ -1585,10 +1597,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1565FD42109F30E00FA9BC9 /* Assets.xcassets in Resources */,
+				A16B764D24ACC4C000D96F09 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				A1565FD52109F30E00FA9BC9 /* Main.storyboard in Resources */,
+				A16B765124ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				A15AA922211A68E900DE867F /* ServerListViewCell.xib in Resources */,
 				A15103A1210D50DC0087EA86 /* dpquake.ttf in Resources */,
 				A1565FD62109F30E00FA9BC9 /* baseq3 in Resources */,
+				A16B764F24ACC4C000D96F09 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1598,10 +1613,13 @@
 			files = (
 				A196B6E521167B890031CEB8 /* ServerListViewCell.xib in Resources */,
 				A179BFF1210142FB00D3C611 /* LaunchScreen.storyboard in Resources */,
+				A16B764C24ACC4C000D96F09 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				A151039F210D50D50087EA86 /* dpquake.ttf in Resources */,
 				A1902E9B21075F1C008823BB /* baseq3 in Resources */,
 				A179BFEE210142FB00D3C611 /* Assets.xcassets in Resources */,
 				A179BFEC210142FA00D3C611 /* Main.storyboard in Resources */,
+				A16B765024ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				A16B764E24ACC4C000D96F09 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
