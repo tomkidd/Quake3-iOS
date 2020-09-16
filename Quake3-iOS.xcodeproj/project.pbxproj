@@ -2311,6 +2311,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Quake3-iOS/bridging.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
