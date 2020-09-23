@@ -30,5 +30,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Quake III: Arena would like to remain connected to nearby bluetooth Game Controllers and Game Pads even when you’re not using the app.</string>
 </dict>
 </plist>
