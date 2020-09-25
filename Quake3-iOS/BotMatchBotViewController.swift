@@ -78,7 +78,11 @@ class BotMatchBotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #if os(tvOS)
+        let documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #else
+        let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #endif
 
         var skill1URL = URL(fileURLWithPath: documentsDir)
         skill1URL.appendPathComponent("graphics/menu/art/skill1.tga")
@@ -194,7 +198,11 @@ extension BotMatchBotViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BotCollectionViewCell
 
+        #if os(tvOS)
+        let documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #else
         let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #endif
 
         var destinationURL = URL(fileURLWithPath: documentsDir)
         destinationURL.appendPathComponent(bots[indexPath.row].icon)

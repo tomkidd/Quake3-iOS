@@ -53,7 +53,11 @@ class BotMatchViewController: UIViewController {
         botList.backgroundColor = UIColor.black
         botList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #if os(tvOS)
+        let documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #else
+        let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        #endif
         
         var destinationURL = URL(fileURLWithPath: documentsDir)
         destinationURL.appendPathComponent("graphics/\(selectedMap).jpg")
