@@ -23,7 +23,7 @@ You will need to provide your own copies of the `baseq3` directory from an exist
 
 You will need to drag your directories into the project and select "Create Folder References" and add them to both the Quake3-iOS and Quake-tvOS targets. The folders will be blue if you've done it right:
 
-![folders](https://github.com/tomkidd/Quake3-iOS/raw/master/folders.png)
+![folders](https://raw.githubusercontent.com/tomkidd/Quake3-iOS/master/folders.png)
 
 You can read a lengthy blog article on how I did all this [here](http://schnapple.com/quake-3-for-ios-and-tvos-for-apple-tv/).
 
