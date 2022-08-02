@@ -79,3 +79,4 @@ iOSInjectionProject/
 
 # Don't commit local Quake3 folder
 baseq3/
+.DS_Store
