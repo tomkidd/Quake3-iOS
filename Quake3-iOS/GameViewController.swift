@@ -39,11 +39,14 @@ class GameViewController: UIViewController {
         let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         #endif
         
+        // Set up baseq3 directory structure in Documents and copies pk3 files from bundle
+        setupBaseq3Directory(documentsDir: documentsDir)
+        
         Sys_SetHomeDir(documentsDir)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
 
-        var argv: [String?] = [ Bundle.main.resourcePath! + "/quake3", "+set", "com_basegame", "baseq3", "+name", self.defaults.string(forKey: "playerName")]
+        var argv: [String?] = [ Bundle.main.resourcePath! + "/quake3", "+set", "fs_basepath", documentsDir, "+name", self.defaults.string(forKey: "playerName")]
 
             if !self.selectedMap.isEmpty {
                 if self.botMatch {
@@ -190,6 +193,31 @@ class GameViewController: UIViewController {
             Sys_Startup(argc, &cargs)
             
             for ptr in cargs { free(UnsafeMutablePointer(mutating: ptr)) }
+        }
+    }
+    
+    private func setupBaseq3Directory(documentsDir: String) {
+        let fileManager = FileManager.default
+        let bundlePath = Bundle.main.resourcePath!
+        let documentsBaseq3Path = documentsDir + "/baseq3"
+        
+        do {
+            // Create baseq3 directory in Documents
+            try fileManager.createDirectory(atPath: documentsBaseq3Path, withIntermediateDirectories: true, attributes: nil)
+            
+            // Copy pk3 files from bundle to Documents/baseq3
+            let bundleContents = try fileManager.contentsOfDirectory(atPath: bundlePath)
+            for file in bundleContents where file.hasSuffix(".pk3") {
+                let sourcePath = bundlePath + "/" + file
+                let destPath = documentsBaseq3Path + "/" + file
+                
+                if !fileManager.fileExists(atPath: destPath) {
+                    try fileManager.copyItem(atPath: sourcePath, toPath: destPath)
+                    print("Copied \(file) to baseq3 directory")
+                }
+            }
+        } catch {
+            print("Error setting up baseq3 directory: \(error)")
         }
     }
     

@@ -55,9 +55,9 @@ class BotMatchMapViewController: UIViewController {
         mapList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         #if os(tvOS)
-        let documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        currentWorkingPath = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         #else
-        let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        currentWorkingPath = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         #endif
     }
     
@@ -85,7 +85,52 @@ extension BotMatchMapViewController : UITableViewDelegate {
         self.delegate?.setMap(map: maps[indexPath.row].map, name: maps[indexPath.row].name)
         var destinationURL = URL(fileURLWithPath: currentWorkingPath)
         destinationURL.appendPathComponent("graphics/\(maps[indexPath.row].map).jpg")
-        mapShot.image = UIImage(contentsOfFile: destinationURL.path)
+        
+        if let image = UIImage(contentsOfFile: destinationURL.path) {
+            mapShot.image = image
+        } else {
+            // Create fallback image with map name
+            let fallbackImage = createFallbackMapImage(with: maps[indexPath.row].map)
+            mapShot.image = fallbackImage
+        }
+    }
+    
+    private func createFallbackMapImage(with mapName: String) -> UIImage {
+        let size = CGSize(width: 200, height: 150)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        
+        // Draw background
+        UIColor.darkGray.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
+        
+        // Draw border
+        UIColor.orange.setStroke()
+        let borderRect = CGRect(origin: .zero, size: size).insetBy(dx: 2, dy: 2)
+        let borderPath = UIBezierPath(rect: borderRect)
+        borderPath.lineWidth = 2
+        borderPath.stroke()
+        
+        // Draw text
+        let font = UIFont.boldSystemFont(ofSize: 16)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.orange
+        ]
+        
+        let textSize = mapName.size(withAttributes: attributes)
+        let textRect = CGRect(
+            x: (size.width - textSize.width) / 2,
+            y: (size.height - textSize.height) / 2,
+            width: textSize.width,
+            height: textSize.height
+        )
+        
+        mapName.draw(in: textRect, withAttributes: attributes)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image ?? UIImage()
     }
     
 }
@@ -103,7 +148,14 @@ extension BotMatchMapViewController : UITableViewDataSource {
             cell.setSelected(true, animated: false)
             var destinationURL = URL(fileURLWithPath: currentWorkingPath)
             destinationURL.appendPathComponent("graphics/\(maps[indexPath.row].map).jpg")
-            mapShot.image = UIImage(contentsOfFile: destinationURL.path)
+            
+            if let image = UIImage(contentsOfFile: destinationURL.path) {
+                mapShot.image = image
+            } else {
+                // Create fallback image with map name
+                let fallbackImage = createFallbackMapImage(with: maps[indexPath.row].map)
+                mapShot.image = fallbackImage
+            }
         }
         
         return cell

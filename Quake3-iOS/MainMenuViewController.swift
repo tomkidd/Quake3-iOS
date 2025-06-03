@@ -161,7 +161,6 @@ class MainMenuViewController: UIViewController {
     
     func extractFile(pk3: String, source: String, destination: String) {
         let fileManager = FileManager()
-        let currentWorkingPath = fileManager.currentDirectoryPath
         #if os(tvOS)
         let documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         #else
@@ -172,19 +171,44 @@ class MainMenuViewController: UIViewController {
         destinationURL.appendPathComponent(destination)
         
         if fileManager.fileExists(atPath: destinationURL.path) {
+            print("File already exists at \(destinationURL.path)")
             return
         }
         
-        var archiveURL = URL(fileURLWithPath: currentWorkingPath)
+        // Look for PK3 files in Documents/baseq3 directory
+        var archiveURL = URL(fileURLWithPath: documentsDir)
         archiveURL.appendPathComponent(pk3)
+        
+        // If PK3 doesn't exist in Documents, try app bundle as fallback
+        if !fileManager.fileExists(atPath: archiveURL.path) {
+            print("PK3 not found at \(archiveURL.path), trying app bundle...")
+            if let bundlePath = Bundle.main.resourcePath {
+                archiveURL = URL(fileURLWithPath: bundlePath)
+                archiveURL.appendPathComponent(pk3)
+            }
+        }
+        
+        print("Attempting to open archive at: \(archiveURL.path)")
         guard let archive = Archive(url: archiveURL, accessMode: .read) else  {
+            print("Could not open archive at path: \(archiveURL.path)")
             return
         }
         guard let entry = archive[source] else {
+            print("Could not find entry '\(source)' in archive \(archiveURL.path)")
             return
         }
+        
+        // Create directory structure if needed
+        let destinationDir = destinationURL.deletingLastPathComponent()
+        do {
+            try fileManager.createDirectory(at: destinationDir, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            print("Failed to create directory \(destinationDir.path): \(error)")
+        }
+        
         do {
             let _ = try archive.extract(entry, to: destinationURL)
+            print("Successfully extracted \(source) to \(destinationURL.path)")
         } catch {
             print("Extracting entry from archive failed with error:\(error)")
         }

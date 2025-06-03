@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -180,7 +180,6 @@
 		A1565FCE2109F30E00FA9BC9 /* jdhuff.c in Sources */ = {isa = PBXBuildFile; fileRef = A179C0612101470F00D3C611 /* jdhuff.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		A1565FD42109F30E00FA9BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1902F68210939BC008823BB /* Assets.xcassets */; };
 		A1565FD52109F30E00FA9BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1902F65210939BA008823BB /* Main.storyboard */; };
-		A1565FD62109F30E00FA9BC9 /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A1565FE2210A0D3E00FA9BC9 /* libcurl_tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1565FE1210A0D3E00FA9BC9 /* libcurl_tvOS.a */; };
 		A1565FE4210A0DEF00FA9BC9 /* libcurl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1565FDC210A0CEA00FA9BC9 /* libcurl_iOS.a */; };
 		A1565FE8210A0E4A00FA9BC9 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1565FE6210A0E4A00FA9BC9 /* libssl.a */; };
@@ -384,7 +383,6 @@
 		A18F9699239B09D40053E3B1 /* UIImage-Targa.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F9697239B09D40053E3B1 /* UIImage-Targa.m */; };
 		A18F969D23A04F070053E3B1 /* tga_reader.c in Sources */ = {isa = PBXBuildFile; fileRef = A18F969C23A04F070053E3B1 /* tga_reader.c */; };
 		A18F969E23A04F070053E3B1 /* tga_reader.c in Sources */ = {isa = PBXBuildFile; fileRef = A18F969C23A04F070053E3B1 /* tga_reader.c */; };
-		A1902E9B21075F1C008823BB /* baseq3 in Resources */ = {isa = PBXBuildFile; fileRef = A1902E9A21075F1C008823BB /* baseq3 */; };
 		A196B6882115F5680031CEB8 /* ServerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B6872115F5680031CEB8 /* ServerBrowserViewController.swift */; };
 		A196B6A72115F7C50031CEB8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B68B2115F7C50031CEB8 /* Server.swift */; };
 		A196B6AB2115F7C50031CEB8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196B68D2115F7C50031CEB8 /* Player.swift */; };
@@ -766,7 +764,6 @@
 		A18F969B23A04F070053E3B1 /* tga_reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tga_reader.h; sourceTree = "<group>"; };
 		A18F969C23A04F070053E3B1 /* tga_reader.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tga_reader.c; sourceTree = "<group>"; };
 		A1902E982103EFC7008823BB /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
-		A1902E9A21075F1C008823BB /* baseq3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = baseq3; path = "../../../Library/Application Support/quake3/baseq3"; sourceTree = "<group>"; };
 		A1902F63210939BA008823BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1902F66210939BA008823BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1902F68210939BC008823BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -817,6 +814,10 @@
 		A1F4032225D22793009B1C92 /* qgles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qgles.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6B3DA91C2DE5545500D653D7 /* baseq3 */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); name = baseq3; path = "/Users/dantecesa/Library/Application Support/Quake3/baseq3"; sourceTree = "<absolute>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		A1565FCF2109F30E00FA9BC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -861,12 +862,12 @@
 		A179BFDA210142F900D3C611 = {
 			isa = PBXGroup;
 			children = (
-				A1902E9A21075F1C008823BB /* baseq3 */,
 				A179BFFA210146BF00D3C611 /* Quake3 */,
 				A179BFE5210142FA00D3C611 /* Quake3-iOS */,
 				A1902F60210939BA008823BB /* Quake3-tvOS */,
 				A179C4AD2101853600D3C611 /* Frameworks */,
 				A179BFE4210142FA00D3C611 /* Products */,
+				6B3DA91C2DE5545500D653D7 /* baseq3 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1422,6 +1423,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				6B3DA91C2DE5545500D653D7 /* baseq3 */,
+			);
 			name = "Quake3-tvOS";
 			packageProductDependencies = (
 				A1DBB61224A161600021BA6F /* CocoaAsyncSocket */,
@@ -1444,6 +1448,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6B3DA91C2DE5545500D653D7 /* baseq3 */,
 			);
 			name = "Quake3-iOS";
 			packageProductDependencies = (
@@ -1509,7 +1516,6 @@
 				A16B765124ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				A15AA922211A68E900DE867F /* ServerListViewCell.xib in Resources */,
 				A15103A1210D50DC0087EA86 /* dpquake.ttf in Resources */,
-				A1565FD62109F30E00FA9BC9 /* baseq3 in Resources */,
 				A16B764F24ACC4C000D96F09 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1522,7 +1528,6 @@
 				A179BFF1210142FB00D3C611 /* LaunchScreen.storyboard in Resources */,
 				A16B764C24ACC4C000D96F09 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				A151039F210D50D50087EA86 /* dpquake.ttf in Resources */,
-				A1902E9B21075F1C008823BB /* baseq3 in Resources */,
 				A179BFEE210142FB00D3C611 /* Assets.xcassets in Resources */,
 				A179BFEC210142FA00D3C611 /* Main.storyboard in Resources */,
 				A16B765024ACC4C000D96F09 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
@@ -2192,8 +2197,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UY8SFDNQ8;
-				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = TSKA2XAG4K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2218,7 +2222,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Quake3/libs/ios",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tomkiddconsulting.Quake3-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dantecesa.Quake3-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quake3-iOS/bridging.h";
 				SWIFT_VERSION = 5.0;
@@ -2233,8 +2237,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UY8SFDNQ8;
-				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = TSKA2XAG4K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2260,7 +2263,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Quake3/libs/ios",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tomkiddconsulting.Quake3-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dantecesa.Quake3-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quake3-iOS/bridging.h";
 				SWIFT_VERSION = 5.0;

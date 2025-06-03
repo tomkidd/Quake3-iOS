@@ -54,14 +54,12 @@ class BotMatchViewController: UIViewController {
         botList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         #if os(tvOS)
-        let documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        documentsDir = try! FileManager().url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         #else
-        let documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
+        documentsDir = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).path
         #endif
         
-        var destinationURL = URL(fileURLWithPath: documentsDir)
-        destinationURL.appendPathComponent("graphics/\(selectedMap).jpg")
-        mapShot.image = UIImage(contentsOfFile: destinationURL.path)
+        updateMapPreview()
         
         var skill1URL = URL(fileURLWithPath: documentsDir)
         skill1URL.appendPathComponent("graphics/menu/art/skill1.tga")
@@ -88,6 +86,57 @@ class BotMatchViewController: UIViewController {
         skill5URL.appendPathComponent("graphics/menu/art/skill5.tga")
         skill5Button.setImage(UIImage.image(fromTGAFile: skill5URL.path) as? UIImage, for: .normal)
         skill5Button.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    private func updateMapPreview() {
+        var destinationURL = URL(fileURLWithPath: documentsDir)
+        destinationURL.appendPathComponent("graphics/\(selectedMap).jpg")
+        
+        if let image = UIImage(contentsOfFile: destinationURL.path) {
+            mapShot.image = image
+        } else {
+            // Create fallback image with map name
+            let fallbackImage = createFallbackMapImage(with: selectedMap)
+            mapShot.image = fallbackImage
+        }
+    }
+    
+    private func createFallbackMapImage(with mapName: String) -> UIImage {
+        let size = CGSize(width: 200, height: 150)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        
+        // Draw background
+        UIColor.darkGray.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
+        
+        // Draw border
+        UIColor.orange.setStroke()
+        let borderRect = CGRect(origin: .zero, size: size).insetBy(dx: 2, dy: 2)
+        let borderPath = UIBezierPath(rect: borderRect)
+        borderPath.lineWidth = 2
+        borderPath.stroke()
+        
+        // Draw text
+        let font = UIFont.boldSystemFont(ofSize: 16)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.orange
+        ]
+        
+        let textSize = mapName.size(withAttributes: attributes)
+        let textRect = CGRect(
+            x: (size.width - textSize.width) / 2,
+            y: (size.height - textSize.height) / 2,
+            width: textSize.width,
+            height: textSize.height
+        )
+        
+        mapName.draw(in: textRect, withAttributes: attributes)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image ?? UIImage()
     }
 
     // MARK: - Navigation
@@ -171,9 +220,7 @@ extension BotMatchViewController: BotMatchProtocol {
     func setMap(map: String, name: String) {
         mapButton.setTitle(map, for: .normal)
         selectedMap = map
-        var destinationURL = URL(fileURLWithPath: documentsDir)
-        destinationURL.appendPathComponent("graphics/\(selectedMap).jpg")
-        mapShot.image = UIImage(contentsOfFile: destinationURL.path)
+        updateMapPreview()
     }
     
     func addBot(bot: String, difficulty: Float, icon:String) {

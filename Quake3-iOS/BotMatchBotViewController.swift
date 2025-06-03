@@ -209,10 +209,16 @@ extension BotMatchBotViewController : UICollectionViewDelegate {
         
         let fileManager = FileManager()
         if fileManager.fileExists(atPath: destinationURL.path) {
-        
             let img: UIImage = UIImage.image(fromTGAFile: destinationURL.path) as! UIImage
             cell.botAvatar.contentMode = .scaleAspectFit
             cell.botAvatar.image = img
+        } else {
+            // Create a fallback image with bot name initials
+            let botName = bots[indexPath.row].name
+            let initials = String(botName.prefix(2)).uppercased()
+            let fallbackImage = createFallbackImage(with: initials)
+            cell.botAvatar.contentMode = .scaleAspectFit
+            cell.botAvatar.image = fallbackImage
         }
         
         cell.botName.text = bots[indexPath.row].name
@@ -225,8 +231,38 @@ extension BotMatchBotViewController : UICollectionViewDelegate {
             cell.botAvatar.layer.borderWidth = 0
         }
 
-
         return cell
+    }
+    
+    private func createFallbackImage(with text: String) -> UIImage {
+        let size = CGSize(width: 64, height: 64)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        
+        // Draw background
+        UIColor.darkGray.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
+        
+        // Draw text
+        let font = UIFont.boldSystemFont(ofSize: 20)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.orange
+        ]
+        
+        let textSize = text.size(withAttributes: attributes)
+        let textRect = CGRect(
+            x: (size.width - textSize.width) / 2,
+            y: (size.height - textSize.height) / 2,
+            width: textSize.width,
+            height: textSize.height
+        )
+        
+        text.draw(in: textRect, withAttributes: attributes)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image ?? UIImage()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
